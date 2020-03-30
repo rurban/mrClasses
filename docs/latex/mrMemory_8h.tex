@@ -1,0 +1,40 @@
+\section{mr\-Memory.h File Reference}
+\label{mrMemory_8h}\index{mrMemory.h@{mrMemory.h}}
+{\tt \#include $<$shader.h$>$}\par
+{\tt \#include $<$new$>$}\par
+{\tt \#include \char`\"{}mr\-Platform.h\char`\"{}}\par
+{\tt \#include \char`\"{}mr\-Macros.h\char`\"{}}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void $\ast$ {\bf operator new} (size\_\-t size)  throw (std::bad\_\-alloc)
+\item 
+void $\ast$ {\bf operator new[$\,$]} (size\_\-t size)  throw (std::bad\_\-alloc)
+\item 
+void {\bf operator delete} (void $\ast$ptr)  throw ()
+\item 
+void {\bf operator delete[$\,$]} (void $\ast$ptr)  throw ()
+\end{CompactItemize}
+
+
+\subsection{Function Documentation}
+\index{mrMemory.h@{mr\-Memory.h}!operator delete@{operator delete}}
+\index{operator delete@{operator delete}!mrMemory.h@{mr\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void operator delete (void $\ast$ {\em ptr})  throw ()\hspace{0.3cm}{\tt  [inline]}}\label{mrMemory_8h_a2}
+
+
+\index{mrMemory.h@{mr\-Memory.h}!operator delete[]@{operator delete[]}}
+\index{operator delete[]@{operator delete[]}!mrMemory.h@{mr\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void operator delete[$\,$] (void $\ast$ {\em ptr})  throw ()\hspace{0.3cm}{\tt  [inline]}}\label{mrMemory_8h_a3}
+
+
+\index{mrMemory.h@{mr\-Memory.h}!operator new@{operator new}}
+\index{operator new@{operator new}!mrMemory.h@{mr\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ operator new (size\_\-t {\em size})  throw (std::bad\_\-alloc)\hspace{0.3cm}{\tt  [inline]}}\label{mrMemory_8h_a0}
+
+
+Override the global new/delete operators to allow tracking of memory leaks. \index{mrMemory.h@{mr\-Memory.h}!operator new[]@{operator new[]}}
+\index{operator new[]@{operator new[]}!mrMemory.h@{mr\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ operator new[$\,$] (size\_\-t {\em size})  throw (std::bad\_\-alloc)\hspace{0.3cm}{\tt  [inline]}}\label{mrMemory_8h_a1}
+
+

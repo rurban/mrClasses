@@ -1,0 +1,240 @@
+\section{mr\-Rman\_\-macros.h File Reference}
+\label{mrRman__macros_8h}\index{mrRman_macros.h@{mrRman\_\-macros.h}}
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define {\bf Ci}\ ($\ast$result)
+\begin{CompactList}\small\item\em color, needs shader to use color$\ast$ result in definition \item\end{CompactList}\item 
+\#define {\bf Oi}\ (result $\rightarrow$ a)
+\begin{CompactList}\small\item\em opacity when in rapid motion, alpha when not. \item\end{CompactList}\item 
+\#define {\bf E}\ (state $\rightarrow$ org)
+\begin{CompactList}\small\item\em origin of the ray/camera \item\end{CompactList}\item 
+\#define {\bf P}\ (state $\rightarrow$ point)
+\begin{CompactList}\small\item\em point being shaded \item\end{CompactList}\item 
+\#define {\bf N}\ (state $\rightarrow$ normal)
+\begin{CompactList}\small\item\em interpolated normal (already normalized usually) \item\end{CompactList}\item 
+\#define {\bf Ng}\ (state $\rightarrow$ normal\_\-geom)
+\begin{CompactList}\small\item\em geometric normal (already normalized usually) \item\end{CompactList}\item 
+\#define {\bf I}\ (state $\rightarrow$ dir)
+\begin{CompactList}\small\item\em Note that state-$>$dir is both I and rayinfo(\char`\"{}dir\char`\"{}). \item\end{CompactList}\item 
+\#define {\bf d\-Pdu}\ (state $\rightarrow$ bump\_\-list[0])
+\begin{CompactList}\small\item\em d\-Pdu is available only for surfaces. \item\end{CompactList}\item 
+\#define {\bf d\-Pdv}\ (state $\rightarrow$ bump\_\-list[1])
+\begin{CompactList}\small\item\em d\-Pdv is available only for surfaces. \item\end{CompactList}\item 
+\#define {\bf u}\ (state $\rightarrow$ tex\_\-list[0].x)
+\begin{CompactList}\small\item\em s and u, v and t are equal in mray, as mray has no u,v. \item\end{CompactList}\item 
+\#define {\bf v}\ (state $\rightarrow$ tex\_\-list[0].y)
+\begin{CompactList}\small\item\em s and u, v and t are equal in mray, as mray has no u,v. \item\end{CompactList}\item 
+\#define {\bf ncomps}\ (4)
+\begin{CompactList}\small\item\em number of components in a color \item\end{CompactList}\item 
+\#define {\bf time}\ (state $\rightarrow$ time)
+\begin{CompactList}\small\item\em time of ray \item\end{CompactList}\item 
+\#define {\bf Ol}\ (Cl.a)
+\begin{CompactList}\small\item\em opacity (alpha) of light \item\end{CompactList}\item 
+\#define {\bf d\-Pdtime}\ (state $\rightarrow$ motion)
+\begin{CompactList}\small\item\em motion vector during shutter \item\end{CompactList}\item 
+\#define {\bf mr\_\-get\_\-array}(i\-Type, i\-Params, i\-Name)
+\item 
+\#define {\bf illuminance}(i\-Params)
+\item 
+\#define {\bf illuminance\-PI}(i\-Params)
+\item 
+\#define {\bf illuminance2}(i\-Params, i\-Lights)
+\item 
+\#define {\bf illuminance2PI}(i\-Params)
+\item 
+\#define {\bf samplelight}(i\-State)
+\end{CompactItemize}
+
+
+\subsection{Define Documentation}
+\index{mrRman_macros.h@{mr\-Rman\_\-macros.h}!Ci@{Ci}}
+\index{Ci@{Ci}!mrRman_macros.h@{mr\-Rman\_\-macros.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define Ci\ ($\ast$result)}\label{mrRman__macros_8h_a0}
+
+
+color, needs shader to use color$\ast$ result in definition 
+
+{\bf mr\-Rman\_\-macros.h}{\rm (p.\,\pageref{mrRman__macros_8h})}
+
+Make sure this is the LAST include you use, as these macros will easily corrupt any other file included afterwards. Also, make sure you DO NOT use any variables with the names of prman built-in variables (s,t,N,P,Ci,etc.) \index{mrRman_macros.h@{mr\-Rman\_\-macros.h}!dPdtime@{dPdtime}}
+\index{dPdtime@{dPdtime}!mrRman_macros.h@{mr\-Rman\_\-macros.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define d\-Pdtime\ (state $\rightarrow$ motion)}\label{mrRman__macros_8h_a14}
+
+
+motion vector during shutter 
+
+\index{mrRman_macros.h@{mr\-Rman\_\-macros.h}!dPdu@{dPdu}}
+\index{dPdu@{dPdu}!mrRman_macros.h@{mr\-Rman\_\-macros.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define d\-Pdu\ (state $\rightarrow$ bump\_\-list[0])}\label{mrRman__macros_8h_a7}
+
+
+d\-Pdu is available only for surfaces. 
+
+\index{mrRman_macros.h@{mr\-Rman\_\-macros.h}!dPdv@{dPdv}}
+\index{dPdv@{dPdv}!mrRman_macros.h@{mr\-Rman\_\-macros.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define d\-Pdv\ (state $\rightarrow$ bump\_\-list[1])}\label{mrRman__macros_8h_a8}
+
+
+d\-Pdv is available only for surfaces. 
+
+\index{mrRman_macros.h@{mr\-Rman\_\-macros.h}!E@{E}}
+\index{E@{E}!mrRman_macros.h@{mr\-Rman\_\-macros.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define E\ (state $\rightarrow$ org)}\label{mrRman__macros_8h_a2}
+
+
+origin of the ray/camera 
+
+\index{mrRman_macros.h@{mr\-Rman\_\-macros.h}!I@{I}}
+\index{I@{I}!mrRman_macros.h@{mr\-Rman\_\-macros.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define I\ (state $\rightarrow$ dir)}\label{mrRman__macros_8h_a6}
+
+
+Note that state-$>$dir is both I and rayinfo(\char`\"{}dir\char`\"{}). 
+
+\index{mrRman_macros.h@{mr\-Rman\_\-macros.h}!illuminance@{illuminance}}
+\index{illuminance@{illuminance}!mrRman_macros.h@{mr\-Rman\_\-macros.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define illuminance(i\-Params)}\label{mrRman__macros_8h_a16}
+
+
+{\bf Value:}
+
+\footnotesize\begin{verbatim}mr_get_array( miTag, iParams, lights ); \
+    mr::color Cl( kNoInit ); miScalar NdL; mr::vector L( kNoInit ); \
+    for (int lgt = 0; lgt < n_lights; ++lgt)
+\end{verbatim}\normalsize 
+Pass one parameters to illuminance, to sample i\-Params-$>$lights. Sample lights only in front of normal. \index{mrRman_macros.h@{mr\-Rman\_\-macros.h}!illuminance2@{illuminance2}}
+\index{illuminance2@{illuminance2}!mrRman_macros.h@{mr\-Rman\_\-macros.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define illuminance2(i\-Params, i\-Lights)}\label{mrRman__macros_8h_a18}
+
+
+{\bf Value:}
+
+\footnotesize\begin{verbatim}mr_get_array( miTag, iParams, iLights ); \
+    mr::color Cl( kNoInit ); miScalar NdL; mr::vector L( kNoInit ); \
+    for (int lgt = 0; lgt < n_lights; ++lgt)
+\end{verbatim}\normalsize 
+Pass two parameters to illuminance, to sample i\-Params-$>$i\-Lights. Sample lights only in front of normal. \index{mrRman_macros.h@{mr\-Rman\_\-macros.h}!illuminance2PI@{illuminance2PI}}
+\index{illuminance2PI@{illuminance2PI}!mrRman_macros.h@{mr\-Rman\_\-macros.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define illuminance2PI(i\-Params)}\label{mrRman__macros_8h_a19}
+
+
+{\bf Value:}
+
+\footnotesize\begin{verbatim}mr_get_array( miTag, iParams, lights ); \
+    void*   pri = state->pri; \
+    state->pri  = NULL; \
+    mr::color Cl( kNoInit ); miScalar NdL; mr::vector L( kNoInit ); \
+    for (int lgt = 0; lgt < n_lights; ++lgt)
+\end{verbatim}\normalsize 
+Pass one parameters to illuminance, to sample i\-Params-$>$lights. Sample lights in front and behind normal. \index{mrRman_macros.h@{mr\-Rman\_\-macros.h}!illuminancePI@{illuminancePI}}
+\index{illuminancePI@{illuminancePI}!mrRman_macros.h@{mr\-Rman\_\-macros.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define illuminance\-PI(i\-Params)}\label{mrRman__macros_8h_a17}
+
+
+{\bf Value:}
+
+\footnotesize\begin{verbatim}mr_get_array( miTag, iParams, lights ); \
+    void*   pri = state->pri; \
+    state->pri  = NULL; \
+    mr::color Cl( kNoInit ); miScalar NdL; mr::vector L( kNoInit ); \
+    for (int lgt = 0; lgt < n_lights; ++lgt)
+\end{verbatim}\normalsize 
+Pass one parameters to illuminance, to sample i\-Params-$>$lights. Sample lights in front and behind normal. \index{mrRman_macros.h@{mr\-Rman\_\-macros.h}!mr_get_array@{mr\_\-get\_\-array}}
+\index{mr_get_array@{mr\_\-get\_\-array}!mrRman_macros.h@{mr\-Rman\_\-macros.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define mr\_\-get\_\-array(i\-Type, i\-Params, i\-Name)}\label{mrRman__macros_8h_a15}
+
+
+{\bf Value:}
+
+\footnotesize\begin{verbatim}miInteger i_ ## iName = *mi_eval_integer( iParams->i_ ## iName ); \
+    miInteger n_ ## iName = *mi_eval_integer( iParams->n_ ## iName ); \
+    const iType*    iName = mr_eval( iParams-> ## iName ) + i_ ## iName;
+\end{verbatim}\normalsize 
+Simple function to get an array of anything from a mray parameter definition \index{mrRman_macros.h@{mr\-Rman\_\-macros.h}!N@{N}}
+\index{N@{N}!mrRman_macros.h@{mr\-Rman\_\-macros.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define N\ (state $\rightarrow$ normal)}\label{mrRman__macros_8h_a4}
+
+
+interpolated normal (already normalized usually) 
+
+\index{mrRman_macros.h@{mr\-Rman\_\-macros.h}!ncomps@{ncomps}}
+\index{ncomps@{ncomps}!mrRman_macros.h@{mr\-Rman\_\-macros.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ncomps\ (4)}\label{mrRman__macros_8h_a11}
+
+
+number of components in a color 
+
+\index{mrRman_macros.h@{mr\-Rman\_\-macros.h}!Ng@{Ng}}
+\index{Ng@{Ng}!mrRman_macros.h@{mr\-Rman\_\-macros.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define Ng\ (state $\rightarrow$ normal\_\-geom)}\label{mrRman__macros_8h_a5}
+
+
+geometric normal (already normalized usually) 
+
+\index{mrRman_macros.h@{mr\-Rman\_\-macros.h}!Oi@{Oi}}
+\index{Oi@{Oi}!mrRman_macros.h@{mr\-Rman\_\-macros.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define Oi\ (result $\rightarrow$ a)}\label{mrRman__macros_8h_a1}
+
+
+opacity when in rapid motion, alpha when not. 
+
+\index{mrRman_macros.h@{mr\-Rman\_\-macros.h}!Ol@{Ol}}
+\index{Ol@{Ol}!mrRman_macros.h@{mr\-Rman\_\-macros.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define Ol\ (Cl.a)}\label{mrRman__macros_8h_a13}
+
+
+opacity (alpha) of light 
+
+\index{mrRman_macros.h@{mr\-Rman\_\-macros.h}!P@{P}}
+\index{P@{P}!mrRman_macros.h@{mr\-Rman\_\-macros.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define P\ (state $\rightarrow$ point)}\label{mrRman__macros_8h_a3}
+
+
+point being shaded 
+
+\index{mrRman_macros.h@{mr\-Rman\_\-macros.h}!samplelight@{samplelight}}
+\index{samplelight@{samplelight}!mrRman_macros.h@{mr\-Rman\_\-macros.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define samplelight(i\-State)}\label{mrRman__macros_8h_a20}
+
+
+{\bf Value:}
+
+\footnotesize\begin{verbatim}miInteger samples = 0; \
+    while( mi_sample_light( &Cl, &L, &NdL, iState, lights[lgt], &samples ) )
+\end{verbatim}\normalsize 
+Simple macro to sample a light within an illuminance loop.
+
+
+
+\footnotesize\begin{verbatim}     illuminance( params )
+     {
+             samplelight( state )
+             {
+             .... do stuff with usual prman variables (Cl, L, etc.) here.
+             .... note that unlike prman, L is normalized already and
+             .... NdL already contains N.L unless illuminancePI is used. */
+//           .... (like in volume shader).
+\end{verbatim}
+\normalsize
+\index{mrRman_macros.h@{mr\-Rman\_\-macros.h}!time@{time}}
+\index{time@{time}!mrRman_macros.h@{mr\-Rman\_\-macros.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define time\ (state $\rightarrow$ time)}\label{mrRman__macros_8h_a12}
+
+
+time of ray 
+
+\index{mrRman_macros.h@{mr\-Rman\_\-macros.h}!u@{u}}
+\index{u@{u}!mrRman_macros.h@{mr\-Rman\_\-macros.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define u\ (state $\rightarrow$ tex\_\-list[0].x)}\label{mrRman__macros_8h_a9}
+
+
+s and u, v and t are equal in mray, as mray has no u,v. 
+
+\index{mrRman_macros.h@{mr\-Rman\_\-macros.h}!v@{v}}
+\index{v@{v}!mrRman_macros.h@{mr\-Rman\_\-macros.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define v\ (state $\rightarrow$ tex\_\-list[0].y)}\label{mrRman__macros_8h_a10}
+
+
+s and u, v and t are equal in mray, as mray has no u,v. 
+

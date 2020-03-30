@@ -1,0 +1,152 @@
+\section{mr\-Stream.h File Reference}
+\label{mrStream_8h}\index{mrStream.h@{mrStream.h}}
+{\tt \#include $<$ostream$>$}\par
+{\tt \#include $<$sstream$>$}\par
+{\tt \#include $<$iomanip$>$}\par
+{\tt \#include $<$geoshader.h$>$}\par
+{\tt \#include \char`\"{}mr\-Mutex.h\char`\"{}}\par
+{\tt \#include \char`\"{}mr\-Stream.inl\char`\"{}}\par
+{\tt \#include $<$shader.h$>$}\par
+{\tt \#include \char`\"{}mr\-Platform.h\char`\"{}}\par
+{\tt \#include \char`\"{}mr\-Memory.h\char`\"{}}\par
+\subsection*{Namespaces}
+\begin{CompactItemize}
+\item 
+namespace {\bf mr}
+\end{CompactItemize}
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define {\bf NEW\_\-STREAM}(X)
+\item 
+\#define {\bf mr\_\-warn}(m)
+\item 
+\#define {\bf mr\_\-warning}(m)\ mr\_\-warn(m)
+\item 
+\#define {\bf mr\_\-fatal}(m)
+\item 
+\#define {\bf mr\_\-error}(m)
+\item 
+\#define {\bf mr\_\-info}(m)
+\item 
+\#define {\bf mr\_\-progress}(m)
+\item 
+\#define {\bf MR\_\-COORDS}
+\item 
+\#define {\bf mr\_\-trace}(m)\ mr\_\-info( MR\_\-COORDS $<$$<$ m );
+\end{CompactItemize}
+
+
+\subsection{Define Documentation}
+\index{mrStream.h@{mr\-Stream.h}!MR_COORDS@{MR\_\-COORDS}}
+\index{MR_COORDS@{MR\_\-COORDS}!mrStream.h@{mr\-Stream.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define MR\_\-COORDS}\label{mrStream_8h_a7}
+
+
+{\bf Value:}
+
+\footnotesize\begin{verbatim}"(" << std::setprecision(2) << state->raster_x << "," \
+                << state->raster_y << std::setprecision(5) << ") "
+\end{verbatim}\normalsize 
+\index{mrStream.h@{mr\-Stream.h}!mr_error@{mr\_\-error}}
+\index{mr_error@{mr\_\-error}!mrStream.h@{mr\-Stream.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define mr\_\-error(m)}\label{mrStream_8h_a4}
+
+
+{\bf Value:}
+
+\footnotesize\begin{verbatim}do { \
+               ::mr::streamMutex->lock(); \
+               (*(::mr::error)) << m << std::endl; \
+               ::mr::streamMutex->unlock(); \
+             } while(0);
+\end{verbatim}\normalsize 
+\index{mrStream.h@{mr\-Stream.h}!mr_fatal@{mr\_\-fatal}}
+\index{mr_fatal@{mr\_\-fatal}!mrStream.h@{mr\-Stream.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define mr\_\-fatal(m)}\label{mrStream_8h_a3}
+
+
+{\bf Value:}
+
+\footnotesize\begin{verbatim}do { \
+               ::mr::streamMutex->lock(); \
+               (*(::mr::fatal)) << m << std::endl; \
+               ::mr::streamMutex->unlock(); \
+             } while(0);
+\end{verbatim}\normalsize 
+\index{mrStream.h@{mr\-Stream.h}!mr_info@{mr\_\-info}}
+\index{mr_info@{mr\_\-info}!mrStream.h@{mr\-Stream.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define mr\_\-info(m)}\label{mrStream_8h_a5}
+
+
+{\bf Value:}
+
+\footnotesize\begin{verbatim}do { \
+               ::mr::streamMutex->lock(); \
+               (*(::mr::info)) << m << std::endl; \
+               ::mr::streamMutex->unlock(); \
+             } while(0);
+\end{verbatim}\normalsize 
+\index{mrStream.h@{mr\-Stream.h}!mr_progress@{mr\_\-progress}}
+\index{mr_progress@{mr\_\-progress}!mrStream.h@{mr\-Stream.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define mr\_\-progress(m)}\label{mrStream_8h_a6}
+
+
+{\bf Value:}
+
+\footnotesize\begin{verbatim}do { \
+               ::mr::streamMutex->lock(); \
+               (*(::mr::progress)) << m << std::endl; \
+               ::mr::streamMutex->unlock(); \
+             } while(0);
+\end{verbatim}\normalsize 
+\index{mrStream.h@{mr\-Stream.h}!mr_trace@{mr\_\-trace}}
+\index{mr_trace@{mr\_\-trace}!mrStream.h@{mr\-Stream.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define mr\_\-trace(m)\ mr\_\-info( MR\_\-COORDS $<$$<$ m );}\label{mrStream_8h_a8}
+
+
+\index{mrStream.h@{mr\-Stream.h}!mr_warn@{mr\_\-warn}}
+\index{mr_warn@{mr\_\-warn}!mrStream.h@{mr\-Stream.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define mr\_\-warn(m)}\label{mrStream_8h_a1}
+
+
+{\bf Value:}
+
+\footnotesize\begin{verbatim}do { \
+               ::mr::streamMutex->lock(); \
+               (*(::mr::warning)) << m << std::endl; \
+               ::mr::streamMutex->unlock(); \
+             } while(0);
+\end{verbatim}\normalsize 
+\index{mrStream.h@{mr\-Stream.h}!mr_warning@{mr\_\-warning}}
+\index{mr_warning@{mr\_\-warning}!mrStream.h@{mr\-Stream.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define mr\_\-warning(m)\ mr\_\-warn(m)}\label{mrStream_8h_a2}
+
+
+\index{mrStream.h@{mr\-Stream.h}!NEW_STREAM@{NEW\_\-STREAM}}
+\index{NEW_STREAM@{NEW\_\-STREAM}!mrStream.h@{mr\-Stream.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define NEW\_\-STREAM(X)}\label{mrStream_8h_a0}
+
+
+{\bf Value:}
+
+\footnotesize\begin{verbatim}struct  X ## buffer : public buffer_base \
+  { \
+    X ## buffer() : buffer_base() {}; \
+    virtual void print(const char* const s) \
+    { \
+      mi_ ## X("%s",s); \
+    }; \
+  }; \
+  \
+  struct  X ## stream : public ostream \
+  { \
+    X ## stream() : ostream( new X ## buffer ) \
+    { \
+      flags( std::ios::showpoint | std::ios::right | std::ios::fixed ); \
+    }; \
+    ~ X ## stream() { delete rdbuf(); }; \
+  }; \
+  \
+  extern MR_LIB_EXPORT X ## stream *  X
+\end{verbatim}\normalsize 

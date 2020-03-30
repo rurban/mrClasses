@@ -1,0 +1,111 @@
+
+
+
+source "gg_mray_aux.mel";
+
+//      Desc: Shows the help string for the passed checkBox
+// $checkBox: the checkBox the user clicked on...
+global proc AEgg_showinfoTemplateDocs( string $checkBox,
+				       string $name )
+{
+   //=========================
+   // define help texts
+   //=========================
+   string $tx;
+   switch ( $name )
+   {
+      case "Show":
+	 $tx =
+	 "What to render. \n";
+
+	 break;
+   }
+   
+   ggShowHelp( $checkBox, "gg_showinfo Shader", $name, $tx );
+}
+
+
+global proc AEgg_whatNew( string $plug )
+{
+      
+   attrEnumOptionMenuGrp
+              -l "Show"
+              -at $plug
+              -ei  0 "Triangles"
+              -ei  1 "Boxes (Grids)"
+              -ei  2 "Orientation"
+              -ei  3 "N . V"
+              -ei  4 "Point(*)"
+              -ei  5 "Normal"
+              -ei  6 "Geom. Normal"
+              -ei  7 "dPdu(*)"
+              -ei  8 "dPdv(*)"
+              -ei  9 "dP2du2(*)"
+              -ei 10 "dP2dv2(*)"
+              -ei 11 "dP2dudv(*)"
+              -ei 12 "TangentU(*)"
+              -ei 13 "TangentV(*)"
+	      -ei 14 "ST(*)"
+	      -ei 15 "dPds(*)"
+	      -ei 16 "dPdt(*)"
+	      -ei 17 "Barycentric"
+	      -ei 18 "Time"
+	      -ei 19 "Motion"
+	      -ei 20 "Instance"
+	      -ei 21 "RasterUnitX"
+	      -ei 22 "RasterUnitY"
+	      -ei 23 "EWA dPds(*)"
+	      -ei 24 "EWA dPdt(*)"
+	      -ei 25 "dNds(*)"
+	      -ei 26 "dNdt(*)"
+              -ei 27 "Raster Area"
+              -ei 28 "Raster Hit"
+              -ei 29 "I in Tangent"
+              -ei 30 "Dsu Dsv"
+	whatCtrl
+	;
+}
+
+
+//
+// Routine to replace a pulldown of whats
+//
+global proc AEgg_whatReplace( string $plug )
+{
+  attrEnumOptionMenuGrp -e -at $plug whatCtrl;
+}
+
+
+global proc AEgg_showinfoTemplate( string $nodeName )
+{
+	AEswatchDisplay $nodeName;
+	editorTemplate -beginScrollLayout;
+
+	   editorTemplate 
+	     -beginLayout "Show Info Attributes" 
+	     -collapse 0;
+
+	       editorTemplate  -beginLayout "Main" -collapse 0;
+		   editorTemplate -callCustom "AEgg_whatNew"  "AEgg_whatReplace" "what";
+		   editorTemplate -l "UV Set" -addControl "uvset";
+	       editorTemplate -endLayout;
+
+	       editorTemplate  -beginLayout "(*)Coordinate Transform" -collapse 0;
+		   editorTemplate -callCustom "AEgg_spaceNew" "AEgg_spaceReplace" "space";
+		   editorTemplate -addControl "minValues";
+		   editorTemplate -addControl "maxValues";
+
+	       editorTemplate -endLayout;
+
+	   editorTemplate -endLayout;
+
+	   editorTemplate -suppress "normalCamera";
+	   editorTemplate -suppress "what";
+	   editorTemplate -suppress "space";
+
+	   AEdependNodeTemplate $nodeName;
+
+	   editorTemplate -addExtraControls;
+
+	editorTemplate -endScrollLayout;
+}

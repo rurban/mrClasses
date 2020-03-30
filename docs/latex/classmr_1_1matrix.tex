@@ -1,0 +1,843 @@
+\section{mr::matrix Class Reference}
+\label{classmr_1_1matrix}\index{mr::matrix@{mr::matrix}}
+Class to represent a matrix in mental ray.  
+
+
+{\tt \#include $<$mr\-Matrix.h$>$}
+
+\subsection*{Enumerations}
+\begin{CompactItemize}
+\item 
+enum {\bf Matrix\-Type} \{ \par
+{\bf k\-Empty} =  0, 
+{\bf k\-Identity}, 
+{\bf k\-Internal\-To\-World}, 
+{\bf k\-Internal\-To\-Camera}, 
+\par
+{\bf k\-Internal\-To\-Object}, 
+{\bf k\-Camera\-To\-World}, 
+{\bf k\-Camera\-To\-Object}, 
+{\bf k\-Camera\-To\-Internal}, 
+\par
+{\bf k\-Camera\-Projection}, 
+{\bf k\-Object\-To\-World}, 
+{\bf k\-Object\-To\-Internal}, 
+{\bf k\-Object\-To\-Camera}, 
+\par
+{\bf k\-Unknown}
+ \}
+\begin{CompactList}\small\item\em Default matrices. \item\end{CompactList}\item 
+void {\bf set\-To\-Null} ()
+\begin{CompactList}\small\item\em Set Matrix all to 0. \item\end{CompactList}\item 
+void {\bf set\-To\-Identity} ()
+\begin{CompactList}\small\item\em Set Matrix to Identity. \item\end{CompactList}\item 
+void {\bf set\-Internal\-To\-World} (mi\-State $\ast$const state)
+\begin{CompactList}\small\item\em Set Matrix to Internal-$>$World Matrix. \item\end{CompactList}\item 
+void {\bf set\-Internal\-To\-Camera} (mi\-State $\ast$const state)
+\begin{CompactList}\small\item\em Set Matrix to Internal-$>$Camera Matrix. \item\end{CompactList}\item 
+void {\bf set\-Internal\-To\-Object} (mi\-State $\ast$const state)
+\begin{CompactList}\small\item\em Set Matrix to Internal-$>$Object Matrix. \item\end{CompactList}\item 
+void {\bf set\-Camera\-To\-World} (mi\-State $\ast$const state)
+\begin{CompactList}\small\item\em Set Matrix to Camera-$>$World Matrix. \item\end{CompactList}\item 
+void {\bf set\-Camera\-To\-Internal} (mi\-State $\ast$const state)
+\begin{CompactList}\small\item\em Set Matrix to Camera-$>$Internal Matrix. \item\end{CompactList}\item 
+void {\bf set\-Object\-To\-World} (mi\-State $\ast$const state)
+\begin{CompactList}\small\item\em Set Matrix to Object-$>$World Matrix. \item\end{CompactList}\item 
+void {\bf set\-Object\-To\-Internal} (mi\-State $\ast$const state)
+\begin{CompactList}\small\item\em Set Matrix to Object-$>$Internal Matrix. \item\end{CompactList}\item 
+void {\bf set\-Camera\-To\-Object} (mi\-State $\ast$const state)
+\begin{CompactList}\small\item\em Set Matrix to Camera-$>$Object Matrix. \item\end{CompactList}\item 
+void {\bf set\-Object\-To\-Camera} (mi\-State $\ast$const state)
+\begin{CompactList}\small\item\em Set Matrix to Object-$>$Camera Matrix. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Friend operators}
+\begin{CompactItemize}
+\item 
+std::ostream \& {\bf operator$<$$<$} (std::ostream \&o, const {\bf matrix} \&a)
+\begin{CompactList}\small\item\em Printing. \item\end{CompactList}\item 
+{\bf matrix} {\bf operator $\ast$} (const mi\-Scalar scalar, const {\bf matrix} \&b)
+\begin{CompactList}\small\item\em Reverse scalar multiplication. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Public Types}
+\subsection*{Public Member Functions}
+\begin{Indent}{\bf Constructors}\par
+\begin{CompactItemize}
+\item 
+{\bf matrix} ({\bf k\-No\-Construct})
+\begin{CompactList}\small\item\em Quick Constructor. Leaves matrix elements unitialized. \item\end{CompactList}\item 
+{\bf matrix} ()
+\begin{CompactList}\small\item\em Default Constructor. Sets matrix to identity. \item\end{CompactList}\item 
+{\bf matrix} (const mi\-Matrix m)
+\begin{CompactList}\small\item\em Construct matrix from an mi\-Matrix. \item\end{CompactList}\item 
+{\bf matrix} (mi\-State $\ast$const state, const {\bf Matrix\-Type} n)
+\begin{CompactList}\small\item\em Construct matrix from a default matrix. \item\end{CompactList}\item 
+{\bf matrix} (const mi\-Integer n)
+\begin{CompactList}\small\item\em Construct matrix from an Integer (this is same as prman 0=null, 1=identity). \item\end{CompactList}\item 
+{\bf matrix} (const {\bf Matrix\-Type} n)
+\begin{CompactList}\small\item\em Construct matrix from a default matrix (only valid for identity/null). \item\end{CompactList}\item 
+{\bf matrix} (const mi\-Scalar m00, const mi\-Scalar m01, const mi\-Scalar m02, const mi\-Scalar m10, const mi\-Scalar m11, const mi\-Scalar m12, const mi\-Scalar m20, const mi\-Scalar m21, const mi\-Scalar m22)
+\begin{CompactList}\small\item\em Construct matrix from 9 scalars for a non-perspective matrix. \item\end{CompactList}\item 
+{\bf matrix} (const mi\-Scalar m00, const mi\-Scalar m01, const mi\-Scalar m02, const mi\-Scalar m03, const mi\-Scalar m10, const mi\-Scalar m11, const mi\-Scalar m12, const mi\-Scalar m13, const mi\-Scalar m20, const mi\-Scalar m21, const mi\-Scalar m22, const mi\-Scalar m23, const mi\-Scalar m30, const mi\-Scalar m31, const mi\-Scalar m32, const mi\-Scalar m33)
+\begin{CompactList}\small\item\em Construct matrix from 16 scalars for a perspective matrix. \item\end{CompactList}\item 
+{\bf matrix} (const mi\-Scalar f[4][4])
+\begin{CompactList}\small\item\em Construct matrix from an array of 4x4 scalars. \item\end{CompactList}\item 
+{\bf matrix} (const mi\-State $\ast$const state)
+\begin{CompactList}\small\item\em Construct matrix as a projection from camera data in mi\-State. \item\end{CompactList}\item 
+{\bf matrix} (const {\bf matrix} \&a)
+\begin{CompactList}\small\item\em Copy Constructor. \item\end{CompactList}\item 
+{\bf $\sim$matrix} ()
+\begin{CompactList}\small\item\em Destructor. \item\end{CompactList}\end{CompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Comparison functions}\par
+\begin{CompactItemize}
+\item 
+bool {\bf is\-Null} () const 
+\begin{CompactList}\small\item\em Is matrix the null matrix? \item\end{CompactList}\item 
+bool {\bf is\-Identity} () const 
+\begin{CompactList}\small\item\em Is matrix the identity matrix? \item\end{CompactList}\end{CompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Assignment}\par
+\begin{CompactItemize}
+\item 
+{\bf matrix} \& {\bf operator=} (const mi\-Matrix a)
+\begin{CompactList}\small\item\em Assign a new mi\-Matrix. \item\end{CompactList}\item 
+{\bf matrix} \& {\bf operator=} (const {\bf matrix} \&a)
+\begin{CompactList}\small\item\em Assign a new matrix. \item\end{CompactList}\item 
+{\bf matrix} \& {\bf operator=} (const mi\-Integer a)
+\begin{CompactList}\small\item\em Assign a new matrix from default matrices (0=null,1=identity). \item\end{CompactList}\item 
+{\bf matrix} \& {\bf operator=} (const {\bf Matrix\-Type} a)
+\begin{CompactList}\small\item\em Assign a new matrix from default matrices. \item\end{CompactList}\end{CompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Accesors}\par
+\begin{CompactItemize}
+\item 
+mi\-Scalar $\ast$ {\bf operator \&} () const 
+\begin{CompactList}\small\item\em Access matrix pointer (useful to pass to mray functions). \item\end{CompactList}\item 
+const mi\-Scalar $\ast$ {\bf operator[$\,$]} (const unsigned row) const 
+\begin{CompactList}\small\item\em Access a specific row of matrix for reading. \item\end{CompactList}\item 
+mi\-Scalar $\ast$ {\bf operator[$\,$]} (const unsigned row)
+\begin{CompactList}\small\item\em Access a specific row of matrix for assignment. \item\end{CompactList}\item 
+mi\-Scalar {\bf get} (const unsigned idx) const 
+\begin{CompactList}\small\item\em Access a specific index[0,15] of matrix for reading. \item\end{CompactList}\item 
+void {\bf set} (const unsigned idx, const mi\-Scalar s)
+\begin{CompactList}\small\item\em Access a specific index[0,15] of matrix for assignment. \item\end{CompactList}\end{CompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Operations}\par
+\begin{CompactItemize}
+\item 
+{\bf matrix} {\bf transposed} () const 
+\item 
+const {\bf matrix} \& {\bf transpose} ()
+\begin{CompactList}\small\item\em Transpose of this matrix in place. \item\end{CompactList}\item 
+{\bf matrix} {\bf inverse} () const 
+\item 
+const {\bf matrix} \& {\bf invert} ()
+\begin{CompactList}\small\item\em Invert this matrix in place. \item\end{CompactList}\item 
+{\bf matrix} {\bf adjoint} () const 
+\begin{CompactList}\small\item\em Return the adjoint matrix. \item\end{CompactList}\item 
+mi\-Scalar {\bf det4x4} () const 
+\begin{CompactList}\small\item\em Return the 4x4 determinant. \item\end{CompactList}\item 
+const {\bf matrix} \& {\bf transpose3x3} ()
+\item 
+{\bf matrix} {\bf transposed3x3} () const 
+\item 
+{\bf matrix} {\bf inverse3x3} () const 
+\item 
+const {\bf matrix} \& {\bf invert3x3} ()
+\begin{CompactList}\small\item\em Invert this matrix in place. Inverts as if 3x3 matrix. \item\end{CompactList}\item 
+{\bf matrix} {\bf adjoint3x3} () const 
+\begin{CompactList}\small\item\em Return the adjoint matrix, assuming matrix is 3x3. \item\end{CompactList}\item 
+mi\-Scalar {\bf det3x3} () const 
+\begin{CompactList}\small\item\em Return the 3x3 determinant. \item\end{CompactList}\item 
+void {\bf orthographic} (const mi\-Scalar near\_\-plane=0.0f, const mi\-Scalar far\_\-plane=1.0f, const mi\-Scalar left\_\-plane=-1.0f, const mi\-Scalar right\_\-plane=1.0f, const mi\-Scalar top\_\-plane=1.0f, const mi\-Scalar bottom\_\-plane=-1.0f)
+\begin{CompactList}\small\item\em Creates a projection matrix (ortho). \item\end{CompactList}\item 
+void {\bf orthographic} (const mi\-State $\ast$const state)
+\begin{CompactList}\small\item\em Creates an orthographi matrix matching camera's. \item\end{CompactList}\item 
+void {\bf projection} (const mi\-State $\ast$const state)
+\begin{CompactList}\small\item\em Creates a projection matrix (frustrum) matching camera's. \item\end{CompactList}\item 
+void {\bf projection} (const mi\-Scalar near\_\-plane=0.0f, const mi\-Scalar far\_\-plane=1.0f, const mi\-Scalar left\_\-plane=-1.0f, const mi\-Scalar right\_\-plane=1.0f, const mi\-Scalar top\_\-plane=1.0f, const mi\-Scalar bottom\_\-plane=-1.0f)
+\begin{CompactList}\small\item\em Creates a projection matrix (frustrum). \item\end{CompactList}\item 
+void {\bf translate} (const mi\-Scalar x, const mi\-Scalar y, const mi\-Scalar z)
+\begin{CompactList}\small\item\em Add an xyz translation to the matrix. \item\end{CompactList}\item 
+void {\bf translate} (const mi\-Vector v)
+\begin{CompactList}\small\item\em Add an xyz translation to the matrix. \item\end{CompactList}\item 
+void {\bf rotate} (const mi\-Scalar x, const mi\-Scalar y, const mi\-Scalar z)
+\begin{CompactList}\small\item\em Add an xyz euler rotation to the matrix. \item\end{CompactList}\item 
+void {\bf rotate} (const mi\-Vector v)
+\begin{CompactList}\small\item\em Add an xyz euler rotation to the matrix. \item\end{CompactList}\item 
+void {\bf scale} (const mi\-Scalar x, const mi\-Scalar y, const mi\-Scalar z)
+\begin{CompactList}\small\item\em Add an xyz scaling to the matrix. \item\end{CompactList}\item 
+void {\bf scale} (const mi\-Scalar xyz)
+\begin{CompactList}\small\item\em Add a proportional scaling to the matrix. \item\end{CompactList}\item 
+void {\bf scale} (const mi\-Vector \&v)
+\begin{CompactList}\small\item\em Add an xyz scaling to the matrix. \item\end{CompactList}\item 
+bool {\bf operator!=} (const {\bf matrix} \&a) const 
+\begin{CompactList}\small\item\em Per component, check for inequality. \item\end{CompactList}\item 
+bool {\bf operator==} (const {\bf matrix} \&a) const 
+\begin{CompactList}\small\item\em Per component, check for equality. \item\end{CompactList}\item 
+{\bf matrix} \& {\bf operator+=} (const {\bf matrix} \&a)
+\begin{CompactList}\small\item\em Per component sum. \item\end{CompactList}\item 
+{\bf matrix} \& {\bf operator+=} (const mi\-Matrix a)
+\begin{CompactList}\small\item\em Per component sum. \item\end{CompactList}\item 
+{\bf matrix} \& {\bf operator-=} (const {\bf matrix} \&a)
+\begin{CompactList}\small\item\em Per component substraction. \item\end{CompactList}\item 
+{\bf matrix} \& {\bf operator-=} (const mi\-Matrix a)
+\begin{CompactList}\small\item\em Per component substraction. \item\end{CompactList}\item 
+{\bf matrix} \& {\bf operator $\ast$=} (const mi\-Scalar scalar)
+\begin{CompactList}\small\item\em Scalar multiplication. \item\end{CompactList}\item 
+{\bf matrix} \& {\bf operator $\ast$=} (const {\bf matrix} \&a)
+\begin{CompactList}\small\item\em Matrix post-multiplication. \item\end{CompactList}\item 
+{\bf matrix} \& {\bf operator $\ast$=} (const mi\-Matrix a)
+\begin{CompactList}\small\item\em Matrix post-multiplication. \item\end{CompactList}\item 
+{\bf matrix} \& {\bf operator/=} (const mi\-Scalar scalar)
+\begin{CompactList}\small\item\em Scalar division. \item\end{CompactList}\item 
+{\bf matrix} \& {\bf operator/=} (const {\bf matrix} \&a)
+\begin{CompactList}\small\item\em Matrix post-multiplication of the inverse of a matrix. \item\end{CompactList}\item 
+{\bf matrix} \& {\bf operator/=} (const mi\-Matrix a)
+\begin{CompactList}\small\item\em Matrix post-multiplication of the inverse of a matrix. \item\end{CompactList}\item 
+{\bf matrix} {\bf operator-} () const 
+\begin{CompactList}\small\item\em Negation. \item\end{CompactList}\item 
+{\bf matrix} {\bf operator+} (const mi\-Matrix b) const 
+\begin{CompactList}\small\item\em Per component sum. \item\end{CompactList}\item 
+{\bf matrix} {\bf operator+} (const {\bf matrix} \&b) const 
+\begin{CompactList}\small\item\em Per component sum. \item\end{CompactList}\item 
+{\bf matrix} {\bf operator-} (const mi\-Matrix b) const 
+\begin{CompactList}\small\item\em Per component substraction. \item\end{CompactList}\item 
+{\bf matrix} {\bf operator-} (const {\bf matrix} \&b) const 
+\begin{CompactList}\small\item\em Per component substraction. \item\end{CompactList}\item 
+{\bf matrix} {\bf operator $\ast$} (const mi\-Scalar scalar) const 
+\begin{CompactList}\small\item\em Scalar multiplication. \item\end{CompactList}\item 
+{\bf matrix} {\bf operator $\ast$} (const mi\-Matrix b) const 
+\begin{CompactList}\small\item\em Matrix post-multiplication. \item\end{CompactList}\item 
+{\bf matrix} {\bf operator $\ast$} (const {\bf matrix} \&b) const 
+\begin{CompactList}\small\item\em Matrix post-multiplication. \item\end{CompactList}\item 
+{\bf matrix} {\bf operator/} (const mi\-Scalar scalar) const 
+\begin{CompactList}\small\item\em Scalar division. \item\end{CompactList}\item 
+{\bf matrix} {\bf operator/} (const mi\-Matrix b) const 
+\begin{CompactList}\small\item\em Matrix post-multiplication of the inverse of a matrix. \item\end{CompactList}\item 
+{\bf matrix} {\bf operator/} (const {\bf matrix} \&b) const 
+\begin{CompactList}\small\item\em Matrix post-multiplication of the inverse of a matrix. \item\end{CompactList}\end{CompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+Class to represent a matrix in mental ray. 
+
+
+
+\subsection{Member Enumeration Documentation}
+\index{mr::matrix@{mr::matrix}!MatrixType@{MatrixType}}
+\index{MatrixType@{MatrixType}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}enum {\bf mr::matrix::Matrix\-Type}}\label{classmr_1_1matrix_z18_0}
+
+
+Default matrices. 
+
+\begin{Desc}
+\item[Enumeration values: ]\par
+\begin{description}
+\index{kEmpty@{kEmpty}!mr::matrix@{mr::matrix}}\index{mr::matrix@{mr::matrix}!kEmpty@{kEmpty}}\item[{\em 
+k\-Empty\label{classmr_1_1matrix_z18_0w0}
+}]\index{kIdentity@{kIdentity}!mr::matrix@{mr::matrix}}\index{mr::matrix@{mr::matrix}!kIdentity@{kIdentity}}\item[{\em 
+k\-Identity\label{classmr_1_1matrix_z18_0w1}
+}]\index{kInternalToWorld@{kInternalToWorld}!mr::matrix@{mr::matrix}}\index{mr::matrix@{mr::matrix}!kInternalToWorld@{kInternalToWorld}}\item[{\em 
+k\-Internal\-To\-World\label{classmr_1_1matrix_z18_0w2}
+}]\index{kInternalToCamera@{kInternalToCamera}!mr::matrix@{mr::matrix}}\index{mr::matrix@{mr::matrix}!kInternalToCamera@{kInternalToCamera}}\item[{\em 
+k\-Internal\-To\-Camera\label{classmr_1_1matrix_z18_0w3}
+}]\index{kInternalToObject@{kInternalToObject}!mr::matrix@{mr::matrix}}\index{mr::matrix@{mr::matrix}!kInternalToObject@{kInternalToObject}}\item[{\em 
+k\-Internal\-To\-Object\label{classmr_1_1matrix_z18_0w4}
+}]\index{kCameraToWorld@{kCameraToWorld}!mr::matrix@{mr::matrix}}\index{mr::matrix@{mr::matrix}!kCameraToWorld@{kCameraToWorld}}\item[{\em 
+k\-Camera\-To\-World\label{classmr_1_1matrix_z18_0w5}
+}]\index{kCameraToObject@{kCameraToObject}!mr::matrix@{mr::matrix}}\index{mr::matrix@{mr::matrix}!kCameraToObject@{kCameraToObject}}\item[{\em 
+k\-Camera\-To\-Object\label{classmr_1_1matrix_z18_0w6}
+}]\index{kCameraToInternal@{kCameraToInternal}!mr::matrix@{mr::matrix}}\index{mr::matrix@{mr::matrix}!kCameraToInternal@{kCameraToInternal}}\item[{\em 
+k\-Camera\-To\-Internal\label{classmr_1_1matrix_z18_0w7}
+}]\index{kCameraProjection@{kCameraProjection}!mr::matrix@{mr::matrix}}\index{mr::matrix@{mr::matrix}!kCameraProjection@{kCameraProjection}}\item[{\em 
+k\-Camera\-Projection\label{classmr_1_1matrix_z18_0w8}
+}]\index{kObjectToWorld@{kObjectToWorld}!mr::matrix@{mr::matrix}}\index{mr::matrix@{mr::matrix}!kObjectToWorld@{kObjectToWorld}}\item[{\em 
+k\-Object\-To\-World\label{classmr_1_1matrix_z18_0w9}
+}]\index{kObjectToInternal@{kObjectToInternal}!mr::matrix@{mr::matrix}}\index{mr::matrix@{mr::matrix}!kObjectToInternal@{kObjectToInternal}}\item[{\em 
+k\-Object\-To\-Internal\label{classmr_1_1matrix_z18_0w10}
+}]\index{kObjectToCamera@{kObjectToCamera}!mr::matrix@{mr::matrix}}\index{mr::matrix@{mr::matrix}!kObjectToCamera@{kObjectToCamera}}\item[{\em 
+k\-Object\-To\-Camera\label{classmr_1_1matrix_z18_0w11}
+}]\index{kUnknown@{kUnknown}!mr::matrix@{mr::matrix}}\index{mr::matrix@{mr::matrix}!kUnknown@{kUnknown}}\item[{\em 
+k\-Unknown\label{classmr_1_1matrix_z18_0w12}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{mr::matrix@{mr::matrix}!matrix@{matrix}}
+\index{matrix@{matrix}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mr::matrix::matrix ({\bf k\-No\-Construct})\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z19_0}
+
+
+Quick Constructor. Leaves matrix elements unitialized. 
+
+\index{mr::matrix@{mr::matrix}!matrix@{matrix}}
+\index{matrix@{matrix}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mr::matrix::matrix ()\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z19_1}
+
+
+Default Constructor. Sets matrix to identity. 
+
+\index{mr::matrix@{mr::matrix}!matrix@{matrix}}
+\index{matrix@{matrix}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mr::matrix::matrix (const mi\-Matrix {\em m})\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z19_2}
+
+
+Construct matrix from an mi\-Matrix. 
+
+\index{mr::matrix@{mr::matrix}!matrix@{matrix}}
+\index{matrix@{matrix}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mr::matrix::matrix (mi\-State $\ast$const {\em state}, const {\bf Matrix\-Type} {\em n})\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z19_3}
+
+
+Construct matrix from a default matrix. 
+
+\index{mr::matrix@{mr::matrix}!matrix@{matrix}}
+\index{matrix@{matrix}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mr::matrix::matrix (const mi\-Integer {\em n})\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z19_4}
+
+
+Construct matrix from an Integer (this is same as prman 0=null, 1=identity). 
+
+\index{mr::matrix@{mr::matrix}!matrix@{matrix}}
+\index{matrix@{matrix}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mr::matrix::matrix (const {\bf Matrix\-Type} {\em n})\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z19_5}
+
+
+Construct matrix from a default matrix (only valid for identity/null). 
+
+\index{mr::matrix@{mr::matrix}!matrix@{matrix}}
+\index{matrix@{matrix}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mr::matrix::matrix (const mi\-Scalar {\em m00}, const mi\-Scalar {\em m01}, const mi\-Scalar {\em m02}, const mi\-Scalar {\em m10}, const mi\-Scalar {\em m11}, const mi\-Scalar {\em m12}, const mi\-Scalar {\em m20}, const mi\-Scalar {\em m21}, const mi\-Scalar {\em m22})\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z19_6}
+
+
+Construct matrix from 9 scalars for a non-perspective matrix. 
+
+\index{mr::matrix@{mr::matrix}!matrix@{matrix}}
+\index{matrix@{matrix}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mr::matrix::matrix (const mi\-Scalar {\em m00}, const mi\-Scalar {\em m01}, const mi\-Scalar {\em m02}, const mi\-Scalar {\em m03}, const mi\-Scalar {\em m10}, const mi\-Scalar {\em m11}, const mi\-Scalar {\em m12}, const mi\-Scalar {\em m13}, const mi\-Scalar {\em m20}, const mi\-Scalar {\em m21}, const mi\-Scalar {\em m22}, const mi\-Scalar {\em m23}, const mi\-Scalar {\em m30}, const mi\-Scalar {\em m31}, const mi\-Scalar {\em m32}, const mi\-Scalar {\em m33})\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z19_7}
+
+
+Construct matrix from 16 scalars for a perspective matrix. 
+
+\index{mr::matrix@{mr::matrix}!matrix@{matrix}}
+\index{matrix@{matrix}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mr::matrix::matrix (const mi\-Scalar {\em f}[4][4])\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z19_8}
+
+
+Construct matrix from an array of 4x4 scalars. 
+
+\index{mr::matrix@{mr::matrix}!matrix@{matrix}}
+\index{matrix@{matrix}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mr::matrix::matrix (const mi\-State $\ast$const {\em state})\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z19_9}
+
+
+Construct matrix as a projection from camera data in mi\-State. 
+
+\index{mr::matrix@{mr::matrix}!matrix@{matrix}}
+\index{matrix@{matrix}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mr::matrix::matrix (const {\bf matrix} \& {\em a})\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z19_10}
+
+
+Copy Constructor. 
+
+\index{mr::matrix@{mr::matrix}!~matrix@{$\sim$matrix}}
+\index{~matrix@{$\sim$matrix}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mr::matrix::$\sim${\bf matrix} ()\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z19_11}
+
+
+Destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\index{mr::matrix@{mr::matrix}!adjoint@{adjoint}}
+\index{adjoint@{adjoint}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf matrix} mr::matrix::adjoint () const\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z23_4}
+
+
+Return the adjoint matrix. 
+
+\index{mr::matrix@{mr::matrix}!adjoint3x3@{adjoint3x3}}
+\index{adjoint3x3@{adjoint3x3}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf matrix} mr::matrix::adjoint3x3 () const\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z23_10}
+
+
+Return the adjoint matrix, assuming matrix is 3x3. 
+
+\index{mr::matrix@{mr::matrix}!det3x3@{det3x3}}
+\index{det3x3@{det3x3}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar mr::matrix::det3x3 () const\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z23_11}
+
+
+Return the 3x3 determinant. 
+
+\index{mr::matrix@{mr::matrix}!det4x4@{det4x4}}
+\index{det4x4@{det4x4}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar mr::matrix::det4x4 () const\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z23_5}
+
+
+Return the 4x4 determinant. 
+
+\index{mr::matrix@{mr::matrix}!get@{get}}
+\index{get@{get}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar mr::matrix::get (const unsigned {\em idx}) const\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z22_3}
+
+
+Access a specific index[0,15] of matrix for reading. 
+
+\index{mr::matrix@{mr::matrix}!inverse@{inverse}}
+\index{inverse@{inverse}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf matrix} mr::matrix::inverse () const\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z23_2}
+
+
+Return the inverse of this matrix. Does not modify the original. \index{mr::matrix@{mr::matrix}!inverse3x3@{inverse3x3}}
+\index{inverse3x3@{inverse3x3}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf matrix} mr::matrix::inverse3x3 () const\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z23_8}
+
+
+Return the inverse of this matrix. Does not modify the original. Assumes matrix is 3x3 and other rows/cols are untouched \index{mr::matrix@{mr::matrix}!invert@{invert}}
+\index{invert@{invert}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf matrix}\& mr::matrix::invert ()\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z23_3}
+
+
+Invert this matrix in place. 
+
+\index{mr::matrix@{mr::matrix}!invert3x3@{invert3x3}}
+\index{invert3x3@{invert3x3}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf matrix}\& mr::matrix::invert3x3 ()\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z23_9}
+
+
+Invert this matrix in place. Inverts as if 3x3 matrix. 
+
+\index{mr::matrix@{mr::matrix}!isIdentity@{isIdentity}}
+\index{isIdentity@{isIdentity}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool mr::matrix::is\-Identity () const\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z20_1}
+
+
+Is matrix the identity matrix? 
+
+\index{mr::matrix@{mr::matrix}!isNull@{isNull}}
+\index{isNull@{isNull}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool mr::matrix::is\-Null () const\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z20_0}
+
+
+Is matrix the null matrix? 
+
+\index{mr::matrix@{mr::matrix}!operator &@{operator \&}}
+\index{operator &@{operator \&}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar$\ast$ mr::matrix::operator \& () const\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z22_0}
+
+
+Access matrix pointer (useful to pass to mray functions). 
+
+\index{mr::matrix@{mr::matrix}!operator *@{operator $\ast$}}
+\index{operator *@{operator $\ast$}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf matrix} mr::matrix::operator $\ast$ (const {\bf matrix} \& {\em b}) const\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z23_42}
+
+
+Matrix post-multiplication. 
+
+\index{mr::matrix@{mr::matrix}!operator *@{operator $\ast$}}
+\index{operator *@{operator $\ast$}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf matrix} mr::matrix::operator $\ast$ (const mi\-Matrix {\em b}) const\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z23_41}
+
+
+Matrix post-multiplication. 
+
+\index{mr::matrix@{mr::matrix}!operator *@{operator $\ast$}}
+\index{operator *@{operator $\ast$}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf matrix} mr::matrix::operator $\ast$ (const mi\-Scalar {\em scalar}) const\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z23_40}
+
+
+Scalar multiplication. 
+
+\index{mr::matrix@{mr::matrix}!operator *=@{operator $\ast$=}}
+\index{operator *=@{operator $\ast$=}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf matrix}\& mr::matrix::operator $\ast$= (const mi\-Matrix {\em a})\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z23_31}
+
+
+Matrix post-multiplication. 
+
+\index{mr::matrix@{mr::matrix}!operator *=@{operator $\ast$=}}
+\index{operator *=@{operator $\ast$=}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf matrix}\& mr::matrix::operator $\ast$= (const {\bf matrix} \& {\em a})\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z23_30}
+
+
+Matrix post-multiplication. 
+
+\index{mr::matrix@{mr::matrix}!operator *=@{operator $\ast$=}}
+\index{operator *=@{operator $\ast$=}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf matrix}\& mr::matrix::operator $\ast$= (const mi\-Scalar {\em scalar})\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z23_29}
+
+
+Scalar multiplication. 
+
+\index{mr::matrix@{mr::matrix}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool mr::matrix::operator!= (const {\bf matrix} \& {\em a}) const\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z23_23}
+
+
+Per component, check for inequality. 
+
+\index{mr::matrix@{mr::matrix}!operator+@{operator+}}
+\index{operator+@{operator+}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf matrix} mr::matrix::operator+ (const {\bf matrix} \& {\em b}) const\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z23_37}
+
+
+Per component sum. 
+
+\index{mr::matrix@{mr::matrix}!operator+@{operator+}}
+\index{operator+@{operator+}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf matrix} mr::matrix::operator+ (const mi\-Matrix {\em b}) const\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z23_36}
+
+
+Per component sum. 
+
+\index{mr::matrix@{mr::matrix}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf matrix}\& mr::matrix::operator+= (const mi\-Matrix {\em a})\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z23_26}
+
+
+Per component sum. 
+
+\index{mr::matrix@{mr::matrix}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf matrix}\& mr::matrix::operator+= (const {\bf matrix} \& {\em a})\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z23_25}
+
+
+Per component sum. 
+
+\index{mr::matrix@{mr::matrix}!operator-@{operator-}}
+\index{operator-@{operator-}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf matrix} mr::matrix::operator- (const {\bf matrix} \& {\em b}) const\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z23_39}
+
+
+Per component substraction. 
+
+\index{mr::matrix@{mr::matrix}!operator-@{operator-}}
+\index{operator-@{operator-}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf matrix} mr::matrix::operator- (const mi\-Matrix {\em b}) const\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z23_38}
+
+
+Per component substraction. 
+
+\index{mr::matrix@{mr::matrix}!operator-@{operator-}}
+\index{operator-@{operator-}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf matrix} mr::matrix::operator- () const\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z23_35}
+
+
+Negation. 
+
+\index{mr::matrix@{mr::matrix}!operator-=@{operator-=}}
+\index{operator-=@{operator-=}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf matrix}\& mr::matrix::operator-= (const mi\-Matrix {\em a})\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z23_28}
+
+
+Per component substraction. 
+
+\index{mr::matrix@{mr::matrix}!operator-=@{operator-=}}
+\index{operator-=@{operator-=}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf matrix}\& mr::matrix::operator-= (const {\bf matrix} \& {\em a})\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z23_27}
+
+
+Per component substraction. 
+
+\index{mr::matrix@{mr::matrix}!operator/@{operator/}}
+\index{operator/@{operator/}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf matrix} mr::matrix::operator/ (const {\bf matrix} \& {\em b}) const\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z23_45}
+
+
+Matrix post-multiplication of the inverse of a matrix. 
+
+\index{mr::matrix@{mr::matrix}!operator/@{operator/}}
+\index{operator/@{operator/}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf matrix} mr::matrix::operator/ (const mi\-Matrix {\em b}) const\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z23_44}
+
+
+Matrix post-multiplication of the inverse of a matrix. 
+
+\index{mr::matrix@{mr::matrix}!operator/@{operator/}}
+\index{operator/@{operator/}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf matrix} mr::matrix::operator/ (const mi\-Scalar {\em scalar}) const\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z23_43}
+
+
+Scalar division. 
+
+\index{mr::matrix@{mr::matrix}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf matrix}\& mr::matrix::operator/= (const mi\-Matrix {\em a})\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z23_34}
+
+
+Matrix post-multiplication of the inverse of a matrix. 
+
+\index{mr::matrix@{mr::matrix}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf matrix}\& mr::matrix::operator/= (const {\bf matrix} \& {\em a})\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z23_33}
+
+
+Matrix post-multiplication of the inverse of a matrix. 
+
+\index{mr::matrix@{mr::matrix}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf matrix}\& mr::matrix::operator/= (const mi\-Scalar {\em scalar})\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z23_32}
+
+
+Scalar division. 
+
+\index{mr::matrix@{mr::matrix}!operator=@{operator=}}
+\index{operator=@{operator=}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf matrix}\& mr::matrix::operator= (const {\bf Matrix\-Type} {\em a})\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z21_3}
+
+
+Assign a new matrix from default matrices. 
+
+\index{mr::matrix@{mr::matrix}!operator=@{operator=}}
+\index{operator=@{operator=}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf matrix}\& mr::matrix::operator= (const mi\-Integer {\em a})\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z21_2}
+
+
+Assign a new matrix from default matrices (0=null,1=identity). 
+
+\index{mr::matrix@{mr::matrix}!operator=@{operator=}}
+\index{operator=@{operator=}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf matrix}\& mr::matrix::operator= (const {\bf matrix} \& {\em a})\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z21_1}
+
+
+Assign a new matrix. 
+
+\index{mr::matrix@{mr::matrix}!operator=@{operator=}}
+\index{operator=@{operator=}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf matrix}\& mr::matrix::operator= (const mi\-Matrix {\em a})\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z21_0}
+
+
+Assign a new mi\-Matrix. 
+
+\index{mr::matrix@{mr::matrix}!operator==@{operator==}}
+\index{operator==@{operator==}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool mr::matrix::operator== (const {\bf matrix} \& {\em a}) const\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z23_24}
+
+
+Per component, check for equality. 
+
+\index{mr::matrix@{mr::matrix}!operator[]@{operator[]}}
+\index{operator[]@{operator[]}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar$\ast$ mr::matrix::operator[$\,$] (const unsigned {\em row})\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z22_2}
+
+
+Access a specific row of matrix for assignment. 
+
+\index{mr::matrix@{mr::matrix}!operator[]@{operator[]}}
+\index{operator[]@{operator[]}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const mi\-Scalar$\ast$ mr::matrix::operator[$\,$] (const unsigned {\em row}) const\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z22_1}
+
+
+Access a specific row of matrix for reading. 
+
+\index{mr::matrix@{mr::matrix}!orthographic@{orthographic}}
+\index{orthographic@{orthographic}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::matrix::orthographic (const mi\-State $\ast$const {\em state})\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z23_13}
+
+
+Creates an orthographi matrix matching camera's. 
+
+\index{mr::matrix@{mr::matrix}!orthographic@{orthographic}}
+\index{orthographic@{orthographic}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::matrix::orthographic (const mi\-Scalar {\em near\_\-plane} = 0.0f, const mi\-Scalar {\em far\_\-plane} = 1.0f, const mi\-Scalar {\em left\_\-plane} = -1.0f, const mi\-Scalar {\em right\_\-plane} = 1.0f, const mi\-Scalar {\em top\_\-plane} = 1.0f, const mi\-Scalar {\em bottom\_\-plane} = -1.0f)\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z23_12}
+
+
+Creates a projection matrix (ortho). 
+
+\index{mr::matrix@{mr::matrix}!projection@{projection}}
+\index{projection@{projection}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::matrix::projection (const mi\-Scalar {\em near\_\-plane} = 0.0f, const mi\-Scalar {\em far\_\-plane} = 1.0f, const mi\-Scalar {\em left\_\-plane} = -1.0f, const mi\-Scalar {\em right\_\-plane} = 1.0f, const mi\-Scalar {\em top\_\-plane} = 1.0f, const mi\-Scalar {\em bottom\_\-plane} = -1.0f)\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z23_15}
+
+
+Creates a projection matrix (frustrum). 
+
+\index{mr::matrix@{mr::matrix}!projection@{projection}}
+\index{projection@{projection}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::matrix::projection (const mi\-State $\ast$const {\em state})\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z23_14}
+
+
+Creates a projection matrix (frustrum) matching camera's. 
+
+\index{mr::matrix@{mr::matrix}!rotate@{rotate}}
+\index{rotate@{rotate}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::matrix::rotate (const mi\-Vector {\em v})\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z23_19}
+
+
+Add an xyz euler rotation to the matrix. 
+
+\index{mr::matrix@{mr::matrix}!rotate@{rotate}}
+\index{rotate@{rotate}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::matrix::rotate (const mi\-Scalar {\em x}, const mi\-Scalar {\em y}, const mi\-Scalar {\em z})\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z23_18}
+
+
+Add an xyz euler rotation to the matrix. 
+
+\index{mr::matrix@{mr::matrix}!scale@{scale}}
+\index{scale@{scale}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::matrix::scale (const mi\-Vector \& {\em v})\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z23_22}
+
+
+Add an xyz scaling to the matrix. 
+
+\index{mr::matrix@{mr::matrix}!scale@{scale}}
+\index{scale@{scale}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::matrix::scale (const mi\-Scalar {\em xyz})\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z23_21}
+
+
+Add a proportional scaling to the matrix. 
+
+\index{mr::matrix@{mr::matrix}!scale@{scale}}
+\index{scale@{scale}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::matrix::scale (const mi\-Scalar {\em x}, const mi\-Scalar {\em y}, const mi\-Scalar {\em z})\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z23_20}
+
+
+Add an xyz scaling to the matrix. 
+
+\index{mr::matrix@{mr::matrix}!set@{set}}
+\index{set@{set}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::matrix::set (const unsigned {\em idx}, const mi\-Scalar {\em s})\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z22_4}
+
+
+Access a specific index[0,15] of matrix for assignment. 
+
+\index{mr::matrix@{mr::matrix}!setCameraToInternal@{setCameraToInternal}}
+\index{setCameraToInternal@{setCameraToInternal}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::matrix::set\-Camera\-To\-Internal (mi\-State $\ast$const {\em state})\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z18_7}
+
+
+Set Matrix to Camera-$>$Internal Matrix. 
+
+\index{mr::matrix@{mr::matrix}!setCameraToObject@{setCameraToObject}}
+\index{setCameraToObject@{setCameraToObject}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::matrix::set\-Camera\-To\-Object (mi\-State $\ast$const {\em state})\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z18_10}
+
+
+Set Matrix to Camera-$>$Object Matrix. 
+
+\index{mr::matrix@{mr::matrix}!setCameraToWorld@{setCameraToWorld}}
+\index{setCameraToWorld@{setCameraToWorld}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::matrix::set\-Camera\-To\-World (mi\-State $\ast$const {\em state})\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z18_6}
+
+
+Set Matrix to Camera-$>$World Matrix. 
+
+\index{mr::matrix@{mr::matrix}!setInternalToCamera@{setInternalToCamera}}
+\index{setInternalToCamera@{setInternalToCamera}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::matrix::set\-Internal\-To\-Camera (mi\-State $\ast$const {\em state})\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z18_4}
+
+
+Set Matrix to Internal-$>$Camera Matrix. 
+
+\index{mr::matrix@{mr::matrix}!setInternalToObject@{setInternalToObject}}
+\index{setInternalToObject@{setInternalToObject}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::matrix::set\-Internal\-To\-Object (mi\-State $\ast$const {\em state})\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z18_5}
+
+
+Set Matrix to Internal-$>$Object Matrix. 
+
+\index{mr::matrix@{mr::matrix}!setInternalToWorld@{setInternalToWorld}}
+\index{setInternalToWorld@{setInternalToWorld}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::matrix::set\-Internal\-To\-World (mi\-State $\ast$const {\em state})\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z18_3}
+
+
+Set Matrix to Internal-$>$World Matrix. 
+
+\index{mr::matrix@{mr::matrix}!setObjectToCamera@{setObjectToCamera}}
+\index{setObjectToCamera@{setObjectToCamera}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::matrix::set\-Object\-To\-Camera (mi\-State $\ast$const {\em state})\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z18_11}
+
+
+Set Matrix to Object-$>$Camera Matrix. 
+
+\index{mr::matrix@{mr::matrix}!setObjectToInternal@{setObjectToInternal}}
+\index{setObjectToInternal@{setObjectToInternal}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::matrix::set\-Object\-To\-Internal (mi\-State $\ast$const {\em state})\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z18_9}
+
+
+Set Matrix to Object-$>$Internal Matrix. 
+
+\index{mr::matrix@{mr::matrix}!setObjectToWorld@{setObjectToWorld}}
+\index{setObjectToWorld@{setObjectToWorld}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::matrix::set\-Object\-To\-World (mi\-State $\ast$const {\em state})\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z18_8}
+
+
+Set Matrix to Object-$>$World Matrix. 
+
+\index{mr::matrix@{mr::matrix}!setToIdentity@{setToIdentity}}
+\index{setToIdentity@{setToIdentity}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::matrix::set\-To\-Identity ()\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z18_2}
+
+
+Set Matrix to Identity. 
+
+\index{mr::matrix@{mr::matrix}!setToNull@{setToNull}}
+\index{setToNull@{setToNull}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::matrix::set\-To\-Null ()\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z18_1}
+
+
+Set Matrix all to 0. 
+
+\index{mr::matrix@{mr::matrix}!translate@{translate}}
+\index{translate@{translate}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::matrix::translate (const mi\-Vector {\em v})\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z23_17}
+
+
+Add an xyz translation to the matrix. 
+
+\index{mr::matrix@{mr::matrix}!translate@{translate}}
+\index{translate@{translate}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::matrix::translate (const mi\-Scalar {\em x}, const mi\-Scalar {\em y}, const mi\-Scalar {\em z})\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z23_16}
+
+
+Add an xyz translation to the matrix. 
+
+\index{mr::matrix@{mr::matrix}!transpose@{transpose}}
+\index{transpose@{transpose}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf matrix}\& mr::matrix::transpose ()\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z23_1}
+
+
+Transpose of this matrix in place. 
+
+\index{mr::matrix@{mr::matrix}!transpose3x3@{transpose3x3}}
+\index{transpose3x3@{transpose3x3}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf matrix}\& mr::matrix::transpose3x3 ()\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z23_6}
+
+
+Return the transpose of this matrix. Does not modify the original. Assumes matrix is 3x3 and other rows/cols are untouched \index{mr::matrix@{mr::matrix}!transposed@{transposed}}
+\index{transposed@{transposed}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf matrix} mr::matrix::transposed () const\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z23_0}
+
+
+Return the transpose of this matrix. Does not modify the original. \index{mr::matrix@{mr::matrix}!transposed3x3@{transposed3x3}}
+\index{transposed3x3@{transposed3x3}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf matrix} mr::matrix::transposed3x3 () const\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1matrix_z23_7}
+
+
+Transpose of this matrix in place. Assumes matrix is 3x3 and other rows/cols are untouched 
+
+\subsection{Friends And Related Function Documentation}
+\index{mr::matrix@{mr::matrix}!operator *@{operator $\ast$}}
+\index{operator *@{operator $\ast$}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf matrix} operator $\ast$ (const mi\-Scalar {\em scalar}, const {\bf matrix} \& {\em b})\hspace{0.3cm}{\tt  [friend]}}\label{classmr_1_1matrix_z24_3}
+
+
+Reverse scalar multiplication. 
+
+\index{mr::matrix@{mr::matrix}!operator<<@{operator$<$$<$}}
+\index{operator<<@{operator$<$$<$}!mr::matrix@{mr::matrix}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}std::ostream\& operator$<$$<$ (std::ostream \& {\em o}, const {\bf matrix} \& {\em a})\hspace{0.3cm}{\tt  [friend]}}\label{classmr_1_1matrix_z24_2}
+
+
+Printing. 
+
+
+
+The documentation for this class was generated from the following file:\begin{CompactItemize}
+\item 
+{\bf mr\-Matrix.h}\end{CompactItemize}

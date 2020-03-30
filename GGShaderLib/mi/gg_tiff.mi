@@ -1,0 +1,73 @@
+
+declare shader
+	scalar				#: shortname "os"
+	"gg_tiff"
+	(
+		string "filename",      #: shortname "f"
+		integer "filter",       #: shortname "flt"
+					#: default 0
+					#: min 0 max 7
+		scalar  "sblur",        #: shortname "sb"
+					#: default 0
+					#: min 0 max 100
+		scalar  "tblur",        #: shortname "tb"
+					#: default 0
+					#: min 0 max 100
+		scalar  "swidth",       #: shortname "sw"
+					#: default 1
+					#: min 0 max 100
+		scalar  "twidth",       #: shortname "tw"
+					#: default 1
+					#: min 0 max 100
+		integer "samples",      #: shortname "s"
+					#: default 1
+					#: min 1 max 256
+		integer "channel",      #: shortname "c"
+					#: default 0
+					#: min 0 max 2
+		scalar  "fill"          #: shortname "fl"
+					#: default 0
+					#: min 0 max 1
+	)
+	#:
+	#: nodeid 3016
+	#:
+	apply texture
+	version 1
+end declare
+
+declare shader
+	color 				#: shortname "oc"
+	"gg_ctiff"
+	(
+		string "filename",      #: shortname "f"
+		integer "filter",       #: shortname "flt"
+					#: default 0
+					#: min 0 max 7
+		integer "samples",      #: shortname "s"
+					#: default 1
+					#: min 1 max 256
+		scalar  "sblur",        #: shortname "sb"
+					#: default 0
+					#: min 0 max 100
+		scalar  "tblur",        #: shortname "tb"
+					#: default 0
+					#: min 0 max 100
+		scalar  "swidth",       #: shortname "sw"
+					#: default 1
+					#: min 0 max 100
+		scalar  "twidth",       #: shortname "tw"
+					#: default 1
+					#: min 0 max 100
+		integer "channel",      #: shortname "c"
+					#: default 0
+					#: min 0 max 2
+		color   "fill"          #: shortname "fl"
+					#: default 0 0 0
+	)
+	#:
+	#: nodeid 3017
+	#:
+	apply texture
+	version 1
+end declare

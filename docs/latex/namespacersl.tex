@@ -1,0 +1,1415 @@
+\section{rsl Namespace Reference}
+\label{namespacersl}\index{rsl@{rsl}}
+
+
+\subsection*{Interpolations}
+\begin{CompactItemize}
+\item 
+template$<$typename T$>$ T {\bf linear} (const T \&a, const T \&b, const T \&x)
+\begin{CompactList}\small\item\em Do a linear interpolation. \item\end{CompactList}\item 
+mi\-Color {\bf linear} (const mi\-Color \&a, const mi\-Color \&b, const mi\-Color \&x)
+\begin{CompactList}\small\item\em Do a linear interpolation of colors. \item\end{CompactList}\item 
+mi\-Vector {\bf linear} (const mi\-Vector \&a, const mi\-Vector \&b, const mi\-Vector \&x)
+\begin{CompactList}\small\item\em Do a linear interpolation of vectors. \item\end{CompactList}\item 
+template$<$typename T$>$ T {\bf step} (const T \&a, const T \&b)
+\begin{CompactList}\small\item\em Do a step (binary) interpolatio. \item\end{CompactList}\item 
+template$<$typename T$>$ T {\bf smoothstep} (const T \&a, const T \&b, const T \&x)
+\begin{CompactList}\small\item\em Do a smoothstep interpolation. \item\end{CompactList}\item 
+template$<$typename T$>$ T {\bf silkysmoothstep} (const T \&a, const T \&b, const T \&x)
+\begin{CompactList}\small\item\em Do an even smoother smoothstep interpolation. \item\end{CompactList}\item 
+template$<$typename T$>$ T {\bf pulse} (const T \&a, const T \&b, const T \&x)
+\begin{CompactList}\small\item\em Do a pulse interpolation. \item\end{CompactList}\item 
+template$<$typename T$>$ T {\bf smoothpulse} (const T \&a, const T \&b, const T \&x)
+\begin{CompactList}\small\item\em Do a smoothpulse interpolation. \item\end{CompactList}\item 
+template$<$typename T$>$ T {\bf smoothpulse} (const T \&a, const T \&b, const T \&fuzz, const T \&x)
+\begin{CompactList}\small\item\em Do a smoothpulse interpolation with controlled fuzziness. \item\end{CompactList}\item 
+template$<$typename T$>$ T {\bf silkysmoothpulse} (const T \&a, const T \&b, const T \&fuzz, const T \&x)
+\begin{CompactList}\small\item\em Do an even smoother smoothpulse interpolation with controlled fuzziness. \item\end{CompactList}\end{CompactItemize}
+\subsection*{mix}
+\begin{CompactItemize}
+\item 
+template$<$typename T$>$ T {\bf mix} (const T \&a, const T \&b, const mi\-Scalar x)
+\begin{CompactList}\small\item\em Mix two elements of identical type together, based on x=[0,1]. \item\end{CompactList}\item 
+unsigned short {\bf mix} (const unsigned short \&a, const unsigned short \&b, const mi\-Scalar x)
+\begin{CompactList}\small\item\em Mix two unsigned shorts together, based on x=[0,1]. \item\end{CompactList}\item 
+unsigned int {\bf mix} (const unsigned int \&a, const unsigned int \&b, const mi\-Scalar x)
+\begin{CompactList}\small\item\em Mix two unsigned ints together, based on x=[0,1]. \item\end{CompactList}\item 
+template$<$typename T$>$ T {\bf mix} (const T \&a, const T \&b, const T \&x)
+\end{CompactItemize}
+\subsection*{normalize}
+\begin{CompactItemize}
+\item 
+mi\-Vector {\bf normalize} (const mi\-Vector \&a)
+\begin{CompactList}\small\item\em Normalize vector/normal/etc. to unit length. \item\end{CompactList}\item 
+mi\-Vector {\bf normalize} (const {\bf point} \&a)
+\begin{CompactList}\small\item\em Invalid operation. \item\end{CompactList}\end{CompactItemize}
+\subsection*{randome}
+\begin{CompactItemize}
+\item 
+mi\-Scalar {\bf random} ()
+\item 
+{\bf vector} {\bf vrandom} ()
+\end{CompactItemize}
+\subsection*{noise}
+\begin{CompactItemize}
+\item 
+mi\-Scalar {\bf mi\_\-noise} (const mi\-Scalar a)
+\begin{CompactList}\small\item\em mray's built-in signed noise, one parameter. \item\end{CompactList}\item 
+mi\-Scalar {\bf mi\_\-noise} (const mi\-Vector2d \&a)
+\begin{CompactList}\small\item\em mray's built-in signed noise, two parameters. \item\end{CompactList}\item 
+mi\-Scalar {\bf mi\_\-noise} (const mi\-Scalar u, const mi\-Scalar v)
+\begin{CompactList}\small\item\em mray's built-in signed noise, two parameters. \item\end{CompactList}\item 
+mi\-Scalar {\bf mi\_\-noise} (const mi\-Vector \&a)
+\begin{CompactList}\small\item\em mray's built-in signed noise, 3 parameters. \item\end{CompactList}\item 
+mi\-Scalar {\bf mi\_\-noise} (const mi\-Scalar a, const mi\-Scalar b, const mi\-Scalar c)
+\begin{CompactList}\small\item\em mray's built-in signed noise, 3 parameters. \item\end{CompactList}\item 
+mi\-Scalar {\bf mi\_\-noise} (const mi\-Vector \&a, const mi\-Scalar d)
+\begin{CompactList}\small\item\em mr\-Classes signed noise, 4 parameters. \item\end{CompactList}\item 
+mi\-Scalar {\bf mi\_\-noise} (const mi\-Scalar a, const mi\-Scalar b, const mi\-Scalar c, const mi\-Scalar d)
+\begin{CompactList}\small\item\em mr\-Classes signed noise, 4 parameters. \item\end{CompactList}\item 
+mi\-Scalar {\bf mi\_\-noise\_\-grad} (const mi\-Scalar a, mi\-Scalar \&g)
+\begin{CompactList}\small\item\em mray's built-in signed noise with gradient, 1 parameter. \item\end{CompactList}\item 
+mi\-Scalar {\bf mi\_\-noise\_\-grad} (const mi\-Vector2d \&a, mi\-Vector2d \&g)
+\begin{CompactList}\small\item\em mray's built-in signed noise with gradient, 2 parameters. \item\end{CompactList}\item 
+mi\-Scalar {\bf mi\_\-noise\_\-grad} (const mi\-Scalar u, const mi\-Scalar v, mi\-Scalar \&gu, mi\-Scalar \&gv)
+\begin{CompactList}\small\item\em mray's built-in signed noise with gradients, 2 parameters. \item\end{CompactList}\item 
+mi\-Scalar {\bf mi\_\-noise\_\-grad} (const mi\-Vector \&a, mi\-Vector \&g)
+\begin{CompactList}\small\item\em mray's built-in signed noise with gradients, 3 parameters. \item\end{CompactList}\item 
+mi\-Scalar {\bf mi\_\-noise\_\-grad} (const mi\-Scalar a, const mi\-Scalar b, const mi\-Scalar c, mi\-Vector \&g)
+\begin{CompactList}\small\item\em mray's built-in signed noise with gradients, 3 parameters. \item\end{CompactList}\item 
+mi\-Scalar {\bf snoise} (const mi\-Scalar a)
+\begin{CompactList}\small\item\em mr\-Classes signed Noise returning a scalar, 1 parameter \item\end{CompactList}\item 
+mi\-Scalar {\bf snoise} (const mi\-Vector2d \&a)
+\begin{CompactList}\small\item\em mr\-Classes signed Noise returning a scalar, 2 parameters \item\end{CompactList}\item 
+mi\-Scalar {\bf snoise} (const mi\-Scalar u, const mi\-Scalar v)
+\begin{CompactList}\small\item\em mr\-Classes signed Noise returning a scalar, 2 parameters \item\end{CompactList}\item 
+mi\-Scalar {\bf snoise} (const mi\-Vector \&a)
+\begin{CompactList}\small\item\em mr\-Classes signed Noise returning a scalar, 3 parameters \item\end{CompactList}\item 
+mi\-Scalar {\bf snoise} (const mi\-Scalar a, const mi\-Scalar b, const mi\-Scalar c)
+\begin{CompactList}\small\item\em mr\-Classes signed Noise returning a scalar, 3 parameters \item\end{CompactList}\item 
+mi\-Scalar {\bf snoise} (const mi\-Scalar a, const mi\-Scalar b, const mi\-Scalar c, const mi\-Scalar d)
+\begin{CompactList}\small\item\em mr\-Classes signed Noise returning a scalar, 4 parameters \item\end{CompactList}\item 
+mi\-Scalar {\bf snoise} (const mi\-Vector \&a, const mi\-Scalar t)
+\begin{CompactList}\small\item\em mr\-Classes signed Noise returning a scalar, 4 parameters \item\end{CompactList}\item 
+{\bf vector} {\bf vsnoise} (const mi\-Scalar a)
+\begin{CompactList}\small\item\em mr\-Classes signed Noise returning a vector, 1 parameter \item\end{CompactList}\item 
+{\bf vector} {\bf vsnoise} (const mi\-Vector2d \&a)
+\begin{CompactList}\small\item\em mr\-Classes signed Noise returning a vector, 2 parameters \item\end{CompactList}\item 
+{\bf vector} {\bf vsnoise} (const mi\-Scalar u, const mi\-Scalar v)
+\begin{CompactList}\small\item\em mr\-Classes signed Noise returning a vector, 2 parameters \item\end{CompactList}\item 
+{\bf vector} {\bf vsnoise} (const mi\-Vector \&a)
+\begin{CompactList}\small\item\em mr\-Classes signed Noise returning a vector, 3 parameters \item\end{CompactList}\item 
+{\bf vector} {\bf vsnoise} (const mi\-Scalar a, const mi\-Scalar b, const mi\-Scalar c)
+\begin{CompactList}\small\item\em mr\-Classes signed Noise returning a vector, 3 parameters \item\end{CompactList}\item 
+{\bf vector} {\bf vsnoise} (const mi\-Scalar a, const mi\-Scalar b, const mi\-Scalar c, const mi\-Scalar d)
+\begin{CompactList}\small\item\em mr\-Classes signed Noise returning a vector, 4 parameters \item\end{CompactList}\item 
+{\bf vector} {\bf vsnoise} (const mi\-Vector \&a, const mi\-Scalar t)
+\begin{CompactList}\small\item\em mr\-Classes signed Noise returning a vector, 4 parameters \item\end{CompactList}\item 
+mi\-Scalar {\bf noise} (const mi\-Scalar a)
+\begin{CompactList}\small\item\em mr\-Classes signed Noise returning a scalar, 1 parameter \item\end{CompactList}\item 
+mi\-Scalar {\bf noise} (const mi\-Vector2d \&a)
+\begin{CompactList}\small\item\em mr\-Classes signed Noise returning a scalar, 2 parameters \item\end{CompactList}\item 
+mi\-Scalar {\bf noise} (const mi\-Scalar u, const mi\-Scalar v)
+\begin{CompactList}\small\item\em mr\-Classes signed Noise returning a scalar, 2 parameters \item\end{CompactList}\item 
+mi\-Scalar {\bf noise} (const mi\-Vector \&a)
+\begin{CompactList}\small\item\em mr\-Classes signed Noise returning a scalar, 3 parameters \item\end{CompactList}\item 
+mi\-Scalar {\bf noise} (const mi\-Scalar a, const mi\-Scalar b, const mi\-Scalar c)
+\begin{CompactList}\small\item\em mr\-Classes signed Noise returning a scalar, 3 parameters \item\end{CompactList}\item 
+mi\-Scalar {\bf noise} (const mi\-Scalar a, const mi\-Scalar b, const mi\-Scalar c, const mi\-Scalar d)
+\begin{CompactList}\small\item\em mr\-Classes signed Noise returning a scalar, 4 parameters \item\end{CompactList}\item 
+mi\-Scalar {\bf noise} (const mi\-Vector \&a, const mi\-Scalar t)
+\begin{CompactList}\small\item\em mr\-Classes signed Noise returning a scalar, 4 parameters \item\end{CompactList}\item 
+{\bf vector} {\bf vnoise} (const mi\-Scalar a)
+\begin{CompactList}\small\item\em mr\-Classes signed Noise returning a vector, 1 parameter \item\end{CompactList}\item 
+{\bf vector} {\bf vnoise} (const mi\-Vector2d \&a)
+\begin{CompactList}\small\item\em mr\-Classes signed Noise returning a vector, 2 parameters \item\end{CompactList}\item 
+{\bf vector} {\bf vnoise} (const mi\-Scalar u, const mi\-Scalar v)
+\begin{CompactList}\small\item\em mr\-Classes signed Noise returning a vector, 2 parameters \item\end{CompactList}\item 
+{\bf vector} {\bf vnoise} (const mi\-Vector \&a)
+\begin{CompactList}\small\item\em mr\-Classes signed Noise returning a vector, 3 parameters \item\end{CompactList}\item 
+{\bf vector} {\bf vnoise} (const mi\-Scalar a, const mi\-Scalar b, const mi\-Scalar c)
+\begin{CompactList}\small\item\em mr\-Classes signed Noise returning a vector, 3 parameters \item\end{CompactList}\item 
+{\bf vector} {\bf vnoise} (const mi\-Scalar a, const mi\-Scalar b, const mi\-Scalar c, const mi\-Scalar d)
+\begin{CompactList}\small\item\em mr\-Classes signed Noise returning a vector, 4 parameters \item\end{CompactList}\item 
+{\bf vector} {\bf vnoise} (const mi\-Vector \&a, const mi\-Scalar t)
+\begin{CompactList}\small\item\em mr\-Classes signed Noise returning a vector, 4 parameters \item\end{CompactList}\item 
+mi\-Scalar {\bf spnoise} (const mi\-Scalar a, const mi\-Scalar p)
+\begin{CompactList}\small\item\em mr\-Classes signed Noise returning a scalar, 1 parameter \item\end{CompactList}\item 
+mi\-Scalar {\bf spnoise} (const mi\-Vector2d \&a, const mi\-Vector2d \&p)
+\begin{CompactList}\small\item\em mr\-Classes signed Noise returning a scalar, 2 parameters \item\end{CompactList}\item 
+mi\-Scalar {\bf spnoise} (const mi\-Scalar u, const mi\-Scalar v, const mi\-Scalar pu, const mi\-Scalar pv)
+\begin{CompactList}\small\item\em mr\-Classes signed Noise returning a scalar, 2 parameters \item\end{CompactList}\item 
+mi\-Scalar {\bf spnoise} (const mi\-Vector \&a, const mi\-Vector \&p)
+\begin{CompactList}\small\item\em mr\-Classes signed Noise returning a scalar, 3 parameters \item\end{CompactList}\item 
+mi\-Scalar {\bf spnoise} (const mi\-Scalar a, const mi\-Scalar b, const mi\-Scalar c, const mi\-Scalar pa, const mi\-Scalar pb, const mi\-Scalar pc)
+\begin{CompactList}\small\item\em mr\-Classes signed Noise returning a scalar, 3 parameters \item\end{CompactList}\item 
+mi\-Scalar {\bf spnoise} (const mi\-Scalar a, const mi\-Scalar b, const mi\-Scalar c, const mi\-Scalar d, const mi\-Scalar pa, const mi\-Scalar pb, const mi\-Scalar pc, const mi\-Scalar pd)
+\begin{CompactList}\small\item\em mr\-Classes signed Noise returning a scalar, 4 parameters \item\end{CompactList}\item 
+mi\-Scalar {\bf spnoise} (const mi\-Vector \&a, const mi\-Scalar t, const mi\-Vector \&pa, const mi\-Scalar pt)
+\begin{CompactList}\small\item\em mr\-Classes signed Noise returning a scalar, 4 parameters \item\end{CompactList}\item 
+{\bf vector} {\bf vspnoise} (const mi\-Scalar a, const mi\-Scalar p)
+\begin{CompactList}\small\item\em mr\-Classes signed Noise returning a vector, 1 parameter \item\end{CompactList}\item 
+{\bf vector} {\bf vspnoise} (const mi\-Vector2d \&a, const mi\-Vector2d \&p)
+\begin{CompactList}\small\item\em mr\-Classes signed Noise returning a vector, 2 parameters \item\end{CompactList}\item 
+{\bf vector} {\bf vspnoise} (const mi\-Scalar u, const mi\-Scalar v, const mi\-Scalar pu, const mi\-Scalar pv)
+\begin{CompactList}\small\item\em mr\-Classes signed Noise returning a vector, 2 parameters \item\end{CompactList}\item 
+{\bf vector} {\bf vspnoise} (const mi\-Vector \&a, const mi\-Vector \&p)
+\begin{CompactList}\small\item\em mr\-Classes signed Noise returning a vector, 3 parameters \item\end{CompactList}\item 
+{\bf vector} {\bf vspnoise} (const mi\-Scalar a, const mi\-Scalar b, const mi\-Scalar c, const mi\-Scalar pa, const mi\-Scalar pb, const mi\-Scalar pc)
+\begin{CompactList}\small\item\em mr\-Classes signed Noise returning a vector, 3 parameters \item\end{CompactList}\item 
+{\bf vector} {\bf vspnoise} (const mi\-Scalar a, const mi\-Scalar b, const mi\-Scalar c, const mi\-Scalar d, const mi\-Scalar pa, const mi\-Scalar pb, const mi\-Scalar pc, const mi\-Scalar pd)
+\begin{CompactList}\small\item\em mr\-Classes signed Noise returning a vector, 4 parameters \item\end{CompactList}\item 
+{\bf vector} {\bf vspnoise} (const mi\-Vector \&a, const mi\-Scalar t, const mi\-Vector \&pa, const mi\-Scalar pt)
+\begin{CompactList}\small\item\em mr\-Classes signed Noise returning a vector, 4 parameters \item\end{CompactList}\item 
+mi\-Scalar {\bf pnoise} (const mi\-Scalar a, const mi\-Scalar p)
+\begin{CompactList}\small\item\em mr\-Classes signed Noise returning a scalar, 1 parameter \item\end{CompactList}\item 
+mi\-Scalar {\bf pnoise} (const mi\-Vector2d \&a, const mi\-Vector2d \&p)
+\begin{CompactList}\small\item\em mr\-Classes signed Noise returning a scalar, 2 parameters \item\end{CompactList}\item 
+mi\-Scalar {\bf pnoise} (const mi\-Scalar u, const mi\-Scalar v, const mi\-Scalar pu, const mi\-Scalar pv)
+\begin{CompactList}\small\item\em mr\-Classes signed Noise returning a scalar, 2 parameters \item\end{CompactList}\item 
+mi\-Scalar {\bf pnoise} (const mi\-Vector \&a, const mi\-Vector \&p)
+\begin{CompactList}\small\item\em mr\-Classes signed Noise returning a scalar, 3 parameters \item\end{CompactList}\item 
+mi\-Scalar {\bf pnoise} (const mi\-Scalar a, const mi\-Scalar b, const mi\-Scalar c, const mi\-Scalar pa, const mi\-Scalar pb, const mi\-Scalar pc)
+\begin{CompactList}\small\item\em mr\-Classes signed Noise returning a scalar, 3 parameters \item\end{CompactList}\item 
+mi\-Scalar {\bf pnoise} (const mi\-Scalar a, const mi\-Scalar b, const mi\-Scalar c, const mi\-Scalar d, const mi\-Scalar pa, const mi\-Scalar pb, const mi\-Scalar pc, const mi\-Scalar pd)
+\begin{CompactList}\small\item\em mr\-Classes signed Noise returning a scalar, 4 parameters \item\end{CompactList}\item 
+mi\-Scalar {\bf pnoise} (const mi\-Vector \&a, const mi\-Scalar t, const mi\-Vector \&pa, const mi\-Scalar pt)
+\begin{CompactList}\small\item\em mr\-Classes signed Noise returning a scalar, 4 parameters \item\end{CompactList}\item 
+{\bf vector} {\bf vpnoise} (const mi\-Scalar a, const mi\-Scalar p)
+\begin{CompactList}\small\item\em mr\-Classes signed Noise returning a vector, 1 parameter \item\end{CompactList}\item 
+{\bf vector} {\bf vpnoise} (const mi\-Vector2d \&a, const mi\-Vector2d \&p)
+\begin{CompactList}\small\item\em mr\-Classes signed Noise returning a vector, 2 parameters \item\end{CompactList}\item 
+{\bf vector} {\bf vpnoise} (const mi\-Scalar u, const mi\-Scalar v, const mi\-Scalar pu, const mi\-Scalar pv)
+\begin{CompactList}\small\item\em mr\-Classes signed Noise returning a vector, 2 parameters \item\end{CompactList}\item 
+{\bf vector} {\bf vpnoise} (const mi\-Vector \&a, const mi\-Vector \&p)
+\begin{CompactList}\small\item\em mr\-Classes signed Noise returning a vector, 3 parameters \item\end{CompactList}\item 
+{\bf vector} {\bf vpnoise} (const mi\-Scalar a, const mi\-Scalar b, const mi\-Scalar c, const mi\-Scalar pa, const mi\-Scalar pb, const mi\-Scalar pc)
+\begin{CompactList}\small\item\em mr\-Classes signed Noise returning a vector, 3 parameters \item\end{CompactList}\item 
+{\bf vector} {\bf vpnoise} (const mi\-Scalar a, const mi\-Scalar b, const mi\-Scalar c, const mi\-Scalar d, const mi\-Scalar pa, const mi\-Scalar pb, const mi\-Scalar pc, const mi\-Scalar pd)
+\begin{CompactList}\small\item\em mr\-Classes signed Noise returning a vector, 4 parameters \item\end{CompactList}\item 
+{\bf vector} {\bf vpnoise} (const mi\-Vector \&a, const mi\-Scalar t, const mi\-Vector \&pa, const mi\-Scalar pt)
+\begin{CompactList}\small\item\em mr\-Classes signed Noise returning a vector, 4 parameters \item\end{CompactList}\item 
+mi\-Scalar {\bf mi\_\-unoise} (const mi\-Scalar a)
+\begin{CompactList}\small\item\em mray's built-in noise, uniform distribution. one parameter. \item\end{CompactList}\item 
+mi\-Scalar {\bf mi\_\-unoise} (const mi\-Vector2d \&a)
+\begin{CompactList}\small\item\em mray's built-in noise, uniform distribution. two parameters. \item\end{CompactList}\item 
+mi\-Scalar {\bf mi\_\-unoise} (const mi\-Scalar u, const mi\-Scalar v)
+\begin{CompactList}\small\item\em mray's built-in noise, uniform distribution. two parameters. \item\end{CompactList}\item 
+mi\-Scalar {\bf mi\_\-unoise} (const mi\-Vector \&a)
+\begin{CompactList}\small\item\em mray's built-in noise, uniform distribution. 3 parameters. \item\end{CompactList}\item 
+mi\-Scalar {\bf mi\_\-unoise} (const mi\-Scalar a, const mi\-Scalar b, const mi\-Scalar c)
+\begin{CompactList}\small\item\em mray's built-in noise, uniform distribution. 3 parameters. \item\end{CompactList}\item 
+mi\-Scalar {\bf mi\_\-unoise} (const mi\-Vector \&a, const mi\-Scalar d)
+\begin{CompactList}\small\item\em mr\-Classes unsigned noise, 4 parameters. \item\end{CompactList}\item 
+mi\-Scalar {\bf mi\_\-unoise} (const mi\-Scalar a, const mi\-Scalar b, const mi\-Scalar c, const mi\-Scalar d)
+\begin{CompactList}\small\item\em mr\-Classes unsigned noise, 4 parameters. \item\end{CompactList}\item 
+mi\-Scalar {\bf mi\_\-unoise\_\-grad} (const mi\-Scalar a, mi\-Scalar \&g)
+\begin{CompactList}\small\item\em mray's built-in unsigned noise with gradient, 1 parameter. \item\end{CompactList}\item 
+mi\-Scalar {\bf mi\_\-unoise\_\-grad} (const mi\-Vector2d \&a, mi\-Vector2d \&g)
+\begin{CompactList}\small\item\em mray's built-in unsigned noise with gradient, 2 parameters. \item\end{CompactList}\item 
+mi\-Scalar {\bf mi\_\-unoise\_\-grad} (const mi\-Scalar u, const mi\-Scalar v, mi\-Scalar \&gu, mi\-Scalar \&gv)
+\begin{CompactList}\small\item\em mray's built-in unsigned noise with gradients, 2 parameters. \item\end{CompactList}\item 
+mi\-Scalar {\bf mi\_\-unoise\_\-grad} (const mi\-Vector \&a, mi\-Vector \&g)
+\begin{CompactList}\small\item\em mray's built-in unsigned noise with gradients, 3 parameters. \item\end{CompactList}\item 
+mi\-Scalar {\bf mi\_\-unoise\_\-grad} (const mi\-Scalar a, const mi\-Scalar b, const mi\-Scalar c, mi\-Vector \&g)
+\begin{CompactList}\small\item\em mray's built-in unsigned noise with gradients, 3 parameters. \item\end{CompactList}\item 
+mi\-Scalar {\bf cellnoise} (const mi\-Scalar x)
+\item 
+mi\-Scalar {\bf cellnoise} (const mi\-Scalar x, const mi\-Scalar y)
+\item 
+mi\-Scalar {\bf cellnoise} (const mi\-Scalar x, const mi\-Scalar y, const mi\-Scalar z)
+\item 
+mi\-Scalar {\bf cellnoise} (const mi\-Scalar x, const mi\-Scalar y, const mi\-Scalar z, const mi\-Scalar t)
+\item 
+mi\-Scalar {\bf cellnoise} (const {\bf vector2d} \&P)
+\item 
+mi\-Scalar {\bf cellnoise} (const {\bf point} \&P)
+\item 
+mi\-Scalar {\bf cellnoise} (const {\bf point} \&P, const mi\-Scalar t)
+\item 
+{\bf vector} {\bf vcellnoise} (const mi\-Scalar x)
+\item 
+{\bf vector} {\bf vcellnoise} (const mi\-Scalar x, const mi\-Scalar y)
+\item 
+{\bf vector} {\bf vcellnoise} (const mi\-Scalar x, const mi\-Scalar y, const mi\-Scalar z)
+\item 
+{\bf vector} {\bf vcellnoise} (const mi\-Scalar x, const mi\-Scalar y, const mi\-Scalar z, const mi\-Scalar t)
+\item 
+{\bf vector} {\bf vcellnoise} (const {\bf vector2d} \&P)
+\item 
+{\bf vector} {\bf vcellnoise} (const {\bf point} \&P)
+\item 
+{\bf vector} {\bf vcellnoise} (const {\bf point} \&P, const mi\-Scalar t)
+\end{CompactItemize}
+\subsection*{Transforms}
+\begin{CompactItemize}
+\item 
+{\bf normal} {\bf ntransform} (const mi\-State $\ast$const state, const space::type from\-Space, const space::type to\-Space, const {\bf normal} \&Nin)
+\item 
+{\bf normal} {\bf ntransform} (const mi\-State $\ast$const state, const space::type to\-Space, const {\bf normal} \&Nin)
+\item 
+{\bf normal} {\bf ntransform} (const mi\-Matrix \&m, const {\bf normal} \&Nin)
+\item 
+{\bf normal} {\bf ntransform} (const {\bf matrix} \&m, const {\bf normal} \&Nin)
+\item 
+{\bf vector} {\bf vtransform} (const mi\-State $\ast$const state, const space::type from\-Space, const space::type to\-Space, const {\bf vector} \&Vin)
+\item 
+{\bf vector} {\bf vtransform} (const mi\-State $\ast$const state, const space::type to\-Space, const {\bf vector} \&Vin)
+\item 
+{\bf vector} {\bf vtransform} (const mi\-Matrix \&m, const {\bf vector} \&Vin)
+\item 
+{\bf vector} {\bf vtransform} (const {\bf matrix} \&m, const {\bf vector} \&Vin)
+\item 
+{\bf point} {\bf transform} (const mi\-State $\ast$const state, const space::type from\-Space, const space::type to\-Space, const {\bf point} \&Pin)
+\item 
+{\bf point} {\bf transform} (const mi\-State $\ast$const state, const space::type to\-Space, const {\bf point} \&Pin)
+\item 
+{\bf point} {\bf transform} (const mi\-Matrix \&m, const {\bf point} \&Pin)
+\item 
+{\bf point} {\bf transform} (const {\bf matrix} \&m, const {\bf point} \&Pin)
+\item 
+{\bf color} {\bf ctransform} (const color::space from\-Space, const color::space to\-Space, const {\bf color} \&Cin)
+\item 
+{\bf color} {\bf ctransform} (const color::space to\-Space, const {\bf color} \&Cin)
+\end{CompactItemize}
+\subsection*{Invalid Prman functions}
+\begin{CompactItemize}
+\item 
+template$<$class T$>$ T {\bf environment} (...)
+\begin{CompactList}\small\item\em Just trace rays and let environment shaders do the rest. \item\end{CompactList}\item 
+template$<$class T$>$ T {\bf rayinfo} (...)
+\begin{CompactList}\small\item\em mi\-State contains most of the info you want from this. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+template$<$typename T$>$ const int {\bf sign} (const T a)
+\begin{CompactList}\small\item\em Return -1,0 or 1 to indicate the sign of the number. \item\end{CompactList}\item 
+template$<$typename T$>$ const T {\bf abs} (const T a)
+\begin{CompactList}\small\item\em Return the absolute value. \item\end{CompactList}\item 
+template$<$typename T$>$ T {\bf frac} (const T \&f)
+\begin{CompactList}\small\item\em Return the fractional part of a float number. \item\end{CompactList}\item 
+template$<$typename T$>$ const T {\bf square} (const T a)
+\begin{CompactList}\small\item\em Return a $\ast$ a. \item\end{CompactList}\item 
+template$<$typename T$>$ const T \& {\bf faceforward} (const T \&N, const T \&I)
+\begin{CompactList}\small\item\em Make N face in the same direction as Ng (not needed in mray). \item\end{CompactList}\item 
+template$<$typename T$>$ T {\bf faceforward} (const T \&N, const T \&I, const T \&Nref)
+\begin{CompactList}\small\item\em Make N face in the same direction as Nref. \item\end{CompactList}\item 
+mi\-Color {\bf randomtriangle} (mi\-State $\ast$const state)
+\begin{CompactList}\small\item\em Color each triangle with a different color. \item\end{CompactList}\item 
+mi\-Color {\bf randomgrid} (mi\-State $\ast$const state)
+\begin{CompactList}\small\item\em Color each grid (\char`\"{}bucket\char`\"{}) with a different color. \item\end{CompactList}\item 
+float {\bf radians} (const float deg)
+\begin{CompactList}\small\item\em Return angle in radians. \item\end{CompactList}\item 
+float {\bf degrees} (const float rad)
+\begin{CompactList}\small\item\em Return angle in degrees. \item\end{CompactList}\item 
+template$<$class T$>$ T {\bf asin} (const T \&x)
+\begin{CompactList}\small\item\em Return the arcsine of the angle. \item\end{CompactList}\item 
+template$<$class T$>$ T {\bf acos} (const T \&x)
+\begin{CompactList}\small\item\em Return the arc cosine of the angle. \item\end{CompactList}\item 
+template$<$class T$>$ T {\bf atan} (const T \&x)
+\begin{CompactList}\small\item\em Return the arc tangent of the angle. \item\end{CompactList}\item 
+template$<$class T$>$ T {\bf atan} (const T \&x, const T \&y)
+\begin{CompactList}\small\item\em Return the arc tangent of the angle. \item\end{CompactList}\item 
+template$<$class T$>$ T {\bf sin} (const T x)
+\begin{CompactList}\small\item\em Return the sine of the angle. \item\end{CompactList}\item 
+template$<$class T$>$ T {\bf cos} (const T \&x)
+\begin{CompactList}\small\item\em Return the cosine of the angle. \item\end{CompactList}\item 
+template$<$class T$>$ T {\bf tan} (const T \&x)
+\begin{CompactList}\small\item\em Return the tangent of the angle. \item\end{CompactList}\item 
+template$<$class T$>$ T {\bf pow} (const T \&x, const T \&y)
+\begin{CompactList}\small\item\em Return x raised to the power of y. \item\end{CompactList}\item 
+template$<$class T$>$ T {\bf exp} (const T \&x)
+\begin{CompactList}\small\item\em Calculate an exponential. \item\end{CompactList}\item 
+template$<$class T$>$ T {\bf sqrt} (const T \&x)
+\begin{CompactList}\small\item\em Calculate a square root. \item\end{CompactList}\item 
+template$<$class T$>$ T {\bf log} (const T \&x)
+\begin{CompactList}\small\item\em Calculate logarithm (base 10). \item\end{CompactList}\item 
+template$<$class T$>$ T {\bf log} (const T \&x, const T \&b)
+\begin{CompactList}\small\item\em Calculate logarithm (base b). \item\end{CompactList}\item 
+template$<$class T$>$ int {\bf ceil} (const T \&x)
+\begin{CompactList}\small\item\em find the nearest integer greater than or equal to X \item\end{CompactList}\item 
+template$<$class T$>$ int {\bf floor} (const T \&x)
+\begin{CompactList}\small\item\em find the nearest integer less than or equal to X \item\end{CompactList}\item 
+float {\bf distance} (const {\bf point} \&P0, const {\bf point} \&P1)
+\item 
+float {\bf ptlined} (const {\bf point} \&P0, const {\bf point} \&P1, const {\bf point} \&Q)
+\item 
+mi\-Scalar {\bf depth} (const mi\-State $\ast$const state, const {\bf point} \&Pin)
+\item 
+{\bf matrix} {\bf inverse} (const {\bf matrix} \&m)
+\item 
+mi\-Scalar {\bf determinant} (const {\bf matrix} \&m)
+\end{CompactItemize}
+\subsection*{Variables}
+\begin{CompactItemize}
+\item 
+const mi\-Color {\bf \_\-grid\-Colors} [$\,$]
+\item 
+const double {\bf PI} = M\_\-PI
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+A file to add most RSL constructs. 
+
+
+
+\subsection{Function Documentation}
+\index{rsl@{rsl}!abs@{abs}}
+\index{abs@{abs}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ const T abs (const T {\em a})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a3}
+
+
+Return the absolute value. 
+
+\index{rsl@{rsl}!acos@{acos}}
+\index{acos@{acos}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T acos (const T \& {\em x})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a27}
+
+
+Return the arc cosine of the angle. 
+
+\index{rsl@{rsl}!asin@{asin}}
+\index{asin@{asin}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T asin (const T \& {\em x})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a26}
+
+
+Return the arcsine of the angle. 
+
+\index{rsl@{rsl}!atan@{atan}}
+\index{atan@{atan}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T atan (const T \& {\em x}, const T \& {\em y})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a29}
+
+
+Return the arc tangent of the angle. 
+
+\index{rsl@{rsl}!atan@{atan}}
+\index{atan@{atan}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T atan (const T \& {\em x})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a28}
+
+
+Return the arc tangent of the angle. 
+
+\index{rsl@{rsl}!ceil@{ceil}}
+\index{ceil@{ceil}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ int ceil (const T \& {\em x})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a38}
+
+
+find the nearest integer greater than or equal to X 
+
+\index{rsl@{rsl}!cellnoise@{cellnoise}}
+\index{cellnoise@{cellnoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar cellnoise (const point \& {\em P}, const mi\-Scalar {\em t})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a130}
+
+
+\index{rsl@{rsl}!cellnoise@{cellnoise}}
+\index{cellnoise@{cellnoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar cellnoise (const point \& {\em P})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a129}
+
+
+\index{rsl@{rsl}!cellnoise@{cellnoise}}
+\index{cellnoise@{cellnoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar cellnoise (const vector2d \& {\em P})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a128}
+
+
+\index{rsl@{rsl}!cellnoise@{cellnoise}}
+\index{cellnoise@{cellnoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar cellnoise (const mi\-Scalar {\em x}, const mi\-Scalar {\em y}, const mi\-Scalar {\em z}, const mi\-Scalar {\em t})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a127}
+
+
+\index{rsl@{rsl}!cellnoise@{cellnoise}}
+\index{cellnoise@{cellnoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar cellnoise (const mi\-Scalar {\em x}, const mi\-Scalar {\em y}, const mi\-Scalar {\em z})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a126}
+
+
+\index{rsl@{rsl}!cellnoise@{cellnoise}}
+\index{cellnoise@{cellnoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar cellnoise (const mi\-Scalar {\em x}, const mi\-Scalar {\em y})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a125}
+
+
+\index{rsl@{rsl}!cellnoise@{cellnoise}}
+\index{cellnoise@{cellnoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar cellnoise (const mi\-Scalar {\em x})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a124}
+
+
+\index{rsl@{rsl}!cos@{cos}}
+\index{cos@{cos}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T cos (const T \& {\em x})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a31}
+
+
+Return the cosine of the angle. 
+
+\index{rsl@{rsl}!ctransform@{ctransform}}
+\index{ctransform@{ctransform}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} ctransform (const color::space {\em to\-Space}, const color \& {\em Cin})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a151}
+
+
+\index{rsl@{rsl}!ctransform@{ctransform}}
+\index{ctransform@{ctransform}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} ctransform (const color::space {\em from\-Space}, const color::space {\em to\-Space}, const color \& {\em Cin})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a150}
+
+
+\index{rsl@{rsl}!degrees@{degrees}}
+\index{degrees@{degrees}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}float degrees (const float {\em rad})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a25}
+
+
+Return angle in degrees. 
+
+\index{rsl@{rsl}!depth@{depth}}
+\index{depth@{depth}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar depth (const mi\-State $\ast$const {\em state}, const point \& {\em Pin})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a154}
+
+
+\index{rsl@{rsl}!determinant@{determinant}}
+\index{determinant@{determinant}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar determinant (const matrix \& {\em m})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a156}
+
+
+\index{rsl@{rsl}!distance@{distance}}
+\index{distance@{distance}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}float distance (const point \& {\em P0}, const point \& {\em P1})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a152}
+
+
+\index{rsl@{rsl}!environment@{environment}}
+\index{environment@{environment}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T environment (...)\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a157}
+
+
+Just trace rays and let environment shaders do the rest. 
+
+\begin{Desc}
+\item[{\bf Todo}]: textureinfo(), texture(), shadow(), match()\end{Desc}
+\index{rsl@{rsl}!exp@{exp}}
+\index{exp@{exp}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T exp (const T \& {\em x})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a34}
+
+
+Calculate an exponential. 
+
+\index{rsl@{rsl}!faceforward@{faceforward}}
+\index{faceforward@{faceforward}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T faceforward (const T \& {\em N}, const T \& {\em I}, const T \& {\em Nref})}\label{namespacersl_a7}
+
+
+Make N face in the same direction as Nref. 
+
+\index{rsl@{rsl}!faceforward@{faceforward}}
+\index{faceforward@{faceforward}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ const T\& faceforward (const T \& {\em N}, const T \& {\em I})}\label{namespacersl_a6}
+
+
+Make N face in the same direction as Ng (not needed in mray). 
+
+\index{rsl@{rsl}!floor@{floor}}
+\index{floor@{floor}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ int floor (const T \& {\em x})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a39}
+
+
+find the nearest integer less than or equal to X 
+
+\index{rsl@{rsl}!frac@{frac}}
+\index{frac@{frac}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T frac (const T \& {\em f})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a4}
+
+
+Return the fractional part of a float number. 
+
+\index{rsl@{rsl}!inverse@{inverse}}
+\index{inverse@{inverse}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf matrix} inverse (const matrix \& {\em m})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a155}
+
+
+\index{rsl@{rsl}!linear@{linear}}
+\index{linear@{linear}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Vector linear (const mi\-Vector \& {\em a}, const mi\-Vector \& {\em b}, const mi\-Vector \& {\em x})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a10}
+
+
+Do a linear interpolation of vectors. 
+
+\index{rsl@{rsl}!linear@{linear}}
+\index{linear@{linear}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Color linear (const mi\-Color \& {\em a}, const mi\-Color \& {\em b}, const mi\-Color \& {\em x})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a9}
+
+
+Do a linear interpolation of colors. 
+
+\index{rsl@{rsl}!linear@{linear}}
+\index{linear@{linear}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T linear (const T \& {\em a}, const T \& {\em b}, const T \& {\em x})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a8}
+
+
+Do a linear interpolation. 
+
+\index{rsl@{rsl}!log@{log}}
+\index{log@{log}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T log (const T \& {\em x}, const T \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a37}
+
+
+Calculate logarithm (base b). 
+
+\index{rsl@{rsl}!log@{log}}
+\index{log@{log}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T log (const T \& {\em x})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a36}
+
+
+Calculate logarithm (base 10). 
+
+\index{rsl@{rsl}!mi_noise@{mi\_\-noise}}
+\index{mi_noise@{mi\_\-noise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar mi\_\-noise (const mi\-Scalar {\em a}, const mi\-Scalar {\em b}, const mi\-Scalar {\em c}, const mi\-Scalar {\em d})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a50}
+
+
+mr\-Classes signed noise, 4 parameters. 
+
+\index{rsl@{rsl}!mi_noise@{mi\_\-noise}}
+\index{mi_noise@{mi\_\-noise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar mi\_\-noise (const mi\-Vector \& {\em a}, const mi\-Scalar {\em d})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a49}
+
+
+mr\-Classes signed noise, 4 parameters. 
+
+\index{rsl@{rsl}!mi_noise@{mi\_\-noise}}
+\index{mi_noise@{mi\_\-noise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar mi\_\-noise (const mi\-Scalar {\em a}, const mi\-Scalar {\em b}, const mi\-Scalar {\em c})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a48}
+
+
+mray's built-in signed noise, 3 parameters. 
+
+\index{rsl@{rsl}!mi_noise@{mi\_\-noise}}
+\index{mi_noise@{mi\_\-noise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar mi\_\-noise (const mi\-Vector \& {\em a})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a47}
+
+
+mray's built-in signed noise, 3 parameters. 
+
+\index{rsl@{rsl}!mi_noise@{mi\_\-noise}}
+\index{mi_noise@{mi\_\-noise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar mi\_\-noise (const mi\-Scalar {\em u}, const mi\-Scalar {\em v})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a46}
+
+
+mray's built-in signed noise, two parameters. 
+
+\index{rsl@{rsl}!mi_noise@{mi\_\-noise}}
+\index{mi_noise@{mi\_\-noise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar mi\_\-noise (const mi\-Vector2d \& {\em a})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a45}
+
+
+mray's built-in signed noise, two parameters. 
+
+\index{rsl@{rsl}!mi_noise@{mi\_\-noise}}
+\index{mi_noise@{mi\_\-noise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar mi\_\-noise (const mi\-Scalar {\em a})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a44}
+
+
+mray's built-in signed noise, one parameter. 
+
+\index{rsl@{rsl}!mi_noise_grad@{mi\_\-noise\_\-grad}}
+\index{mi_noise_grad@{mi\_\-noise\_\-grad}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar mi\_\-noise\_\-grad (const mi\-Scalar {\em a}, const mi\-Scalar {\em b}, const mi\-Scalar {\em c}, mi\-Vector \& {\em g})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a55}
+
+
+mray's built-in signed noise with gradients, 3 parameters. 
+
+\index{rsl@{rsl}!mi_noise_grad@{mi\_\-noise\_\-grad}}
+\index{mi_noise_grad@{mi\_\-noise\_\-grad}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar mi\_\-noise\_\-grad (const mi\-Vector \& {\em a}, mi\-Vector \& {\em g})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a54}
+
+
+mray's built-in signed noise with gradients, 3 parameters. 
+
+\index{rsl@{rsl}!mi_noise_grad@{mi\_\-noise\_\-grad}}
+\index{mi_noise_grad@{mi\_\-noise\_\-grad}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar mi\_\-noise\_\-grad (const mi\-Scalar {\em u}, const mi\-Scalar {\em v}, mi\-Scalar \& {\em gu}, mi\-Scalar \& {\em gv})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a53}
+
+
+mray's built-in signed noise with gradients, 2 parameters. 
+
+\index{rsl@{rsl}!mi_noise_grad@{mi\_\-noise\_\-grad}}
+\index{mi_noise_grad@{mi\_\-noise\_\-grad}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar mi\_\-noise\_\-grad (const mi\-Vector2d \& {\em a}, mi\-Vector2d \& {\em g})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a52}
+
+
+mray's built-in signed noise with gradient, 2 parameters. 
+
+\index{rsl@{rsl}!mi_noise_grad@{mi\_\-noise\_\-grad}}
+\index{mi_noise_grad@{mi\_\-noise\_\-grad}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar mi\_\-noise\_\-grad (const mi\-Scalar {\em a}, mi\-Scalar \& {\em g})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a51}
+
+
+mray's built-in signed noise with gradient, 1 parameter. 
+
+\index{rsl@{rsl}!mi_unoise@{mi\_\-unoise}}
+\index{mi_unoise@{mi\_\-unoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar mi\_\-unoise (const mi\-Scalar {\em a}, const mi\-Scalar {\em b}, const mi\-Scalar {\em c}, const mi\-Scalar {\em d})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a118}
+
+
+mr\-Classes unsigned noise, 4 parameters. 
+
+\index{rsl@{rsl}!mi_unoise@{mi\_\-unoise}}
+\index{mi_unoise@{mi\_\-unoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar mi\_\-unoise (const mi\-Vector \& {\em a}, const mi\-Scalar {\em d})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a117}
+
+
+mr\-Classes unsigned noise, 4 parameters. 
+
+\index{rsl@{rsl}!mi_unoise@{mi\_\-unoise}}
+\index{mi_unoise@{mi\_\-unoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar mi\_\-unoise (const mi\-Scalar {\em a}, const mi\-Scalar {\em b}, const mi\-Scalar {\em c})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a116}
+
+
+mray's built-in noise, uniform distribution. 3 parameters. 
+
+\index{rsl@{rsl}!mi_unoise@{mi\_\-unoise}}
+\index{mi_unoise@{mi\_\-unoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar mi\_\-unoise (const mi\-Vector \& {\em a})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a115}
+
+
+mray's built-in noise, uniform distribution. 3 parameters. 
+
+\index{rsl@{rsl}!mi_unoise@{mi\_\-unoise}}
+\index{mi_unoise@{mi\_\-unoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar mi\_\-unoise (const mi\-Scalar {\em u}, const mi\-Scalar {\em v})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a114}
+
+
+mray's built-in noise, uniform distribution. two parameters. 
+
+\index{rsl@{rsl}!mi_unoise@{mi\_\-unoise}}
+\index{mi_unoise@{mi\_\-unoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar mi\_\-unoise (const mi\-Vector2d \& {\em a})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a113}
+
+
+mray's built-in noise, uniform distribution. two parameters. 
+
+\index{rsl@{rsl}!mi_unoise@{mi\_\-unoise}}
+\index{mi_unoise@{mi\_\-unoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar mi\_\-unoise (const mi\-Scalar {\em a})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a112}
+
+
+mray's built-in noise, uniform distribution. one parameter. 
+
+\index{rsl@{rsl}!mi_unoise_grad@{mi\_\-unoise\_\-grad}}
+\index{mi_unoise_grad@{mi\_\-unoise\_\-grad}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar mi\_\-unoise\_\-grad (const mi\-Scalar {\em a}, const mi\-Scalar {\em b}, const mi\-Scalar {\em c}, mi\-Vector \& {\em g})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a123}
+
+
+mray's built-in unsigned noise with gradients, 3 parameters. 
+
+\index{rsl@{rsl}!mi_unoise_grad@{mi\_\-unoise\_\-grad}}
+\index{mi_unoise_grad@{mi\_\-unoise\_\-grad}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar mi\_\-unoise\_\-grad (const mi\-Vector \& {\em a}, mi\-Vector \& {\em g})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a122}
+
+
+mray's built-in unsigned noise with gradients, 3 parameters. 
+
+\index{rsl@{rsl}!mi_unoise_grad@{mi\_\-unoise\_\-grad}}
+\index{mi_unoise_grad@{mi\_\-unoise\_\-grad}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar mi\_\-unoise\_\-grad (const mi\-Scalar {\em u}, const mi\-Scalar {\em v}, mi\-Scalar \& {\em gu}, mi\-Scalar \& {\em gv})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a121}
+
+
+mray's built-in unsigned noise with gradients, 2 parameters. 
+
+\index{rsl@{rsl}!mi_unoise_grad@{mi\_\-unoise\_\-grad}}
+\index{mi_unoise_grad@{mi\_\-unoise\_\-grad}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar mi\_\-unoise\_\-grad (const mi\-Vector2d \& {\em a}, mi\-Vector2d \& {\em g})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a120}
+
+
+mray's built-in unsigned noise with gradient, 2 parameters. 
+
+\index{rsl@{rsl}!mi_unoise_grad@{mi\_\-unoise\_\-grad}}
+\index{mi_unoise_grad@{mi\_\-unoise\_\-grad}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar mi\_\-unoise\_\-grad (const mi\-Scalar {\em a}, mi\-Scalar \& {\em g})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a119}
+
+
+mray's built-in unsigned noise with gradient, 1 parameter. 
+
+\index{rsl@{rsl}!mix@{mix}}
+\index{mix@{mix}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T mix (const T \& {\em a}, const T \& {\em b}, const T \& {\em x})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a23}
+
+
+Mix two similar elements together, using a third element Useful for mixing 2 colors based on a 3rd. \index{rsl@{rsl}!mix@{mix}}
+\index{mix@{mix}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned int mix (const unsigned int \& {\em a}, const unsigned int \& {\em b}, const mi\-Scalar {\em x})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a22}
+
+
+Mix two unsigned ints together, based on x=[0,1]. 
+
+\index{rsl@{rsl}!mix@{mix}}
+\index{mix@{mix}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned short mix (const unsigned short \& {\em a}, const unsigned short \& {\em b}, const mi\-Scalar {\em x})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a21}
+
+
+Mix two unsigned shorts together, based on x=[0,1]. 
+
+\index{rsl@{rsl}!mix@{mix}}
+\index{mix@{mix}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T mix (const T \& {\em a}, const T \& {\em b}, const mi\-Scalar {\em x})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a20}
+
+
+Mix two elements of identical type together, based on x=[0,1]. 
+
+\index{rsl@{rsl}!noise@{noise}}
+\index{noise@{noise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar noise (const mi\-Vector \& {\em a}, const mi\-Scalar {\em t})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a76}
+
+
+mr\-Classes signed Noise returning a scalar, 4 parameters 
+
+\index{rsl@{rsl}!noise@{noise}}
+\index{noise@{noise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar noise (const mi\-Scalar {\em a}, const mi\-Scalar {\em b}, const mi\-Scalar {\em c}, const mi\-Scalar {\em d})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a75}
+
+
+mr\-Classes signed Noise returning a scalar, 4 parameters 
+
+\index{rsl@{rsl}!noise@{noise}}
+\index{noise@{noise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar noise (const mi\-Scalar {\em a}, const mi\-Scalar {\em b}, const mi\-Scalar {\em c})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a74}
+
+
+mr\-Classes signed Noise returning a scalar, 3 parameters 
+
+\index{rsl@{rsl}!noise@{noise}}
+\index{noise@{noise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar noise (const mi\-Vector \& {\em a})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a73}
+
+
+mr\-Classes signed Noise returning a scalar, 3 parameters 
+
+\index{rsl@{rsl}!noise@{noise}}
+\index{noise@{noise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar noise (const mi\-Scalar {\em u}, const mi\-Scalar {\em v})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a72}
+
+
+mr\-Classes signed Noise returning a scalar, 2 parameters 
+
+\index{rsl@{rsl}!noise@{noise}}
+\index{noise@{noise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar noise (const mi\-Vector2d \& {\em a})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a71}
+
+
+mr\-Classes signed Noise returning a scalar, 2 parameters 
+
+\index{rsl@{rsl}!noise@{noise}}
+\index{noise@{noise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar noise (const mi\-Scalar {\em a})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a70}
+
+
+mr\-Classes signed Noise returning a scalar, 1 parameter 
+
+\index{rsl@{rsl}!normalize@{normalize}}
+\index{normalize@{normalize}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Vector normalize (const point \& {\em a})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a41}
+
+
+Invalid operation. 
+
+\index{rsl@{rsl}!normalize@{normalize}}
+\index{normalize@{normalize}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Vector normalize (const mi\-Vector \& {\em a})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a40}
+
+
+Normalize vector/normal/etc. to unit length. 
+
+\index{rsl@{rsl}!ntransform@{ntransform}}
+\index{ntransform@{ntransform}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf normal} ntransform (const matrix \& {\em m}, const normal \& {\em Nin})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a141}
+
+
+\index{rsl@{rsl}!ntransform@{ntransform}}
+\index{ntransform@{ntransform}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf normal} ntransform (const mi\-Matrix \& {\em m}, const normal \& {\em Nin})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a140}
+
+
+\index{rsl@{rsl}!ntransform@{ntransform}}
+\index{ntransform@{ntransform}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf normal} ntransform (const mi\-State $\ast$const {\em state}, const space::type {\em to\-Space}, const normal \& {\em Nin})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a139}
+
+
+\index{rsl@{rsl}!ntransform@{ntransform}}
+\index{ntransform@{ntransform}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf normal} ntransform (const mi\-State $\ast$const {\em state}, const space::type {\em from\-Space}, const space::type {\em to\-Space}, const normal \& {\em Nin})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a138}
+
+
+\index{rsl@{rsl}!pnoise@{pnoise}}
+\index{pnoise@{pnoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar pnoise (const mi\-Vector \& {\em a}, const mi\-Scalar {\em t}, const mi\-Vector \& {\em pa}, const mi\-Scalar {\em pt})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a104}
+
+
+mr\-Classes signed Noise returning a scalar, 4 parameters 
+
+\index{rsl@{rsl}!pnoise@{pnoise}}
+\index{pnoise@{pnoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar pnoise (const mi\-Scalar {\em a}, const mi\-Scalar {\em b}, const mi\-Scalar {\em c}, const mi\-Scalar {\em d}, const mi\-Scalar {\em pa}, const mi\-Scalar {\em pb}, const mi\-Scalar {\em pc}, const mi\-Scalar {\em pd})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a103}
+
+
+mr\-Classes signed Noise returning a scalar, 4 parameters 
+
+\index{rsl@{rsl}!pnoise@{pnoise}}
+\index{pnoise@{pnoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar pnoise (const mi\-Scalar {\em a}, const mi\-Scalar {\em b}, const mi\-Scalar {\em c}, const mi\-Scalar {\em pa}, const mi\-Scalar {\em pb}, const mi\-Scalar {\em pc})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a102}
+
+
+mr\-Classes signed Noise returning a scalar, 3 parameters 
+
+\index{rsl@{rsl}!pnoise@{pnoise}}
+\index{pnoise@{pnoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar pnoise (const mi\-Vector \& {\em a}, const mi\-Vector \& {\em p})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a101}
+
+
+mr\-Classes signed Noise returning a scalar, 3 parameters 
+
+\index{rsl@{rsl}!pnoise@{pnoise}}
+\index{pnoise@{pnoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar pnoise (const mi\-Scalar {\em u}, const mi\-Scalar {\em v}, const mi\-Scalar {\em pu}, const mi\-Scalar {\em pv})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a100}
+
+
+mr\-Classes signed Noise returning a scalar, 2 parameters 
+
+\index{rsl@{rsl}!pnoise@{pnoise}}
+\index{pnoise@{pnoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar pnoise (const mi\-Vector2d \& {\em a}, const mi\-Vector2d \& {\em p})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a99}
+
+
+mr\-Classes signed Noise returning a scalar, 2 parameters 
+
+\index{rsl@{rsl}!pnoise@{pnoise}}
+\index{pnoise@{pnoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar pnoise (const mi\-Scalar {\em a}, const mi\-Scalar {\em p})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a98}
+
+
+mr\-Classes signed Noise returning a scalar, 1 parameter 
+
+\index{rsl@{rsl}!pow@{pow}}
+\index{pow@{pow}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T pow (const T \& {\em x}, const T \& {\em y})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a33}
+
+
+Return x raised to the power of y. 
+
+\index{rsl@{rsl}!ptlined@{ptlined}}
+\index{ptlined@{ptlined}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}float ptlined (const point \& {\em P0}, const point \& {\em P1}, const point \& {\em Q})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a153}
+
+
+\index{rsl@{rsl}!pulse@{pulse}}
+\index{pulse@{pulse}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T pulse (const T \& {\em a}, const T \& {\em b}, const T \& {\em x})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a14}
+
+
+Do a pulse interpolation. 
+
+\index{rsl@{rsl}!radians@{radians}}
+\index{radians@{radians}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}float radians (const float {\em deg})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a24}
+
+
+Return angle in radians. 
+
+\index{rsl@{rsl}!random@{random}}
+\index{random@{random}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar random ()\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a42}
+
+
+\index{rsl@{rsl}!randomgrid@{randomgrid}}
+\index{randomgrid@{randomgrid}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Color randomgrid (mi\-State $\ast$const {\em state})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a19}
+
+
+Color each grid (\char`\"{}bucket\char`\"{}) with a different color. 
+
+\index{rsl@{rsl}!randomtriangle@{randomtriangle}}
+\index{randomtriangle@{randomtriangle}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Color randomtriangle (mi\-State $\ast$const {\em state})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a18}
+
+
+Color each triangle with a different color. 
+
+\index{rsl@{rsl}!rayinfo@{rayinfo}}
+\index{rayinfo@{rayinfo}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T rayinfo (...)\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a158}
+
+
+mi\-State contains most of the info you want from this. 
+
+\index{rsl@{rsl}!sign@{sign}}
+\index{sign@{sign}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ const int sign (const T {\em a})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a2}
+
+
+Return -1,0 or 1 to indicate the sign of the number. 
+
+\index{rsl@{rsl}!silkysmoothpulse@{silkysmoothpulse}}
+\index{silkysmoothpulse@{silkysmoothpulse}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T silkysmoothpulse (const T \& {\em a}, const T \& {\em b}, const T \& {\em fuzz}, const T \& {\em x})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a17}
+
+
+Do an even smoother smoothpulse interpolation with controlled fuzziness. 
+
+\index{rsl@{rsl}!silkysmoothstep@{silkysmoothstep}}
+\index{silkysmoothstep@{silkysmoothstep}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T silkysmoothstep (const T \& {\em a}, const T \& {\em b}, const T \& {\em x})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a13}
+
+
+Do an even smoother smoothstep interpolation. 
+
+\index{rsl@{rsl}!sin@{sin}}
+\index{sin@{sin}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T sin (const T {\em x})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a30}
+
+
+Return the sine of the angle. 
+
+\index{rsl@{rsl}!smoothpulse@{smoothpulse}}
+\index{smoothpulse@{smoothpulse}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T smoothpulse (const T \& {\em a}, const T \& {\em b}, const T \& {\em fuzz}, const T \& {\em x})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a16}
+
+
+Do a smoothpulse interpolation with controlled fuzziness. 
+
+\index{rsl@{rsl}!smoothpulse@{smoothpulse}}
+\index{smoothpulse@{smoothpulse}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T smoothpulse (const T \& {\em a}, const T \& {\em b}, const T \& {\em x})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a15}
+
+
+Do a smoothpulse interpolation. 
+
+\index{rsl@{rsl}!smoothstep@{smoothstep}}
+\index{smoothstep@{smoothstep}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T smoothstep (const T \& {\em a}, const T \& {\em b}, const T \& {\em x})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a12}
+
+
+Do a smoothstep interpolation. 
+
+\begin{Desc}
+\item[{\bf Todo}]Add filterstep\end{Desc}
+\index{rsl@{rsl}!snoise@{snoise}}
+\index{snoise@{snoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar snoise (const mi\-Vector \& {\em a}, const mi\-Scalar {\em t})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a62}
+
+
+mr\-Classes signed Noise returning a scalar, 4 parameters 
+
+\index{rsl@{rsl}!snoise@{snoise}}
+\index{snoise@{snoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar snoise (const mi\-Scalar {\em a}, const mi\-Scalar {\em b}, const mi\-Scalar {\em c}, const mi\-Scalar {\em d})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a61}
+
+
+mr\-Classes signed Noise returning a scalar, 4 parameters 
+
+\index{rsl@{rsl}!snoise@{snoise}}
+\index{snoise@{snoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar snoise (const mi\-Scalar {\em a}, const mi\-Scalar {\em b}, const mi\-Scalar {\em c})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a60}
+
+
+mr\-Classes signed Noise returning a scalar, 3 parameters 
+
+\index{rsl@{rsl}!snoise@{snoise}}
+\index{snoise@{snoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar snoise (const mi\-Vector \& {\em a})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a59}
+
+
+mr\-Classes signed Noise returning a scalar, 3 parameters 
+
+\index{rsl@{rsl}!snoise@{snoise}}
+\index{snoise@{snoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar snoise (const mi\-Scalar {\em u}, const mi\-Scalar {\em v})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a58}
+
+
+mr\-Classes signed Noise returning a scalar, 2 parameters 
+
+\index{rsl@{rsl}!snoise@{snoise}}
+\index{snoise@{snoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar snoise (const mi\-Vector2d \& {\em a})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a57}
+
+
+mr\-Classes signed Noise returning a scalar, 2 parameters 
+
+\index{rsl@{rsl}!snoise@{snoise}}
+\index{snoise@{snoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar snoise (const mi\-Scalar {\em a})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a56}
+
+
+mr\-Classes signed Noise returning a scalar, 1 parameter 
+
+\index{rsl@{rsl}!spnoise@{spnoise}}
+\index{spnoise@{spnoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar spnoise (const mi\-Vector \& {\em a}, const mi\-Scalar {\em t}, const mi\-Vector \& {\em pa}, const mi\-Scalar {\em pt})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a90}
+
+
+mr\-Classes signed Noise returning a scalar, 4 parameters 
+
+\index{rsl@{rsl}!spnoise@{spnoise}}
+\index{spnoise@{spnoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar spnoise (const mi\-Scalar {\em a}, const mi\-Scalar {\em b}, const mi\-Scalar {\em c}, const mi\-Scalar {\em d}, const mi\-Scalar {\em pa}, const mi\-Scalar {\em pb}, const mi\-Scalar {\em pc}, const mi\-Scalar {\em pd})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a89}
+
+
+mr\-Classes signed Noise returning a scalar, 4 parameters 
+
+\index{rsl@{rsl}!spnoise@{spnoise}}
+\index{spnoise@{spnoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar spnoise (const mi\-Scalar {\em a}, const mi\-Scalar {\em b}, const mi\-Scalar {\em c}, const mi\-Scalar {\em pa}, const mi\-Scalar {\em pb}, const mi\-Scalar {\em pc})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a88}
+
+
+mr\-Classes signed Noise returning a scalar, 3 parameters 
+
+\index{rsl@{rsl}!spnoise@{spnoise}}
+\index{spnoise@{spnoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar spnoise (const mi\-Vector \& {\em a}, const mi\-Vector \& {\em p})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a87}
+
+
+mr\-Classes signed Noise returning a scalar, 3 parameters 
+
+\index{rsl@{rsl}!spnoise@{spnoise}}
+\index{spnoise@{spnoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar spnoise (const mi\-Scalar {\em u}, const mi\-Scalar {\em v}, const mi\-Scalar {\em pu}, const mi\-Scalar {\em pv})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a86}
+
+
+mr\-Classes signed Noise returning a scalar, 2 parameters 
+
+\index{rsl@{rsl}!spnoise@{spnoise}}
+\index{spnoise@{spnoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar spnoise (const mi\-Vector2d \& {\em a}, const mi\-Vector2d \& {\em p})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a85}
+
+
+mr\-Classes signed Noise returning a scalar, 2 parameters 
+
+\index{rsl@{rsl}!spnoise@{spnoise}}
+\index{spnoise@{spnoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar spnoise (const mi\-Scalar {\em a}, const mi\-Scalar {\em p})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a84}
+
+
+mr\-Classes signed Noise returning a scalar, 1 parameter 
+
+\index{rsl@{rsl}!sqrt@{sqrt}}
+\index{sqrt@{sqrt}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T sqrt (const T \& {\em x})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a35}
+
+
+Calculate a square root. 
+
+\index{rsl@{rsl}!square@{square}}
+\index{square@{square}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ const T square (const T {\em a})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a5}
+
+
+Return a $\ast$ a. 
+
+\index{rsl@{rsl}!step@{step}}
+\index{step@{step}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T step (const T \& {\em a}, const T \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a11}
+
+
+Do a step (binary) interpolatio. 
+
+\index{rsl@{rsl}!tan@{tan}}
+\index{tan@{tan}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T tan (const T \& {\em x})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a32}
+
+
+Return the tangent of the angle. 
+
+\index{rsl@{rsl}!transform@{transform}}
+\index{transform@{transform}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf point} transform (const matrix \& {\em m}, const point \& {\em Pin})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a149}
+
+
+\index{rsl@{rsl}!transform@{transform}}
+\index{transform@{transform}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf point} transform (const mi\-Matrix \& {\em m}, const point \& {\em Pin})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a148}
+
+
+\index{rsl@{rsl}!transform@{transform}}
+\index{transform@{transform}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf point} transform (const mi\-State $\ast$const {\em state}, const space::type {\em to\-Space}, const point \& {\em Pin})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a147}
+
+
+\index{rsl@{rsl}!transform@{transform}}
+\index{transform@{transform}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf point} transform (const mi\-State $\ast$const {\em state}, const space::type {\em from\-Space}, const space::type {\em to\-Space}, const point \& {\em Pin})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a146}
+
+
+\index{rsl@{rsl}!vcellnoise@{vcellnoise}}
+\index{vcellnoise@{vcellnoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf vector} vcellnoise (const point \& {\em P}, const mi\-Scalar {\em t})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a137}
+
+
+\index{rsl@{rsl}!vcellnoise@{vcellnoise}}
+\index{vcellnoise@{vcellnoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf vector} vcellnoise (const point \& {\em P})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a136}
+
+
+\index{rsl@{rsl}!vcellnoise@{vcellnoise}}
+\index{vcellnoise@{vcellnoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf vector} vcellnoise (const vector2d \& {\em P})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a135}
+
+
+\index{rsl@{rsl}!vcellnoise@{vcellnoise}}
+\index{vcellnoise@{vcellnoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf vector} vcellnoise (const mi\-Scalar {\em x}, const mi\-Scalar {\em y}, const mi\-Scalar {\em z}, const mi\-Scalar {\em t})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a134}
+
+
+\index{rsl@{rsl}!vcellnoise@{vcellnoise}}
+\index{vcellnoise@{vcellnoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf vector} vcellnoise (const mi\-Scalar {\em x}, const mi\-Scalar {\em y}, const mi\-Scalar {\em z})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a133}
+
+
+\index{rsl@{rsl}!vcellnoise@{vcellnoise}}
+\index{vcellnoise@{vcellnoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf vector} vcellnoise (const mi\-Scalar {\em x}, const mi\-Scalar {\em y})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a132}
+
+
+\index{rsl@{rsl}!vcellnoise@{vcellnoise}}
+\index{vcellnoise@{vcellnoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf vector} vcellnoise (const mi\-Scalar {\em x})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a131}
+
+
+\index{rsl@{rsl}!vnoise@{vnoise}}
+\index{vnoise@{vnoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf vector} vnoise (const mi\-Vector \& {\em a}, const mi\-Scalar {\em t})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a83}
+
+
+mr\-Classes signed Noise returning a vector, 4 parameters 
+
+\index{rsl@{rsl}!vnoise@{vnoise}}
+\index{vnoise@{vnoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf vector} vnoise (const mi\-Scalar {\em a}, const mi\-Scalar {\em b}, const mi\-Scalar {\em c}, const mi\-Scalar {\em d})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a82}
+
+
+mr\-Classes signed Noise returning a vector, 4 parameters 
+
+\index{rsl@{rsl}!vnoise@{vnoise}}
+\index{vnoise@{vnoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf vector} vnoise (const mi\-Scalar {\em a}, const mi\-Scalar {\em b}, const mi\-Scalar {\em c})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a81}
+
+
+mr\-Classes signed Noise returning a vector, 3 parameters 
+
+\index{rsl@{rsl}!vnoise@{vnoise}}
+\index{vnoise@{vnoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf vector} vnoise (const mi\-Vector \& {\em a})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a80}
+
+
+mr\-Classes signed Noise returning a vector, 3 parameters 
+
+\index{rsl@{rsl}!vnoise@{vnoise}}
+\index{vnoise@{vnoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf vector} vnoise (const mi\-Scalar {\em u}, const mi\-Scalar {\em v})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a79}
+
+
+mr\-Classes signed Noise returning a vector, 2 parameters 
+
+\index{rsl@{rsl}!vnoise@{vnoise}}
+\index{vnoise@{vnoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf vector} vnoise (const mi\-Vector2d \& {\em a})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a78}
+
+
+mr\-Classes signed Noise returning a vector, 2 parameters 
+
+\index{rsl@{rsl}!vnoise@{vnoise}}
+\index{vnoise@{vnoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf vector} vnoise (const mi\-Scalar {\em a})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a77}
+
+
+mr\-Classes signed Noise returning a vector, 1 parameter 
+
+\index{rsl@{rsl}!vpnoise@{vpnoise}}
+\index{vpnoise@{vpnoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf vector} vpnoise (const mi\-Vector \& {\em a}, const mi\-Scalar {\em t}, const mi\-Vector \& {\em pa}, const mi\-Scalar {\em pt})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a111}
+
+
+mr\-Classes signed Noise returning a vector, 4 parameters 
+
+\index{rsl@{rsl}!vpnoise@{vpnoise}}
+\index{vpnoise@{vpnoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf vector} vpnoise (const mi\-Scalar {\em a}, const mi\-Scalar {\em b}, const mi\-Scalar {\em c}, const mi\-Scalar {\em d}, const mi\-Scalar {\em pa}, const mi\-Scalar {\em pb}, const mi\-Scalar {\em pc}, const mi\-Scalar {\em pd})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a110}
+
+
+mr\-Classes signed Noise returning a vector, 4 parameters 
+
+\index{rsl@{rsl}!vpnoise@{vpnoise}}
+\index{vpnoise@{vpnoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf vector} vpnoise (const mi\-Scalar {\em a}, const mi\-Scalar {\em b}, const mi\-Scalar {\em c}, const mi\-Scalar {\em pa}, const mi\-Scalar {\em pb}, const mi\-Scalar {\em pc})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a109}
+
+
+mr\-Classes signed Noise returning a vector, 3 parameters 
+
+\index{rsl@{rsl}!vpnoise@{vpnoise}}
+\index{vpnoise@{vpnoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf vector} vpnoise (const mi\-Vector \& {\em a}, const mi\-Vector \& {\em p})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a108}
+
+
+mr\-Classes signed Noise returning a vector, 3 parameters 
+
+\index{rsl@{rsl}!vpnoise@{vpnoise}}
+\index{vpnoise@{vpnoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf vector} vpnoise (const mi\-Scalar {\em u}, const mi\-Scalar {\em v}, const mi\-Scalar {\em pu}, const mi\-Scalar {\em pv})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a107}
+
+
+mr\-Classes signed Noise returning a vector, 2 parameters 
+
+\index{rsl@{rsl}!vpnoise@{vpnoise}}
+\index{vpnoise@{vpnoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf vector} vpnoise (const mi\-Vector2d \& {\em a}, const mi\-Vector2d \& {\em p})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a106}
+
+
+mr\-Classes signed Noise returning a vector, 2 parameters 
+
+\index{rsl@{rsl}!vpnoise@{vpnoise}}
+\index{vpnoise@{vpnoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf vector} vpnoise (const mi\-Scalar {\em a}, const mi\-Scalar {\em p})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a105}
+
+
+mr\-Classes signed Noise returning a vector, 1 parameter 
+
+\index{rsl@{rsl}!vrandom@{vrandom}}
+\index{vrandom@{vrandom}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf vector} vrandom ()\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a43}
+
+
+\index{rsl@{rsl}!vsnoise@{vsnoise}}
+\index{vsnoise@{vsnoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf vector} vsnoise (const mi\-Vector \& {\em a}, const mi\-Scalar {\em t})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a69}
+
+
+mr\-Classes signed Noise returning a vector, 4 parameters 
+
+\index{rsl@{rsl}!vsnoise@{vsnoise}}
+\index{vsnoise@{vsnoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf vector} vsnoise (const mi\-Scalar {\em a}, const mi\-Scalar {\em b}, const mi\-Scalar {\em c}, const mi\-Scalar {\em d})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a68}
+
+
+mr\-Classes signed Noise returning a vector, 4 parameters 
+
+\index{rsl@{rsl}!vsnoise@{vsnoise}}
+\index{vsnoise@{vsnoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf vector} vsnoise (const mi\-Scalar {\em a}, const mi\-Scalar {\em b}, const mi\-Scalar {\em c})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a67}
+
+
+mr\-Classes signed Noise returning a vector, 3 parameters 
+
+\index{rsl@{rsl}!vsnoise@{vsnoise}}
+\index{vsnoise@{vsnoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf vector} vsnoise (const mi\-Vector \& {\em a})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a66}
+
+
+mr\-Classes signed Noise returning a vector, 3 parameters 
+
+\index{rsl@{rsl}!vsnoise@{vsnoise}}
+\index{vsnoise@{vsnoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf vector} vsnoise (const mi\-Scalar {\em u}, const mi\-Scalar {\em v})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a65}
+
+
+mr\-Classes signed Noise returning a vector, 2 parameters 
+
+\index{rsl@{rsl}!vsnoise@{vsnoise}}
+\index{vsnoise@{vsnoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf vector} vsnoise (const mi\-Vector2d \& {\em a})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a64}
+
+
+mr\-Classes signed Noise returning a vector, 2 parameters 
+
+\index{rsl@{rsl}!vsnoise@{vsnoise}}
+\index{vsnoise@{vsnoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf vector} vsnoise (const mi\-Scalar {\em a})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a63}
+
+
+mr\-Classes signed Noise returning a vector, 1 parameter 
+
+\index{rsl@{rsl}!vspnoise@{vspnoise}}
+\index{vspnoise@{vspnoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf vector} vspnoise (const mi\-Vector \& {\em a}, const mi\-Scalar {\em t}, const mi\-Vector \& {\em pa}, const mi\-Scalar {\em pt})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a97}
+
+
+mr\-Classes signed Noise returning a vector, 4 parameters 
+
+\index{rsl@{rsl}!vspnoise@{vspnoise}}
+\index{vspnoise@{vspnoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf vector} vspnoise (const mi\-Scalar {\em a}, const mi\-Scalar {\em b}, const mi\-Scalar {\em c}, const mi\-Scalar {\em d}, const mi\-Scalar {\em pa}, const mi\-Scalar {\em pb}, const mi\-Scalar {\em pc}, const mi\-Scalar {\em pd})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a96}
+
+
+mr\-Classes signed Noise returning a vector, 4 parameters 
+
+\index{rsl@{rsl}!vspnoise@{vspnoise}}
+\index{vspnoise@{vspnoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf vector} vspnoise (const mi\-Scalar {\em a}, const mi\-Scalar {\em b}, const mi\-Scalar {\em c}, const mi\-Scalar {\em pa}, const mi\-Scalar {\em pb}, const mi\-Scalar {\em pc})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a95}
+
+
+mr\-Classes signed Noise returning a vector, 3 parameters 
+
+\index{rsl@{rsl}!vspnoise@{vspnoise}}
+\index{vspnoise@{vspnoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf vector} vspnoise (const mi\-Vector \& {\em a}, const mi\-Vector \& {\em p})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a94}
+
+
+mr\-Classes signed Noise returning a vector, 3 parameters 
+
+\index{rsl@{rsl}!vspnoise@{vspnoise}}
+\index{vspnoise@{vspnoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf vector} vspnoise (const mi\-Scalar {\em u}, const mi\-Scalar {\em v}, const mi\-Scalar {\em pu}, const mi\-Scalar {\em pv})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a93}
+
+
+mr\-Classes signed Noise returning a vector, 2 parameters 
+
+\index{rsl@{rsl}!vspnoise@{vspnoise}}
+\index{vspnoise@{vspnoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf vector} vspnoise (const mi\-Vector2d \& {\em a}, const mi\-Vector2d \& {\em p})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a92}
+
+
+mr\-Classes signed Noise returning a vector, 2 parameters 
+
+\index{rsl@{rsl}!vspnoise@{vspnoise}}
+\index{vspnoise@{vspnoise}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf vector} vspnoise (const mi\-Scalar {\em a}, const mi\-Scalar {\em p})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a91}
+
+
+mr\-Classes signed Noise returning a vector, 1 parameter 
+
+\index{rsl@{rsl}!vtransform@{vtransform}}
+\index{vtransform@{vtransform}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf vector} vtransform (const matrix \& {\em m}, const vector \& {\em Vin})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a145}
+
+
+\index{rsl@{rsl}!vtransform@{vtransform}}
+\index{vtransform@{vtransform}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf vector} vtransform (const mi\-Matrix \& {\em m}, const vector \& {\em Vin})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a144}
+
+
+\index{rsl@{rsl}!vtransform@{vtransform}}
+\index{vtransform@{vtransform}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf vector} vtransform (const mi\-State $\ast$const {\em state}, const space::type {\em to\-Space}, const vector \& {\em Vin})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a143}
+
+
+\index{rsl@{rsl}!vtransform@{vtransform}}
+\index{vtransform@{vtransform}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf vector} vtransform (const mi\-State $\ast$const {\em state}, const space::type {\em from\-Space}, const space::type {\em to\-Space}, const vector \& {\em Vin})\hspace{0.3cm}{\tt  [inline]}}\label{namespacersl_a142}
+
+
+
+
+\subsection{Variable Documentation}
+\index{rsl@{rsl}!_gridColors@{\_\-gridColors}}
+\index{_gridColors@{\_\-gridColors}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const mi\-Color {\bf rsl::\_\-grid\-Colors}[$\,$]\hspace{0.3cm}{\tt  [static]}}\label{namespacersl_a0}
+
+
+{\bf Initial value:}
+
+\footnotesize\begin{verbatim}
+{
+{ 0.1f, 0.1f, 0.9f, 1.0f },
+{ 0.9f, 0.9f, 0.1f, 1.0f },
+{ 0.9f, 0.1f, 0.1f, 1.0f },
+{ 0.1f, 0.9f, 0.9f, 1.0f },
+{ 0.1f, 0.9f, 0.1f, 1.0f },
+{ 0.9f, 0.9f, 0.9f, 1.0f },
+{ 0.9f, 0.1f, 0.9f, 1.0f },
+{ 0.1f, 0.5f, 0.9f, 1.0f }
+}
+\end{verbatim}\normalsize 
+\index{rsl@{rsl}!PI@{PI}}
+\index{PI@{PI}!rsl@{rsl}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const double {\bf rsl::PI} = M\_\-PI\hspace{0.3cm}{\tt  [static]}}\label{namespacersl_a1}
+
+

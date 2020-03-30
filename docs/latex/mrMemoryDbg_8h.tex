@@ -1,0 +1,53 @@
+\section{mr\-Memory\-Dbg.h File Reference}
+\label{mrMemoryDbg_8h}\index{mrMemoryDbg.h@{mrMemoryDbg.h}}
+{\tt \#include \char`\"{}mr\-Platform.h\char`\"{}}\par
+{\tt \#include $<$new$>$}\par
+{\tt \#include $<$stdio.h$>$}\par
+{\tt \#include \char`\"{}shader.h\char`\"{}}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void {\bf Start\_\-Memory\-Debug} ()
+\item 
+void {\bf End\_\-Memory\-Debug} ()
+\item 
+MR\_\-LIB\_\-EXPORT void {\bf \_\-dbg\_\-delete} (void $\ast$addr)
+\item 
+MR\_\-LIB\_\-EXPORT void $\ast$ {\bf \_\-dbg\_\-alloc} (size\_\-t size, const unsigned int line, const char $\ast$const file)
+\end{CompactItemize}
+\subsection*{Variables}
+\begin{CompactItemize}
+\item 
+MR\_\-LIB\_\-EXPORT mi\-Lock {\bf \_\-mem\-Alloc\-Lock}
+\end{CompactItemize}
+
+
+\subsection{Function Documentation}
+\index{mrMemoryDbg.h@{mr\-Memory\-Dbg.h}!_dbg_alloc@{\_\-dbg\_\-alloc}}
+\index{_dbg_alloc@{\_\-dbg\_\-alloc}!mrMemoryDbg.h@{mr\-Memory\-Dbg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MR\_\-LIB\_\-EXPORT void$\ast$ \_\-dbg\_\-alloc (size\_\-t {\em size}, const unsigned int {\em line}, const char $\ast$const {\em file})}\label{mrMemoryDbg_8h_a4}
+
+
+\index{mrMemoryDbg.h@{mr\-Memory\-Dbg.h}!_dbg_delete@{\_\-dbg\_\-delete}}
+\index{_dbg_delete@{\_\-dbg\_\-delete}!mrMemoryDbg.h@{mr\-Memory\-Dbg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MR\_\-LIB\_\-EXPORT void \_\-dbg\_\-delete (void $\ast$ {\em addr})}\label{mrMemoryDbg_8h_a3}
+
+
+\index{mrMemoryDbg.h@{mr\-Memory\-Dbg.h}!End_MemoryDebug@{End\_\-MemoryDebug}}
+\index{End_MemoryDebug@{End\_\-MemoryDebug}!mrMemoryDbg.h@{mr\-Memory\-Dbg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void End\_\-Memory\-Debug ()}\label{mrMemoryDbg_8h_a2}
+
+
+\index{mrMemoryDbg.h@{mr\-Memory\-Dbg.h}!Start_MemoryDebug@{Start\_\-MemoryDebug}}
+\index{Start_MemoryDebug@{Start\_\-MemoryDebug}!mrMemoryDbg.h@{mr\-Memory\-Dbg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void Start\_\-Memory\-Debug ()}\label{mrMemoryDbg_8h_a1}
+
+
+
+
+\subsection{Variable Documentation}
+\index{mrMemoryDbg.h@{mr\-Memory\-Dbg.h}!_memAllocLock@{\_\-memAllocLock}}
+\index{_memAllocLock@{\_\-memAllocLock}!mrMemoryDbg.h@{mr\-Memory\-Dbg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MR\_\-LIB\_\-EXPORT mi\-Lock {\bf \_\-mem\-Alloc\-Lock}}\label{mrMemoryDbg_8h_a0}
+
+

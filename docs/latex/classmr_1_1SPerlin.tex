@@ -1,0 +1,225 @@
+\section{mr::SPerlin Class Reference}
+\label{classmr_1_1SPerlin}\index{mr::SPerlin@{mr::SPerlin}}
+Perlin Class returning a mi\-Scalar.  
+
+
+{\tt \#include $<$mr\-Perlin.h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{CompactItemize}
+\item 
+mi\-Scalar {\bf snoise} (mi\-Scalar x)
+\item 
+mi\-Scalar {\bf snoise} (mi\-Scalar x, mi\-Scalar y)
+\item 
+mi\-Scalar {\bf snoise} (mi\-Scalar x, mi\-Scalar y, mi\-Scalar z)
+\item 
+mi\-Scalar {\bf snoise} (mi\-Scalar x, mi\-Scalar y, mi\-Scalar z, mi\-Scalar t)
+\item 
+mi\-Scalar {\bf snoise} (const {\bf vector2d} \&P)
+\item 
+mi\-Scalar {\bf snoise} (const {\bf point} \&P)
+\item 
+mi\-Scalar {\bf snoise} (const {\bf point} \&P, const mi\-Scalar t)
+\item 
+mi\-Scalar {\bf noise} (const mi\-Scalar x)
+\item 
+mi\-Scalar {\bf noise} (const mi\-Scalar x, const mi\-Scalar y)
+\item 
+mi\-Scalar {\bf noise} (const mi\-Scalar x, const mi\-Scalar y, const mi\-Scalar z)
+\item 
+mi\-Scalar {\bf noise} (const mi\-Scalar x, const mi\-Scalar y, const mi\-Scalar z, const mi\-Scalar t)
+\item 
+mi\-Scalar {\bf noise} (const {\bf vector2d} \&P)
+\item 
+mi\-Scalar {\bf noise} (const {\bf point} \&P)
+\item 
+mi\-Scalar {\bf noise} (const {\bf point} \&P, const mi\-Scalar t)
+\item 
+mi\-Scalar {\bf pnoise} (const mi\-Scalar xi, const mi\-Scalar period)
+\item 
+mi\-Scalar {\bf pnoise} (const mi\-Scalar xi, const mi\-Scalar yi, const mi\-Scalar w, const mi\-Scalar h)
+\item 
+mi\-Scalar {\bf pnoise} (const mi\-Scalar xi, const mi\-Scalar yi, const mi\-Scalar zi, const mi\-Scalar w, const mi\-Scalar h, const mi\-Scalar d)
+\item 
+mi\-Scalar {\bf pnoise} (const mi\-Scalar xi, const mi\-Scalar yi, const mi\-Scalar zi, const mi\-Scalar ti, const mi\-Scalar w, const mi\-Scalar h, const mi\-Scalar d, const mi\-Scalar p)
+\item 
+mi\-Scalar {\bf pnoise} (const {\bf vector2d} \&P, const {\bf vector2d} \&period)
+\item 
+mi\-Scalar {\bf pnoise} (const {\bf point} \&P, const {\bf vector} \&period)
+\item 
+mi\-Scalar {\bf pnoise} (const {\bf point} \&P, const mi\-Scalar t, const {\bf vector} \&Pperiod, const mi\-Scalar tperiod)
+\item 
+mi\-Scalar {\bf spnoise} (const mi\-Scalar xi, const mi\-Scalar period)
+\item 
+mi\-Scalar {\bf spnoise} (const mi\-Scalar xi, const mi\-Scalar yi, const mi\-Scalar w, const mi\-Scalar h)
+\item 
+mi\-Scalar {\bf spnoise} (const mi\-Scalar xi, const mi\-Scalar yi, const mi\-Scalar zi, const mi\-Scalar w, const mi\-Scalar h, const mi\-Scalar d)
+\item 
+mi\-Scalar {\bf spnoise} (const mi\-Scalar xi, const mi\-Scalar yi, const mi\-Scalar zi, const mi\-Scalar ti, const mi\-Scalar w, const mi\-Scalar h, const mi\-Scalar d, const mi\-Scalar p)
+\item 
+mi\-Scalar {\bf spnoise} (const {\bf vector2d} \&P, const {\bf vector2d} \&period)
+\item 
+mi\-Scalar {\bf spnoise} (const {\bf point} \&P, const {\bf vector} \&period)
+\item 
+mi\-Scalar {\bf spnoise} (const {\bf point} \&P, const mi\-Scalar t, const {\bf vector} \&Pperiod, const mi\-Scalar tperiod)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Perlin Class returning a mi\-Scalar. 
+
+\begin{Desc}
+\item[{\bf Todo}]: rewrite {\bf snoise( 4 channels)}{\rm (p.\,\pageref{mrRman__notes_8h_a14})} as the indexes are wrong and so is the gradient. 
+
+: Make noise functions that return the gradient?\end{Desc}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{mr::SPerlin@{mr::SPerlin}!noise@{noise}}
+\index{noise@{noise}!mr::SPerlin@{mr::SPerlin}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar mr::SPerlin::noise (const {\bf point} \& {\em P}, const mi\-Scalar {\em t})\hspace{0.3cm}{\tt  [inline, static]}}\label{classmr_1_1SPerlin_e13}
+
+
+\index{mr::SPerlin@{mr::SPerlin}!noise@{noise}}
+\index{noise@{noise}!mr::SPerlin@{mr::SPerlin}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar mr::SPerlin::noise (const {\bf point} \& {\em P})\hspace{0.3cm}{\tt  [inline, static]}}\label{classmr_1_1SPerlin_e12}
+
+
+\index{mr::SPerlin@{mr::SPerlin}!noise@{noise}}
+\index{noise@{noise}!mr::SPerlin@{mr::SPerlin}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar mr::SPerlin::noise (const {\bf vector2d} \& {\em P})\hspace{0.3cm}{\tt  [inline, static]}}\label{classmr_1_1SPerlin_e11}
+
+
+\index{mr::SPerlin@{mr::SPerlin}!noise@{noise}}
+\index{noise@{noise}!mr::SPerlin@{mr::SPerlin}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar mr::SPerlin::noise (const mi\-Scalar {\em x}, const mi\-Scalar {\em y}, const mi\-Scalar {\em z}, const mi\-Scalar {\em t})\hspace{0.3cm}{\tt  [inline, static]}}\label{classmr_1_1SPerlin_e10}
+
+
+\index{mr::SPerlin@{mr::SPerlin}!noise@{noise}}
+\index{noise@{noise}!mr::SPerlin@{mr::SPerlin}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar mr::SPerlin::noise (const mi\-Scalar {\em x}, const mi\-Scalar {\em y}, const mi\-Scalar {\em z})\hspace{0.3cm}{\tt  [inline, static]}}\label{classmr_1_1SPerlin_e9}
+
+
+\index{mr::SPerlin@{mr::SPerlin}!noise@{noise}}
+\index{noise@{noise}!mr::SPerlin@{mr::SPerlin}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar mr::SPerlin::noise (const mi\-Scalar {\em x}, const mi\-Scalar {\em y})\hspace{0.3cm}{\tt  [inline, static]}}\label{classmr_1_1SPerlin_e8}
+
+
+\index{mr::SPerlin@{mr::SPerlin}!noise@{noise}}
+\index{noise@{noise}!mr::SPerlin@{mr::SPerlin}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar mr::SPerlin::noise (const mi\-Scalar {\em x})\hspace{0.3cm}{\tt  [inline, static]}}\label{classmr_1_1SPerlin_e7}
+
+
+\index{mr::SPerlin@{mr::SPerlin}!pnoise@{pnoise}}
+\index{pnoise@{pnoise}!mr::SPerlin@{mr::SPerlin}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar mr::SPerlin::pnoise (const {\bf point} \& {\em P}, const mi\-Scalar {\em t}, const {\bf vector} \& {\em Pperiod}, const mi\-Scalar {\em tperiod})\hspace{0.3cm}{\tt  [inline, static]}}\label{classmr_1_1SPerlin_e20}
+
+
+\index{mr::SPerlin@{mr::SPerlin}!pnoise@{pnoise}}
+\index{pnoise@{pnoise}!mr::SPerlin@{mr::SPerlin}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar mr::SPerlin::pnoise (const {\bf point} \& {\em P}, const {\bf vector} \& {\em period})\hspace{0.3cm}{\tt  [inline, static]}}\label{classmr_1_1SPerlin_e19}
+
+
+\index{mr::SPerlin@{mr::SPerlin}!pnoise@{pnoise}}
+\index{pnoise@{pnoise}!mr::SPerlin@{mr::SPerlin}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar mr::SPerlin::pnoise (const {\bf vector2d} \& {\em P}, const {\bf vector2d} \& {\em period})\hspace{0.3cm}{\tt  [inline, static]}}\label{classmr_1_1SPerlin_e18}
+
+
+\index{mr::SPerlin@{mr::SPerlin}!pnoise@{pnoise}}
+\index{pnoise@{pnoise}!mr::SPerlin@{mr::SPerlin}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar mr::SPerlin::pnoise (const mi\-Scalar {\em xi}, const mi\-Scalar {\em yi}, const mi\-Scalar {\em zi}, const mi\-Scalar {\em ti}, const mi\-Scalar {\em w}, const mi\-Scalar {\em h}, const mi\-Scalar {\em d}, const mi\-Scalar {\em p})\hspace{0.3cm}{\tt  [inline, static]}}\label{classmr_1_1SPerlin_e17}
+
+
+\index{mr::SPerlin@{mr::SPerlin}!pnoise@{pnoise}}
+\index{pnoise@{pnoise}!mr::SPerlin@{mr::SPerlin}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar mr::SPerlin::pnoise (const mi\-Scalar {\em xi}, const mi\-Scalar {\em yi}, const mi\-Scalar {\em zi}, const mi\-Scalar {\em w}, const mi\-Scalar {\em h}, const mi\-Scalar {\em d})\hspace{0.3cm}{\tt  [inline, static]}}\label{classmr_1_1SPerlin_e16}
+
+
+\index{mr::SPerlin@{mr::SPerlin}!pnoise@{pnoise}}
+\index{pnoise@{pnoise}!mr::SPerlin@{mr::SPerlin}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar mr::SPerlin::pnoise (const mi\-Scalar {\em xi}, const mi\-Scalar {\em yi}, const mi\-Scalar {\em w}, const mi\-Scalar {\em h})\hspace{0.3cm}{\tt  [inline, static]}}\label{classmr_1_1SPerlin_e15}
+
+
+\index{mr::SPerlin@{mr::SPerlin}!pnoise@{pnoise}}
+\index{pnoise@{pnoise}!mr::SPerlin@{mr::SPerlin}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar mr::SPerlin::pnoise (const mi\-Scalar {\em xi}, const mi\-Scalar {\em period})\hspace{0.3cm}{\tt  [inline, static]}}\label{classmr_1_1SPerlin_e14}
+
+
+\index{mr::SPerlin@{mr::SPerlin}!snoise@{snoise}}
+\index{snoise@{snoise}!mr::SPerlin@{mr::SPerlin}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar mr::SPerlin::snoise (const {\bf point} \& {\em P}, const mi\-Scalar {\em t})\hspace{0.3cm}{\tt  [inline, static]}}\label{classmr_1_1SPerlin_e6}
+
+
+\index{mr::SPerlin@{mr::SPerlin}!snoise@{snoise}}
+\index{snoise@{snoise}!mr::SPerlin@{mr::SPerlin}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar mr::SPerlin::snoise (const {\bf point} \& {\em P})\hspace{0.3cm}{\tt  [inline, static]}}\label{classmr_1_1SPerlin_e5}
+
+
+\index{mr::SPerlin@{mr::SPerlin}!snoise@{snoise}}
+\index{snoise@{snoise}!mr::SPerlin@{mr::SPerlin}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar mr::SPerlin::snoise (const {\bf vector2d} \& {\em P})\hspace{0.3cm}{\tt  [inline, static]}}\label{classmr_1_1SPerlin_e4}
+
+
+\index{mr::SPerlin@{mr::SPerlin}!snoise@{snoise}}
+\index{snoise@{snoise}!mr::SPerlin@{mr::SPerlin}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar mr::SPerlin::snoise (mi\-Scalar {\em x}, mi\-Scalar {\em y}, mi\-Scalar {\em z}, mi\-Scalar {\em t})\hspace{0.3cm}{\tt  [inline, static]}}\label{classmr_1_1SPerlin_e3}
+
+
+\index{mr::SPerlin@{mr::SPerlin}!snoise@{snoise}}
+\index{snoise@{snoise}!mr::SPerlin@{mr::SPerlin}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar mr::SPerlin::snoise (mi\-Scalar {\em x}, mi\-Scalar {\em y}, mi\-Scalar {\em z})\hspace{0.3cm}{\tt  [inline, static]}}\label{classmr_1_1SPerlin_e2}
+
+
+\index{mr::SPerlin@{mr::SPerlin}!snoise@{snoise}}
+\index{snoise@{snoise}!mr::SPerlin@{mr::SPerlin}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar mr::SPerlin::snoise (mi\-Scalar {\em x}, mi\-Scalar {\em y})\hspace{0.3cm}{\tt  [inline, static]}}\label{classmr_1_1SPerlin_e1}
+
+
+\index{mr::SPerlin@{mr::SPerlin}!snoise@{snoise}}
+\index{snoise@{snoise}!mr::SPerlin@{mr::SPerlin}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar mr::SPerlin::snoise (mi\-Scalar {\em x})\hspace{0.3cm}{\tt  [inline, static]}}\label{classmr_1_1SPerlin_e0}
+
+
+\index{mr::SPerlin@{mr::SPerlin}!spnoise@{spnoise}}
+\index{spnoise@{spnoise}!mr::SPerlin@{mr::SPerlin}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar mr::SPerlin::spnoise (const {\bf point} \& {\em P}, const mi\-Scalar {\em t}, const {\bf vector} \& {\em Pperiod}, const mi\-Scalar {\em tperiod})\hspace{0.3cm}{\tt  [inline, static]}}\label{classmr_1_1SPerlin_e27}
+
+
+\index{mr::SPerlin@{mr::SPerlin}!spnoise@{spnoise}}
+\index{spnoise@{spnoise}!mr::SPerlin@{mr::SPerlin}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar mr::SPerlin::spnoise (const {\bf point} \& {\em P}, const {\bf vector} \& {\em period})\hspace{0.3cm}{\tt  [inline, static]}}\label{classmr_1_1SPerlin_e26}
+
+
+\index{mr::SPerlin@{mr::SPerlin}!spnoise@{spnoise}}
+\index{spnoise@{spnoise}!mr::SPerlin@{mr::SPerlin}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar mr::SPerlin::spnoise (const {\bf vector2d} \& {\em P}, const {\bf vector2d} \& {\em period})\hspace{0.3cm}{\tt  [inline, static]}}\label{classmr_1_1SPerlin_e25}
+
+
+\index{mr::SPerlin@{mr::SPerlin}!spnoise@{spnoise}}
+\index{spnoise@{spnoise}!mr::SPerlin@{mr::SPerlin}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar mr::SPerlin::spnoise (const mi\-Scalar {\em xi}, const mi\-Scalar {\em yi}, const mi\-Scalar {\em zi}, const mi\-Scalar {\em ti}, const mi\-Scalar {\em w}, const mi\-Scalar {\em h}, const mi\-Scalar {\em d}, const mi\-Scalar {\em p})\hspace{0.3cm}{\tt  [inline, static]}}\label{classmr_1_1SPerlin_e24}
+
+
+\index{mr::SPerlin@{mr::SPerlin}!spnoise@{spnoise}}
+\index{spnoise@{spnoise}!mr::SPerlin@{mr::SPerlin}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar mr::SPerlin::spnoise (const mi\-Scalar {\em xi}, const mi\-Scalar {\em yi}, const mi\-Scalar {\em zi}, const mi\-Scalar {\em w}, const mi\-Scalar {\em h}, const mi\-Scalar {\em d})\hspace{0.3cm}{\tt  [inline, static]}}\label{classmr_1_1SPerlin_e23}
+
+
+\index{mr::SPerlin@{mr::SPerlin}!spnoise@{spnoise}}
+\index{spnoise@{spnoise}!mr::SPerlin@{mr::SPerlin}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar mr::SPerlin::spnoise (const mi\-Scalar {\em xi}, const mi\-Scalar {\em yi}, const mi\-Scalar {\em w}, const mi\-Scalar {\em h})\hspace{0.3cm}{\tt  [inline, static]}}\label{classmr_1_1SPerlin_e22}
+
+
+\index{mr::SPerlin@{mr::SPerlin}!spnoise@{spnoise}}
+\index{spnoise@{spnoise}!mr::SPerlin@{mr::SPerlin}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar mr::SPerlin::spnoise (const mi\-Scalar {\em xi}, const mi\-Scalar {\em period})\hspace{0.3cm}{\tt  [inline, static]}}\label{classmr_1_1SPerlin_e21}
+
+
+
+
+The documentation for this class was generated from the following file:\begin{CompactItemize}
+\item 
+{\bf mr\-Perlin.h}\end{CompactItemize}

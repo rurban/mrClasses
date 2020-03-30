@@ -1,0 +1,17 @@
+
+#
+# Simple shader to save out ALL buffers if present
+# (depth, normal, tag, coverage, motion, user0-7, etc)
+#
+declare shader
+	color 				#: shortname "oc"
+	"gg_buffers"
+	(
+		string "filename"       #: shortname "f"
+	)
+	#:
+	#: nodeid 3018
+	#:
+	apply output
+	version 1
+end declare

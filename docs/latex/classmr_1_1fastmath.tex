@@ -1,0 +1,124 @@
+\section{mr::fastmath$<$ T $>$ Class Template Reference}
+\label{classmr_1_1fastmath}\index{mr::fastmath@{mr::fastmath}}
+Encapsulates fast math tables / functions.  
+
+
+{\tt \#include $<$mr\-Fast\-Math.h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{CompactItemize}
+\item 
+T {\bf sin0} (const T x)
+\item 
+T {\bf sin1} (const T x)
+\item 
+T {\bf cos0} (const T x)
+\item 
+T {\bf cos1} (const T x)
+\item 
+T {\bf tan0} (const T x)
+\item 
+T {\bf tan1} (const T x)
+\item 
+T {\bf asin} (const T x)
+\item 
+T {\bf acos} (const T x)
+\item 
+T {\bf atan0} (const T x)
+\item 
+T {\bf atan1} (const T x)
+\item 
+T {\bf invsqrt} (T x)
+\begin{CompactList}\small\item\em A fast approximation to 1/sqrt. \item\end{CompactList}\item 
+int {\bf floor} (T x)
+\begin{CompactList}\small\item\em A fast and quite accurate approximation to floor(x) or int(float). \item\end{CompactList}\item 
+int {\bf ceil} (T x)
+\begin{CompactList}\small\item\em A fast and quite accurate approximation to ceil(x). \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T$>$ class mr::fastmath$<$ T $>$}
+
+Encapsulates fast math tables / functions. 
+
+
+
+\subsection{Member Function Documentation}
+\index{mr::fastmath@{mr::fastmath}!acos@{acos}}
+\index{acos@{acos}!mr::fastmath@{mr::fastmath}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T {\bf mr::fastmath}$<$ T $>$::acos (const T {\em x})\hspace{0.3cm}{\tt  [inline, static]}}\label{classmr_1_1fastmath_e7}
+
+
+Fast evaluation of acos(value) by a sqrt times a polynomial. The value must be in [0,1]. The maximum absolute error is about 6.8e-05 and the speed up is about 2.5. \index{mr::fastmath@{mr::fastmath}!asin@{asin}}
+\index{asin@{asin}!mr::fastmath@{mr::fastmath}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T {\bf mr::fastmath}$<$ T $>$::asin (const T {\em x})\hspace{0.3cm}{\tt  [inline, static]}}\label{classmr_1_1fastmath_e6}
+
+
+Fast evaluation of asin(value) by a sqrt times a polynomial. The value must be in [0,1]. The maximum absolute error is about 6.8e-05 and the speed up is about 2.5. \index{mr::fastmath@{mr::fastmath}!atan0@{atan0}}
+\index{atan0@{atan0}!mr::fastmath@{mr::fastmath}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T {\bf mr::fastmath}$<$ T $>$::atan0 (const T {\em x})\hspace{0.3cm}{\tt  [inline, static]}}\label{classmr_1_1fastmath_e8}
+
+
+Fast evaluation of atan(value) by polynomial approximations. The value must be in [-1,1]. The maximum absolute error is about 1.2e-05 when templated as doubles. The speed up is about 2.2. \index{mr::fastmath@{mr::fastmath}!atan1@{atan1}}
+\index{atan1@{atan1}!mr::fastmath@{mr::fastmath}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T {\bf mr::fastmath}$<$ T $>$::atan1 (const T {\em x})\hspace{0.3cm}{\tt  [inline, static]}}\label{classmr_1_1fastmath_e9}
+
+
+Fast evaluation of atan(value) by polynomial approximations. The value must be in [-1,1]. The maximum absolute error is about 1.43-08 when templated as doubles. The speed up is about 1.5. \index{mr::fastmath@{mr::fastmath}!ceil@{ceil}}
+\index{ceil@{ceil}!mr::fastmath@{mr::fastmath}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ int {\bf mr::fastmath}$<$ T $>$::ceil (T {\em x})\hspace{0.3cm}{\tt  [inline, static]}}\label{classmr_1_1fastmath_e12}
+
+
+A fast and quite accurate approximation to ceil(x). 
+
+\index{mr::fastmath@{mr::fastmath}!cos0@{cos0}}
+\index{cos0@{cos0}!mr::fastmath@{mr::fastmath}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T {\bf mr::fastmath}$<$ T $>$::cos0 (const T {\em x})\hspace{0.3cm}{\tt  [inline, static]}}\label{classmr_1_1fastmath_e2}
+
+
+Fast evaluation of cos(angle) by polynomial approximations. The angle must be in [0,pi/2]. The maximum absolute error is about 1.2e-03 and the speed up is about 2 when templated as doubles. \index{mr::fastmath@{mr::fastmath}!cos1@{cos1}}
+\index{cos1@{cos1}!mr::fastmath@{mr::fastmath}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T {\bf mr::fastmath}$<$ T $>$::cos1 (const T {\em x})\hspace{0.3cm}{\tt  [inline, static]}}\label{classmr_1_1fastmath_e3}
+
+
+Fast evaluation of cos(angle) by polynomial approximations. The angle must be in [0,pi/2]. The maximum absolute error is about 2.3e-09 and the speed up is about 1.5 when templated as doubles. \index{mr::fastmath@{mr::fastmath}!floor@{floor}}
+\index{floor@{floor}!mr::fastmath@{mr::fastmath}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ int {\bf mr::fastmath}$<$ T $>$::floor (T {\em x})\hspace{0.3cm}{\tt  [inline, static]}}\label{classmr_1_1fastmath_e11}
+
+
+A fast and quite accurate approximation to floor(x) or int(float). 
+
+\index{mr::fastmath@{mr::fastmath}!invsqrt@{invsqrt}}
+\index{invsqrt@{invsqrt}!mr::fastmath@{mr::fastmath}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T {\bf mr::fastmath}$<$ T $>$::invsqrt (T {\em x})\hspace{0.3cm}{\tt  [inline, static]}}\label{classmr_1_1fastmath_e10}
+
+
+A fast approximation to 1/sqrt. 
+
+This {\bf invsqrt()}{\rm (p.\,\pageref{classmr_1_1fastmath_e10})} is attributed to Quake. It was published in comp.graphics.algorithms and now David Eberly keeps a copy in his Magic-Software web site.
+
+Comparing it to the Apple {\bf invsqrt()}{\rm (p.\,\pageref{classmr_1_1fastmath_e10})} and those from Gems, I found this one to be a tad faster, and use no memory. Input; x $>$ 0. Else routine does not work. This routine should be 10 to 20 times faster than using 1.0/sqrt(x). See Dave Eberly's notes at www.magic-software.com \index{mr::fastmath@{mr::fastmath}!sin0@{sin0}}
+\index{sin0@{sin0}!mr::fastmath@{mr::fastmath}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T {\bf mr::fastmath}$<$ T $>$::sin0 (const T {\em x})\hspace{0.3cm}{\tt  [inline, static]}}\label{classmr_1_1fastmath_e0}
+
+
+Fast evaluation of sin(angle) by polynomial approximations. The angle must be in [0,pi/2]. The maximum absolute error is about 1.7e-04 and speed up is about 2 when templated as doubles. \index{mr::fastmath@{mr::fastmath}!sin1@{sin1}}
+\index{sin1@{sin1}!mr::fastmath@{mr::fastmath}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T {\bf mr::fastmath}$<$ T $>$::sin1 (const T {\em x})\hspace{0.3cm}{\tt  [inline, static]}}\label{classmr_1_1fastmath_e1}
+
+
+Fast evaluation of sin(angle) by polynomial approximations. The angle must be in [0,pi/2]. The maximum absolute error is about 2.3e-09 and speed up is about 1.5 when templated as doubles. \index{mr::fastmath@{mr::fastmath}!tan0@{tan0}}
+\index{tan0@{tan0}!mr::fastmath@{mr::fastmath}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T {\bf mr::fastmath}$<$ T $>$::tan0 (const T {\em x})\hspace{0.3cm}{\tt  [inline, static]}}\label{classmr_1_1fastmath_e4}
+
+
+Fast evaluation of tan(angle) by polynomial approximations. The angle must be in [0,pi/4]. The maximum absolute error is about 8.1e-04 for when templated as doubles. The speed up is about 2.5. \index{mr::fastmath@{mr::fastmath}!tan1@{tan1}}
+\index{tan1@{tan1}!mr::fastmath@{mr::fastmath}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T {\bf mr::fastmath}$<$ T $>$::tan1 (const T {\em x})\hspace{0.3cm}{\tt  [inline, static]}}\label{classmr_1_1fastmath_e5}
+
+
+Fast evaluation of tan(angle) by polynomial approximations. The angle must be in [0,pi/4]. The maximum absolute error is about 1.9e-08 for tan1 when templated as doubles and The speed up is about 1.75. 
+
+The documentation for this class was generated from the following file:\begin{CompactItemize}
+\item 
+{\bf mr\-Fast\-Math.h}\end{CompactItemize}

@@ -1,0 +1,383 @@
+\section{mr::normal\_\-base$<$ C, T $>$ Struct Template Reference}
+\label{structmr_1_1normal__base}\index{mr::normal_base@{mr::normal\_\-base}}
+{\tt \#include $<$mr\-Vector.h$>$}
+
+Inheritance diagram for mr::normal\_\-base$<$ C, T $>$::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{structmr_1_1normal__base}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{CompactItemize}
+\item 
+typedef {\bf normal\_\-base}$<$ C, T $>$ {\bf self}
+\end{CompactItemize}
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+void {\bf to\-Tangent} (const mi\-State $\ast$const state, const int idx=0)
+\item 
+void {\bf to\-Object} (const mi\-State $\ast$const state)
+\item 
+void {\bf to\-World} (const mi\-State $\ast$const state)
+\item 
+void {\bf to\-Camera} (const mi\-State $\ast$const state)
+\item 
+void {\bf to\-Raster} (const mi\-State $\ast$const state)
+\item 
+void {\bf to\-NDC} (const mi\-State $\ast$const state)
+\item 
+void {\bf to\-Light} (const mi\-State $\ast$const state)
+\item 
+void {\bf from\-Tangent} (const mi\-State $\ast$const state, const int idx=0)
+\item 
+void {\bf from\-Object} (const mi\-State $\ast$const state)
+\item 
+void {\bf from\-World} (const mi\-State $\ast$const state)
+\item 
+void {\bf from\-Camera} (const mi\-State $\ast$const state)
+\item 
+void {\bf from\-Light} (const mi\-State $\ast$const state)
+\item 
+void {\bf to} (const mi\-State $\ast$const state, const {\bf space::type} to\-Space)
+\item 
+void {\bf from} (const mi\-State $\ast$const state, const {\bf space::type} from\-Space)
+\item 
+void {\bf transform} (const mi\-State $\ast$const state, const {\bf space::type} from\-Space, const {\bf space::type} to\-Space)
+\item 
+{\bf self} {\bf inverse} () const 
+\item 
+{\bf self} {\bf operator-} () const 
+\item 
+{\bf self} {\bf normalized} () const 
+\item 
+{\bf self} {\bf normalized\-Fast} () const 
+\item 
+{\bf self} {\bf operator $\ast$} (const mi\-Matrix m) const 
+\item 
+{\bf self} {\bf operator $\ast$} (const {\bf matrix} \&m) const 
+\end{CompactItemize}
+\begin{Indent}{\bf Constructors}\par
+\begin{CompactItemize}
+\item 
+{\bf normal\_\-base} ({\bf k\-No\-Construct})
+\item 
+{\bf normal\_\-base} ()
+\item 
+{\bf normal\_\-base} (const C \&b)
+\item 
+{\bf normal\_\-base} (const T b)
+\item 
+template$<$class X, class Y, class Oper$>$ {\bf normal\_\-base} (const {\bf base::exp}$<$ X, Y, Oper $>$ \&e)
+\item 
+{\bf normal\_\-base} (const T xx, const T yy=0.0f, const T zz=0.0f)
+\item 
+{\bf normal\_\-base} (const mi\-State $\ast$const state, const {\bf space::type} from\-Space, const T xx, const T yy, const T zz)
+\item 
+{\bf normal\_\-base} (const mi\-State $\ast$const state, const {\bf space::type} from\-Space, const C \&v)
+\end{CompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Copy Constructor}\par
+\begin{CompactItemize}
+\item 
+{\bf normal\_\-base} (const {\bf self} \&b)
+\end{CompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Assignment}\par
+\begin{CompactItemize}
+\item 
+template$<$class X, class Y, class Oper$>$ const {\bf self} \& {\bf operator=} (const {\bf base::exp}$<$ X, Y, Oper $>$ \&e)
+\begin{CompactList}\small\item\em Handle assignment when we deal with a chained operation. \item\end{CompactList}\item 
+const {\bf self} \& {\bf operator=} (const {\bf self} \&b)
+\begin{CompactList}\small\item\em Assignment of similar object. \item\end{CompactList}\item 
+const {\bf self} \& {\bf operator=} (const C \&b)
+\begin{CompactList}\small\item\em Assignemnt of base class object. \item\end{CompactList}\item 
+const {\bf self} \& {\bf operator=} (const T b)
+\begin{CompactList}\small\item\em Assignment of base type. \item\end{CompactList}\end{CompactItemize}
+\end{Indent}
+\begin{Indent}{\bf REFERENCE OPERATORS (MODIFY IN PLACE)}\par
+\begin{CompactItemize}
+\item 
+const {\bf self} \& {\bf operator $\ast$=} (const T b)
+\item 
+const {\bf self} \& {\bf operator $\ast$=} (const C \&b)
+\item 
+const {\bf self} \& {\bf operator $\ast$=} (const mi\-Matrix a)
+\item 
+const {\bf self} \& {\bf operator $\ast$=} (const {\bf matrix} \&m)
+\end{CompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Cross product}\par
+\begin{CompactItemize}
+\item 
+template$<$class X, class Y, class Oper$>$ const {\bf self} \& {\bf operator$^\wedge$=} (const {\bf base::exp}$<$ X, Y, Oper $>$ \&b)
+\item 
+const {\bf self} \& {\bf operator$^\wedge$=} (const mi\-Vector \&b)
+\item 
+template$<$typename X$>$ const {\bf self} \& {\bf cross} (const X \&b)
+\item 
+template$<$class X, class Y, class Oper$>$ {\bf self} {\bf operator$^\wedge$} (const {\bf base::exp}$<$ X, Y, Oper $>$ \&b) const 
+\item 
+{\bf self} {\bf operator$^\wedge$} (const mi\-Vector \&b) const 
+\end{CompactItemize}
+\end{Indent}
+\subsubsection*{template$<$class C, typename T$>$ struct mr::normal\_\-base$<$ C, T $>$}
+
+
+
+\subsection{Member Typedef Documentation}
+\index{mr::normal_base@{mr::normal\_\-base}!self@{self}}
+\index{self@{self}!mr::normal_base@{mr::normal\_\-base}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class C, typename T$>$ typedef {\bf normal\_\-base}$<$ C, T $>$ {\bf mr::normal\_\-base}$<$ C, T $>$::{\bf self}}\label{structmr_1_1normal__base_w0}
+
+
+
+
+Reimplemented from {\bf mr::vecnorm$<$ C, T $>$} {\rm (p.\,\pageref{structmr_1_1vecnorm_w0})}.
+
+\subsection{Constructor \& Destructor Documentation}
+\index{mr::normal_base@{mr::normal\_\-base}!normal_base@{normal\_\-base}}
+\index{normal_base@{normal\_\-base}!mr::normal_base@{mr::normal\_\-base}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class C, typename T$>$ {\bf mr::normal\_\-base}$<$ C, T $>$::{\bf normal\_\-base} ({\bf k\-No\-Construct})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1normal__base_z66_0}
+
+
+\index{mr::normal_base@{mr::normal\_\-base}!normal_base@{normal\_\-base}}
+\index{normal_base@{normal\_\-base}!mr::normal_base@{mr::normal\_\-base}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class C, typename T$>$ {\bf mr::normal\_\-base}$<$ C, T $>$::{\bf normal\_\-base} ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1normal__base_z66_1}
+
+
+\index{mr::normal_base@{mr::normal\_\-base}!normal_base@{normal\_\-base}}
+\index{normal_base@{normal\_\-base}!mr::normal_base@{mr::normal\_\-base}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class C, typename T$>$ {\bf mr::normal\_\-base}$<$ C, T $>$::{\bf normal\_\-base} (const C \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1normal__base_z66_2}
+
+
+\index{mr::normal_base@{mr::normal\_\-base}!normal_base@{normal\_\-base}}
+\index{normal_base@{normal\_\-base}!mr::normal_base@{mr::normal\_\-base}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class C, typename T$>$ {\bf mr::normal\_\-base}$<$ C, T $>$::{\bf normal\_\-base} (const T {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1normal__base_z66_3}
+
+
+\index{mr::normal_base@{mr::normal\_\-base}!normal_base@{normal\_\-base}}
+\index{normal_base@{normal\_\-base}!mr::normal_base@{mr::normal\_\-base}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class C, typename T$>$ template$<$class X, class Y, class Oper$>$ {\bf mr::normal\_\-base}$<$ C, T $>$::{\bf normal\_\-base} (const {\bf base::exp}$<$ X, Y, Oper $>$ \& {\em e})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1normal__base_z66_4}
+
+
+\index{mr::normal_base@{mr::normal\_\-base}!normal_base@{normal\_\-base}}
+\index{normal_base@{normal\_\-base}!mr::normal_base@{mr::normal\_\-base}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class C, typename T$>$ {\bf mr::normal\_\-base}$<$ C, T $>$::{\bf normal\_\-base} (const T {\em xx}, const T {\em yy} = 0.0f, const T {\em zz} = 0.0f)\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1normal__base_z66_5}
+
+
+\index{mr::normal_base@{mr::normal\_\-base}!normal_base@{normal\_\-base}}
+\index{normal_base@{normal\_\-base}!mr::normal_base@{mr::normal\_\-base}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class C, typename T$>$ {\bf mr::normal\_\-base}$<$ C, T $>$::{\bf normal\_\-base} (const mi\-State $\ast$const {\em state}, const {\bf space::type} {\em from\-Space}, const T {\em xx}, const T {\em yy}, const T {\em zz})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1normal__base_z66_6}
+
+
+\index{mr::normal_base@{mr::normal\_\-base}!normal_base@{normal\_\-base}}
+\index{normal_base@{normal\_\-base}!mr::normal_base@{mr::normal\_\-base}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class C, typename T$>$ {\bf mr::normal\_\-base}$<$ C, T $>$::{\bf normal\_\-base} (const mi\-State $\ast$const {\em state}, const {\bf space::type} {\em from\-Space}, const C \& {\em v})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1normal__base_z66_7}
+
+
+\index{mr::normal_base@{mr::normal\_\-base}!normal_base@{normal\_\-base}}
+\index{normal_base@{normal\_\-base}!mr::normal_base@{mr::normal\_\-base}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class C, typename T$>$ {\bf mr::normal\_\-base}$<$ C, T $>$::{\bf normal\_\-base} (const {\bf self} \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1normal__base_z67_0}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{mr::normal_base@{mr::normal\_\-base}!cross@{cross}}
+\index{cross@{cross}!mr::normal_base@{mr::normal\_\-base}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class C, typename T$>$ template$<$typename X$>$ const {\bf self}\& {\bf mr::normal\_\-base}$<$ C, T $>$::cross (const X \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1normal__base_z73_2}
+
+
+\index{mr::normal_base@{mr::normal\_\-base}!from@{from}}
+\index{from@{from}!mr::normal_base@{mr::normal\_\-base}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class C, typename T$>$ void {\bf mr::normal\_\-base}$<$ C, T $>$::from (const mi\-State $\ast$const {\em state}, const {\bf space::type} {\em from\-Space})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1normal__base_a13}
+
+
+\index{mr::normal_base@{mr::normal\_\-base}!fromCamera@{fromCamera}}
+\index{fromCamera@{fromCamera}!mr::normal_base@{mr::normal\_\-base}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class C, typename T$>$ void {\bf mr::normal\_\-base}$<$ C, T $>$::from\-Camera (const mi\-State $\ast$const {\em state})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1normal__base_a10}
+
+
+\index{mr::normal_base@{mr::normal\_\-base}!fromLight@{fromLight}}
+\index{fromLight@{fromLight}!mr::normal_base@{mr::normal\_\-base}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class C, typename T$>$ void {\bf mr::normal\_\-base}$<$ C, T $>$::from\-Light (const mi\-State $\ast$const {\em state})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1normal__base_a11}
+
+
+\index{mr::normal_base@{mr::normal\_\-base}!fromObject@{fromObject}}
+\index{fromObject@{fromObject}!mr::normal_base@{mr::normal\_\-base}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class C, typename T$>$ void {\bf mr::normal\_\-base}$<$ C, T $>$::from\-Object (const mi\-State $\ast$const {\em state})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1normal__base_a8}
+
+
+\index{mr::normal_base@{mr::normal\_\-base}!fromTangent@{fromTangent}}
+\index{fromTangent@{fromTangent}!mr::normal_base@{mr::normal\_\-base}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class C, typename T$>$ void {\bf mr::normal\_\-base}$<$ C, T $>$::from\-Tangent (const mi\-State $\ast$const {\em state}, const int {\em idx} = 0)\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1normal__base_a7}
+
+
+\index{mr::normal_base@{mr::normal\_\-base}!fromWorld@{fromWorld}}
+\index{fromWorld@{fromWorld}!mr::normal_base@{mr::normal\_\-base}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class C, typename T$>$ void {\bf mr::normal\_\-base}$<$ C, T $>$::from\-World (const mi\-State $\ast$const {\em state})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1normal__base_a9}
+
+
+\index{mr::normal_base@{mr::normal\_\-base}!inverse@{inverse}}
+\index{inverse@{inverse}!mr::normal_base@{mr::normal\_\-base}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class C, typename T$>$ {\bf self} {\bf mr::normal\_\-base}$<$ C, T $>$::inverse () const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1normal__base_a15}
+
+
+\index{mr::normal_base@{mr::normal\_\-base}!normalized@{normalized}}
+\index{normalized@{normalized}!mr::normal_base@{mr::normal\_\-base}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class C, typename T$>$ {\bf self} {\bf mr::normal\_\-base}$<$ C, T $>$::normalized () const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1normal__base_a17}
+
+
+\index{mr::normal_base@{mr::normal\_\-base}!normalizedFast@{normalizedFast}}
+\index{normalizedFast@{normalizedFast}!mr::normal_base@{mr::normal\_\-base}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class C, typename T$>$ {\bf self} {\bf mr::normal\_\-base}$<$ C, T $>$::normalized\-Fast () const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1normal__base_a18}
+
+
+\index{mr::normal_base@{mr::normal\_\-base}!operator *@{operator $\ast$}}
+\index{operator *@{operator $\ast$}!mr::normal_base@{mr::normal\_\-base}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class C, typename T$>$ {\bf self} {\bf mr::normal\_\-base}$<$ C, T $>$::operator $\ast$ (const {\bf matrix} \& {\em m}) const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1normal__base_a20}
+
+
+\index{mr::normal_base@{mr::normal\_\-base}!operator *@{operator $\ast$}}
+\index{operator *@{operator $\ast$}!mr::normal_base@{mr::normal\_\-base}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class C, typename T$>$ {\bf self} {\bf mr::normal\_\-base}$<$ C, T $>$::operator $\ast$ (const mi\-Matrix {\em m}) const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1normal__base_a19}
+
+
+\index{mr::normal_base@{mr::normal\_\-base}!operator *=@{operator $\ast$=}}
+\index{operator *=@{operator $\ast$=}!mr::normal_base@{mr::normal\_\-base}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class C, typename T$>$ const {\bf self}\& {\bf mr::normal\_\-base}$<$ C, T $>$::operator $\ast$= (const {\bf matrix} \& {\em m})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1normal__base_z71_3}
+
+
+\index{mr::normal_base@{mr::normal\_\-base}!operator *=@{operator $\ast$=}}
+\index{operator *=@{operator $\ast$=}!mr::normal_base@{mr::normal\_\-base}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class C, typename T$>$ const {\bf self}\& {\bf mr::normal\_\-base}$<$ C, T $>$::operator $\ast$= (const mi\-Matrix {\em a})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1normal__base_z71_2}
+
+
+\index{mr::normal_base@{mr::normal\_\-base}!operator *=@{operator $\ast$=}}
+\index{operator *=@{operator $\ast$=}!mr::normal_base@{mr::normal\_\-base}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class C, typename T$>$ const {\bf self}\& {\bf mr::normal\_\-base}$<$ C, T $>$::operator $\ast$= (const C \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1normal__base_z71_1}
+
+
+
+
+Reimplemented from {\bf mr::base::vec3$<$ C, T $>$} {\rm (p.\,\pageref{structmr_1_1base_1_1vec3_z40_8})}.\index{mr::normal_base@{mr::normal\_\-base}!operator *=@{operator $\ast$=}}
+\index{operator *=@{operator $\ast$=}!mr::normal_base@{mr::normal\_\-base}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class C, typename T$>$ const {\bf self}\& {\bf mr::normal\_\-base}$<$ C, T $>$::operator $\ast$= (const T {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1normal__base_z71_0}
+
+
+
+
+Reimplemented from {\bf mr::base::vec3$<$ C, T $>$} {\rm (p.\,\pageref{structmr_1_1base_1_1vec3_z40_7})}.\index{mr::normal_base@{mr::normal\_\-base}!operator-@{operator-}}
+\index{operator-@{operator-}!mr::normal_base@{mr::normal\_\-base}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class C, typename T$>$ {\bf self} {\bf mr::normal\_\-base}$<$ C, T $>$::operator- () const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1normal__base_a16}
+
+
+\index{mr::normal_base@{mr::normal\_\-base}!operator=@{operator=}}
+\index{operator=@{operator=}!mr::normal_base@{mr::normal\_\-base}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class C, typename T$>$ const {\bf self}\& {\bf mr::normal\_\-base}$<$ C, T $>$::operator= (const T {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1normal__base_z69_3}
+
+
+Assignment of base type. 
+
+
+
+Reimplemented from {\bf mr::base::vec3$<$ C, T $>$} {\rm (p.\,\pageref{structmr_1_1base_1_1vec3_z36_3})}.\index{mr::normal_base@{mr::normal\_\-base}!operator=@{operator=}}
+\index{operator=@{operator=}!mr::normal_base@{mr::normal\_\-base}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class C, typename T$>$ const {\bf self}\& {\bf mr::normal\_\-base}$<$ C, T $>$::operator= (const C \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1normal__base_z69_2}
+
+
+Assignemnt of base class object. 
+
+
+
+Reimplemented from {\bf mr::base::vec3$<$ C, T $>$} {\rm (p.\,\pageref{structmr_1_1base_1_1vec3_z36_2})}.\index{mr::normal_base@{mr::normal\_\-base}!operator=@{operator=}}
+\index{operator=@{operator=}!mr::normal_base@{mr::normal\_\-base}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class C, typename T$>$ const {\bf self}\& {\bf mr::normal\_\-base}$<$ C, T $>$::operator= (const {\bf self} \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1normal__base_z69_1}
+
+
+Assignment of similar object. 
+
+
+
+Reimplemented from {\bf mr::base::vec3$<$ C, T $>$} {\rm (p.\,\pageref{structmr_1_1base_1_1vec3_z36_1})}.\index{mr::normal_base@{mr::normal\_\-base}!operator=@{operator=}}
+\index{operator=@{operator=}!mr::normal_base@{mr::normal\_\-base}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class C, typename T$>$ template$<$class X, class Y, class Oper$>$ const {\bf self}\& {\bf mr::normal\_\-base}$<$ C, T $>$::operator= (const {\bf base::exp}$<$ X, Y, Oper $>$ \& {\em e})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1normal__base_z69_0}
+
+
+Handle assignment when we deal with a chained operation. 
+
+
+
+Reimplemented from {\bf mr::base::vec3$<$ C, T $>$} {\rm (p.\,\pageref{structmr_1_1base_1_1vec3_z36_0})}.\index{mr::normal_base@{mr::normal\_\-base}!operator^@{operator$^\wedge$}}
+\index{operator^@{operator$^\wedge$}!mr::normal_base@{mr::normal\_\-base}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class C, typename T$>$ {\bf self} {\bf mr::normal\_\-base}$<$ C, T $>$::operator$^\wedge$ (const mi\-Vector \& {\em b}) const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1normal__base_z73_4}
+
+
+\index{mr::normal_base@{mr::normal\_\-base}!operator^@{operator$^\wedge$}}
+\index{operator^@{operator$^\wedge$}!mr::normal_base@{mr::normal\_\-base}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class C, typename T$>$ template$<$class X, class Y, class Oper$>$ {\bf self} {\bf mr::normal\_\-base}$<$ C, T $>$::operator$^\wedge$ (const {\bf base::exp}$<$ X, Y, Oper $>$ \& {\em b}) const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1normal__base_z73_3}
+
+
+\index{mr::normal_base@{mr::normal\_\-base}!operator^=@{operator$^\wedge$=}}
+\index{operator^=@{operator$^\wedge$=}!mr::normal_base@{mr::normal\_\-base}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class C, typename T$>$ const {\bf self}\& {\bf mr::normal\_\-base}$<$ C, T $>$::operator$^\wedge$= (const mi\-Vector \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1normal__base_z73_1}
+
+
+\index{mr::normal_base@{mr::normal\_\-base}!operator^=@{operator$^\wedge$=}}
+\index{operator^=@{operator$^\wedge$=}!mr::normal_base@{mr::normal\_\-base}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class C, typename T$>$ template$<$class X, class Y, class Oper$>$ const {\bf self}\& {\bf mr::normal\_\-base}$<$ C, T $>$::operator$^\wedge$= (const {\bf base::exp}$<$ X, Y, Oper $>$ \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1normal__base_z73_0}
+
+
+\index{mr::normal_base@{mr::normal\_\-base}!to@{to}}
+\index{to@{to}!mr::normal_base@{mr::normal\_\-base}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class C, typename T$>$ void {\bf mr::normal\_\-base}$<$ C, T $>$::to (const mi\-State $\ast$const {\em state}, const {\bf space::type} {\em to\-Space})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1normal__base_a12}
+
+
+\index{mr::normal_base@{mr::normal\_\-base}!toCamera@{toCamera}}
+\index{toCamera@{toCamera}!mr::normal_base@{mr::normal\_\-base}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class C, typename T$>$ void {\bf mr::normal\_\-base}$<$ C, T $>$::to\-Camera (const mi\-State $\ast$const {\em state})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1normal__base_a3}
+
+
+\index{mr::normal_base@{mr::normal\_\-base}!toLight@{toLight}}
+\index{toLight@{toLight}!mr::normal_base@{mr::normal\_\-base}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class C, typename T$>$ void {\bf mr::normal\_\-base}$<$ C, T $>$::to\-Light (const mi\-State $\ast$const {\em state})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1normal__base_a6}
+
+
+\index{mr::normal_base@{mr::normal\_\-base}!toNDC@{toNDC}}
+\index{toNDC@{toNDC}!mr::normal_base@{mr::normal\_\-base}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class C, typename T$>$ void {\bf mr::normal\_\-base}$<$ C, T $>$::to\-NDC (const mi\-State $\ast$const {\em state})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1normal__base_a5}
+
+
+\index{mr::normal_base@{mr::normal\_\-base}!toObject@{toObject}}
+\index{toObject@{toObject}!mr::normal_base@{mr::normal\_\-base}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class C, typename T$>$ void {\bf mr::normal\_\-base}$<$ C, T $>$::to\-Object (const mi\-State $\ast$const {\em state})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1normal__base_a1}
+
+
+\index{mr::normal_base@{mr::normal\_\-base}!toRaster@{toRaster}}
+\index{toRaster@{toRaster}!mr::normal_base@{mr::normal\_\-base}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class C, typename T$>$ void {\bf mr::normal\_\-base}$<$ C, T $>$::to\-Raster (const mi\-State $\ast$const {\em state})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1normal__base_a4}
+
+
+\index{mr::normal_base@{mr::normal\_\-base}!toTangent@{toTangent}}
+\index{toTangent@{toTangent}!mr::normal_base@{mr::normal\_\-base}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class C, typename T$>$ void {\bf mr::normal\_\-base}$<$ C, T $>$::to\-Tangent (const mi\-State $\ast$const {\em state}, const int {\em idx} = 0)\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1normal__base_a0}
+
+
+\index{mr::normal_base@{mr::normal\_\-base}!toWorld@{toWorld}}
+\index{toWorld@{toWorld}!mr::normal_base@{mr::normal\_\-base}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class C, typename T$>$ void {\bf mr::normal\_\-base}$<$ C, T $>$::to\-World (const mi\-State $\ast$const {\em state})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1normal__base_a2}
+
+
+\index{mr::normal_base@{mr::normal\_\-base}!transform@{transform}}
+\index{transform@{transform}!mr::normal_base@{mr::normal\_\-base}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class C, typename T$>$ void {\bf mr::normal\_\-base}$<$ C, T $>$::transform (const mi\-State $\ast$const {\em state}, const {\bf space::type} {\em from\-Space}, const {\bf space::type} {\em to\-Space})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1normal__base_a14}
+
+
+
+
+The documentation for this struct was generated from the following files:\begin{CompactItemize}
+\item 
+{\bf mr\-Vector.h}\item 
+{\bf mr\-Derivs.h}\end{CompactItemize}

@@ -1,0 +1,92 @@
+\section{mr::base Namespace Reference}
+\label{namespacemr_1_1base}\index{mr::base@{mr::base}}
+
+
+\subsection*{Classes}
+\begin{CompactItemize}
+\item 
+struct {\bf add}
+\item 
+struct {\bf div}
+\item 
+class {\bf exp}
+\item 
+struct {\bf mult}
+\item 
+struct {\bf sub}
+\item 
+struct {\bf vec2}
+\item 
+struct {\bf vec3}
+\item 
+class {\bf vecarg}
+\item 
+class {\bf vecarg$<$ const double $>$}
+\item 
+class {\bf vecarg$<$ const float $>$}
+\item 
+class {\bf vecarg$<$ const int $>$}
+\item 
+class {\bf vecarg$<$ const mi\-Color $>$}
+\item 
+class {\bf vecarg$<$ const mi\-Geo\-Range $>$}
+\item 
+class {\bf vecarg$<$ const mi\-Geo\-Vector $>$}
+\item 
+class {\bf vecarg$<$ const mi\-Geo\-Vector2d $>$}
+\item 
+class {\bf vecarg$<$ const mi\-Quaternion $>$}
+\item 
+class {\bf vecarg$<$ const mi\-Range $>$}
+\item 
+class {\bf vecarg$<$ const mi\-Vector $>$}
+\item 
+class {\bf vecarg$<$ const mi\-Vector2d $>$}
+\item 
+class {\bf vecarg$<$ const short $>$}
+\item 
+class {\bf vecarg$<$ const unsigned int $>$}
+\item 
+class {\bf vecarg$<$ const unsigned short $>$}
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+template$<$class ta\_\-c1, class ta\_\-c2$>$ const {\bf mr::base::exp}$<$ const ta\_\-c1, const ta\_\-c2, {\bf add} $>$ {\bf operator+} (const ta\_\-c1 \&Pa, const ta\_\-c2 \&Pb)
+\item 
+template$<$class ta\_\-c1, class ta\_\-c2$>$ const {\bf exp}$<$ const ta\_\-c1, const ta\_\-c2, {\bf sub} $>$ {\bf operator-} (const ta\_\-c1 \&Pa, const ta\_\-c2 \&Pb)
+\item 
+template$<$class ta\_\-c1, class ta\_\-c2$>$ const {\bf exp}$<$ const ta\_\-c1, const ta\_\-c2, {\bf mult} $>$ {\bf operator $\ast$} (const ta\_\-c1 \&Pa, const ta\_\-c2 \&Pb)
+\item 
+template$<$class ta\_\-c1, class ta\_\-c2$>$ const {\bf exp}$<$ const ta\_\-c1, const ta\_\-c2, {\bf div} $>$ {\bf operator/} (const ta\_\-c1 \&Pa, const ta\_\-c2 \&Pb)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+base namespace will contain overloaded non-reference operators and the base classes that will use those operators The final vector, geovector, color, etc. classes are derived always from some base class. This assures that +,-,$\ast$,/ operators will use base overloads for very fast math.
+
+Note that for this to work properly, NO global binary operators like the ones below should be defined in the namespace mr. 
+
+
+
+\subsection{Function Documentation}
+\index{mr::base@{mr::base}!operator *@{operator $\ast$}}
+\index{operator *@{operator $\ast$}!mr::base@{mr::base}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class ta\_\-c1, class ta\_\-c2$>$ const {\bf exp}$<$ const ta\_\-c1, const ta\_\-c2, {\bf mult} $>$ operator $\ast$ (const ta\_\-c1 \& {\em Pa}, const ta\_\-c2 \& {\em Pb})\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_1_1base_a2}
+
+
+\index{mr::base@{mr::base}!operator+@{operator+}}
+\index{operator+@{operator+}!mr::base@{mr::base}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class ta\_\-c1, class ta\_\-c2$>$ const {\bf mr::base::exp}$<$ const ta\_\-c1, const ta\_\-c2, {\bf add} $>$ operator+ (const ta\_\-c1 \& {\em Pa}, const ta\_\-c2 \& {\em Pb})\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_1_1base_a0}
+
+
+\index{mr::base@{mr::base}!operator-@{operator-}}
+\index{operator-@{operator-}!mr::base@{mr::base}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class ta\_\-c1, class ta\_\-c2$>$ const {\bf exp}$<$ const ta\_\-c1, const ta\_\-c2, {\bf sub} $>$ operator- (const ta\_\-c1 \& {\em Pa}, const ta\_\-c2 \& {\em Pb})\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_1_1base_a1}
+
+
+\index{mr::base@{mr::base}!operator/@{operator/}}
+\index{operator/@{operator/}!mr::base@{mr::base}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class ta\_\-c1, class ta\_\-c2$>$ const {\bf exp}$<$ const ta\_\-c1, const ta\_\-c2, {\bf div} $>$ operator/ (const ta\_\-c1 \& {\em Pa}, const ta\_\-c2 \& {\em Pb})\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_1_1base_a3}
+
+

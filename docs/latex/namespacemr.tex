@@ -1,0 +1,810 @@
+\section{mr Namespace Reference}
+\label{namespacemr}\index{mr@{mr}}
+
+
+\subsection*{Classes}
+\begin{CompactItemize}
+\item 
+struct {\bf buffer\_\-base}
+\item 
+struct {\bf color}
+\begin{CompactList}\small\item\em Define main color class that replaces mi\-Color. \item\end{CompactList}\item 
+struct {\bf delete\-Map\-Iterator\-Data}
+\begin{CompactList}\small\item\em Simple functor class to delete Map Iterators. \item\end{CompactList}\item 
+struct {\bf delete\-Vector\-Iterator\-Data}
+\begin{CompactList}\small\item\em Simple functor class to delete vector Iterators. \item\end{CompactList}\item 
+class {\bf disk\-Sampler}
+\begin{CompactList}\small\item\em Sample in a disk. \item\end{CompactList}\item 
+struct {\bf errorbuffer}
+\item 
+struct {\bf errorstream}
+\item 
+class {\bf Exception\-Handler}
+\begin{CompactList}\small\item\em Exception handler. \item\end{CompactList}\item 
+class {\bf fastmath}
+\begin{CompactList}\small\item\em Encapsulates fast math tables / functions. \item\end{CompactList}\item 
+struct {\bf fatalbuffer}
+\item 
+struct {\bf fatalstream}
+\item 
+class {\bf FCell}
+\begin{CompactList}\small\item\em Cellnoise class returning a float. \item\end{CompactList}\item 
+class {\bf FWorley}
+\begin{CompactList}\small\item\em Worley noise class returning arbitrary number of floats. \item\end{CompactList}\item 
+class {\bf hemisphere\-Sampler}
+\begin{CompactList}\small\item\em Sample a full or partial hemisphere around a direction. \item\end{CompactList}\item 
+struct {\bf infobuffer}
+\item 
+struct {\bf infostream}
+\item 
+struct {\bf less\-Tri\-Op}
+\item 
+struct {\bf less\-UVOp}
+\item 
+struct {\bf less\-XYZOp}
+\item 
+struct {\bf math}
+\item 
+struct {\bf math$<$ float $>$}
+\item 
+class {\bf matrix}
+\begin{CompactList}\small\item\em Class to represent a matrix in mental ray. \item\end{CompactList}\item 
+struct {\bf mutex}
+\begin{CompactList}\small\item\em Class used to create an autolock for multithreading by wrapping mi\-Locks. \item\end{CompactList}\item 
+struct {\bf normal\_\-base}
+\item 
+struct {\bf point\_\-base}
+\item 
+class {\bf Point\-Cache}
+\item 
+struct {\bf progressbuffer}
+\item 
+struct {\bf progressstream}
+\item 
+struct {\bf sampler}
+\item 
+struct {\bf sampler3D}
+\item 
+class {\bf simple\_\-timer}
+\item 
+class {\bf SPerlin}
+\begin{CompactList}\small\item\em Perlin Class returning a mi\-Scalar. \item\end{CompactList}\item 
+class {\bf sphere\-Sampler}
+\begin{CompactList}\small\item\em Sample spherically or partially around a sphere. \item\end{CompactList}\item 
+class {\bf timer}
+\item 
+class {\bf Triangle\-Vertex\-Cache}
+\item 
+struct {\bf tri\-Id}
+\begin{CompactList}\small\item\em Identifies a triangle, as in mi\-State, but smaller. \item\end{CompactList}\item 
+class {\bf UVCache}
+\item 
+class {\bf VCell}
+\begin{CompactList}\small\item\em Cellnoise class returning a vector. \item\end{CompactList}\item 
+struct {\bf vec\_\-base}
+\item 
+struct {\bf vecnorm}
+\item 
+class {\bf VPerlin}
+\begin{CompactList}\small\item\em Perlin Class returning a vector. \item\end{CompactList}\item 
+struct {\bf warningbuffer}
+\item 
+struct {\bf warningstream}
+\end{CompactItemize}
+\subsection*{clamp}
+\begin{CompactItemize}
+\item 
+const mi\-Scalar {\bf clamp} (const mi\-Scalar x, const mi\-Scalar min\-Val, const mi\-Scalar max\-Val)
+\begin{CompactList}\small\item\em Clamp X based on a min and max value. \item\end{CompactList}\item 
+template$<$class T$>$ const T \& {\bf clamp} (const T \&x, const T \&min\-Val, const T \&max\-Val)
+\begin{CompactList}\small\item\em Clamp X based on a min and max value. \item\end{CompactList}\item 
+template$<$class T$>$ T {\bf clamp} (const T \&x, const T \&min\-Val, const mi\-Scalar max\-Val)
+\begin{CompactList}\small\item\em Clamp X based on a similar min but max scalar value. \item\end{CompactList}\item 
+template$<$class T$>$ T {\bf clamp} (const T \&x, const mi\-Scalar min\-Val, const T \&max\-Val)
+\begin{CompactList}\small\item\em Clamp X based on a scalar min but similar max value. \item\end{CompactList}\item 
+template$<$class T$>$ T {\bf clamp} (const T \&x, const mi\-Scalar min\-Val=0.0f, const mi\-Scalar max\-Val=1.0f)
+\begin{CompactList}\small\item\em Clamp X based on a two scalar values. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Typedefs}
+\begin{CompactItemize}
+\item 
+typedef const char $\ast$const  {\bf k\-No\-Construct}
+\item 
+typedef std::map$<$ {\bf vector}, {\bf color} $\ast$, {\bf less\-XYZOp} $>$ {\bf vertex\_\-color\_\-cache}
+\item 
+typedef basic\_\-stringbuf$<$ char, std::char\_\-traits$<$ char $>$, std::allocator$<$ char $>$ $>$ {\bf mr\_\-string\_\-stream}
+\item 
+typedef {\bf normal\_\-base}$<$ mi\-Vector, mi\-Scalar $>$ {\bf normal}
+\item 
+typedef {\bf point\_\-base}$<$ mi\-Vector, mi\-Scalar $>$ {\bf point}
+\item 
+typedef {\bf vec\_\-base}$<$ mi\-Vector, mi\-Scalar $>$ {\bf vector}
+\item 
+typedef {\bf vec\_\-base}$<$ mi\-Vector, mi\-Scalar $>$ {\bf Vector}
+\item 
+typedef {\bf vec\_\-base}$<$ mi\-Geo\-Vector, mi\-Geo\-Scalar $>$ {\bf geovector}
+\item 
+typedef {\bf base::vec2} {\bf vector2d}
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void {\bf linear\_\-bump} (mi\-State $\ast$const state, {\bf vector} \&d\-Pds, {\bf vector} \&d\-Pdt, const mi\-Scalar gradu, const mi\-Scalar gradv)
+\begin{CompactList}\small\item\em Perform Linear bump mapping. \item\end{CompactList}\item 
+void {\bf deriv\_\-bump} (const {\bf vector} \&N, {\bf vector} \&d\-Pds, {\bf vector} \&d\-Pdt, const mi\-Scalar gradu, const mi\-Scalar gradv)
+\begin{CompactList}\small\item\em Perform Derivative bump mapping. \item\end{CompactList}\item 
+void {\bf bump} (mi\-State $\ast$const state, const {\bf vector} \&d\-Pds, const {\bf vector} \&d\-Pdt, const mi\-Scalar gradu, const mi\-Scalar gradv)
+\begin{CompactList}\small\item\em Perform Blinn bump mapping. \item\end{CompactList}\item 
+void {\bf parallax\_\-bump} (mi\-Vector2d \&offset, const mi\-State $\ast$const state, const mi\-Scalar amt, const mi\-Scalar scale, const mi\-Scalar bias=0.5f, const int idx=0)
+\item 
+void {\bf parallax\_\-bump} (const mi\-State $\ast$const state, const mi\-Scalar amt, const mi\-Scalar scale, const mi\-Scalar bias=0.5f, const int idx=0)
+\item 
+void {\bf calculatenormal} (mi\-State $\ast$const state, const {\bf vector} \&d\-Pds, const {\bf vector} \&d\-Pdt)
+\item 
+void {\bf calculatenormal} (mi\-State $\ast$const state)
+\item 
+void {\bf get\_\-normals} (const mi\-State $\ast$const state, mi\-Vector N[3])
+\item 
+void {\bf get\_\-vertices} (const mi\-State $\ast$const state, mi\-Vector v[3])
+\item 
+void {\bf check\_\-bary\_\-bounds} (mi\-Scalar b[3])
+\item 
+mi\-Boolean {\bf calculate\_\-bary} (mi\-Scalar b[3], const {\bf point} \&p, const mi\-Vector v[3])
+\item 
+mi\-Boolean {\bf calculate\_\-bary} (mi\-Scalar bary[3], const mi\-State $\ast$const state, const {\bf point} \&p)
+\item 
+void {\bf calculate\_\-bary2} (mi\-Scalar bx[3], mi\-Scalar by[3], const mi\-State $\ast$const state, const {\bf point} \&px, const {\bf point} \&py)
+\begin{CompactList}\small\item\em Auxiliary routine to take two points and return their barycentric coords. \item\end{CompactList}\item 
+mi\-Scalar {\bf area} (const mi\-State $\ast$const state)
+\item 
+mi\-Scalar {\bf area\-Squared} (const mi\-State $\ast$const state)
+\begin{CompactList}\small\item\em Same as area, but squared. \item\end{CompactList}\item 
+mi\-Scalar {\bf area} (const mi\-State $\ast$const state, const mi\-Vector \&P)
+\item 
+mi\-Scalar {\bf areatriangle} (const mi\-State $\ast$const state)
+\item 
+mi\-Scalar {\bf areatriangle\-Squared} (const mi\-State $\ast$const state)
+\begin{CompactList}\small\item\em Same as areatriangle, but squared. \item\end{CompactList}\item 
+void {\bf get\_\-sides} (const mi\-State $\ast$const state, int \&w, int \&h)
+\item 
+template$<$typename T$>$ mi\-Boolean {\bf Du\-Dv\_\-Impl} (T \&Du, T \&Dv, const mi\-State $\ast$state, const mi\-Scalar u1, const mi\-Scalar u2, const mi\-Scalar v1, const mi\-Scalar v2, const T data[3], const int idx=0)
+\item 
+mi\-Boolean {\bf Du\-Dv\_\-Impl} ({\bf color} \&Du, {\bf color} \&Dv, const mi\-State $\ast$state, const mi\-Scalar u1, const mi\-Scalar u2, const mi\-Scalar v1, const mi\-Scalar v2, const {\bf color} data[3], const int idx)
+\item 
+mi\-Boolean {\bf Du\-Dv\_\-Impl} ({\bf vector2d} \&Du, {\bf vector2d} \&Dv, const mi\-State $\ast$state, const mi\-Scalar u1, const mi\-Scalar u2, const mi\-Scalar v1, const mi\-Scalar v2, const {\bf vector2d} data[3], const int idx)
+\item 
+mi\-Boolean {\bf Du\-Dv\_\-Impl} (mi\-Scalar \&Du, mi\-Scalar \&Dv, const mi\-State $\ast$state, const mi\-Scalar u1, const mi\-Scalar u2, const mi\-Scalar v1, const mi\-Scalar v2, const mi\-Scalar data[3], const int idx)
+\item 
+template$<$typename T$>$ mi\-Boolean {\bf Du\-Dv\_\-Impl} (T \&Du, T \&Dv, const mi\-State $\ast$state, const mi\-Scalar bx[3], const mi\-Scalar by[3], const T data[3], const int idx=0)
+\begin{CompactList}\small\item\em Calculates auxiliary determinants then goes to calculate Du,Dv. \item\end{CompactList}\item 
+template$<$typename T$>$ mi\-Boolean {\bf Du\-Dv\_\-Impl} (T \&Du, T \&Dv, mi\-Scalar \&du, mi\-Scalar \&dv, const mi\-State $\ast$state, const mi\-Scalar bx[3], const mi\-Scalar by[3], const T data[3], const int idx=0)
+\begin{CompactList}\small\item\em Calculates du, dv then goes to calculate Du,Dv. \item\end{CompactList}\item 
+template$<$typename T$>$ mi\-Boolean {\bf Du\-Dv} (T \&Du, T \&Dv, mi\-Scalar \&du, mi\-Scalar \&dv, const mi\-State $\ast$state, const {\bf point} \&Px, const {\bf point} \&Py, const T data[3], const int idx=0)
+\item 
+template$<$typename T$>$ mi\-Boolean {\bf Du\-Dv} (T \&Du, T \&Dv, mi\-Scalar \&du, mi\-Scalar \&dv, const mi\-State $\ast$state, const T tri\_\-data[3], const int idx=0)
+\item 
+template$<$typename T$>$ mi\-Boolean {\bf Du\-Dv} (T \&Du, T \&Dv, const mi\-State $\ast$state, const {\bf vector} \&Px, const {\bf vector} \&Py, const T data[3], const int idx=0)
+\item 
+template$<$typename T$>$ mi\-Boolean {\bf Du\-Dv} (T \&Du, T \&Dv, const mi\-State $\ast$state, const T tri\_\-data[3], const int idx=0)
+\item 
+void {\bf Dsu\-Dtv} (const mi\-State $\ast$const state, mi\-Scalar \&Du\-S, mi\-Scalar \&Dv\-S, mi\-Scalar \&Du\-T, mi\-Scalar \&Dv\-T, const int STidx=0, const int UVidx=0)
+\begin{CompactList}\small\item\em Like Du\-Dv, but returning Du(s)$\ast$du, Dv(s)$\ast$dv and Du(t)$\ast$du, Dv(t)$\ast$dv. \item\end{CompactList}\item 
+mi\-Boolean {\bf d\-Pdst} (mi\-Vector \&d\-Pds, mi\-Vector \&d\-Pdt, const mi\-State $\ast$const state, const int idx=0)
+\item 
+mi\-Boolean {\bf d\-Ndst} (mi\-Vector \&d\-Nds, mi\-Vector \&d\-Ndt, const mi\-State $\ast$const state, const int idx=0)
+\item 
+mi\-Boolean {\bf d\-PNdst} (mi\-Vector \&d\-Pds, mi\-Vector \&d\-Pdt, mi\-Vector \&d\-Nds, mi\-Vector \&d\-Ndt, const mi\-State $\ast$const state, const int idx=0)
+\item 
+mi\-Boolean {\bf d\-Pduv} (mi\-Vector \&d\-Pdu, mi\-Vector \&d\-Pdv, const mi\-State $\ast$const state)
+\item 
+mi\-Boolean {\bf Bump\-UV} (mi\-Vector \&d\-Pdu, mi\-Vector \&d\-Pdv, const mi\-State $\ast$const state, const int idx=0)
+\begin{CompactList}\small\item\em Get bump basis for a texture index. \item\end{CompactList}\item 
+mi\-Boolean {\bf d\-Pduv2} (mi\-Vector \&d\-P2du2, mi\-Vector \&d\-P2dv2, mi\-Vector \&d\-P2dudv, const mi\-State $\ast$const state)
+\begin{CompactList}\small\item\em Get second order derivatives d2x/du2, d2x/dv2, d2x/dudv. \item\end{CompactList}\item 
+template$<$typename T$>$ const T \& {\bf min} (const T \&x, const T \&y)
+\begin{CompactList}\small\item\em Auxiliary function to return min of 2 elements. \item\end{CompactList}\item 
+template$<$typename T$>$ const T \& {\bf min} (const T \&x, const T \&y, const T \&z)
+\begin{CompactList}\small\item\em Auxiliary function to return min of 3 elements. \item\end{CompactList}\item 
+template$<$typename T$>$ const T \& {\bf min} (const T \&w, const T \&x, const T \&y, const T \&z)
+\begin{CompactList}\small\item\em Auxiliary function to return min of 4 elements. \item\end{CompactList}\item 
+template$<$typename T$>$ const T \& {\bf max} (const T \&x, const T \&y)
+\begin{CompactList}\small\item\em Auxiliary function to return max of 2 elements. \item\end{CompactList}\item 
+template$<$typename T$>$ const T \& {\bf max} (const T \&x, const T \&y, const T \&z)
+\begin{CompactList}\small\item\em Auxiliary function to return max of 3 elements. \item\end{CompactList}\item 
+template$<$typename T$>$ const T \& {\bf max} (const T \&w, const T \&x, const T \&y, const T \&z)
+\begin{CompactList}\small\item\em Auxiliary function to return max of 4 elements. \item\end{CompactList}\item 
+template$<$typename T$>$ void {\bf minmax} (T \&minst, T \&maxst, const T \&s0, const T \&s1, const T \&s2)
+\item 
+template$<$typename T$>$ bool {\bf is\-Equivalent} (const T v, const T x, const T eps=mi\-SCALAR\_\-EPSILON)
+\item 
+bool {\bf is\-Equivalent} (const mi\-Geo\-Scalar v, const mi\-Geo\-Scalar x, const mi\-Geo\-Scalar eps=mi\-GEO\_\-SCALAR\_\-EPSILON)
+\item 
+template$<$class T$>$ int {\bf round} (const T \&x)
+\item 
+template$<$typename T$>$ bool {\bf connected} (const mi\-State $\ast$const s, const T \&p)
+\item 
+template$<$typename T$>$ const T \& {\bf eval} (const mi\-State $\ast$const state, const T \&v)
+\begin{CompactList}\small\item\em Simpler mi\_\-eval\_\-$\ast$ for shaders' use. \item\end{CompactList}\item 
+template$<$typename T$>$ const T $\ast$ {\bf eval} (const mi\-State $\ast$const state, const T $\ast$v)
+\begin{CompactList}\small\item\em Simpler mi\_\-eval\_\-$\ast$ for shaders' use. \item\end{CompactList}\item 
+void {\bf blinn\_\-coeffs} (mi\-Scalar \&Nd\-H, mi\-Scalar \&Vd\-H, const {\bf normal} \&N, const {\bf vector} \&L, const {\bf vector} \&V, const mi\-Scalar Nd\-L, const mi\-Scalar Nd\-V)
+\item 
+mi\-Scalar {\bf G\_\-attenuation} (const mi\-Scalar Nd\-V, const mi\-Scalar Nd\-L, const mi\-Scalar Nd\-H, const mi\-Scalar Vd\-H)
+\item 
+mi\-Scalar {\bf G\_\-attenuation\_\-pixar} (const mi\-Scalar Nd\-V, const mi\-Scalar Nd\-L, const mi\-Scalar Nd\-H, const mi\-Scalar Vd\-H)
+\item 
+mi\-Scalar {\bf Trowbridge\_\-Reitz} (const mi\-Scalar Nd\-H, const mi\-Scalar k2)
+\item 
+mi\-Scalar {\bf Torrance\_\-Sparrow} (const mi\-Scalar Nd\-H, const mi\-Scalar k1)
+\item 
+mi\-Scalar {\bf Beckmann} (const mi\-Scalar Nd\-H, const mi\-Scalar m)
+\item 
+mi\-Scalar {\bf Phong} (const {\bf vector} \&V, const {\bf normal} \&N, const {\bf vector} \&L, const mi\-Scalar Nd\-L, const mi\-Scalar shiny)
+\item 
+mi\-Scalar {\bf Blong} (const {\bf normal} \&N, const {\bf vector} \&H, const mi\-Scalar shiny)
+\item 
+template$<$class T$>$ T {\bf spline} (const mi\-Scalar f, const std::vector$<$ T $>$ \&args, const {\bf basis::type} b=basis::k\-Catmull\-Rom)
+\item 
+template$<$class T$>$ T {\bf spline} (const mi\-Scalar f, const unsigned num, const T $\ast$const args, const {\bf basis::type} b=basis::k\-Catmull\-Rom)
+\end{CompactItemize}
+\subsection*{Variables}
+\begin{CompactItemize}
+\item 
+const char $\ast$const  {\bf k\-No\-Init} = \char`\"{}\char`\"{}
+\item 
+const mi\-Scalar {\bf k\-Not\-Cached} = -255.0f
+\item 
+MR\_\-LIB\_\-EXPORT {\bf mutex} $\ast$ {\bf stream\-Mutex}
+\item 
+{\bf infostream} $\ast$ {\bf info}
+\item 
+{\bf warningstream} $\ast$ {\bf warning}
+\item 
+{\bf errorstream} $\ast$ {\bf error}
+\item 
+{\bf fatalstream} $\ast$ {\bf fatal}
+\item 
+{\bf progressstream} $\ast$ {\bf progress}
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Just a simple include that adds most typical settings needed for all other classes to function properly 
+
+
+
+\subsection{Typedef Documentation}
+\index{mr@{mr}!geovector@{geovector}}
+\index{geovector@{geovector}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf vec\_\-base}$<$ mi\-Geo\-Vector, mi\-Geo\-Scalar $>$ {\bf mr::geovector}}\label{namespacemr_a15}
+
+
+\index{mr@{mr}!kNoConstruct@{kNoConstruct}}
+\index{kNoConstruct@{kNoConstruct}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef const char$\ast$ const {\bf mr::k\-No\-Construct}}\label{namespacemr_a0}
+
+
+This typedef/static const will be used to create constructors that do not init their values. Example: color x( k\-No\-Init ); \index{mr@{mr}!mr_string_stream@{mr\_\-string\_\-stream}}
+\index{mr_string_stream@{mr\_\-string\_\-stream}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef basic\_\-stringbuf$<$char, std::char\_\-traits$<$char$>$, std::allocator$<$char$>$ $>$ {\bf mr::mr\_\-string\_\-stream}}\label{namespacemr_a4}
+
+
+\index{mr@{mr}!normal@{normal}}
+\index{normal@{normal}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf normal\_\-base}$<$ mi\-Vector, mi\-Scalar $>$ {\bf mr::normal}}\label{namespacemr_a11}
+
+
+\index{mr@{mr}!point@{point}}
+\index{point@{point}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf point\_\-base}$<$ mi\-Vector, mi\-Scalar $>$ {\bf mr::point}}\label{namespacemr_a12}
+
+
+\index{mr@{mr}!Vector@{Vector}}
+\index{Vector@{Vector}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf vec\_\-base}$<$ mi\-Vector, mi\-Scalar $>$ {\bf mr::Vector}}\label{namespacemr_a14}
+
+
+\index{mr@{mr}!vector@{vector}}
+\index{vector@{vector}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf vec\_\-base}$<$ mi\-Vector, mi\-Scalar $>$ {\bf mr::vector}}\label{namespacemr_a13}
+
+
+\index{mr@{mr}!vector2d@{vector2d}}
+\index{vector2d@{vector2d}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf base::vec2} {\bf mr::vector2d}}\label{namespacemr_a16}
+
+
+\index{mr@{mr}!vertex_color_cache@{vertex\_\-color\_\-cache}}
+\index{vertex_color_cache@{vertex\_\-color\_\-cache}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef std::map$<$ {\bf vector}, {\bf color}$\ast$, {\bf less\-XYZOp} $>$ {\bf mr::vertex\_\-color\_\-cache}}\label{namespacemr_a2}
+
+
+
+
+\subsection{Function Documentation}
+\index{mr@{mr}!area@{area}}
+\index{area@{area}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar area (const mi\-State $\ast$const {\em state}, const mi\-Vector \& {\em P})\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_a32}
+
+
+\begin{Desc}
+\item[{\bf Todo}]: test if this area(P) works at all\end{Desc}
+\index{mr@{mr}!area@{area}}
+\index{area@{area}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar area (const mi\-State $\ast$const {\em state})\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_a30}
+
+
+Raster area -ie. pixel footprint - ( more similar to what shader writers expect from prman's {\bf area()}{\rm (p.\,\pageref{namespacemr_a30})} ).
+
+Use area\-Triangle(state) for area of actual (micro)triangle \index{mr@{mr}!areaSquared@{areaSquared}}
+\index{areaSquared@{areaSquared}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar area\-Squared (const mi\-State $\ast$const {\em state})\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_a31}
+
+
+Same as area, but squared. 
+
+\index{mr@{mr}!areatriangle@{areatriangle}}
+\index{areatriangle@{areatriangle}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar areatriangle (const mi\-State $\ast$const {\em state})\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_a33}
+
+
+Calculate the squared area of the (micro)triangle. Note that this can be different from the pixel footprint, even if in Prman this is one and the same. Use area(state) for pixel area \index{mr@{mr}!areatriangleSquared@{areatriangleSquared}}
+\index{areatriangleSquared@{areatriangleSquared}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar areatriangle\-Squared (const mi\-State $\ast$const {\em state})\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_a34}
+
+
+Same as areatriangle, but squared. 
+
+\index{mr@{mr}!Beckmann@{Beckmann}}
+\index{Beckmann@{Beckmann}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar Beckmann (const mi\-Scalar {\em Nd\-H}, const mi\-Scalar {\em m})\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_a76}
+
+
+Given the dot product of the normal and the half vector H, and a scalar value, calculate the Beckmann (aka. Cook-Torrance) specular spread.
+
+D = \_\-\_\-\_\-\_\-\_\-\_\-\_\-\_\-\_\- 1 \_\-\_\-\_\-\_\-\_\-\_\-\_\-\_\-\_\-\_\-\_\-\_\- 2 -[(tan B)/m] 2 4 e 4m cos B \index{mr@{mr}!blinn_coeffs@{blinn\_\-coeffs}}
+\index{blinn_coeffs@{blinn\_\-coeffs}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void blinn\_\-coeffs (mi\-Scalar \& {\em Nd\-H}, mi\-Scalar \& {\em Vd\-H}, const normal \& {\em N}, const vector \& {\em L}, const vector \& {\em V}, const mi\-Scalar {\em Nd\-L}, const mi\-Scalar {\em Nd\-V})\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_a71}
+
+
+This is a faster way to calculate Nd\-H and Vd\-H.
+
+Given the normal, position of a light(L) and the incident vector (V), and the dot products of N.L (from mi\_\-sample\_\-light) and N.V (from mi\-State), this routine returns the dot products with the half vector: N.H and V.H.
+
+This is faster than calculating H, normalizing it and then doing two dot products.
+
+For explanation and derivation, see: GRAPHICS GEMS I: Fast Dot Products for Shading. \index{mr@{mr}!Blong@{Blong}}
+\index{Blong@{Blong}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar Blong (const normal \& {\em N}, const vector \& {\em H}, const mi\-Scalar {\em shiny})\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_a78}
+
+
+Given a normal, the half-vector (blinn\_\-coeff) H, and a scalar value, calculate blinn's phong specular, defined as:
+
+D = (N.H)$^\wedge$shiny
+
+This is Softimage's phong. \index{mr@{mr}!bump@{bump}}
+\index{bump@{bump}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void bump (mi\-State $\ast$const {\em state}, const vector \& {\em d\-Pds}, const vector \& {\em d\-Pdt}, const mi\-Scalar {\em gradu}, const mi\-Scalar {\em gradv})\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_a19}
+
+
+Perform Blinn bump mapping. 
+
+\index{mr@{mr}!BumpUV@{BumpUV}}
+\index{BumpUV@{BumpUV}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Boolean Bump\-UV (mi\-Vector \& {\em d\-Pdu}, mi\-Vector \& {\em d\-Pdv}, const mi\-State $\ast$const {\em state}, const int {\em idx} = 0)\hspace{0.3cm}{\tt  [static]}}\label{namespacemr_a51}
+
+
+Get bump basis for a texture index. 
+
+\index{mr@{mr}!calculate_bary@{calculate\_\-bary}}
+\index{calculate_bary@{calculate\_\-bary}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Boolean calculate\_\-bary (mi\-Scalar {\em bary}[3], const mi\-State $\ast$const {\em state}, const point \& {\em p})\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_a28}
+
+
+\index{mr@{mr}!calculate_bary@{calculate\_\-bary}}
+\index{calculate_bary@{calculate\_\-bary}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Boolean calculate\_\-bary (mi\-Scalar {\em b}[3], const point \& {\em p}, const mi\-Vector {\em v}[3])\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_a27}
+
+
+This is from comp.graphics.algorithms, old post of Rod Bogart.
+
+Given an arbitrary point in the plane of the triangle, calculate its barycentric coordinates. Returns mi\-FALSE if point is outside triangle.
+
+1 If the area of triangle 123 is A, then the area of /$|$$\backslash$ P23 is r\-A. Area 12P is s\-A and area 1P3 is t\-A. / $|$ $\backslash$ With this image, it is obvious that r+s+t must equal / $|$ $\backslash$ one. If r, s, or t go outside the range zero to one, / t $|$ s $\backslash$ P will be outside the triangle. / \_\--P-\_\- $\backslash$ / \_\-- -\_\- $\backslash$ /\_\-- r -\_\-$\backslash$ 3---------------2 N = triangle normal = (vec(1 2) cross vec(1 3))
+
+(vec(1 P) cross vec(1 3)) dot N s = ------------------------------- length N
+
+(vec(1 2) cross vec(1 P)) dot N t = ------------------------------- length N
+
+r = 1 - (s + t)
+
+Note that equation as published in the email is kind of incomplete. dot N assumes that N is normalized. Code below does that. \index{mr@{mr}!calculate_bary2@{calculate\_\-bary2}}
+\index{calculate_bary2@{calculate\_\-bary2}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void calculate\_\-bary2 (mi\-Scalar {\em bx}[3], mi\-Scalar {\em by}[3], const mi\-State $\ast$const {\em state}, const point \& {\em px}, const point \& {\em py})\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_a29}
+
+
+Auxiliary routine to take two points and return their barycentric coords. 
+
+\index{mr@{mr}!calculatenormal@{calculatenormal}}
+\index{calculatenormal@{calculatenormal}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void calculatenormal (mi\-State $\ast$const {\em state})\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_a23}
+
+
+Recalculate and renormalize normal for Blinn/Linear bump mapping To be used only for bump mapping (displacement shaders do not need this) \index{mr@{mr}!calculatenormal@{calculatenormal}}
+\index{calculatenormal@{calculatenormal}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void calculatenormal (mi\-State $\ast$const {\em state}, const vector \& {\em d\-Pds}, const vector \& {\em d\-Pdt})\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_a22}
+
+
+Recalculate and renormalize normal for rotational bump map To be used only for bump mapping (displacement shaders do not need this) \index{mr@{mr}!check_bary_bounds@{check\_\-bary\_\-bounds}}
+\index{check_bary_bounds@{check\_\-bary\_\-bounds}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void check\_\-bary\_\-bounds (mi\-Scalar {\em b}[3])\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_a26}
+
+
+Auxiliary routine to check barycentric coordinates to be in [0,1] range for derivatives. \index{mr@{mr}!clamp@{clamp}}
+\index{clamp@{clamp}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T clamp (const T \& {\em x}, const mi\-Scalar {\em min\-Val} = 0.0f, const mi\-Scalar {\em max\-Val} = 1.0f)\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_a67}
+
+
+Clamp X based on a two scalar values. 
+
+\index{mr@{mr}!clamp@{clamp}}
+\index{clamp@{clamp}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T clamp (const T \& {\em x}, const mi\-Scalar {\em min\-Val}, const T \& {\em max\-Val})\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_a66}
+
+
+Clamp X based on a scalar min but similar max value. 
+
+\index{mr@{mr}!clamp@{clamp}}
+\index{clamp@{clamp}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T clamp (const T \& {\em x}, const T \& {\em min\-Val}, const mi\-Scalar {\em max\-Val})\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_a65}
+
+
+Clamp X based on a similar min but max scalar value. 
+
+\index{mr@{mr}!clamp@{clamp}}
+\index{clamp@{clamp}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ const T\& clamp (const T \& {\em x}, const T \& {\em min\-Val}, const T \& {\em max\-Val})\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_a64}
+
+
+Clamp X based on a min and max value. 
+
+\index{mr@{mr}!clamp@{clamp}}
+\index{clamp@{clamp}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const mi\-Scalar clamp (const mi\-Scalar {\em x}, const mi\-Scalar {\em min\-Val}, const mi\-Scalar {\em max\-Val})\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_a63}
+
+
+Clamp X based on a min and max value. 
+
+\index{mr@{mr}!connected@{connected}}
+\index{connected@{connected}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ bool connected (const mi\-State $\ast$const {\em s}, const T \& {\em p})\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_a68}
+
+
+Undocumented way of determining whether a parameter is connected into a shader tree. This is what mi\_\-eval() does behind the scenes, basically. \index{mr@{mr}!deriv_bump@{deriv\_\-bump}}
+\index{deriv_bump@{deriv\_\-bump}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void deriv\_\-bump (const vector \& {\em N}, vector \& {\em d\-Pds}, vector \& {\em d\-Pdt}, const mi\-Scalar {\em gradu}, const mi\-Scalar {\em gradv})\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_a18}
+
+
+Perform Derivative bump mapping. 
+
+\index{mr@{mr}!dNdst@{dNdst}}
+\index{dNdst@{dNdst}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Boolean d\-Ndst (mi\-Vector \& {\em d\-Nds}, mi\-Vector \& {\em d\-Ndt}, const mi\-State $\ast$const {\em state}, const int {\em idx} = 0)\hspace{0.3cm}{\tt  [static]}}\label{namespacemr_a48}
+
+
+Calculate d\-Nds and d\-Ndt for the state-$>$point intersection. idx controls the texture vectors. \index{mr@{mr}!dPdst@{dPdst}}
+\index{dPdst@{dPdst}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Boolean d\-Pdst (mi\-Vector \& {\em d\-Pds}, mi\-Vector \& {\em d\-Pdt}, const mi\-State $\ast$const {\em state}, const int {\em idx} = 0)\hspace{0.3cm}{\tt  [static]}}\label{namespacemr_a47}
+
+
+Calculate d\-Pds and d\-Pdt for the state-$>$point intersection. idx controls the texture vectors (for when surface has multiple STs) \index{mr@{mr}!dPduv@{dPduv}}
+\index{dPduv@{dPduv}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Boolean d\-Pduv (mi\-Vector \& {\em d\-Pdu}, mi\-Vector \& {\em d\-Pdv}, const mi\-State $\ast$const {\em state})\hspace{0.3cm}{\tt  [static]}}\label{namespacemr_a50}
+
+
+Calculate d\-Pdu and d\-Pdv for the state-$>$point intersection. idx controls the texture vectors (for when surface has multiple STs) \index{mr@{mr}!dPduv2@{dPduv2}}
+\index{dPduv2@{dPduv2}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Boolean d\-Pduv2 (mi\-Vector \& {\em d\-P2du2}, mi\-Vector \& {\em d\-P2dv2}, mi\-Vector \& {\em d\-P2dudv}, const mi\-State $\ast$const {\em state})\hspace{0.3cm}{\tt  [static]}}\label{namespacemr_a52}
+
+
+Get second order derivatives d2x/du2, d2x/dv2, d2x/dudv. 
+
+\index{mr@{mr}!dPNdst@{dPNdst}}
+\index{dPNdst@{dPNdst}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Boolean d\-PNdst (mi\-Vector \& {\em d\-Pds}, mi\-Vector \& {\em d\-Pdt}, mi\-Vector \& {\em d\-Nds}, mi\-Vector \& {\em d\-Ndt}, const mi\-State $\ast$const {\em state}, const int {\em idx} = 0)\hspace{0.3cm}{\tt  [static]}}\label{namespacemr_a49}
+
+
+Calculate d\-Pds, d\-Pdt, d\-Nds and d\-Ndt for the state-$>$point intersection. idx controls the texture vectors (for when surface has multiple STs) \index{mr@{mr}!DsuDtv@{DsuDtv}}
+\index{DsuDtv@{DsuDtv}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void Dsu\-Dtv (const mi\-State $\ast$const {\em state}, mi\-Scalar \& {\em Du\-S}, mi\-Scalar \& {\em Dv\-S}, mi\-Scalar \& {\em Du\-T}, mi\-Scalar \& {\em Dv\-T}, const int {\em STidx} = 0, const int {\em UVidx} = 0)\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_a46}
+
+
+Like Du\-Dv, but returning Du(s)$\ast$du, Dv(s)$\ast$dv and Du(t)$\ast$du, Dv(t)$\ast$dv. 
+
+\index{mr@{mr}!DuDv@{DuDv}}
+\index{DuDv@{DuDv}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ mi\-Boolean Du\-Dv (T \& {\em Du}, T \& {\em Dv}, const mi\-State $\ast$ {\em state}, const T {\em tri\_\-data}[3], const int {\em idx} = 0)\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_a45}
+
+
+Calculate Du(data) and Dv(data).
+
+Du, Dv are the derivatives of data in u and v (ie. Du(data), Dv(data)).
+
+This is similar to prman's Du() and Dv() functions. Accuracy of partial derivatives will be dependant on surface tesselation.
+
+tri\_\-data[3] is the data to interpolate. Each index corresponds to a vertex of the triangle, in the order of mi\_\-tri\_\-vectors. idx is the texture index (state-$>$tex\_\-list[]) to be used as UV.
+
+To create tri\_\-data[] when problem cannot be solved analitically, you can use a dummy displacement shader to evaluate and store the result for each vertex. See {\bf mr\-Point\-Cache.h}{\rm (p.\,\pageref{mrPointCache_8h})} \index{mr@{mr}!DuDv@{DuDv}}
+\index{DuDv@{DuDv}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ mi\-Boolean Du\-Dv (T \& {\em Du}, T \& {\em Dv}, const mi\-State $\ast$ {\em state}, const vector \& {\em Px}, const vector \& {\em Py}, const T {\em data}[3], const int {\em idx} = 0)\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_a44}
+
+
+Calculate Du(data) and Dv(data) from 3 positions.
+
+Du, Dv are the derivatives of data in u and v (ie. Du(data), Dv(data)).
+
+Px is the point offset. Usually, this is state-$>$point + mi\_\-raster\_\-unit(..,X,..) Py is the other point offset. Usually, this is state-$>$point + mi\_\-raster\_\-unit(..,..,Y) data[3] is the data to interpolate. data[0] is the data for current point (state-$>$point) data[1] is the data for point Px data[2] is the data for point Py idx is the texture index (state-$>$tex\_\-list[]) to be used as UV. \index{mr@{mr}!DuDv@{DuDv}}
+\index{DuDv@{DuDv}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ mi\-Boolean Du\-Dv (T \& {\em Du}, T \& {\em Dv}, mi\-Scalar \& {\em du}, mi\-Scalar \& {\em dv}, const mi\-State $\ast$ {\em state}, const T {\em tri\_\-data}[3], const int {\em idx} = 0)\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_a43}
+
+
+Calculate Du(data), du and Dv(data), dv.
+
+Du, Dv are the derivatives of data in u and v (ie. Du(data), Dv(data)). du, dv are the derivatives of u and v.
+
+This is similar to prman's Du() and Dv() functions. Accuracy of partial derivatives will be dependant on surface tesselation.
+
+tri\_\-data[3] is the data to interpolate. Each index corresponds to a vertex of the triangle, in the order of mi\_\-tri\_\-vectors. idx is the texture index (state-$>$tex\_\-list[]) to be used as UV.
+
+To create tri\_\-data[] when problem cannot be solved analitically, you can use a dummy displacement shader to evaluate and store the result for each vertex. See {\bf mr\-Point\-Cache.h}{\rm (p.\,\pageref{mrPointCache_8h})} \index{mr@{mr}!DuDv@{DuDv}}
+\index{DuDv@{DuDv}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ mi\-Boolean Du\-Dv (T \& {\em Du}, T \& {\em Dv}, mi\-Scalar \& {\em du}, mi\-Scalar \& {\em dv}, const mi\-State $\ast$ {\em state}, const point \& {\em Px}, const point \& {\em Py}, const T {\em data}[3], const int {\em idx} = 0)\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_a42}
+
+
+Calculate Du(data), du and Dv(data), dv.
+
+Du, Dv are the derivatives of data in u and v (ie. Du(data), Dv(data)). du, dv are the derivatives of u and v.
+
+This is similar to prman's Du() and Dv() functions. Accuracy of partial derivatives will be dependant on surface tesselation.
+
+data[3] is the data to interpolate. Each index corresponds to a vertex. data[0] corresponds to state-$>$point, data[1] corresponds to Px, data[2] corresponds to Py. idx is the texture index (state-$>$tex\_\-list[]) to be used as UV. \index{mr@{mr}!DuDv_Impl@{DuDv\_\-Impl}}
+\index{DuDv_Impl@{DuDv\_\-Impl}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ mi\-Boolean Du\-Dv\_\-Impl (T \& {\em Du}, T \& {\em Dv}, mi\-Scalar \& {\em du}, mi\-Scalar \& {\em dv}, const mi\-State $\ast$ {\em state}, const mi\-Scalar {\em bx}[3], const mi\-Scalar {\em by}[3], const T {\em data}[3], const int {\em idx} = 0)\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_a41}
+
+
+Calculates du, dv then goes to calculate Du,Dv. 
+
+\index{mr@{mr}!DuDv_Impl@{DuDv\_\-Impl}}
+\index{DuDv_Impl@{DuDv\_\-Impl}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ mi\-Boolean Du\-Dv\_\-Impl (T \& {\em Du}, T \& {\em Dv}, const mi\-State $\ast$ {\em state}, const mi\-Scalar {\em bx}[3], const mi\-Scalar {\em by}[3], const T {\em data}[3], const int {\em idx} = 0)\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_a40}
+
+
+Calculates auxiliary determinants then goes to calculate Du,Dv. 
+
+\index{mr@{mr}!DuDv_Impl@{DuDv\_\-Impl}}
+\index{DuDv_Impl@{DuDv\_\-Impl}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Boolean Du\-Dv\_\-Impl (mi\-Scalar \& {\em Du}, mi\-Scalar \& {\em Dv}, const mi\-State $\ast$ {\em state}, const mi\-Scalar {\em u1}, const mi\-Scalar {\em u2}, const mi\-Scalar {\em v1}, const mi\-Scalar {\em v2}, const mi\-Scalar {\em data}[3], const int {\em idx})\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_a39}
+
+
+Calculate Du(data), du and Dv(data), dv.
+
+Internal function not for user consumption. \index{mr@{mr}!DuDv_Impl@{DuDv\_\-Impl}}
+\index{DuDv_Impl@{DuDv\_\-Impl}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Boolean Du\-Dv\_\-Impl (vector2d \& {\em Du}, vector2d \& {\em Dv}, const mi\-State $\ast$ {\em state}, const mi\-Scalar {\em u1}, const mi\-Scalar {\em u2}, const mi\-Scalar {\em v1}, const mi\-Scalar {\em v2}, const vector2d {\em data}[3], const int {\em idx})\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_a38}
+
+
+Calculate Du(data), du and Dv(data), dv.
+
+Internal function not for user consumption. \index{mr@{mr}!DuDv_Impl@{DuDv\_\-Impl}}
+\index{DuDv_Impl@{DuDv\_\-Impl}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Boolean Du\-Dv\_\-Impl (color \& {\em Du}, color \& {\em Dv}, const mi\-State $\ast$ {\em state}, const mi\-Scalar {\em u1}, const mi\-Scalar {\em u2}, const mi\-Scalar {\em v1}, const mi\-Scalar {\em v2}, const color {\em data}[3], const int {\em idx})\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_a37}
+
+
+Calculate Du(data), du and Dv(data), dv.
+
+Internal function not for user consumption. \index{mr@{mr}!DuDv_Impl@{DuDv\_\-Impl}}
+\index{DuDv_Impl@{DuDv\_\-Impl}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ mi\-Boolean Du\-Dv\_\-Impl (T \& {\em Du}, T \& {\em Dv}, const mi\-State $\ast$ {\em state}, const mi\-Scalar {\em u1}, const mi\-Scalar {\em u2}, const mi\-Scalar {\em v1}, const mi\-Scalar {\em v2}, const T {\em data}[3], const int {\em idx} = 0)\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_a36}
+
+
+Calculate Du(data), du and Dv(data), dv.
+
+Internal function not for user consumption. \index{mr@{mr}!eval@{eval}}
+\index{eval@{eval}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ const T$\ast$ eval (const mi\-State $\ast$const {\em state}, const T $\ast$ {\em v})\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_a70}
+
+
+Simpler mi\_\-eval\_\-$\ast$ for shaders' use. 
+
+\index{mr@{mr}!eval@{eval}}
+\index{eval@{eval}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ const T\& eval (const mi\-State $\ast$const {\em state}, const T \& {\em v})\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_a69}
+
+
+Simpler mi\_\-eval\_\-$\ast$ for shaders' use. 
+
+\index{mr@{mr}!G_attenuation@{G\_\-attenuation}}
+\index{G_attenuation@{G\_\-attenuation}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar G\_\-attenuation (const mi\-Scalar {\em Nd\-V}, const mi\-Scalar {\em Nd\-L}, const mi\-Scalar {\em Nd\-H}, const mi\-Scalar {\em Vd\-H})\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_a72}
+
+
+Specular G(eometric) attenuation
+
+In Foley-Van\-Damm, it is:
+
+G = min( 1, 2$\ast$Nd\-H$\ast$Nd\-V/Vd\-H, 2$\ast$Nd\-H$\ast$Nd\-L/Vd\-H );
+
+But Pixar in MTOR uses a similar but slightly different construct, which is the one below. \index{mr@{mr}!G_attenuation_pixar@{G\_\-attenuation\_\-pixar}}
+\index{G_attenuation_pixar@{G\_\-attenuation\_\-pixar}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar G\_\-attenuation\_\-pixar (const mi\-Scalar {\em Nd\-V}, const mi\-Scalar {\em Nd\-L}, const mi\-Scalar {\em Nd\-H}, const mi\-Scalar {\em Vd\-H})\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_a73}
+
+
+Specular G(eometric) attenuation a la pixar \index{mr@{mr}!get_normals@{get\_\-normals}}
+\index{get_normals@{get\_\-normals}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void get\_\-normals (const mi\-State $\ast$const {\em state}, mi\-Vector {\em N}[3])\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_a24}
+
+
+Auxiliary routine to get triangle normals and take them to internal space, normalizing them also. \index{mr@{mr}!get_sides@{get\_\-sides}}
+\index{get_sides@{get\_\-sides}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void get\_\-sides (const mi\-State $\ast$const {\em state}, int \& {\em w}, int \& {\em h})\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_a35}
+
+
+Auxiliary routine to find the two indices to the sides of the triangle (ie. disregard hypotenuse) \index{mr@{mr}!get_vertices@{get\_\-vertices}}
+\index{get_vertices@{get\_\-vertices}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void get\_\-vertices (const mi\-State $\ast$const {\em state}, mi\-Vector {\em v}[3])\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_a25}
+
+
+Auxiliary routine to get triangle vertices and take them to internal space. \index{mr@{mr}!isEquivalent@{isEquivalent}}
+\index{isEquivalent@{isEquivalent}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool is\-Equivalent (const mi\-Geo\-Scalar {\em v}, const mi\-Geo\-Scalar {\em x}, const mi\-Geo\-Scalar {\em eps} = mi\-GEO\_\-SCALAR\_\-EPSILON)\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_a61}
+
+
+\index{mr@{mr}!isEquivalent@{isEquivalent}}
+\index{isEquivalent@{isEquivalent}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ bool is\-Equivalent (const T {\em v}, const T {\em x}, const T {\em eps} = mi\-SCALAR\_\-EPSILON)\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_a60}
+
+
+\index{mr@{mr}!linear_bump@{linear\_\-bump}}
+\index{linear_bump@{linear\_\-bump}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void linear\_\-bump (mi\-State $\ast$const {\em state}, vector \& {\em d\-Pds}, vector \& {\em d\-Pdt}, const mi\-Scalar {\em gradu}, const mi\-Scalar {\em gradv})\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_a17}
+
+
+Perform Linear bump mapping. 
+
+\index{mr@{mr}!max@{max}}
+\index{max@{max}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ const T\& max (const T \& {\em w}, const T \& {\em x}, const T \& {\em y}, const T \& {\em z})\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_a58}
+
+
+Auxiliary function to return max of 4 elements. 
+
+\index{mr@{mr}!max@{max}}
+\index{max@{max}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ const T\& max (const T \& {\em x}, const T \& {\em y}, const T \& {\em z})\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_a57}
+
+
+Auxiliary function to return max of 3 elements. 
+
+\index{mr@{mr}!max@{max}}
+\index{max@{max}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ const T\& max (const T \& {\em x}, const T \& {\em y})\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_a56}
+
+
+Auxiliary function to return max of 2 elements. 
+
+\index{mr@{mr}!min@{min}}
+\index{min@{min}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ const T\& min (const T \& {\em w}, const T \& {\em x}, const T \& {\em y}, const T \& {\em z})\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_a55}
+
+
+Auxiliary function to return min of 4 elements. 
+
+\index{mr@{mr}!min@{min}}
+\index{min@{min}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ const T\& min (const T \& {\em x}, const T \& {\em y}, const T \& {\em z})\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_a54}
+
+
+Auxiliary function to return min of 3 elements. 
+
+\index{mr@{mr}!min@{min}}
+\index{min@{min}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ const T\& min (const T \& {\em x}, const T \& {\em y})\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_a53}
+
+
+Auxiliary function to return min of 2 elements. 
+
+\index{mr@{mr}!minmax@{minmax}}
+\index{minmax@{minmax}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ void minmax (T \& {\em minst}, T \& {\em maxst}, const T \& {\em s0}, const T \& {\em s1}, const T \& {\em s2})\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_a59}
+
+
+Auxiliary function to return min/max of 3 numbers. A tad faster than using {\bf max()}{\rm (p.\,\pageref{namespacemr_a56})} and {\bf min()}{\rm (p.\,\pageref{namespacemr_a53})} separately \index{mr@{mr}!parallax_bump@{parallax\_\-bump}}
+\index{parallax_bump@{parallax\_\-bump}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void parallax\_\-bump (const mi\-State $\ast$const {\em state}, const mi\-Scalar {\em amt}, const mi\-Scalar {\em scale}, const mi\-Scalar {\em bias} = 0.5f, const int {\em idx} = 0)\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_a21}
+
+
+\index{mr@{mr}!parallax_bump@{parallax\_\-bump}}
+\index{parallax_bump@{parallax\_\-bump}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void parallax\_\-bump (mi\-Vector2d \& {\em offset}, const mi\-State $\ast$const {\em state}, const mi\-Scalar {\em amt}, const mi\-Scalar {\em scale}, const mi\-Scalar {\em bias} = 0.5f, const int {\em idx} = 0)\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_a20}
+
+
+Perform parallax bump mapping This routine will modify all state-$>$tex\_\-list[] coordinates. See: {\tt http://vrsj.t.u-tokyo.ac.jp/ic-at/papers/01205.pdf} \index{mr@{mr}!Phong@{Phong}}
+\index{Phong@{Phong}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar Phong (const vector \& {\em V}, const normal \& {\em N}, const vector \& {\em L}, const mi\-Scalar {\em Nd\-L}, const mi\-Scalar {\em shiny})\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_a77}
+
+
+Given the view vector, a normal, the light vector, and a scalar value, calculate the (original) phong specular spread. \index{mr@{mr}!round@{round}}
+\index{round@{round}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ int round (const T \& {\em x})\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_a62}
+
+
+\index{mr@{mr}!spline@{spline}}
+\index{spline@{spline}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T spline (const mi\-Scalar {\em f}, const unsigned {\em num}, const T $\ast$const {\em args}, const basis::type {\em b} = basis::k\-Catmull\-Rom)\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_a80}
+
+
+Evaluate a spline function in the range f=[0,1]. You need to pass at least 4 arguments for the spline. If basis b is k\-Linear, the first and last argument are unused. If basis is not specified, default to k\-Catmull\-Rom. \index{mr@{mr}!spline@{spline}}
+\index{spline@{spline}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T spline (const mi\-Scalar {\em f}, const std::vector$<$ T $>$ \& {\em args}, const basis::type {\em b} = basis::k\-Catmull\-Rom)\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_a79}
+
+
+Evaluate a spline function in the range f=[0,1]. You need to pass at least 4 arguments for the spline. If basis b is k\-Linear, the first and last argument are unused. If basis is not specified, default to k\-Catmull\-Rom. \index{mr@{mr}!Torrance_Sparrow@{Torrance\_\-Sparrow}}
+\index{Torrance_Sparrow@{Torrance\_\-Sparrow}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar Torrance\_\-Sparrow (const mi\-Scalar {\em Nd\-H}, const mi\-Scalar {\em k1})\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_a75}
+
+
+Given the dot product of N.H, and a scalar value, calculate the Torrance-Sparrow specular spread.
+
+exp(-( pow(k1 $\ast$ acos(N.H)),2))
+
+where k1 is a user defined shiny constant. \index{mr@{mr}!Trowbridge_Reitz@{Trowbridge\_\-Reitz}}
+\index{Trowbridge_Reitz@{Trowbridge\_\-Reitz}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar Trowbridge\_\-Reitz (const mi\-Scalar {\em Nd\-H}, const mi\-Scalar {\em k2})\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_a74}
+
+
+Given the dot product of N.H, and a scalar value, calculate the Trowbridge-Reitz specular spread. Defined by this equation:
+
+D = ( (k2$^\wedge$2) / ((N.H)$^\wedge$2$\ast$(k2$^\wedge$2-1)+1) )$^\wedge$2;
+
+where k2 is the shiny constant 
+
+\subsection{Variable Documentation}
+\index{mr@{mr}!error@{error}}
+\index{error@{error}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf errorstream}$\ast$ {\bf mr::error}}\label{namespacemr_a8}
+
+
+\index{mr@{mr}!fatal@{fatal}}
+\index{fatal@{fatal}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf fatalstream}$\ast$ {\bf mr::fatal}}\label{namespacemr_a9}
+
+
+\index{mr@{mr}!info@{info}}
+\index{info@{info}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf infostream}$\ast$ {\bf mr::info}}\label{namespacemr_a6}
+
+
+\index{mr@{mr}!kNoInit@{kNoInit}}
+\index{kNoInit@{kNoInit}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ const {\bf mr::k\-No\-Init} = \char`\"{}\char`\"{}\hspace{0.3cm}{\tt  [static]}}\label{namespacemr_a1}
+
+
+\index{mr@{mr}!kNotCached@{kNotCached}}
+\index{kNotCached@{kNotCached}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const mi\-Scalar {\bf mr::k\-Not\-Cached} = -255.0f\hspace{0.3cm}{\tt  [static]}}\label{namespacemr_a3}
+
+
+\index{mr@{mr}!progress@{progress}}
+\index{progress@{progress}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf progressstream}$\ast$ {\bf mr::progress}}\label{namespacemr_a10}
+
+
+\index{mr@{mr}!streamMutex@{streamMutex}}
+\index{streamMutex@{streamMutex}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MR\_\-LIB\_\-EXPORT {\bf mutex}$\ast$ {\bf mr::stream\-Mutex}}\label{namespacemr_a5}
+
+
+\index{mr@{mr}!warning@{warning}}
+\index{warning@{warning}!mr@{mr}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf warningstream}$\ast$ {\bf mr::warning}}\label{namespacemr_a7}
+
+

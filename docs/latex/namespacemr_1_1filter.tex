@@ -1,0 +1,181 @@
+\section{mr::filter Namespace Reference}
+\label{namespacemr_1_1filter}\index{mr::filter@{mr::filter}}
+
+
+\subsection*{Typedefs}
+\begin{CompactItemize}
+\item 
+typedef mi\-Scalar($\ast$ {\bf function} )(mi\-Scalar, mi\-Scalar, mi\-Scalar, mi\-Scalar)
+\end{CompactItemize}
+\subsection*{Enumerations}
+\begin{CompactItemize}
+\item 
+enum {\bf types} \{ \par
+{\bf k\-Box}, 
+{\bf k\-Triangle}, 
+{\bf k\-Gaussian}, 
+{\bf k\-Sinc}, 
+\par
+{\bf k\-Disk}, 
+{\bf k\-Catmull\-Rom}, 
+{\bf k\-Mitchell}, 
+{\bf k\-Bessel}, 
+\par
+{\bf k\-Lanczos2}, 
+{\bf k\-Lanczos3}, 
+{\bf k\-Hann}, 
+{\bf k\-Hamming}
+ \}
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+mi\-Scalar {\bf box} (mi\-Scalar x, mi\-Scalar y, mi\-Scalar w, mi\-Scalar h)
+\item 
+mi\-Scalar {\bf triangle} (mi\-Scalar x, mi\-Scalar y, mi\-Scalar w, mi\-Scalar h)
+\item 
+mi\-Scalar {\bf gaussian} (mi\-Scalar x, mi\-Scalar y, mi\-Scalar w, mi\-Scalar h)
+\item 
+mi\-Scalar {\bf sinc} (mi\-Scalar x, mi\-Scalar y, mi\-Scalar w, mi\-Scalar h)
+\item 
+mi\-Scalar {\bf disk} (mi\-Scalar x, mi\-Scalar y, mi\-Scalar w, mi\-Scalar h)
+\item 
+mi\-Scalar {\bf catmullrom} (mi\-Scalar x, mi\-Scalar y, mi\-Scalar w, mi\-Scalar h)
+\item 
+mi\-Scalar {\bf mitchell} (mi\-Scalar x, mi\-Scalar y, mi\-Scalar w, mi\-Scalar h)
+\item 
+mi\-Scalar {\bf bessel} (mi\-Scalar x, mi\-Scalar y, mi\-Scalar w, mi\-Scalar h)
+\item 
+mi\-Scalar {\bf sinc} (mi\-Scalar t)
+\item 
+mi\-Scalar {\bf lanczos2} (mi\-Scalar x, mi\-Scalar y, mi\-Scalar w, mi\-Scalar h)
+\item 
+mi\-Scalar {\bf lanczos} (mi\-Scalar x, mi\-Scalar y, mi\-Scalar w, mi\-Scalar h)
+\item 
+mi\-Scalar {\bf hann} (mi\-Scalar x, mi\-Scalar y, mi\-Scalar w, mi\-Scalar h, mi\-Scalar n=3, mi\-Scalar a=0.5f)
+\item 
+mi\-Scalar {\bf hamming} (mi\-Scalar x, mi\-Scalar y, mi\-Scalar w, mi\-Scalar h, mi\-Scalar n=3)
+\item 
+{\bf function} {\bf from\-Enumeration} (const {\bf types} flt)
+\end{CompactItemize}
+
+
+\subsection{Typedef Documentation}
+\index{mr::filter@{mr::filter}!function@{function}}
+\index{function@{function}!mr::filter@{mr::filter}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef mi\-Scalar($\ast$ {\bf mr::filter::function})(mi\-Scalar, mi\-Scalar, mi\-Scalar, mi\-Scalar)}\label{namespacemr_1_1filter_a0}
+
+
+\begin{Desc}
+\item[{\bf Todo}]: create tables for each filters to avoid calling them directly.\end{Desc}
+
+
+\subsection{Enumeration Type Documentation}
+\index{mr::filter@{mr::filter}!types@{types}}
+\index{types@{types}!mr::filter@{mr::filter}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}enum {\bf mr::filter::types}}\label{namespacemr_1_1filter_a27}
+
+
+\begin{Desc}
+\item[Enumeration values: ]\par
+\begin{description}
+\index{kBox@{kBox}!mr::filter@{mr::filter}}\index{mr::filter@{mr::filter}!kBox@{kBox}}\item[{\em 
+k\-Box\label{namespacemr_1_1filter_a27a1}
+}]\index{kTriangle@{kTriangle}!mr::filter@{mr::filter}}\index{mr::filter@{mr::filter}!kTriangle@{kTriangle}}\item[{\em 
+k\-Triangle\label{namespacemr_1_1filter_a27a2}
+}]\index{kGaussian@{kGaussian}!mr::filter@{mr::filter}}\index{mr::filter@{mr::filter}!kGaussian@{kGaussian}}\item[{\em 
+k\-Gaussian\label{namespacemr_1_1filter_a27a3}
+}]\index{kSinc@{kSinc}!mr::filter@{mr::filter}}\index{mr::filter@{mr::filter}!kSinc@{kSinc}}\item[{\em 
+k\-Sinc\label{namespacemr_1_1filter_a27a4}
+}]\index{kDisk@{kDisk}!mr::filter@{mr::filter}}\index{mr::filter@{mr::filter}!kDisk@{kDisk}}\item[{\em 
+k\-Disk\label{namespacemr_1_1filter_a27a5}
+}]\index{kCatmullRom@{kCatmullRom}!mr::filter@{mr::filter}}\index{mr::filter@{mr::filter}!kCatmullRom@{kCatmullRom}}\item[{\em 
+k\-Catmull\-Rom\label{namespacemr_1_1filter_a27a6}
+}]\index{kMitchell@{kMitchell}!mr::filter@{mr::filter}}\index{mr::filter@{mr::filter}!kMitchell@{kMitchell}}\item[{\em 
+k\-Mitchell\label{namespacemr_1_1filter_a27a7}
+}]\index{kBessel@{kBessel}!mr::filter@{mr::filter}}\index{mr::filter@{mr::filter}!kBessel@{kBessel}}\item[{\em 
+k\-Bessel\label{namespacemr_1_1filter_a27a8}
+}]\index{kLanczos2@{kLanczos2}!mr::filter@{mr::filter}}\index{mr::filter@{mr::filter}!kLanczos2@{kLanczos2}}\item[{\em 
+k\-Lanczos2\label{namespacemr_1_1filter_a27a9}
+}]\index{kLanczos3@{kLanczos3}!mr::filter@{mr::filter}}\index{mr::filter@{mr::filter}!kLanczos3@{kLanczos3}}\item[{\em 
+k\-Lanczos3\label{namespacemr_1_1filter_a27a10}
+}]\index{kHann@{kHann}!mr::filter@{mr::filter}}\index{mr::filter@{mr::filter}!kHann@{kHann}}\item[{\em 
+k\-Hann\label{namespacemr_1_1filter_a27a11}
+}]\index{kHamming@{kHamming}!mr::filter@{mr::filter}}\index{mr::filter@{mr::filter}!kHamming@{kHamming}}\item[{\em 
+k\-Hamming\label{namespacemr_1_1filter_a27a12}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{Function Documentation}
+\index{mr::filter@{mr::filter}!bessel@{bessel}}
+\index{bessel@{bessel}!mr::filter@{mr::filter}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar bessel (mi\-Scalar {\em x}, mi\-Scalar {\em y}, mi\-Scalar {\em w}, mi\-Scalar {\em h})\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_1_1filter_a20}
+
+
+\index{mr::filter@{mr::filter}!box@{box}}
+\index{box@{box}!mr::filter@{mr::filter}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar box (mi\-Scalar {\em x}, mi\-Scalar {\em y}, mi\-Scalar {\em w}, mi\-Scalar {\em h})\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_1_1filter_a13}
+
+
+\index{mr::filter@{mr::filter}!catmullrom@{catmullrom}}
+\index{catmullrom@{catmullrom}!mr::filter@{mr::filter}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar catmullrom (mi\-Scalar {\em x}, mi\-Scalar {\em y}, mi\-Scalar {\em w}, mi\-Scalar {\em h})\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_1_1filter_a18}
+
+
+\index{mr::filter@{mr::filter}!disk@{disk}}
+\index{disk@{disk}!mr::filter@{mr::filter}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar disk (mi\-Scalar {\em x}, mi\-Scalar {\em y}, mi\-Scalar {\em w}, mi\-Scalar {\em h})\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_1_1filter_a17}
+
+
+\index{mr::filter@{mr::filter}!fromEnumeration@{fromEnumeration}}
+\index{fromEnumeration@{fromEnumeration}!mr::filter@{mr::filter}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf function} from\-Enumeration (const types {\em flt})\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_1_1filter_a26}
+
+
+\index{mr::filter@{mr::filter}!gaussian@{gaussian}}
+\index{gaussian@{gaussian}!mr::filter@{mr::filter}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar gaussian (mi\-Scalar {\em x}, mi\-Scalar {\em y}, mi\-Scalar {\em w}, mi\-Scalar {\em h})\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_1_1filter_a15}
+
+
+\index{mr::filter@{mr::filter}!hamming@{hamming}}
+\index{hamming@{hamming}!mr::filter@{mr::filter}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar hamming (mi\-Scalar {\em x}, mi\-Scalar {\em y}, mi\-Scalar {\em w}, mi\-Scalar {\em h}, mi\-Scalar {\em n} = 3)\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_1_1filter_a25}
+
+
+\index{mr::filter@{mr::filter}!hann@{hann}}
+\index{hann@{hann}!mr::filter@{mr::filter}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar hann (mi\-Scalar {\em x}, mi\-Scalar {\em y}, mi\-Scalar {\em w}, mi\-Scalar {\em h}, mi\-Scalar {\em n} = 3, mi\-Scalar {\em a} = 0.5f)\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_1_1filter_a24}
+
+
+\index{mr::filter@{mr::filter}!lanczos@{lanczos}}
+\index{lanczos@{lanczos}!mr::filter@{mr::filter}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar lanczos (mi\-Scalar {\em x}, mi\-Scalar {\em y}, mi\-Scalar {\em w}, mi\-Scalar {\em h})\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_1_1filter_a23}
+
+
+\index{mr::filter@{mr::filter}!lanczos2@{lanczos2}}
+\index{lanczos2@{lanczos2}!mr::filter@{mr::filter}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar lanczos2 (mi\-Scalar {\em x}, mi\-Scalar {\em y}, mi\-Scalar {\em w}, mi\-Scalar {\em h})\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_1_1filter_a22}
+
+
+\index{mr::filter@{mr::filter}!mitchell@{mitchell}}
+\index{mitchell@{mitchell}!mr::filter@{mr::filter}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar mitchell (mi\-Scalar {\em x}, mi\-Scalar {\em y}, mi\-Scalar {\em w}, mi\-Scalar {\em h})\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_1_1filter_a19}
+
+
+\index{mr::filter@{mr::filter}!sinc@{sinc}}
+\index{sinc@{sinc}!mr::filter@{mr::filter}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar sinc (mi\-Scalar {\em t})\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_1_1filter_a21}
+
+
+\index{mr::filter@{mr::filter}!sinc@{sinc}}
+\index{sinc@{sinc}!mr::filter@{mr::filter}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar sinc (mi\-Scalar {\em x}, mi\-Scalar {\em y}, mi\-Scalar {\em w}, mi\-Scalar {\em h})\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_1_1filter_a16}
+
+
+\index{mr::filter@{mr::filter}!triangle@{triangle}}
+\index{triangle@{triangle}!mr::filter@{mr::filter}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar triangle (mi\-Scalar {\em x}, mi\-Scalar {\em y}, mi\-Scalar {\em w}, mi\-Scalar {\em h})\hspace{0.3cm}{\tt  [inline]}}\label{namespacemr_1_1filter_a14}
+
+

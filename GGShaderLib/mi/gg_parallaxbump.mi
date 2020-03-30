@@ -1,0 +1,23 @@
+
+
+declare shader
+	struct {
+	    scalar "offsetU",  #: shortname "u"
+	    scalar "offsetV"   #: shortname "v"
+	} "gg_parallaxbump"
+	(
+		scalar "amount",
+		#: shortname "a"
+		scalar "scale",
+		#: default 0.2 softmin -1 softmax 1
+		#: shortname "s"
+		scalar	"bias"
+		#: default 0.5 softmin -1 softmax 1
+		#: shortname "b"
+	)
+	#:
+	#: nodeid 3015
+	#:
+	apply texture
+	version 1
+end declare

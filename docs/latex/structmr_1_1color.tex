@@ -1,0 +1,2469 @@
+\section{mr::color Struct Reference}
+\label{structmr_1_1color}\index{mr::color@{mr::color}}
+Define main color class that replaces mi\-Color.  
+
+
+{\tt \#include $<$mr\-Color.h$>$}
+
+\subsection*{Public Types}
+\begin{CompactItemize}
+\item 
+typedef {\bf color} {\bf self}
+\item 
+typedef mi\-Scalar {\bf S}
+\item 
+enum {\bf space} \{ \par
+{\bf k\-RGB} =  0, 
+{\bf k\-HSV}, 
+{\bf k\-HSL}, 
+{\bf k\-XYZ}, 
+\par
+{\bf k\-CIEXYZ} =  k\-XYZ, 
+{\bf k\-YPP}, 
+{\bf k\-YCC}, 
+{\bf k\-Unknown}
+ \}
+\end{CompactItemize}
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+const mi\-Scalar {\bf Evaluate} (const unsigned short i) const 
+\end{CompactItemize}
+\begin{Indent}{\bf Color Space Conversion}\par
+\begin{CompactItemize}
+\item 
+void {\bf xyz2rgb} ()
+\begin{CompactList}\small\item\em Assuming color represents CIE XYZ, take it to RGB. \item\end{CompactList}\item 
+void {\bf rgb2xyz} ()
+\begin{CompactList}\small\item\em Assuming color represents RGB, take it to CIE XYZ. \item\end{CompactList}\item 
+void {\bf hsv2rgb} ()
+\begin{CompactList}\small\item\em Assuming color represents HSV, take it to RGB values. \item\end{CompactList}\item 
+void {\bf rgb2hsv} ()
+\begin{CompactList}\small\item\em Assuming color represents RGB, take it to HSV (r=H,g=S,b=V). \item\end{CompactList}\item 
+void {\bf hsl2rgb} ()
+\begin{CompactList}\small\item\em Assuming color represents HSL, take it to RGB values. \item\end{CompactList}\item 
+void {\bf rgb2hsl} ()
+\begin{CompactList}\small\item\em Assuming color represents RGB, take it to HSL (r=H,g=S,b=L). \item\end{CompactList}\item 
+void {\bf ycc2rgb} ()
+\begin{CompactList}\small\item\em Assuming color represents YCb\-Cr, take it to RGB values. \item\end{CompactList}\item 
+void {\bf rgb2ycc} ()
+\begin{CompactList}\small\item\em Assuming color represents RGB, take it to YCb\-Cr. \item\end{CompactList}\item 
+void {\bf ypp2rgb} ()
+\begin{CompactList}\small\item\em Assuming color represents YPb\-Pr, take it to RGB values. \item\end{CompactList}\item 
+void {\bf rgb2ypp} ()
+\begin{CompactList}\small\item\em Assuming color represents RGB, take it to YPb\-Pr. \item\end{CompactList}\item 
+void {\bf to} (const {\bf space} to\-Space)
+\begin{CompactList}\small\item\em Assume color is RGB, then take it to\-Space. \item\end{CompactList}\item 
+void {\bf from} (const {\bf space} from\-Space)
+\begin{CompactList}\small\item\em Assume color is defined in from\-Space, then take it to RGB. \item\end{CompactList}\item 
+void {\bf transform} (const {\bf space} from\-Space, const {\bf space} to\-Space)
+\begin{CompactList}\small\item\em Transform the color from one space to another. \item\end{CompactList}\end{CompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Constructors}\par
+\begin{CompactItemize}
+\item 
+template$<$class X, class Y, class Oper$>$ {\bf color} (const {\bf base::exp}$<$ X, Y, Oper $>$ \&e)
+\item 
+{\bf color} ({\bf k\-No\-Construct})
+\item 
+{\bf color} (const mi\-Color \&x)
+\item 
+{\bf color} (const mi\-Vector \&x, const mi\-Scalar aa=0.0f)
+\begin{CompactList}\small\item\em Constructor to initialize from an mi\-Vector, with optional alpha. \item\end{CompactList}\item 
+{\bf color} ()
+\begin{CompactList}\small\item\em Default constructor. Sets r,g,b,a to 0. \item\end{CompactList}\item 
+{\bf color} (const mi\-Scalar rgb, const mi\-Scalar aa=0.0f)
+\item 
+{\bf color} (const mi\-Scalar rr, const mi\-Scalar gg, const mi\-Scalar bb, const mi\-Scalar aa=0.0f)
+\item 
+{\bf color} (const {\bf space} t, const mi\-Color \&v)
+\item 
+{\bf color} (const {\bf space} t, const mi\-Scalar rr, const mi\-Scalar gg, const mi\-Scalar bb, const mi\-Scalar aa=0.0f)
+\end{CompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Copy Constructor}\par
+\begin{CompactItemize}
+\item 
+{\bf color} (const {\bf color} \&x)
+\end{CompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Conversions}\par
+\begin{CompactItemize}
+\item 
+{\bf operator mi\-Vector} ()
+\begin{CompactList}\small\item\em Convert color to an mi\-Vector. \item\end{CompactList}\item 
+{\bf operator vector} ()
+\begin{CompactList}\small\item\em Convert color to a vector. \item\end{CompactList}\item 
+{\bf operator point} ()
+\begin{CompactList}\small\item\em Convert color to a point. \item\end{CompactList}\item 
+{\bf operator normal} ()
+\begin{CompactList}\small\item\em Convert color to a normal. \item\end{CompactList}\end{CompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Assignment (With Alpha Channel)}\par
+\begin{CompactItemize}
+\item 
+template$<$class X, class Y, class Oper$>$ const {\bf color} \& {\bf operator$|$=} (const {\bf base::exp}$<$ X, Y, Oper $>$ \&e)
+\item 
+const {\bf color} \& {\bf operator$|$=} (const {\bf color} \&x)
+\item 
+const {\bf color} \& {\bf operator$|$=} (const mi\-Color \&x)
+\item 
+const {\bf color} \& {\bf operator$|$=} (const mi\-Vector \&x)
+\item 
+const {\bf color} \& {\bf operator$|$=} (const mi\-Scalar rgba)
+\end{CompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Assignment (Without Alpha Channel)}\par
+\begin{CompactItemize}
+\item 
+template$<$class X, class Y, class Oper$>$ const {\bf color} \& {\bf operator=} (const {\bf base::exp}$<$ X, Y, Oper $>$ \&e)
+\item 
+const {\bf color} \& {\bf operator=} (const {\bf color} \&x)
+\item 
+const {\bf color} \& {\bf operator=} (const mi\-Color \&x)
+\item 
+const {\bf color} \& {\bf operator=} (const mi\-Vector \&x)
+\item 
+const {\bf color} \& {\bf operator=} (const mi\-Scalar rgb)
+\end{CompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Swizzle operators}\par
+\begin{CompactItemize}
+\item 
+const {\bf color} \& {\bf rgb} (const mi\-Color \&t)
+\begin{CompactList}\small\item\em Set color to another mi\-Color. Original Alpha is not modified. \item\end{CompactList}\item 
+const {\bf color} \& {\bf rgb} () const 
+\begin{CompactList}\small\item\em Return color as {\bf rgb()}{\rm (p.\,\pageref{structmr_1_1color_z7_0})}. \item\end{CompactList}\item 
+{\bf self} {\bf rrr} () const 
+\begin{CompactList}\small\item\em 3 same channels \item\end{CompactList}\item 
+{\bf self} {\bf ggg} () const 
+\item 
+{\bf self} {\bf bbb} () const 
+\item 
+{\bf self} {\bf aaa} () const 
+\item 
+{\bf self} {\bf brg} () const 
+\item 
+const {\bf self} \& {\bf brg} (const {\bf self} \&t)
+\item 
+{\bf self} {\bf gbr} () const 
+\item 
+const {\bf self} \& {\bf gbr} (const {\bf self} \&t)
+\item 
+{\bf self} {\bf rbg} () const 
+\item 
+const {\bf self} \& {\bf rbg} (const {\bf self} \&t)
+\item 
+{\bf self} {\bf bgr} () const 
+\item 
+const {\bf self} \& {\bf bgr} (const {\bf self} \&t)
+\item 
+{\bf self} {\bf grb} () const 
+\item 
+const {\bf self} \& {\bf grb} (const {\bf self} \&t)
+\item 
+{\bf self} {\bf rab} () const 
+\item 
+const {\bf self} \& {\bf rab} (const {\bf self} \&t)
+\item 
+{\bf self} {\bf rba} () const 
+\item 
+const {\bf self} \& {\bf rba} (const {\bf self} \&t)
+\item 
+{\bf self} {\bf bag} () const 
+\item 
+const {\bf self} \& {\bf bag} (const {\bf self} \&t)
+\item 
+{\bf self} {\bf gar} () const 
+\item 
+const {\bf self} \& {\bf gar} (const {\bf self} \&t)
+\item 
+{\bf self} {\bf rag} () const 
+\item 
+const {\bf self} \& {\bf rag} (const {\bf self} \&t)
+\item 
+{\bf self} {\bf bga} () const 
+\item 
+const {\bf self} \& {\bf bga} (const {\bf self} \&t)
+\item 
+{\bf self} {\bf gra} () const 
+\item 
+const {\bf self} \& {\bf gra} (const {\bf self} \&t)
+\item 
+{\bf self} {\bf rga} () const 
+\item 
+const {\bf self} \& {\bf rga} (const {\bf self} \&t)
+\item 
+{\bf self} {\bf grr} () const 
+\item 
+{\bf self} {\bf brr} () const 
+\item 
+{\bf self} {\bf arr} () const 
+\item 
+{\bf self} {\bf rgr} () const 
+\item 
+{\bf self} {\bf rbr} () const 
+\item 
+{\bf self} {\bf rar} () const 
+\item 
+{\bf self} {\bf rrg} () const 
+\item 
+{\bf self} {\bf rrb} () const 
+\item 
+{\bf self} {\bf rra} () const 
+\item 
+{\bf self} {\bf rgg} () const 
+\item 
+{\bf self} {\bf bgg} () const 
+\item 
+{\bf self} {\bf agg} () const 
+\item 
+{\bf self} {\bf grg} () const 
+\item 
+{\bf self} {\bf gbg} () const 
+\item 
+{\bf self} {\bf gag} () const 
+\item 
+{\bf self} {\bf ggr} () const 
+\item 
+{\bf self} {\bf ggb} () const 
+\item 
+{\bf self} {\bf gga} () const 
+\item 
+{\bf self} {\bf gbb} () const 
+\item 
+{\bf self} {\bf rbb} () const 
+\item 
+{\bf self} {\bf abb} () const 
+\item 
+{\bf self} {\bf bgb} () const 
+\item 
+{\bf self} {\bf brb} () const 
+\item 
+{\bf self} {\bf bab} () const 
+\item 
+{\bf self} {\bf bbg} () const 
+\item 
+{\bf self} {\bf bbr} () const 
+\item 
+{\bf self} {\bf bba} () const 
+\item 
+{\bf color} {\bf rrrr} ()
+\item 
+{\bf color} {\bf gggg} ()
+\item 
+{\bf color} {\bf bbbb} ()
+\item 
+{\bf color} {\bf aaaa} ()
+\item 
+{\bf color} {\bf rgba} ()
+\item 
+const {\bf self} \& {\bf rgba} (const mi\-Color \&t)
+\item 
+{\bf color} {\bf rgab} ()
+\item 
+const {\bf self} \& {\bf rgab} (const mi\-Color \&t)
+\item 
+{\bf color} {\bf rbga} ()
+\item 
+const {\bf self} \& {\bf rbga} (const mi\-Color \&t)
+\item 
+{\bf color} {\bf rbag} ()
+\item 
+const {\bf self} \& {\bf rbag} (const mi\-Color \&t)
+\item 
+{\bf color} {\bf rabg} ()
+\item 
+const {\bf self} \& {\bf rabg} (const mi\-Color \&t)
+\item 
+{\bf color} {\bf ragb} ()
+\item 
+const {\bf self} \& {\bf ragb} (const mi\-Color \&t)
+\item 
+{\bf color} {\bf rrgb} ()
+\item 
+{\bf color} {\bf rrbg} ()
+\item 
+{\bf color} {\bf rrag} ()
+\item 
+{\bf color} {\bf rrga} ()
+\item 
+{\bf color} {\bf rrab} ()
+\item 
+{\bf color} {\bf rrba} ()
+\item 
+{\bf color} {\bf grrb} ()
+\item 
+{\bf color} {\bf brrg} ()
+\item 
+{\bf color} {\bf grra} ()
+\item 
+{\bf color} {\bf arrg} ()
+\item 
+{\bf color} {\bf brra} ()
+\item 
+{\bf color} {\bf arrb} ()
+\item 
+{\bf color} {\bf gbrr} ()
+\item 
+{\bf color} {\bf bgrr} ()
+\item 
+{\bf color} {\bf abrr} ()
+\item 
+{\bf color} {\bf barr} ()
+\item 
+{\bf color} {\bf agrr} ()
+\item 
+{\bf color} {\bf garr} ()
+\item 
+{\bf color} {\bf rrrg} ()
+\item 
+{\bf color} {\bf rrrb} ()
+\item 
+{\bf color} {\bf rrra} ()
+\item 
+{\bf color} {\bf rrgr} ()
+\item 
+{\bf color} {\bf rrbr} ()
+\item 
+{\bf color} {\bf rrar} ()
+\item 
+{\bf color} {\bf rgrr} ()
+\item 
+{\bf color} {\bf rbrr} ()
+\item 
+{\bf color} {\bf rarr} ()
+\item 
+{\bf color} {\bf grrr} ()
+\item 
+{\bf color} {\bf brrr} ()
+\item 
+{\bf color} {\bf arrr} ()
+\item 
+{\bf color} {\bf grba} ()
+\item 
+const {\bf self} \& {\bf grba} (const mi\-Color \&t)
+\item 
+{\bf color} {\bf grab} ()
+\item 
+const {\bf self} \& {\bf grab} (const mi\-Color \&t)
+\item 
+{\bf color} {\bf gbra} ()
+\item 
+const {\bf self} \& {\bf gbra} (const mi\-Color \&t)
+\item 
+{\bf color} {\bf gbar} ()
+\item 
+const {\bf self} \& {\bf gbar} (const mi\-Color \&t)
+\item 
+{\bf color} {\bf gabr} ()
+\item 
+const {\bf self} \& {\bf gabr} (const mi\-Color \&t)
+\item 
+{\bf color} {\bf garb} ()
+\item 
+const {\bf self} \& {\bf garb} (const mi\-Color \&t)
+\item 
+{\bf color} {\bf ggrb} ()
+\item 
+{\bf color} {\bf ggbr} ()
+\item 
+{\bf color} {\bf ggar} ()
+\item 
+{\bf color} {\bf ggra} ()
+\item 
+{\bf color} {\bf ggab} ()
+\item 
+{\bf color} {\bf ggba} ()
+\item 
+{\bf color} {\bf rggb} ()
+\item 
+{\bf color} {\bf bggr} ()
+\item 
+{\bf color} {\bf rgga} ()
+\item 
+{\bf color} {\bf aggr} ()
+\item 
+{\bf color} {\bf bgga} ()
+\item 
+{\bf color} {\bf aggb} ()
+\item 
+{\bf color} {\bf rbgg} ()
+\item 
+{\bf color} {\bf brgg} ()
+\item 
+{\bf color} {\bf abgg} ()
+\item 
+{\bf color} {\bf bagg} ()
+\item 
+{\bf color} {\bf argg} ()
+\item 
+{\bf color} {\bf ragg} ()
+\item 
+{\bf color} {\bf gggr} ()
+\item 
+{\bf color} {\bf gggb} ()
+\item 
+{\bf color} {\bf ggga} ()
+\item 
+{\bf color} {\bf ggrg} ()
+\item 
+{\bf color} {\bf ggbg} ()
+\item 
+{\bf color} {\bf ggag} ()
+\item 
+{\bf color} {\bf grgg} ()
+\item 
+{\bf color} {\bf gbgg} ()
+\item 
+{\bf color} {\bf gagg} ()
+\item 
+{\bf color} {\bf rggg} ()
+\item 
+{\bf color} {\bf bggg} ()
+\item 
+{\bf color} {\bf aggg} ()
+\item 
+{\bf color} {\bf bgra} ()
+\item 
+const {\bf self} \& {\bf bgra} (const mi\-Color \&t)
+\item 
+{\bf color} {\bf bgar} ()
+\item 
+const {\bf self} \& {\bf bgar} (const mi\-Color \&t)
+\item 
+{\bf color} {\bf brga} ()
+\item 
+const {\bf self} \& {\bf brga} (const mi\-Color \&t)
+\item 
+{\bf color} {\bf brag} ()
+\item 
+const {\bf self} \& {\bf brag} (const mi\-Color \&t)
+\item 
+{\bf color} {\bf barg} ()
+\item 
+const {\bf self} \& {\bf barg} (const mi\-Color \&t)
+\item 
+{\bf color} {\bf bagr} ()
+\item 
+const {\bf self} \& {\bf bagr} (const mi\-Color \&t)
+\item 
+{\bf color} {\bf bbgr} ()
+\item 
+{\bf color} {\bf bbrg} ()
+\item 
+{\bf color} {\bf bbag} ()
+\item 
+{\bf color} {\bf bbga} ()
+\item 
+{\bf color} {\bf bbar} ()
+\item 
+{\bf color} {\bf bbra} ()
+\item 
+{\bf color} {\bf gbbr} ()
+\item 
+{\bf color} {\bf rbbg} ()
+\item 
+{\bf color} {\bf gbba} ()
+\item 
+{\bf color} {\bf abbg} ()
+\item 
+{\bf color} {\bf rbba} ()
+\item 
+{\bf color} {\bf abbr} ()
+\item 
+{\bf color} {\bf grbb} ()
+\item 
+{\bf color} {\bf rgbb} ()
+\item 
+{\bf color} {\bf arbb} ()
+\item 
+{\bf color} {\bf rabb} ()
+\item 
+{\bf color} {\bf agbb} ()
+\item 
+{\bf color} {\bf gabb} ()
+\item 
+{\bf color} {\bf bbbg} ()
+\item 
+{\bf color} {\bf bbbr} ()
+\item 
+{\bf color} {\bf bbba} ()
+\item 
+{\bf color} {\bf bbgb} ()
+\item 
+{\bf color} {\bf bbrb} ()
+\item 
+{\bf color} {\bf bbab} ()
+\item 
+{\bf color} {\bf bgbb} ()
+\item 
+{\bf color} {\bf brbb} ()
+\item 
+{\bf color} {\bf babb} ()
+\item 
+{\bf color} {\bf gbbb} ()
+\item 
+{\bf color} {\bf rbbb} ()
+\item 
+{\bf color} {\bf abbb} ()
+\item 
+{\bf color} {\bf agbr} ()
+\item 
+const {\bf self} \& {\bf agbr} (const mi\-Color \&t)
+\item 
+{\bf color} {\bf agrb} ()
+\item 
+const {\bf self} \& {\bf agrb} (const mi\-Color \&t)
+\item 
+{\bf color} {\bf abgr} ()
+\item 
+const {\bf self} \& {\bf abgr} (const mi\-Color \&t)
+\item 
+{\bf color} {\bf abrg} ()
+\item 
+const {\bf self} \& {\bf abrg} (const mi\-Color \&t)
+\item 
+{\bf color} {\bf arbg} ()
+\item 
+const {\bf self} \& {\bf arbg} (const mi\-Color \&t)
+\item 
+{\bf color} {\bf argb} ()
+\item 
+const {\bf self} \& {\bf argb} (const mi\-Color \&t)
+\item 
+{\bf color} {\bf aagb} ()
+\item 
+{\bf color} {\bf aabg} ()
+\item 
+{\bf color} {\bf aarg} ()
+\item 
+{\bf color} {\bf aagr} ()
+\item 
+{\bf color} {\bf aarb} ()
+\item 
+{\bf color} {\bf aabr} ()
+\item 
+{\bf color} {\bf gaab} ()
+\item 
+{\bf color} {\bf baag} ()
+\item 
+{\bf color} {\bf gaar} ()
+\item 
+{\bf color} {\bf raag} ()
+\item 
+{\bf color} {\bf baar} ()
+\item 
+{\bf color} {\bf raab} ()
+\item 
+{\bf color} {\bf gbaa} ()
+\item 
+{\bf color} {\bf bgaa} ()
+\item 
+{\bf color} {\bf rbaa} ()
+\item 
+{\bf color} {\bf braa} ()
+\item 
+{\bf color} {\bf rgaa} ()
+\item 
+{\bf color} {\bf graa} ()
+\item 
+{\bf color} {\bf aaag} ()
+\item 
+{\bf color} {\bf aaab} ()
+\item 
+{\bf color} {\bf aaar} ()
+\item 
+{\bf color} {\bf aaga} ()
+\item 
+{\bf color} {\bf aaba} ()
+\item 
+{\bf color} {\bf aara} ()
+\item 
+{\bf color} {\bf agaa} ()
+\item 
+{\bf color} {\bf abaa} ()
+\item 
+{\bf color} {\bf araa} ()
+\item 
+{\bf color} {\bf gaaa} ()
+\item 
+{\bf color} {\bf baaa} ()
+\item 
+{\bf color} {\bf raaa} ()
+\end{CompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Debugging (only active if MR\_\-DEBUG is defined)}\par
+\begin{CompactItemize}
+\item 
+void {\bf is\-Valid} () const 
+\begin{CompactList}\small\item\em mr\-ASSERT color is valid (ie. is Positive) \item\end{CompactList}\item 
+void {\bf is\-In\-Range} () const 
+\begin{CompactList}\small\item\em mr\-ASSERT all the rgba channel values are in range [0,1] \item\end{CompactList}\item 
+void {\bf is\-Positive} () const 
+\begin{CompactList}\small\item\em mr\-ASSERT all the rgba channel values are positive numbers (or 0) \item\end{CompactList}\item 
+void {\bf is\-Premult} () const 
+\end{CompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Indexed Component Access}\par
+\begin{CompactItemize}
+\item 
+mi\-Scalar \& {\bf operator[$\,$]} (const unsigned short i)
+\begin{CompactList}\small\item\em Component setter using [0,3] index. \item\end{CompactList}\item 
+const mi\-Scalar {\bf operator[$\,$]} (const unsigned short i) const 
+\begin{CompactList}\small\item\em Component access using [0,3] index. \item\end{CompactList}\end{CompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Equality}\par
+\begin{CompactItemize}
+\item 
+template$<$class X, class Y, class Oper$>$ const bool {\bf operator==} (const {\bf base::exp}$<$ X, Y, Oper $>$ \&e) const 
+\item 
+const bool {\bf operator==} (const mi\-Color \&x) const 
+\item 
+const bool {\bf operator==} (const mi\-Scalar x) const 
+\item 
+template$<$class X, class Y, class Oper$>$ const bool {\bf operator!=} (const {\bf base::exp}$<$ X, Y, Oper $>$ \&e) const 
+\item 
+const bool {\bf operator!=} (const mi\-Color \&x) const 
+\item 
+const bool {\bf operator!=} (const mi\-Scalar x) const 
+\end{CompactItemize}
+\end{Indent}
+\begin{Indent}{\bf RGB Luminance Comparisons}\par
+\begin{CompactItemize}
+\item 
+bool {\bf operator$<$} (const mi\-Scalar a) const 
+\begin{CompactList}\small\item\em Compare R+G+B $<$ Scalar. \item\end{CompactList}\item 
+bool {\bf operator$>$} (const mi\-Scalar a) const 
+\begin{CompactList}\small\item\em Compare R+G+B $>$ Scalar. \item\end{CompactList}\item 
+bool {\bf operator$<$=} (const mi\-Scalar a) const 
+\begin{CompactList}\small\item\em Compare R+G+B $<$= Scalar. \item\end{CompactList}\item 
+bool {\bf operator$>$=} (const mi\-Scalar a) const 
+\begin{CompactList}\small\item\em Compare R+G+B $>$= Scalar. \item\end{CompactList}\item 
+bool {\bf operator$<$} (const mi\-Color \&a) const 
+\begin{CompactList}\small\item\em Compare R+G+B $<$ R+G+B of other color. \item\end{CompactList}\item 
+bool {\bf operator$>$} (const mi\-Color \&a) const 
+\begin{CompactList}\small\item\em Compare R+G+B $>$ R+G+B of other color. \item\end{CompactList}\item 
+bool {\bf operator$<$=} (const mi\-Color \&a) const 
+\begin{CompactList}\small\item\em Compare R+G+B $<$= R+G+B of other color. \item\end{CompactList}\item 
+bool {\bf operator$>$=} (const mi\-Color \&a) const 
+\begin{CompactList}\small\item\em Compare R+G+B $>$= R+G+B of other color. \item\end{CompactList}\end{CompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Per channel comparisons}\par
+\begin{CompactItemize}
+\item 
+{\bf color} {\bf less\-Than} (const mi\-Color \&b)
+\item 
+{\bf color} {\bf less\-Than\-Equal} (const mi\-Color \&b)
+\item 
+{\bf color} {\bf greater\-Than} (const mi\-Color \&b)
+\item 
+{\bf color} {\bf greater\-Than\-Equal} (const mi\-Color \&b)
+\item 
+const bool {\bf any} ()
+\item 
+const bool {\bf any\_\-rgb} ()
+\end{CompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Operators}\par
+\begin{CompactItemize}
+\item 
+{\bf color} {\bf operator-} () const 
+\begin{CompactList}\small\item\em Per component negation. Original Alpha is NOT modified. \item\end{CompactList}\item 
+template$<$class X, class Y, class Oper$>$ const {\bf color} \& {\bf operator+=} (const {\bf base::exp}$<$ X, Y, Oper $>$ \&t)
+\item 
+const {\bf color} \& {\bf operator+=} (const mi\-Scalar \&x)
+\item 
+const {\bf color} \& {\bf operator+=} (const mi\-Color \&x)
+\item 
+template$<$class X, class Y, class Oper$>$ const {\bf color} \& {\bf operator-=} (const {\bf base::exp}$<$ X, Y, Oper $>$ \&b)
+\item 
+const {\bf color} \& {\bf operator-=} (const mi\-Scalar x)
+\item 
+const {\bf color} \& {\bf operator-=} (const mi\-Color \&x)
+\item 
+template$<$class X, class Y, class Oper$>$ const {\bf color} \& {\bf operator $\ast$=} (const {\bf base::exp}$<$ X, Y, Oper $>$ \&b)
+\item 
+const {\bf color} \& {\bf operator $\ast$=} (const mi\-Scalar x)
+\item 
+const {\bf color} \& {\bf operator $\ast$=} (const mi\-Color \&x)
+\item 
+template$<$class X, class Y, class Oper$>$ const {\bf color} \& {\bf operator/=} (const {\bf base::exp}$<$ X, Y, Oper $>$ \&b)
+\item 
+const {\bf color} \& {\bf operator/=} (const mi\-Scalar x)
+\item 
+const {\bf color} \& {\bf operator/=} (const mi\-Color \&x)
+\end{CompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Common functions on colors}\par
+\begin{CompactItemize}
+\item 
+bool {\bf is\-Equivalent} (const mi\-Color \&x, const mi\-Scalar tolerance=mi\-SCALAR\_\-EPSILON) const 
+\begin{CompactList}\small\item\em Verify two colors are equivalent up to a certain tolerance. \item\end{CompactList}\item 
+const {\bf color} \& {\bf mix} (const mi\-Color \&x, const mi\-Scalar p)
+\item 
+const {\bf color} \& {\bf clamp} (const mi\-Color \&a, const mi\-Color \&b)
+\begin{CompactList}\small\item\em Clamp color to this min/max values. \item\end{CompactList}\item 
+const {\bf color} \& {\bf clamp} (const mi\-Scalar a, const mi\-Scalar b)
+\begin{CompactList}\small\item\em Clamp color to this min/max values. \item\end{CompactList}\item 
+const {\bf color} \& {\bf clamp} (const mi\-Color \&a, const mi\-Scalar b)
+\begin{CompactList}\small\item\em Clamp color to this min/max values. \item\end{CompactList}\item 
+const {\bf color} \& {\bf clamp} (const mi\-Scalar a, const mi\-Color \&b)
+\begin{CompactList}\small\item\em Clamp color to this min/max values. \item\end{CompactList}\end{CompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Color Correction}\par
+\begin{CompactItemize}
+\item 
+void {\bf gamma} (const mi\-Scalar p)
+\begin{CompactList}\small\item\em Control gamma ( a pow() function ). \item\end{CompactList}\item 
+mi\-Scalar {\bf lumma} (const mi\-State $\ast$state)
+\begin{CompactList}\small\item\em Returns lumma of color (using state-$>$options-$>$luminance). \item\end{CompactList}\item 
+void {\bf saturation} (const mi\-State $\ast$state, const mi\-Scalar p)
+\end{CompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+Define main color class that replaces mi\-Color. 
+
+
+
+\subsection{Member Typedef Documentation}
+\index{mr::color@{mr::color}!S@{S}}
+\index{S@{S}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef mi\-Scalar {\bf mr::color::S}}\label{structmr_1_1color_w1}
+
+
+\index{mr::color@{mr::color}!self@{self}}
+\index{self@{self}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf color} {\bf mr::color::self}}\label{structmr_1_1color_w0}
+
+
+
+
+\subsection{Member Enumeration Documentation}
+\index{mr::color@{mr::color}!space@{space}}
+\index{space@{space}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}enum {\bf mr::color::space}}\label{structmr_1_1color_w10}
+
+
+color spaces \begin{Desc}
+\item[{\bf Todo}]add other spaces:\end{Desc}
+\begin{Desc}
+\item[Enumeration values: ]\par
+\begin{description}
+\index{kRGB@{kRGB}!mr::color@{mr::color}}\index{mr::color@{mr::color}!kRGB@{kRGB}}\item[{\em 
+k\-RGB\label{structmr_1_1color_w10w2}
+}]\index{kHSV@{kHSV}!mr::color@{mr::color}}\index{mr::color@{mr::color}!kHSV@{kHSV}}\item[{\em 
+k\-HSV\label{structmr_1_1color_w10w3}
+}]\index{kHSL@{kHSL}!mr::color@{mr::color}}\index{mr::color@{mr::color}!kHSL@{kHSL}}\item[{\em 
+k\-HSL\label{structmr_1_1color_w10w4}
+}]\index{kXYZ@{kXYZ}!mr::color@{mr::color}}\index{mr::color@{mr::color}!kXYZ@{kXYZ}}\item[{\em 
+k\-XYZ\label{structmr_1_1color_w10w5}
+}]\index{kCIEXYZ@{kCIEXYZ}!mr::color@{mr::color}}\index{mr::color@{mr::color}!kCIEXYZ@{kCIEXYZ}}\item[{\em 
+k\-CIEXYZ\label{structmr_1_1color_w10w6}
+}]\index{kYPP@{kYPP}!mr::color@{mr::color}}\index{mr::color@{mr::color}!kYPP@{kYPP}}\item[{\em 
+k\-YPP\label{structmr_1_1color_w10w7}
+}]\index{kYCC@{kYCC}!mr::color@{mr::color}}\index{mr::color@{mr::color}!kYCC@{kYCC}}\item[{\em 
+k\-YCC\label{structmr_1_1color_w10w8}
+}]\index{kUnknown@{kUnknown}!mr::color@{mr::color}}\index{mr::color@{mr::color}!kUnknown@{kUnknown}}\item[{\em 
+k\-Unknown\label{structmr_1_1color_w10w9}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{mr::color@{mr::color}!color@{color}}
+\index{color@{color}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class X, class Y, class Oper$>$ mr::color::color (const {\bf base::exp}$<$ X, Y, Oper $>$ \& {\em e})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z1_0}
+
+
+Constructor to evaluate an expression (such as a concatenation of operations) \index{mr::color@{mr::color}!color@{color}}
+\index{color@{color}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mr::color::color ({\bf k\-No\-Construct})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z1_1}
+
+
+Quick constructor. r,g,b,a values remain undefined and should later be set. \index{mr::color@{mr::color}!color@{color}}
+\index{color@{color}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mr::color::color (const mi\-Color \& {\em x})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z1_2}
+
+
+Constructor to initialize from an mi\-Color. Note that alpha channel is also changed. \index{mr::color@{mr::color}!color@{color}}
+\index{color@{color}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mr::color::color (const mi\-Vector \& {\em x}, const mi\-Scalar {\em aa} = 0.0f)\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z1_3}
+
+
+Constructor to initialize from an mi\-Vector, with optional alpha. 
+
+\index{mr::color@{mr::color}!color@{color}}
+\index{color@{color}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mr::color::color ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z1_4}
+
+
+Default constructor. Sets r,g,b,a to 0. 
+
+\index{mr::color@{mr::color}!color@{color}}
+\index{color@{color}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mr::color::color (const mi\-Scalar {\em rgb}, const mi\-Scalar {\em aa} = 0.0f)\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z1_5}
+
+
+Constructor to initialize rgb channels from a mi\-Scalar, with optional alpha \index{mr::color@{mr::color}!color@{color}}
+\index{color@{color}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mr::color::color (const mi\-Scalar {\em rr}, const mi\-Scalar {\em gg}, const mi\-Scalar {\em bb}, const mi\-Scalar {\em aa} = 0.0f)\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z1_6}
+
+
+Constructor to initialize each rgb channel individually, with optional alpha \index{mr::color@{mr::color}!color@{color}}
+\index{color@{color}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mr::color::color (const {\bf space} {\em t}, const mi\-Color \& {\em v})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z1_7}
+
+
+Constructor to initialize from an mi\-Color, but assuming the color passed is in a particular color space. The new color created is defined in rgb and is equivalent to the color passed to it. Note that alpha channel is also changed. This is a similar construct to renderman's: color x = color \char`\"{}hsv\char`\"{} (1,0,0); \index{mr::color@{mr::color}!color@{color}}
+\index{color@{color}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mr::color::color (const {\bf space} {\em t}, const mi\-Scalar {\em rr}, const mi\-Scalar {\em gg}, const mi\-Scalar {\em bb}, const mi\-Scalar {\em aa} = 0.0f)\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z1_8}
+
+
+Constructor to initialize each channel individually, but assuming the values passed are in a particular color space. The new color created is defined in rgb and is equivalent to the color passed to it. \index{mr::color@{mr::color}!color@{color}}
+\index{color@{color}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mr::color::color (const {\bf color} \& {\em x})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z2_0}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{mr::color@{mr::color}!aaa@{aaa}}
+\index{aaa@{aaa}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf self} mr::color::aaa () const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_5}
+
+
+\index{mr::color@{mr::color}!aaaa@{aaaa}}
+\index{aaaa@{aaaa}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::aaaa ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_62}
+
+
+\index{mr::color@{mr::color}!aaab@{aaab}}
+\index{aaab@{aaab}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::aaab ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_220}
+
+
+\index{mr::color@{mr::color}!aaag@{aaag}}
+\index{aaag@{aaag}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::aaag ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_219}
+
+
+\index{mr::color@{mr::color}!aaar@{aaar}}
+\index{aaar@{aaar}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::aaar ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_221}
+
+
+\index{mr::color@{mr::color}!aaba@{aaba}}
+\index{aaba@{aaba}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::aaba ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_223}
+
+
+\index{mr::color@{mr::color}!aabg@{aabg}}
+\index{aabg@{aabg}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::aabg ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_202}
+
+
+\index{mr::color@{mr::color}!aabr@{aabr}}
+\index{aabr@{aabr}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::aabr ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_206}
+
+
+\index{mr::color@{mr::color}!aaga@{aaga}}
+\index{aaga@{aaga}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::aaga ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_222}
+
+
+\index{mr::color@{mr::color}!aagb@{aagb}}
+\index{aagb@{aagb}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::aagb ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_201}
+
+
+\index{mr::color@{mr::color}!aagr@{aagr}}
+\index{aagr@{aagr}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::aagr ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_204}
+
+
+\index{mr::color@{mr::color}!aara@{aara}}
+\index{aara@{aara}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::aara ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_224}
+
+
+\index{mr::color@{mr::color}!aarb@{aarb}}
+\index{aarb@{aarb}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::aarb ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_205}
+
+
+\index{mr::color@{mr::color}!aarg@{aarg}}
+\index{aarg@{aarg}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::aarg ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_203}
+
+
+\index{mr::color@{mr::color}!abaa@{abaa}}
+\index{abaa@{abaa}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::abaa ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_226}
+
+
+\index{mr::color@{mr::color}!abb@{abb}}
+\index{abb@{abb}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf self} mr::color::abb () const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_52}
+
+
+\index{mr::color@{mr::color}!abbb@{abbb}}
+\index{abbb@{abbb}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::abbb ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_188}
+
+
+\index{mr::color@{mr::color}!abbg@{abbg}}
+\index{abbg@{abbg}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::abbg ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_168}
+
+
+\index{mr::color@{mr::color}!abbr@{abbr}}
+\index{abbr@{abbr}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::abbr ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_170}
+
+
+\index{mr::color@{mr::color}!abgg@{abgg}}
+\index{abgg@{abgg}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::abgg ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_131}
+
+
+\index{mr::color@{mr::color}!abgr@{abgr}}
+\index{abgr@{abgr}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf self}\& mr::color::abgr (const mi\-Color \& {\em t})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_194}
+
+
+\index{mr::color@{mr::color}!abgr@{abgr}}
+\index{abgr@{abgr}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::abgr ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_193}
+
+
+\index{mr::color@{mr::color}!abrg@{abrg}}
+\index{abrg@{abrg}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf self}\& mr::color::abrg (const mi\-Color \& {\em t})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_196}
+
+
+\index{mr::color@{mr::color}!abrg@{abrg}}
+\index{abrg@{abrg}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::abrg ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_195}
+
+
+\index{mr::color@{mr::color}!abrr@{abrr}}
+\index{abrr@{abrr}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::abrr ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_89}
+
+
+\index{mr::color@{mr::color}!agaa@{agaa}}
+\index{agaa@{agaa}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::agaa ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_225}
+
+
+\index{mr::color@{mr::color}!agbb@{agbb}}
+\index{agbb@{agbb}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::agbb ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_175}
+
+
+\index{mr::color@{mr::color}!agbr@{agbr}}
+\index{agbr@{agbr}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf self}\& mr::color::agbr (const mi\-Color \& {\em t})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_190}
+
+
+\index{mr::color@{mr::color}!agbr@{agbr}}
+\index{agbr@{agbr}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::agbr ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_189}
+
+
+\index{mr::color@{mr::color}!agg@{agg}}
+\index{agg@{agg}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf self} mr::color::agg () const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_43}
+
+
+\index{mr::color@{mr::color}!aggb@{aggb}}
+\index{aggb@{aggb}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::aggb ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_128}
+
+
+\index{mr::color@{mr::color}!aggg@{aggg}}
+\index{aggg@{aggg}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::aggg ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_146}
+
+
+\index{mr::color@{mr::color}!aggr@{aggr}}
+\index{aggr@{aggr}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::aggr ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_126}
+
+
+\index{mr::color@{mr::color}!agrb@{agrb}}
+\index{agrb@{agrb}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf self}\& mr::color::agrb (const mi\-Color \& {\em t})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_192}
+
+
+\index{mr::color@{mr::color}!agrb@{agrb}}
+\index{agrb@{agrb}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::agrb ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_191}
+
+
+\index{mr::color@{mr::color}!agrr@{agrr}}
+\index{agrr@{agrr}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::agrr ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_91}
+
+
+\index{mr::color@{mr::color}!any@{any}}
+\index{any@{any}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const bool mr::color::any ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z12_4}
+
+
+Returns true if any rgba channel is not 0. To be used mainly with the return of the functions of per channel comparison. For example: 
+
+\footnotesize\begin{verbatim}           if ( c1.lessThan( c2 ).any() ) {
+              mr_info("some channel in c1 is less than c2.")
+           }
+\end{verbatim}
+\normalsize
+\index{mr::color@{mr::color}!any_rgb@{any\_\-rgb}}
+\index{any_rgb@{any\_\-rgb}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const bool mr::color::any\_\-rgb ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z12_5}
+
+
+Returns true if any rgb channel is not 0. Alpha is ignored. To be used mainly with the return of the functions of per channel comparison. For example: 
+
+\footnotesize\begin{verbatim}           if ( c1.lessThan( c2 ).any_rgb() ) {
+              mr_info("some rgb channel in c1 is less than c2.")
+           }
+\end{verbatim}
+\normalsize
+\index{mr::color@{mr::color}!araa@{araa}}
+\index{araa@{araa}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::araa ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_227}
+
+
+\index{mr::color@{mr::color}!arbb@{arbb}}
+\index{arbb@{arbb}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::arbb ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_173}
+
+
+\index{mr::color@{mr::color}!arbg@{arbg}}
+\index{arbg@{arbg}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf self}\& mr::color::arbg (const mi\-Color \& {\em t})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_198}
+
+
+\index{mr::color@{mr::color}!arbg@{arbg}}
+\index{arbg@{arbg}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::arbg ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_197}
+
+
+\index{mr::color@{mr::color}!argb@{argb}}
+\index{argb@{argb}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf self}\& mr::color::argb (const mi\-Color \& {\em t})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_200}
+
+
+\index{mr::color@{mr::color}!argb@{argb}}
+\index{argb@{argb}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::argb ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_199}
+
+
+\index{mr::color@{mr::color}!argg@{argg}}
+\index{argg@{argg}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::argg ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_133}
+
+
+\index{mr::color@{mr::color}!arr@{arr}}
+\index{arr@{arr}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf self} mr::color::arr () const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_34}
+
+
+\index{mr::color@{mr::color}!arrb@{arrb}}
+\index{arrb@{arrb}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::arrb ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_86}
+
+
+\index{mr::color@{mr::color}!arrg@{arrg}}
+\index{arrg@{arrg}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::arrg ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_84}
+
+
+\index{mr::color@{mr::color}!arrr@{arrr}}
+\index{arrr@{arrr}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::arrr ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_104}
+
+
+\index{mr::color@{mr::color}!baaa@{baaa}}
+\index{baaa@{baaa}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::baaa ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_229}
+
+
+\index{mr::color@{mr::color}!baag@{baag}}
+\index{baag@{baag}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::baag ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_208}
+
+
+\index{mr::color@{mr::color}!baar@{baar}}
+\index{baar@{baar}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::baar ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_211}
+
+
+\index{mr::color@{mr::color}!bab@{bab}}
+\index{bab@{bab}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf self} mr::color::bab () const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_55}
+
+
+\index{mr::color@{mr::color}!babb@{babb}}
+\index{babb@{babb}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::babb ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_185}
+
+
+\index{mr::color@{mr::color}!bag@{bag}}
+\index{bag@{bag}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf self}\& mr::color::bag (const {\bf self} \& {\em t})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_21}
+
+
+\index{mr::color@{mr::color}!bag@{bag}}
+\index{bag@{bag}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf self} mr::color::bag () const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_20}
+
+
+\index{mr::color@{mr::color}!bagg@{bagg}}
+\index{bagg@{bagg}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::bagg ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_132}
+
+
+\index{mr::color@{mr::color}!bagr@{bagr}}
+\index{bagr@{bagr}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf self}\& mr::color::bagr (const mi\-Color \& {\em t})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_158}
+
+
+\index{mr::color@{mr::color}!bagr@{bagr}}
+\index{bagr@{bagr}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::bagr ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_157}
+
+
+\index{mr::color@{mr::color}!barg@{barg}}
+\index{barg@{barg}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf self}\& mr::color::barg (const mi\-Color \& {\em t})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_156}
+
+
+\index{mr::color@{mr::color}!barg@{barg}}
+\index{barg@{barg}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::barg ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_155}
+
+
+\index{mr::color@{mr::color}!barr@{barr}}
+\index{barr@{barr}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::barr ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_90}
+
+
+\index{mr::color@{mr::color}!bba@{bba}}
+\index{bba@{bba}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf self} mr::color::bba () const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_58}
+
+
+\index{mr::color@{mr::color}!bbab@{bbab}}
+\index{bbab@{bbab}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::bbab ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_182}
+
+
+\index{mr::color@{mr::color}!bbag@{bbag}}
+\index{bbag@{bbag}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::bbag ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_161}
+
+
+\index{mr::color@{mr::color}!bbar@{bbar}}
+\index{bbar@{bbar}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::bbar ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_163}
+
+
+\index{mr::color@{mr::color}!bbb@{bbb}}
+\index{bbb@{bbb}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf self} mr::color::bbb () const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_4}
+
+
+\index{mr::color@{mr::color}!bbba@{bbba}}
+\index{bbba@{bbba}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::bbba ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_179}
+
+
+\index{mr::color@{mr::color}!bbbb@{bbbb}}
+\index{bbbb@{bbbb}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::bbbb ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_61}
+
+
+\index{mr::color@{mr::color}!bbbg@{bbbg}}
+\index{bbbg@{bbbg}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::bbbg ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_177}
+
+
+\index{mr::color@{mr::color}!bbbr@{bbbr}}
+\index{bbbr@{bbbr}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::bbbr ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_178}
+
+
+\index{mr::color@{mr::color}!bbg@{bbg}}
+\index{bbg@{bbg}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf self} mr::color::bbg () const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_56}
+
+
+\index{mr::color@{mr::color}!bbga@{bbga}}
+\index{bbga@{bbga}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::bbga ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_162}
+
+
+\index{mr::color@{mr::color}!bbgb@{bbgb}}
+\index{bbgb@{bbgb}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::bbgb ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_180}
+
+
+\index{mr::color@{mr::color}!bbgr@{bbgr}}
+\index{bbgr@{bbgr}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::bbgr ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_159}
+
+
+\index{mr::color@{mr::color}!bbr@{bbr}}
+\index{bbr@{bbr}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf self} mr::color::bbr () const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_57}
+
+
+\index{mr::color@{mr::color}!bbra@{bbra}}
+\index{bbra@{bbra}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::bbra ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_164}
+
+
+\index{mr::color@{mr::color}!bbrb@{bbrb}}
+\index{bbrb@{bbrb}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::bbrb ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_181}
+
+
+\index{mr::color@{mr::color}!bbrg@{bbrg}}
+\index{bbrg@{bbrg}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::bbrg ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_160}
+
+
+\index{mr::color@{mr::color}!bga@{bga}}
+\index{bga@{bga}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf self}\& mr::color::bga (const {\bf self} \& {\em t})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_27}
+
+
+\index{mr::color@{mr::color}!bga@{bga}}
+\index{bga@{bga}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf self} mr::color::bga () const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_26}
+
+
+\index{mr::color@{mr::color}!bgaa@{bgaa}}
+\index{bgaa@{bgaa}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::bgaa ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_214}
+
+
+\index{mr::color@{mr::color}!bgar@{bgar}}
+\index{bgar@{bgar}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf self}\& mr::color::bgar (const mi\-Color \& {\em t})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_150}
+
+
+\index{mr::color@{mr::color}!bgar@{bgar}}
+\index{bgar@{bgar}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::bgar ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_149}
+
+
+\index{mr::color@{mr::color}!bgb@{bgb}}
+\index{bgb@{bgb}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf self} mr::color::bgb () const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_53}
+
+
+\index{mr::color@{mr::color}!bgbb@{bgbb}}
+\index{bgbb@{bgbb}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::bgbb ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_183}
+
+
+\index{mr::color@{mr::color}!bgg@{bgg}}
+\index{bgg@{bgg}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf self} mr::color::bgg () const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_42}
+
+
+\index{mr::color@{mr::color}!bgga@{bgga}}
+\index{bgga@{bgga}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::bgga ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_127}
+
+
+\index{mr::color@{mr::color}!bggg@{bggg}}
+\index{bggg@{bggg}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::bggg ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_145}
+
+
+\index{mr::color@{mr::color}!bggr@{bggr}}
+\index{bggr@{bggr}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::bggr ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_124}
+
+
+\index{mr::color@{mr::color}!bgr@{bgr}}
+\index{bgr@{bgr}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf self}\& mr::color::bgr (const {\bf self} \& {\em t})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_13}
+
+
+\index{mr::color@{mr::color}!bgr@{bgr}}
+\index{bgr@{bgr}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf self} mr::color::bgr () const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_12}
+
+
+\index{mr::color@{mr::color}!bgra@{bgra}}
+\index{bgra@{bgra}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf self}\& mr::color::bgra (const mi\-Color \& {\em t})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_148}
+
+
+\index{mr::color@{mr::color}!bgra@{bgra}}
+\index{bgra@{bgra}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::bgra ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_147}
+
+
+\index{mr::color@{mr::color}!bgrr@{bgrr}}
+\index{bgrr@{bgrr}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::bgrr ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_88}
+
+
+\index{mr::color@{mr::color}!braa@{braa}}
+\index{braa@{braa}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::braa ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_216}
+
+
+\index{mr::color@{mr::color}!brag@{brag}}
+\index{brag@{brag}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf self}\& mr::color::brag (const mi\-Color \& {\em t})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_154}
+
+
+\index{mr::color@{mr::color}!brag@{brag}}
+\index{brag@{brag}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::brag ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_153}
+
+
+\index{mr::color@{mr::color}!brb@{brb}}
+\index{brb@{brb}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf self} mr::color::brb () const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_54}
+
+
+\index{mr::color@{mr::color}!brbb@{brbb}}
+\index{brbb@{brbb}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::brbb ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_184}
+
+
+\index{mr::color@{mr::color}!brg@{brg}}
+\index{brg@{brg}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf self}\& mr::color::brg (const {\bf self} \& {\em t})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_7}
+
+
+\index{mr::color@{mr::color}!brg@{brg}}
+\index{brg@{brg}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf self} mr::color::brg () const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_6}
+
+
+\index{mr::color@{mr::color}!brga@{brga}}
+\index{brga@{brga}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf self}\& mr::color::brga (const mi\-Color \& {\em t})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_152}
+
+
+\index{mr::color@{mr::color}!brga@{brga}}
+\index{brga@{brga}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::brga ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_151}
+
+
+\index{mr::color@{mr::color}!brgg@{brgg}}
+\index{brgg@{brgg}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::brgg ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_130}
+
+
+\index{mr::color@{mr::color}!brr@{brr}}
+\index{brr@{brr}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf self} mr::color::brr () const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_33}
+
+
+\index{mr::color@{mr::color}!brra@{brra}}
+\index{brra@{brra}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::brra ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_85}
+
+
+\index{mr::color@{mr::color}!brrg@{brrg}}
+\index{brrg@{brrg}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::brrg ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_82}
+
+
+\index{mr::color@{mr::color}!brrr@{brrr}}
+\index{brrr@{brrr}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::brrr ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_103}
+
+
+\index{mr::color@{mr::color}!clamp@{clamp}}
+\index{clamp@{clamp}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf color}\& mr::color::clamp (const mi\-Scalar {\em a}, const mi\-Color \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z15_5}
+
+
+Clamp color to this min/max values. 
+
+\index{mr::color@{mr::color}!clamp@{clamp}}
+\index{clamp@{clamp}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf color}\& mr::color::clamp (const mi\-Color \& {\em a}, const mi\-Scalar {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z15_4}
+
+
+Clamp color to this min/max values. 
+
+\index{mr::color@{mr::color}!clamp@{clamp}}
+\index{clamp@{clamp}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf color}\& mr::color::clamp (const mi\-Scalar {\em a}, const mi\-Scalar {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z15_3}
+
+
+Clamp color to this min/max values. 
+
+\index{mr::color@{mr::color}!clamp@{clamp}}
+\index{clamp@{clamp}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf color}\& mr::color::clamp (const mi\-Color \& {\em a}, const mi\-Color \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z15_2}
+
+
+Clamp color to this min/max values. 
+
+\index{mr::color@{mr::color}!Evaluate@{Evaluate}}
+\index{Evaluate@{Evaluate}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const mi\-Scalar mr::color::Evaluate (const unsigned short {\em i}) const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_a0}
+
+
+Internal function used to evaluate expressions one channel at a time. Should be a protected method, with other friends classes accessing it, but MSVC7.1 still seems to have some problems with that. \index{mr::color@{mr::color}!from@{from}}
+\index{from@{from}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::color::from (const {\bf space} {\em from\-Space})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z0_11}
+
+
+Assume color is defined in from\-Space, then take it to RGB. 
+
+\index{mr::color@{mr::color}!gaaa@{gaaa}}
+\index{gaaa@{gaaa}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::gaaa ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_228}
+
+
+\index{mr::color@{mr::color}!gaab@{gaab}}
+\index{gaab@{gaab}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::gaab ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_207}
+
+
+\index{mr::color@{mr::color}!gaar@{gaar}}
+\index{gaar@{gaar}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::gaar ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_209}
+
+
+\index{mr::color@{mr::color}!gabb@{gabb}}
+\index{gabb@{gabb}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::gabb ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_176}
+
+
+\index{mr::color@{mr::color}!gabr@{gabr}}
+\index{gabr@{gabr}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf self}\& mr::color::gabr (const mi\-Color \& {\em t})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_114}
+
+
+\index{mr::color@{mr::color}!gabr@{gabr}}
+\index{gabr@{gabr}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::gabr ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_113}
+
+
+\index{mr::color@{mr::color}!gag@{gag}}
+\index{gag@{gag}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf self} mr::color::gag () const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_46}
+
+
+\index{mr::color@{mr::color}!gagg@{gagg}}
+\index{gagg@{gagg}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::gagg ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_143}
+
+
+\index{mr::color@{mr::color}!gamma@{gamma}}
+\index{gamma@{gamma}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::color::gamma (const mi\-Scalar {\em p})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z16_0}
+
+
+Control gamma ( a pow() function ). 
+
+\index{mr::color@{mr::color}!gar@{gar}}
+\index{gar@{gar}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf self}\& mr::color::gar (const {\bf self} \& {\em t})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_23}
+
+
+\index{mr::color@{mr::color}!gar@{gar}}
+\index{gar@{gar}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf self} mr::color::gar () const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_22}
+
+
+\index{mr::color@{mr::color}!garb@{garb}}
+\index{garb@{garb}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf self}\& mr::color::garb (const mi\-Color \& {\em t})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_116}
+
+
+\index{mr::color@{mr::color}!garb@{garb}}
+\index{garb@{garb}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::garb ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_115}
+
+
+\index{mr::color@{mr::color}!garr@{garr}}
+\index{garr@{garr}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::garr ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_92}
+
+
+\index{mr::color@{mr::color}!gbaa@{gbaa}}
+\index{gbaa@{gbaa}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::gbaa ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_213}
+
+
+\index{mr::color@{mr::color}!gbar@{gbar}}
+\index{gbar@{gbar}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf self}\& mr::color::gbar (const mi\-Color \& {\em t})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_112}
+
+
+\index{mr::color@{mr::color}!gbar@{gbar}}
+\index{gbar@{gbar}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::gbar ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_111}
+
+
+\index{mr::color@{mr::color}!gbb@{gbb}}
+\index{gbb@{gbb}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf self} mr::color::gbb () const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_50}
+
+
+\index{mr::color@{mr::color}!gbba@{gbba}}
+\index{gbba@{gbba}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::gbba ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_167}
+
+
+\index{mr::color@{mr::color}!gbbb@{gbbb}}
+\index{gbbb@{gbbb}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::gbbb ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_186}
+
+
+\index{mr::color@{mr::color}!gbbr@{gbbr}}
+\index{gbbr@{gbbr}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::gbbr ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_165}
+
+
+\index{mr::color@{mr::color}!gbg@{gbg}}
+\index{gbg@{gbg}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf self} mr::color::gbg () const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_45}
+
+
+\index{mr::color@{mr::color}!gbgg@{gbgg}}
+\index{gbgg@{gbgg}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::gbgg ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_142}
+
+
+\index{mr::color@{mr::color}!gbr@{gbr}}
+\index{gbr@{gbr}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf self}\& mr::color::gbr (const {\bf self} \& {\em t})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_9}
+
+
+\index{mr::color@{mr::color}!gbr@{gbr}}
+\index{gbr@{gbr}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf self} mr::color::gbr () const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_8}
+
+
+\index{mr::color@{mr::color}!gbra@{gbra}}
+\index{gbra@{gbra}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf self}\& mr::color::gbra (const mi\-Color \& {\em t})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_110}
+
+
+\index{mr::color@{mr::color}!gbra@{gbra}}
+\index{gbra@{gbra}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::gbra ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_109}
+
+
+\index{mr::color@{mr::color}!gbrr@{gbrr}}
+\index{gbrr@{gbrr}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::gbrr ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_87}
+
+
+\index{mr::color@{mr::color}!gga@{gga}}
+\index{gga@{gga}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf self} mr::color::gga () const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_49}
+
+
+\index{mr::color@{mr::color}!ggab@{ggab}}
+\index{ggab@{ggab}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::ggab ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_121}
+
+
+\index{mr::color@{mr::color}!ggag@{ggag}}
+\index{ggag@{ggag}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::ggag ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_140}
+
+
+\index{mr::color@{mr::color}!ggar@{ggar}}
+\index{ggar@{ggar}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::ggar ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_119}
+
+
+\index{mr::color@{mr::color}!ggb@{ggb}}
+\index{ggb@{ggb}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf self} mr::color::ggb () const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_48}
+
+
+\index{mr::color@{mr::color}!ggba@{ggba}}
+\index{ggba@{ggba}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::ggba ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_122}
+
+
+\index{mr::color@{mr::color}!ggbg@{ggbg}}
+\index{ggbg@{ggbg}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::ggbg ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_139}
+
+
+\index{mr::color@{mr::color}!ggbr@{ggbr}}
+\index{ggbr@{ggbr}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::ggbr ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_118}
+
+
+\index{mr::color@{mr::color}!ggg@{ggg}}
+\index{ggg@{ggg}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf self} mr::color::ggg () const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_3}
+
+
+\index{mr::color@{mr::color}!ggga@{ggga}}
+\index{ggga@{ggga}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::ggga ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_137}
+
+
+\index{mr::color@{mr::color}!gggb@{gggb}}
+\index{gggb@{gggb}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::gggb ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_136}
+
+
+\index{mr::color@{mr::color}!gggg@{gggg}}
+\index{gggg@{gggg}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::gggg ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_60}
+
+
+\index{mr::color@{mr::color}!gggr@{gggr}}
+\index{gggr@{gggr}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::gggr ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_135}
+
+
+\index{mr::color@{mr::color}!ggr@{ggr}}
+\index{ggr@{ggr}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf self} mr::color::ggr () const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_47}
+
+
+\index{mr::color@{mr::color}!ggra@{ggra}}
+\index{ggra@{ggra}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::ggra ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_120}
+
+
+\index{mr::color@{mr::color}!ggrb@{ggrb}}
+\index{ggrb@{ggrb}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::ggrb ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_117}
+
+
+\index{mr::color@{mr::color}!ggrg@{ggrg}}
+\index{ggrg@{ggrg}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::ggrg ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_138}
+
+
+\index{mr::color@{mr::color}!gra@{gra}}
+\index{gra@{gra}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf self}\& mr::color::gra (const {\bf self} \& {\em t})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_29}
+
+
+\index{mr::color@{mr::color}!gra@{gra}}
+\index{gra@{gra}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf self} mr::color::gra () const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_28}
+
+
+\index{mr::color@{mr::color}!graa@{graa}}
+\index{graa@{graa}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::graa ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_218}
+
+
+\index{mr::color@{mr::color}!grab@{grab}}
+\index{grab@{grab}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf self}\& mr::color::grab (const mi\-Color \& {\em t})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_108}
+
+
+\index{mr::color@{mr::color}!grab@{grab}}
+\index{grab@{grab}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::grab ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_107}
+
+
+\index{mr::color@{mr::color}!grb@{grb}}
+\index{grb@{grb}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf self}\& mr::color::grb (const {\bf self} \& {\em t})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_15}
+
+
+\index{mr::color@{mr::color}!grb@{grb}}
+\index{grb@{grb}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf self} mr::color::grb () const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_14}
+
+
+\index{mr::color@{mr::color}!grba@{grba}}
+\index{grba@{grba}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf self}\& mr::color::grba (const mi\-Color \& {\em t})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_106}
+
+
+\index{mr::color@{mr::color}!grba@{grba}}
+\index{grba@{grba}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::grba ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_105}
+
+
+\index{mr::color@{mr::color}!grbb@{grbb}}
+\index{grbb@{grbb}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::grbb ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_171}
+
+
+\index{mr::color@{mr::color}!greaterThan@{greaterThan}}
+\index{greaterThan@{greaterThan}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::greater\-Than (const mi\-Color \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z12_2}
+
+
+Return a new color indicating for each rgba component if it is $>$ than the rgba components of the other color \index{mr::color@{mr::color}!greaterThanEqual@{greaterThanEqual}}
+\index{greaterThanEqual@{greaterThanEqual}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::greater\-Than\-Equal (const mi\-Color \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z12_3}
+
+
+Return a new color indicating for each rgba component if it is $>$= than the rgba components of the other color \index{mr::color@{mr::color}!grg@{grg}}
+\index{grg@{grg}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf self} mr::color::grg () const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_44}
+
+
+\index{mr::color@{mr::color}!grgg@{grgg}}
+\index{grgg@{grgg}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::grgg ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_141}
+
+
+\index{mr::color@{mr::color}!grr@{grr}}
+\index{grr@{grr}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf self} mr::color::grr () const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_32}
+
+
+\index{mr::color@{mr::color}!grra@{grra}}
+\index{grra@{grra}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::grra ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_83}
+
+
+\index{mr::color@{mr::color}!grrb@{grrb}}
+\index{grrb@{grrb}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::grrb ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_81}
+
+
+\index{mr::color@{mr::color}!grrr@{grrr}}
+\index{grrr@{grrr}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::grrr ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_102}
+
+
+\index{mr::color@{mr::color}!hsl2rgb@{hsl2rgb}}
+\index{hsl2rgb@{hsl2rgb}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::color::hsl2rgb ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z0_4}
+
+
+Assuming color represents HSL, take it to RGB values. 
+
+\index{mr::color@{mr::color}!hsv2rgb@{hsv2rgb}}
+\index{hsv2rgb@{hsv2rgb}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::color::hsv2rgb ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z0_2}
+
+
+Assuming color represents HSV, take it to RGB values. 
+
+\index{mr::color@{mr::color}!isEquivalent@{isEquivalent}}
+\index{isEquivalent@{isEquivalent}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool mr::color::is\-Equivalent (const mi\-Color \& {\em x}, const mi\-Scalar {\em tolerance} = mi\-SCALAR\_\-EPSILON) const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z15_0}
+
+
+Verify two colors are equivalent up to a certain tolerance. 
+
+\index{mr::color@{mr::color}!isInRange@{isInRange}}
+\index{isInRange@{isInRange}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::color::is\-In\-Range () const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z8_1}
+
+
+mr\-ASSERT all the rgba channel values are in range [0,1] 
+
+\index{mr::color@{mr::color}!isPositive@{isPositive}}
+\index{isPositive@{isPositive}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::color::is\-Positive () const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z8_2}
+
+
+mr\-ASSERT all the rgba channel values are positive numbers (or 0) 
+
+\index{mr::color@{mr::color}!isPremult@{isPremult}}
+\index{isPremult@{isPremult}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::color::is\-Premult () const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z8_3}
+
+
+mr\-ASSERT all the rgb channels are premultiplied (ie. are less than alpha) \index{mr::color@{mr::color}!isValid@{isValid}}
+\index{isValid@{isValid}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::color::is\-Valid () const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z8_0}
+
+
+mr\-ASSERT color is valid (ie. is Positive) 
+
+\index{mr::color@{mr::color}!lessThan@{lessThan}}
+\index{lessThan@{lessThan}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::less\-Than (const mi\-Color \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z12_0}
+
+
+Return a new color indicating for each rgba component if it is $<$ than the rgba components of the other color \index{mr::color@{mr::color}!lessThanEqual@{lessThanEqual}}
+\index{lessThanEqual@{lessThanEqual}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::less\-Than\-Equal (const mi\-Color \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z12_1}
+
+
+Return a new color indicating for each rgba component if it is $<$= than the rgba components of the other color \index{mr::color@{mr::color}!lumma@{lumma}}
+\index{lumma@{lumma}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar mr::color::lumma (const mi\-State $\ast$ {\em state})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z16_1}
+
+
+Returns lumma of color (using state-$>$options-$>$luminance). 
+
+\index{mr::color@{mr::color}!mix@{mix}}
+\index{mix@{mix}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf color}\& mr::color::mix (const mi\-Color \& {\em x}, const mi\-Scalar {\em p})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z15_1}
+
+
+Mix this color with another based on a [0,1] percentage. 0 = no mix. 1 = other color. \index{mr::color@{mr::color}!operator *=@{operator $\ast$=}}
+\index{operator *=@{operator $\ast$=}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf color}\& mr::color::operator $\ast$= (const mi\-Color \& {\em x})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z14_9}
+
+
+Per component multiplication of one color with another. Original Alpha is NOT modified. \index{mr::color@{mr::color}!operator *=@{operator $\ast$=}}
+\index{operator *=@{operator $\ast$=}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf color}\& mr::color::operator $\ast$= (const mi\-Scalar {\em x})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z14_8}
+
+
+Per component multiplication by a scalar Original Alpha is NOT modified. \index{mr::color@{mr::color}!operator *=@{operator $\ast$=}}
+\index{operator *=@{operator $\ast$=}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class X, class Y, class Oper$>$ const {\bf color}\& mr::color::operator $\ast$= (const {\bf base::exp}$<$ X, Y, Oper $>$ \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z14_7}
+
+
+Per component multiplication by an arbitrary expression Original Alpha is NOT modified. \index{mr::color@{mr::color}!operator miVector@{operator miVector}}
+\index{operator miVector@{operator miVector}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mr::color::operator mi\-Vector ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z3_0}
+
+
+Convert color to an mi\-Vector. 
+
+\index{mr::color@{mr::color}!operator normal@{operator normal}}
+\index{operator normal@{operator normal}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mr::color::operator {\bf normal} ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z3_3}
+
+
+Convert color to a normal. 
+
+\index{mr::color@{mr::color}!operator point@{operator point}}
+\index{operator point@{operator point}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mr::color::operator {\bf point} ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z3_2}
+
+
+Convert color to a point. 
+
+\index{mr::color@{mr::color}!operator vector@{operator vector}}
+\index{operator vector@{operator vector}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mr::color::operator {\bf vector} ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z3_1}
+
+
+Convert color to a vector. 
+
+\index{mr::color@{mr::color}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const bool mr::color::operator!= (const mi\-Scalar {\em x}) const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z10_5}
+
+
+\index{mr::color@{mr::color}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const bool mr::color::operator!= (const mi\-Color \& {\em x}) const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z10_4}
+
+
+\index{mr::color@{mr::color}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class X, class Y, class Oper$>$ const bool mr::color::operator!= (const {\bf base::exp}$<$ X, Y, Oper $>$ \& {\em e}) const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z10_3}
+
+
+\index{mr::color@{mr::color}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf color}\& mr::color::operator+= (const mi\-Color \& {\em x})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z14_3}
+
+
+Per component addition of one color with another. Original Alpha is NOT modified. \index{mr::color@{mr::color}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf color}\& mr::color::operator+= (const mi\-Scalar \& {\em x})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z14_2}
+
+
+Per component addition by a scalar. Original Alpha is NOT modified. \index{mr::color@{mr::color}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class X, class Y, class Oper$>$ const {\bf color}\& mr::color::operator+= (const {\bf base::exp}$<$ X, Y, Oper $>$ \& {\em t})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z14_1}
+
+
+Per component addition by an arbitrary expression. Original Alpha is NOT modified. \index{mr::color@{mr::color}!operator-@{operator-}}
+\index{operator-@{operator-}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::operator- () const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z14_0}
+
+
+Per component negation. Original Alpha is NOT modified. 
+
+\index{mr::color@{mr::color}!operator-=@{operator-=}}
+\index{operator-=@{operator-=}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf color}\& mr::color::operator-= (const mi\-Color \& {\em x})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z14_6}
+
+
+Per component substraction of one color with another. Original Alpha is NOT modified. \index{mr::color@{mr::color}!operator-=@{operator-=}}
+\index{operator-=@{operator-=}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf color}\& mr::color::operator-= (const mi\-Scalar {\em x})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z14_5}
+
+
+Per component substraction by a scalar Original Alpha is NOT modified. \index{mr::color@{mr::color}!operator-=@{operator-=}}
+\index{operator-=@{operator-=}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class X, class Y, class Oper$>$ const {\bf color}\& mr::color::operator-= (const {\bf base::exp}$<$ X, Y, Oper $>$ \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z14_4}
+
+
+Per component substraction by an arbitrary expression. Original Alpha is NOT modified. \index{mr::color@{mr::color}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf color}\& mr::color::operator/= (const mi\-Color \& {\em x})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z14_12}
+
+
+Per component division of one color with another. Original Alpha is NOT modified. \index{mr::color@{mr::color}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf color}\& mr::color::operator/= (const mi\-Scalar {\em x})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z14_11}
+
+
+Per component division by a scalar Original Alpha is NOT modified. \index{mr::color@{mr::color}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class X, class Y, class Oper$>$ const {\bf color}\& mr::color::operator/= (const {\bf base::exp}$<$ X, Y, Oper $>$ \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z14_10}
+
+
+Per component division by an arbitrary expression Original Alpha is NOT modified. \index{mr::color@{mr::color}!operator<@{operator$<$}}
+\index{operator<@{operator$<$}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool mr::color::operator$<$ (const mi\-Color \& {\em a}) const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z11_4}
+
+
+Compare R+G+B $<$ R+G+B of other color. 
+
+\index{mr::color@{mr::color}!operator<@{operator$<$}}
+\index{operator<@{operator$<$}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool mr::color::operator$<$ (const mi\-Scalar {\em a}) const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z11_0}
+
+
+Compare R+G+B $<$ Scalar. 
+
+\index{mr::color@{mr::color}!operator<=@{operator$<$=}}
+\index{operator<=@{operator$<$=}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool mr::color::operator$<$= (const mi\-Color \& {\em a}) const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z11_6}
+
+
+Compare R+G+B $<$= R+G+B of other color. 
+
+\index{mr::color@{mr::color}!operator<=@{operator$<$=}}
+\index{operator<=@{operator$<$=}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool mr::color::operator$<$= (const mi\-Scalar {\em a}) const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z11_2}
+
+
+Compare R+G+B $<$= Scalar. 
+
+\index{mr::color@{mr::color}!operator=@{operator=}}
+\index{operator=@{operator=}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf color}\& mr::color::operator= (const mi\-Scalar {\em rgb})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z5_4}
+
+
+Assigns a mi\-Scalar (float) to rgb channels. Original Alpha is NOT modified. Use $|$= to modify alpha, too. \index{mr::color@{mr::color}!operator=@{operator=}}
+\index{operator=@{operator=}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf color}\& mr::color::operator= (const mi\-Vector \& {\em x})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z5_3}
+
+
+Assigns a color to another color. Original Alpha is NOT modified. Use $|$= to modify alpha, too. \index{mr::color@{mr::color}!operator=@{operator=}}
+\index{operator=@{operator=}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf color}\& mr::color::operator= (const mi\-Color \& {\em x})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z5_2}
+
+
+Assigns an mi\-Color components to rgb channels. Original Alpha is NOT modified. Use $|$= to modify alpha, too. \index{mr::color@{mr::color}!operator=@{operator=}}
+\index{operator=@{operator=}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf color}\& mr::color::operator= (const {\bf color} \& {\em x})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z5_1}
+
+
+Assigns color components to rgb channels. Original Alpha is NOT modified. Use $|$= to modify alpha, too. \index{mr::color@{mr::color}!operator=@{operator=}}
+\index{operator=@{operator=}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class X, class Y, class Oper$>$ const {\bf color}\& mr::color::operator= (const {\bf base::exp}$<$ X, Y, Oper $>$ \& {\em e})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z5_0}
+
+
+Assigns an expression to rgb channels. Original Alpha is NOT modified. Use $|$= to modify alpha, too. \index{mr::color@{mr::color}!operator==@{operator==}}
+\index{operator==@{operator==}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const bool mr::color::operator== (const mi\-Scalar {\em x}) const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z10_2}
+
+
+\index{mr::color@{mr::color}!operator==@{operator==}}
+\index{operator==@{operator==}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const bool mr::color::operator== (const mi\-Color \& {\em x}) const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z10_1}
+
+
+\index{mr::color@{mr::color}!operator==@{operator==}}
+\index{operator==@{operator==}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class X, class Y, class Oper$>$ const bool mr::color::operator== (const {\bf base::exp}$<$ X, Y, Oper $>$ \& {\em e}) const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z10_0}
+
+
+\index{mr::color@{mr::color}!operator>@{operator$>$}}
+\index{operator>@{operator$>$}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool mr::color::operator$>$ (const mi\-Color \& {\em a}) const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z11_5}
+
+
+Compare R+G+B $>$ R+G+B of other color. 
+
+\index{mr::color@{mr::color}!operator>@{operator$>$}}
+\index{operator>@{operator$>$}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool mr::color::operator$>$ (const mi\-Scalar {\em a}) const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z11_1}
+
+
+Compare R+G+B $>$ Scalar. 
+
+\index{mr::color@{mr::color}!operator>=@{operator$>$=}}
+\index{operator>=@{operator$>$=}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool mr::color::operator$>$= (const mi\-Color \& {\em a}) const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z11_7}
+
+
+Compare R+G+B $>$= R+G+B of other color. 
+
+\index{mr::color@{mr::color}!operator>=@{operator$>$=}}
+\index{operator>=@{operator$>$=}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool mr::color::operator$>$= (const mi\-Scalar {\em a}) const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z11_3}
+
+
+Compare R+G+B $>$= Scalar. 
+
+\index{mr::color@{mr::color}!operator[]@{operator[]}}
+\index{operator[]@{operator[]}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const mi\-Scalar mr::color::operator[$\,$] (const unsigned short {\em i}) const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z9_1}
+
+
+Component access using [0,3] index. 
+
+\index{mr::color@{mr::color}!operator[]@{operator[]}}
+\index{operator[]@{operator[]}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar\& mr::color::operator[$\,$] (const unsigned short {\em i})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z9_0}
+
+
+Component setter using [0,3] index. 
+
+\index{mr::color@{mr::color}!operator\texttt{"|}=@{operator\texttt{"|}=}}
+\index{operator\texttt{"|}=@{operator\texttt{"|}=}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf color}\& mr::color::operator$|$= (const mi\-Scalar {\em rgba})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z4_4}
+
+
+Assigns an mi\-Scalar (float) to rgba channels. Original Alpha IS MODIFIED. Use = to modify only color, too. \index{mr::color@{mr::color}!operator\texttt{"|}=@{operator\texttt{"|}=}}
+\index{operator\texttt{"|}=@{operator\texttt{"|}=}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf color}\& mr::color::operator$|$= (const mi\-Vector \& {\em x})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z4_3}
+
+
+Assigns a color to another color. Original Alpha IS MODIFIED. Use = to modify only color, too. \index{mr::color@{mr::color}!operator\texttt{"|}=@{operator\texttt{"|}=}}
+\index{operator\texttt{"|}=@{operator\texttt{"|}=}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf color}\& mr::color::operator$|$= (const mi\-Color \& {\em x})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z4_2}
+
+
+Assigns an mi\-Color components to rgba channels. Original Alpha IS MODIFIED. Use = to modify only color, too. \index{mr::color@{mr::color}!operator\texttt{"|}=@{operator\texttt{"|}=}}
+\index{operator\texttt{"|}=@{operator\texttt{"|}=}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf color}\& mr::color::operator$|$= (const {\bf color} \& {\em x})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z4_1}
+
+
+Assigns color components to rgba channels. Original Alpha IS MODIFIED. Use = to modify only color, too. \index{mr::color@{mr::color}!operator\texttt{"|}=@{operator\texttt{"|}=}}
+\index{operator\texttt{"|}=@{operator\texttt{"|}=}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class X, class Y, class Oper$>$ const {\bf color}\& mr::color::operator$|$= (const {\bf base::exp}$<$ X, Y, Oper $>$ \& {\em e})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z4_0}
+
+
+Assigns an expression to rgba channels. Original Alpha IS MODIFIED. Use = to modify only color, too. \index{mr::color@{mr::color}!raaa@{raaa}}
+\index{raaa@{raaa}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::raaa ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_230}
+
+
+\index{mr::color@{mr::color}!raab@{raab}}
+\index{raab@{raab}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::raab ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_212}
+
+
+\index{mr::color@{mr::color}!raag@{raag}}
+\index{raag@{raag}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::raag ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_210}
+
+
+\index{mr::color@{mr::color}!rab@{rab}}
+\index{rab@{rab}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf self}\& mr::color::rab (const {\bf self} \& {\em t})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_17}
+
+
+\index{mr::color@{mr::color}!rab@{rab}}
+\index{rab@{rab}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf self} mr::color::rab () const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_16}
+
+
+\index{mr::color@{mr::color}!rabb@{rabb}}
+\index{rabb@{rabb}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::rabb ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_174}
+
+
+\index{mr::color@{mr::color}!rabg@{rabg}}
+\index{rabg@{rabg}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf self}\& mr::color::rabg (const mi\-Color \& {\em t})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_72}
+
+
+\index{mr::color@{mr::color}!rabg@{rabg}}
+\index{rabg@{rabg}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::rabg ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_71}
+
+
+\index{mr::color@{mr::color}!rag@{rag}}
+\index{rag@{rag}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf self}\& mr::color::rag (const {\bf self} \& {\em t})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_25}
+
+
+\index{mr::color@{mr::color}!rag@{rag}}
+\index{rag@{rag}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf self} mr::color::rag () const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_24}
+
+
+\index{mr::color@{mr::color}!ragb@{ragb}}
+\index{ragb@{ragb}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf self}\& mr::color::ragb (const mi\-Color \& {\em t})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_74}
+
+
+\index{mr::color@{mr::color}!ragb@{ragb}}
+\index{ragb@{ragb}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::ragb ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_73}
+
+
+\index{mr::color@{mr::color}!ragg@{ragg}}
+\index{ragg@{ragg}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::ragg ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_134}
+
+
+\index{mr::color@{mr::color}!rar@{rar}}
+\index{rar@{rar}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf self} mr::color::rar () const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_37}
+
+
+\index{mr::color@{mr::color}!rarr@{rarr}}
+\index{rarr@{rarr}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::rarr ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_101}
+
+
+\index{mr::color@{mr::color}!rba@{rba}}
+\index{rba@{rba}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf self}\& mr::color::rba (const {\bf self} \& {\em t})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_19}
+
+
+\index{mr::color@{mr::color}!rba@{rba}}
+\index{rba@{rba}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf self} mr::color::rba () const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_18}
+
+
+\index{mr::color@{mr::color}!rbaa@{rbaa}}
+\index{rbaa@{rbaa}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::rbaa ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_215}
+
+
+\index{mr::color@{mr::color}!rbag@{rbag}}
+\index{rbag@{rbag}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf self}\& mr::color::rbag (const mi\-Color \& {\em t})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_70}
+
+
+\index{mr::color@{mr::color}!rbag@{rbag}}
+\index{rbag@{rbag}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::rbag ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_69}
+
+
+\index{mr::color@{mr::color}!rbb@{rbb}}
+\index{rbb@{rbb}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf self} mr::color::rbb () const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_51}
+
+
+\index{mr::color@{mr::color}!rbba@{rbba}}
+\index{rbba@{rbba}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::rbba ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_169}
+
+
+\index{mr::color@{mr::color}!rbbb@{rbbb}}
+\index{rbbb@{rbbb}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::rbbb ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_187}
+
+
+\index{mr::color@{mr::color}!rbbg@{rbbg}}
+\index{rbbg@{rbbg}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::rbbg ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_166}
+
+
+\index{mr::color@{mr::color}!rbg@{rbg}}
+\index{rbg@{rbg}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf self}\& mr::color::rbg (const {\bf self} \& {\em t})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_11}
+
+
+\index{mr::color@{mr::color}!rbg@{rbg}}
+\index{rbg@{rbg}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf self} mr::color::rbg () const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_10}
+
+
+\index{mr::color@{mr::color}!rbga@{rbga}}
+\index{rbga@{rbga}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf self}\& mr::color::rbga (const mi\-Color \& {\em t})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_68}
+
+
+\index{mr::color@{mr::color}!rbga@{rbga}}
+\index{rbga@{rbga}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::rbga ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_67}
+
+
+\index{mr::color@{mr::color}!rbgg@{rbgg}}
+\index{rbgg@{rbgg}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::rbgg ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_129}
+
+
+\index{mr::color@{mr::color}!rbr@{rbr}}
+\index{rbr@{rbr}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf self} mr::color::rbr () const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_36}
+
+
+\index{mr::color@{mr::color}!rbrr@{rbrr}}
+\index{rbrr@{rbrr}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::rbrr ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_100}
+
+
+\index{mr::color@{mr::color}!rga@{rga}}
+\index{rga@{rga}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf self}\& mr::color::rga (const {\bf self} \& {\em t})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_31}
+
+
+\index{mr::color@{mr::color}!rga@{rga}}
+\index{rga@{rga}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf self} mr::color::rga () const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_30}
+
+
+\index{mr::color@{mr::color}!rgaa@{rgaa}}
+\index{rgaa@{rgaa}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::rgaa ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_217}
+
+
+\index{mr::color@{mr::color}!rgab@{rgab}}
+\index{rgab@{rgab}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf self}\& mr::color::rgab (const mi\-Color \& {\em t})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_66}
+
+
+\index{mr::color@{mr::color}!rgab@{rgab}}
+\index{rgab@{rgab}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::rgab ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_65}
+
+
+\index{mr::color@{mr::color}!rgb@{rgb}}
+\index{rgb@{rgb}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf color}\& mr::color::rgb () const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_1}
+
+
+Return color as {\bf rgb()}{\rm (p.\,\pageref{structmr_1_1color_z7_0})}. 
+
+\index{mr::color@{mr::color}!rgb@{rgb}}
+\index{rgb@{rgb}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf color}\& mr::color::rgb (const mi\-Color \& {\em t})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_0}
+
+
+Set color to another mi\-Color. Original Alpha is not modified. 
+
+\index{mr::color@{mr::color}!rgb2hsl@{rgb2hsl}}
+\index{rgb2hsl@{rgb2hsl}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::color::rgb2hsl ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z0_5}
+
+
+Assuming color represents RGB, take it to HSL (r=H,g=S,b=L). 
+
+\index{mr::color@{mr::color}!rgb2hsv@{rgb2hsv}}
+\index{rgb2hsv@{rgb2hsv}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::color::rgb2hsv ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z0_3}
+
+
+Assuming color represents RGB, take it to HSV (r=H,g=S,b=V). 
+
+\index{mr::color@{mr::color}!rgb2xyz@{rgb2xyz}}
+\index{rgb2xyz@{rgb2xyz}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::color::rgb2xyz ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z0_1}
+
+
+Assuming color represents RGB, take it to CIE XYZ. 
+
+\index{mr::color@{mr::color}!rgb2ycc@{rgb2ycc}}
+\index{rgb2ycc@{rgb2ycc}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::color::rgb2ycc ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z0_7}
+
+
+Assuming color represents RGB, take it to YCb\-Cr. 
+
+\index{mr::color@{mr::color}!rgb2ypp@{rgb2ypp}}
+\index{rgb2ypp@{rgb2ypp}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::color::rgb2ypp ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z0_9}
+
+
+Assuming color represents RGB, take it to YPb\-Pr. 
+
+\index{mr::color@{mr::color}!rgba@{rgba}}
+\index{rgba@{rgba}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf self}\& mr::color::rgba (const mi\-Color \& {\em t})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_64}
+
+
+\index{mr::color@{mr::color}!rgba@{rgba}}
+\index{rgba@{rgba}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::rgba ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_63}
+
+
+\index{mr::color@{mr::color}!rgbb@{rgbb}}
+\index{rgbb@{rgbb}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::rgbb ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_172}
+
+
+\index{mr::color@{mr::color}!rgg@{rgg}}
+\index{rgg@{rgg}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf self} mr::color::rgg () const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_41}
+
+
+\index{mr::color@{mr::color}!rgga@{rgga}}
+\index{rgga@{rgga}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::rgga ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_125}
+
+
+\index{mr::color@{mr::color}!rggb@{rggb}}
+\index{rggb@{rggb}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::rggb ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_123}
+
+
+\index{mr::color@{mr::color}!rggg@{rggg}}
+\index{rggg@{rggg}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::rggg ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_144}
+
+
+\index{mr::color@{mr::color}!rgr@{rgr}}
+\index{rgr@{rgr}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf self} mr::color::rgr () const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_35}
+
+
+\index{mr::color@{mr::color}!rgrr@{rgrr}}
+\index{rgrr@{rgrr}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::rgrr ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_99}
+
+
+\index{mr::color@{mr::color}!rra@{rra}}
+\index{rra@{rra}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf self} mr::color::rra () const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_40}
+
+
+\index{mr::color@{mr::color}!rrab@{rrab}}
+\index{rrab@{rrab}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::rrab ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_79}
+
+
+\index{mr::color@{mr::color}!rrag@{rrag}}
+\index{rrag@{rrag}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::rrag ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_77}
+
+
+\index{mr::color@{mr::color}!rrar@{rrar}}
+\index{rrar@{rrar}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::rrar ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_98}
+
+
+\index{mr::color@{mr::color}!rrb@{rrb}}
+\index{rrb@{rrb}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf self} mr::color::rrb () const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_39}
+
+
+\index{mr::color@{mr::color}!rrba@{rrba}}
+\index{rrba@{rrba}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::rrba ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_80}
+
+
+\index{mr::color@{mr::color}!rrbg@{rrbg}}
+\index{rrbg@{rrbg}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::rrbg ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_76}
+
+
+\index{mr::color@{mr::color}!rrbr@{rrbr}}
+\index{rrbr@{rrbr}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::rrbr ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_97}
+
+
+\index{mr::color@{mr::color}!rrg@{rrg}}
+\index{rrg@{rrg}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf self} mr::color::rrg () const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_38}
+
+
+\index{mr::color@{mr::color}!rrga@{rrga}}
+\index{rrga@{rrga}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::rrga ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_78}
+
+
+\index{mr::color@{mr::color}!rrgb@{rrgb}}
+\index{rrgb@{rrgb}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::rrgb ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_75}
+
+
+\index{mr::color@{mr::color}!rrgr@{rrgr}}
+\index{rrgr@{rrgr}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::rrgr ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_96}
+
+
+\index{mr::color@{mr::color}!rrr@{rrr}}
+\index{rrr@{rrr}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf self} mr::color::rrr () const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_2}
+
+
+3 same channels 
+
+\index{mr::color@{mr::color}!rrra@{rrra}}
+\index{rrra@{rrra}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::rrra ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_95}
+
+
+\index{mr::color@{mr::color}!rrrb@{rrrb}}
+\index{rrrb@{rrrb}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::rrrb ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_94}
+
+
+\index{mr::color@{mr::color}!rrrg@{rrrg}}
+\index{rrrg@{rrrg}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::rrrg ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_93}
+
+
+\index{mr::color@{mr::color}!rrrr@{rrrr}}
+\index{rrrr@{rrrr}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::color::rrrr ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z7_59}
+
+
+\index{mr::color@{mr::color}!saturation@{saturation}}
+\index{saturation@{saturation}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::color::saturation (const mi\-State $\ast$ {\em state}, const mi\-Scalar {\em p})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z16_2}
+
+
+Control saturation, keeping perceived luminance from state-$>$options-$>$luminance. p is a value between [0,1] \index{mr::color@{mr::color}!to@{to}}
+\index{to@{to}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::color::to (const {\bf space} {\em to\-Space})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z0_10}
+
+
+Assume color is RGB, then take it to\-Space. 
+
+\index{mr::color@{mr::color}!transform@{transform}}
+\index{transform@{transform}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::color::transform (const {\bf space} {\em from\-Space}, const {\bf space} {\em to\-Space})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z0_12}
+
+
+Transform the color from one space to another. 
+
+\index{mr::color@{mr::color}!xyz2rgb@{xyz2rgb}}
+\index{xyz2rgb@{xyz2rgb}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::color::xyz2rgb ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z0_0}
+
+
+Assuming color represents CIE XYZ, take it to RGB. 
+
+\index{mr::color@{mr::color}!ycc2rgb@{ycc2rgb}}
+\index{ycc2rgb@{ycc2rgb}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::color::ycc2rgb ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z0_6}
+
+
+Assuming color represents YCb\-Cr, take it to RGB values. 
+
+\index{mr::color@{mr::color}!ypp2rgb@{ypp2rgb}}
+\index{ypp2rgb@{ypp2rgb}!mr::color@{mr::color}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::color::ypp2rgb ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1color_z0_8}
+
+
+Assuming color represents YPb\-Pr, take it to RGB values. 
+
+
+
+The documentation for this struct was generated from the following file:\begin{CompactItemize}
+\item 
+{\bf mr\-Color.h}\end{CompactItemize}

@@ -1,0 +1,41 @@
+\section{Todo List}\label{todo}
+\label{_todo000001}
+ \begin{description}
+\item[Member {\bf mr::color::space}{\rm (p.\,\pageref{structmr_1_1color_w10})} ]add other spaces:\end{description}
+
+
+\label{_todo000005}
+ \begin{description}
+\item[Class {\bf mr::SPerlin}{\rm (p.\,\pageref{classmr_1_1SPerlin})} ]: rewrite {\bf snoise( 4 channels)}{\rm (p.\,\pageref{mrRman__notes_8h_a14})} as the indexes are wrong and so is the gradient. 
+
+: Make noise functions that return the gradient?\end{description}
+
+
+\label{_todo000002}
+ \begin{description}
+\item[Member {\bf mr::area}{\rm (p.\,\pageref{namespacemr_a32})}(const mi\-State $\ast$const state, const mi\-Vector \&P) ]: test if this area(P) works at all\end{description}
+
+
+\label{_todo000008}
+ \begin{description}
+\item[Member {\bf mr::blinn\_\-coeffs}{\rm (p.\,\pageref{namespacemr_a71})}(mi\-Scalar \&Nd\-H, mi\-Scalar \&Vd\-H, const normal \&N, const vector \&L, const vector \&V, const mi\-Scalar Nd\-L, const mi\-Scalar Nd\-V) ]: See which acos() and so forth can be changed to fastmath (most likely, all of them)\end{description}
+
+
+\label{_todo000003}
+ \begin{description}
+\item[Member {\bf mr::d\-Pdst}{\rm (p.\,\pageref{namespacemr_a47})}(mi\-Vector \&d\-Pds, mi\-Vector \&d\-Pdt, const mi\-State $\ast$const state, const int idx=0) ]: The following routines here could be sped up a tad if we record the triangle id (instance, state-$>$pri + state-$>$pri\_\-idx) and cache its d\-Pds, d\-Nds, etc. This has to be done for each mi\-State. With that we can avoid recalculating them each time, as likely several contiguous samples will hit the same triangle.\end{description}
+
+
+\label{_todo000004}
+ \begin{description}
+\item[Member {\bf mr::filter::function}{\rm (p.\,\pageref{namespacemr_1_1filter_a0})})(mi\-Scalar, mi\-Scalar, mi\-Scalar, mi\-Scalar) ]: create tables for each filters to avoid calling them directly.\end{description}
+
+
+\label{_todo000006}
+ \begin{description}
+\item[Member {\bf rsl::smoothstep}{\rm (p.\,\pageref{namespacersl_a12})}(const T \&a, const T \&b, const T \&x) ]Add filterstep\end{description}
+
+
+\label{_todo000007}
+ \begin{description}
+\item[Member {\bf rsl::environment}{\rm (p.\,\pageref{namespacersl_a157})}(...) ]: textureinfo(), texture(), shadow(), match()\end{description}

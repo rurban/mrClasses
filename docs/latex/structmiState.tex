@@ -1,0 +1,379 @@
+\section{mi\-State Struct Reference}
+\label{structmiState}\index{miState@{miState}}
+{\tt \#include $<$shader.h$>$}
+
+\subsection*{Public Attributes}
+\begin{CompactItemize}
+\item 
+int {\bf version}
+\item 
+{\bf mi\-Tag} {\bf camera\_\-inst}
+\item 
+{\bf mi\-Camera} $\ast$ {\bf camera}
+\item 
+{\bf mi\-Options} $\ast$ {\bf options}
+\item 
+{\bf mi\-Lock} {\bf global\_\-lock}
+\item 
+{\bf mi\-Uint} {\bf qmc\_\-instance}
+\item 
+mi\-Ts $\ast$ {\bf ts}
+\item 
+float {\bf raster\_\-x}
+\item 
+float {\bf raster\_\-y}
+\item 
+{\bf mi\-State} $\ast$ {\bf parent}
+\item 
+{\bf mi\-Ray\_\-type} {\bf type}
+\item 
+{\bf mi\-Uchar} {\bf qmc\_\-component}
+\item 
+{\bf mi\-Uint1} {\bf scanline}
+\item 
+{\bf mi\-CBoolean} {\bf inv\_\-normal}
+\item 
+char {\bf face}
+\item 
+void $\ast$ {\bf spare0}
+\item 
+void $\ast$ {\bf cache}
+\item 
+int {\bf reflection\_\-level}
+\item 
+int {\bf refraction\_\-level}
+\item 
+{\bf mi\-Vector} {\bf org}
+\item 
+{\bf mi\-Vector} {\bf dir}
+\item 
+double {\bf dist}
+\item 
+float {\bf time}
+\item 
+{\bf mi\-Scalar} {\bf ior}
+\item 
+{\bf mi\-Scalar} {\bf ior\_\-in}
+\item 
+{\bf mi\-Tag} {\bf material}
+\item 
+{\bf mi\-Tag} {\bf volume}
+\item 
+{\bf mi\-Tag} {\bf environment}
+\item 
+{\bf mi\-Tag} {\bf refraction\_\-volume}
+\item 
+{\bf mi\-Uint} {\bf label}
+\item 
+{\bf mi\-Tag} {\bf instance}
+\item 
+{\bf mi\-Tag} {\bf light\_\-instance}
+\item 
+void $\ast$ {\bf pri}
+\item 
+int {\bf pri\_\-idx}
+\item 
+float {\bf bary} [4]
+\item 
+{\bf mi\-Vector} {\bf point}
+\item 
+{\bf mi\-Vector} {\bf normal}
+\item 
+{\bf mi\-Vector} {\bf normal\_\-geom}
+\item 
+{\bf mi\-Scalar} {\bf dot\_\-nd}
+\item 
+double {\bf shadow\_\-tol}
+\item 
+{\bf mi\-Vector} $\ast$ {\bf tex\_\-list}
+\item 
+{\bf mi\-Vector} $\ast$ {\bf bump\_\-x\_\-list}
+\item 
+{\bf mi\-Vector} $\ast$ {\bf bump\_\-y\_\-list}
+\item 
+{\bf mi\-Vector} {\bf motion}
+\item 
+{\bf mi\-Vector} $\ast$ {\bf derivs}
+\item 
+{\bf mi\-Vector} {\bf tex}
+\item 
+const struct {\bf mi\-Function} $\ast$ {\bf shader}
+\item 
+{\bf mi\-State} $\ast$ {\bf child}
+\item 
+short {\bf thread}
+\item 
+{\bf mi\-Ushort} {\bf count}
+\item 
+void $\ast$ {\bf user}
+\item 
+int {\bf user\_\-size}
+\end{CompactItemize}
+
+
+\subsection{Member Data Documentation}
+\index{miState@{mi\-State}!bary@{bary}}
+\index{bary@{bary}!miState@{mi\-State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}float {\bf mi\-State::bary}[4]}\label{structmiState_o34}
+
+
+\index{miState@{mi\-State}!bump_x_list@{bump\_\-x\_\-list}}
+\index{bump_x_list@{bump\_\-x\_\-list}!miState@{mi\-State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Vector}$\ast$ {\bf mi\-State::bump\_\-x\_\-list}}\label{structmiState_o41}
+
+
+\index{miState@{mi\-State}!bump_y_list@{bump\_\-y\_\-list}}
+\index{bump_y_list@{bump\_\-y\_\-list}!miState@{mi\-State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Vector}$\ast$ {\bf mi\-State::bump\_\-y\_\-list}}\label{structmiState_o42}
+
+
+\index{miState@{mi\-State}!cache@{cache}}
+\index{cache@{cache}!miState@{mi\-State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ {\bf mi\-State::cache}}\label{structmiState_o16}
+
+
+\index{miState@{mi\-State}!camera@{camera}}
+\index{camera@{camera}!miState@{mi\-State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}struct {\bf mi\-Camera}$\ast$ {\bf mi\-State::camera}}\label{structmiState_o2}
+
+
+\index{miState@{mi\-State}!camera_inst@{camera\_\-inst}}
+\index{camera_inst@{camera\_\-inst}!miState@{mi\-State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Tag} {\bf mi\-State::camera\_\-inst}}\label{structmiState_o1}
+
+
+\index{miState@{mi\-State}!child@{child}}
+\index{child@{child}!miState@{mi\-State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}struct {\bf mi\-State}$\ast$ {\bf mi\-State::child}}\label{structmiState_o47}
+
+
+\index{miState@{mi\-State}!count@{count}}
+\index{count@{count}!miState@{mi\-State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Ushort} {\bf mi\-State::count}}\label{structmiState_o49}
+
+
+\index{miState@{mi\-State}!derivs@{derivs}}
+\index{derivs@{derivs}!miState@{mi\-State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Vector}$\ast$ {\bf mi\-State::derivs}}\label{structmiState_o44}
+
+
+\index{miState@{mi\-State}!dir@{dir}}
+\index{dir@{dir}!miState@{mi\-State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Vector} {\bf mi\-State::dir}}\label{structmiState_o20}
+
+
+\index{miState@{mi\-State}!dist@{dist}}
+\index{dist@{dist}!miState@{mi\-State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double {\bf mi\-State::dist}}\label{structmiState_o21}
+
+
+\index{miState@{mi\-State}!dot_nd@{dot\_\-nd}}
+\index{dot_nd@{dot\_\-nd}!miState@{mi\-State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Scalar} {\bf mi\-State::dot\_\-nd}}\label{structmiState_o38}
+
+
+\index{miState@{mi\-State}!environment@{environment}}
+\index{environment@{environment}!miState@{mi\-State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Tag} {\bf mi\-State::environment}}\label{structmiState_o27}
+
+
+\index{miState@{mi\-State}!face@{face}}
+\index{face@{face}!miState@{mi\-State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char {\bf mi\-State::face}}\label{structmiState_o14}
+
+
+\index{miState@{mi\-State}!global_lock@{global\_\-lock}}
+\index{global_lock@{global\_\-lock}!miState@{mi\-State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Lock} {\bf mi\-State::global\_\-lock}}\label{structmiState_o4}
+
+
+\index{miState@{mi\-State}!instance@{instance}}
+\index{instance@{instance}!miState@{mi\-State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Tag} {\bf mi\-State::instance}}\label{structmiState_o30}
+
+
+\index{miState@{mi\-State}!inv_normal@{inv\_\-normal}}
+\index{inv_normal@{inv\_\-normal}!miState@{mi\-State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-CBoolean} {\bf mi\-State::inv\_\-normal}}\label{structmiState_o13}
+
+
+\index{miState@{mi\-State}!ior@{ior}}
+\index{ior@{ior}!miState@{mi\-State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Scalar} {\bf mi\-State::ior}}\label{structmiState_o23}
+
+
+\index{miState@{mi\-State}!ior_in@{ior\_\-in}}
+\index{ior_in@{ior\_\-in}!miState@{mi\-State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Scalar} {\bf mi\-State::ior\_\-in}}\label{structmiState_o24}
+
+
+\index{miState@{mi\-State}!label@{label}}
+\index{label@{label}!miState@{mi\-State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Uint} {\bf mi\-State::label}}\label{structmiState_o29}
+
+
+\index{miState@{mi\-State}!light_instance@{light\_\-instance}}
+\index{light_instance@{light\_\-instance}!miState@{mi\-State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Tag} {\bf mi\-State::light\_\-instance}}\label{structmiState_o31}
+
+
+\index{miState@{mi\-State}!material@{material}}
+\index{material@{material}!miState@{mi\-State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Tag} {\bf mi\-State::material}}\label{structmiState_o25}
+
+
+\index{miState@{mi\-State}!motion@{motion}}
+\index{motion@{motion}!miState@{mi\-State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Vector} {\bf mi\-State::motion}}\label{structmiState_o43}
+
+
+\index{miState@{mi\-State}!normal@{normal}}
+\index{normal@{normal}!miState@{mi\-State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Vector} {\bf mi\-State::normal}}\label{structmiState_o36}
+
+
+\index{miState@{mi\-State}!normal_geom@{normal\_\-geom}}
+\index{normal_geom@{normal\_\-geom}!miState@{mi\-State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Vector} {\bf mi\-State::normal\_\-geom}}\label{structmiState_o37}
+
+
+\index{miState@{mi\-State}!options@{options}}
+\index{options@{options}!miState@{mi\-State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}struct {\bf mi\-Options}$\ast$ {\bf mi\-State::options}}\label{structmiState_o3}
+
+
+\index{miState@{mi\-State}!org@{org}}
+\index{org@{org}!miState@{mi\-State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Vector} {\bf mi\-State::org}}\label{structmiState_o19}
+
+
+\index{miState@{mi\-State}!parent@{parent}}
+\index{parent@{parent}!miState@{mi\-State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}struct {\bf mi\-State}$\ast$ {\bf mi\-State::parent}}\label{structmiState_o9}
+
+
+\index{miState@{mi\-State}!point@{point}}
+\index{point@{point}!miState@{mi\-State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Vector} {\bf mi\-State::point}}\label{structmiState_o35}
+
+
+\index{miState@{mi\-State}!pri@{pri}}
+\index{pri@{pri}!miState@{mi\-State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ {\bf mi\-State::pri}}\label{structmiState_o32}
+
+
+\index{miState@{mi\-State}!pri_idx@{pri\_\-idx}}
+\index{pri_idx@{pri\_\-idx}!miState@{mi\-State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf mi\-State::pri\_\-idx}}\label{structmiState_o33}
+
+
+\index{miState@{mi\-State}!qmc_component@{qmc\_\-component}}
+\index{qmc_component@{qmc\_\-component}!miState@{mi\-State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Uchar} {\bf mi\-State::qmc\_\-component}}\label{structmiState_o11}
+
+
+\index{miState@{mi\-State}!qmc_instance@{qmc\_\-instance}}
+\index{qmc_instance@{qmc\_\-instance}!miState@{mi\-State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Uint} {\bf mi\-State::qmc\_\-instance}}\label{structmiState_o5}
+
+
+\index{miState@{mi\-State}!raster_x@{raster\_\-x}}
+\index{raster_x@{raster\_\-x}!miState@{mi\-State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}float {\bf mi\-State::raster\_\-x}}\label{structmiState_o7}
+
+
+\index{miState@{mi\-State}!raster_y@{raster\_\-y}}
+\index{raster_y@{raster\_\-y}!miState@{mi\-State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}float {\bf mi\-State::raster\_\-y}}\label{structmiState_o8}
+
+
+\index{miState@{mi\-State}!reflection_level@{reflection\_\-level}}
+\index{reflection_level@{reflection\_\-level}!miState@{mi\-State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf mi\-State::reflection\_\-level}}\label{structmiState_o17}
+
+
+\index{miState@{mi\-State}!refraction_level@{refraction\_\-level}}
+\index{refraction_level@{refraction\_\-level}!miState@{mi\-State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf mi\-State::refraction\_\-level}}\label{structmiState_o18}
+
+
+\index{miState@{mi\-State}!refraction_volume@{refraction\_\-volume}}
+\index{refraction_volume@{refraction\_\-volume}!miState@{mi\-State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Tag} {\bf mi\-State::refraction\_\-volume}}\label{structmiState_o28}
+
+
+\index{miState@{mi\-State}!scanline@{scanline}}
+\index{scanline@{scanline}!miState@{mi\-State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Uint1} {\bf mi\-State::scanline}}\label{structmiState_o12}
+
+
+\index{miState@{mi\-State}!shader@{shader}}
+\index{shader@{shader}!miState@{mi\-State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const struct {\bf mi\-Function}$\ast$ {\bf mi\-State::shader}}\label{structmiState_o46}
+
+
+\index{miState@{mi\-State}!shadow_tol@{shadow\_\-tol}}
+\index{shadow_tol@{shadow\_\-tol}!miState@{mi\-State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double {\bf mi\-State::shadow\_\-tol}}\label{structmiState_o39}
+
+
+\index{miState@{mi\-State}!spare0@{spare0}}
+\index{spare0@{spare0}!miState@{mi\-State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ {\bf mi\-State::spare0}}\label{structmiState_o15}
+
+
+\index{miState@{mi\-State}!tex@{tex}}
+\index{tex@{tex}!miState@{mi\-State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Vector} {\bf mi\-State::tex}}\label{structmiState_o45}
+
+
+\index{miState@{mi\-State}!tex_list@{tex\_\-list}}
+\index{tex_list@{tex\_\-list}!miState@{mi\-State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Vector}$\ast$ {\bf mi\-State::tex\_\-list}}\label{structmiState_o40}
+
+
+\index{miState@{mi\-State}!thread@{thread}}
+\index{thread@{thread}!miState@{mi\-State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}short {\bf mi\-State::thread}}\label{structmiState_o48}
+
+
+\index{miState@{mi\-State}!time@{time}}
+\index{time@{time}!miState@{mi\-State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}float {\bf mi\-State::time}}\label{structmiState_o22}
+
+
+\index{miState@{mi\-State}!ts@{ts}}
+\index{ts@{ts}!miState@{mi\-State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}struct mi\-Ts$\ast$ {\bf mi\-State::ts}}\label{structmiState_o6}
+
+
+\index{miState@{mi\-State}!type@{type}}
+\index{type@{type}!miState@{mi\-State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Ray\_\-type} {\bf mi\-State::type}}\label{structmiState_o10}
+
+
+\index{miState@{mi\-State}!user@{user}}
+\index{user@{user}!miState@{mi\-State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ {\bf mi\-State::user}}\label{structmiState_o50}
+
+
+\index{miState@{mi\-State}!user_size@{user\_\-size}}
+\index{user_size@{user\_\-size}!miState@{mi\-State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf mi\-State::user\_\-size}}\label{structmiState_o51}
+
+
+\index{miState@{mi\-State}!version@{version}}
+\index{version@{version}!miState@{mi\-State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf mi\-State::version}}\label{structmiState_o0}
+
+
+\index{miState@{mi\-State}!volume@{volume}}
+\index{volume@{volume}!miState@{mi\-State}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Tag} {\bf mi\-State::volume}}\label{structmiState_o26}
+
+
+
+
+The documentation for this struct was generated from the following file:\begin{CompactItemize}
+\item 
+{\bf shader.h}\end{CompactItemize}

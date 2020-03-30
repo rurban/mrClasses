@@ -1,0 +1,46 @@
+
+declare shader
+	scalar 			    #: shortname "os"
+	"gg_perlin"
+	(
+		integer "channels", #: default 3  min 1  max 4
+				    #: shortname "c"
+		vector "location",  #: shortname "l"
+		vector "scale",     #: default 1 1 1  min 0 0 0  
+				    #: shortname "s"
+		scalar "timeScale", #: default 1  min 0
+				    #: shortname "ts"
+		vector "periods",   #: min 0 0 0
+				    #: shortname "p"
+		scalar "timePeriod" #: min 0
+				    #: shortname "tp"
+	)
+	#:
+	#: nodeid 3011
+	#:
+	apply texture
+	version 1
+end declare
+
+declare shader
+	color  			    #: shortname "oc"
+	"gg_vperlin"
+	(
+		integer "channels", #: default 3 min 1 max 4
+				    #: shortname "c"
+		vector "location",  #: shortname "l"
+		vector "scale",     #: default 1 1 1  min 0 0 0
+				    #: shortname "s"
+		scalar "timeScale", #: default 1  min 0
+				    #: shortname "ts"
+		vector "periods",   #: min 0 0 0
+				    #: shortname "p"
+		scalar "timePeriod" #: min 0
+				    #: shortname "tp"
+	)
+	#:
+	#: nodeid 3012
+	#:
+	apply texture
+	version 1
+end declare

@@ -1,0 +1,26 @@
+
+declare shader
+	scalar 		#: shortname "os"
+	"gg_rgbdisplacement"
+	(
+		scalar	"intensity",
+		#: default 1.0
+		#: shortname "i"
+		integer "mixType",
+		#: default 0
+		#: min 0 max 2
+		#: shortname "mt"
+		color	"direction",
+		#: shortname "d"
+		#: default 0.0 0.0 0.0
+		integer "space"
+		#: shortname "s"
+		#: default 0
+	)
+	#:
+	#: nodeid 3004
+	#:
+	apply displace
+	version 1
+end declare
+

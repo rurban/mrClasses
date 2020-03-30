@@ -1,0 +1,813 @@
+\section{mi\-Options Struct Reference}
+\label{structmiOptions}\index{miOptions@{miOptions}}
+{\tt \#include $<$shader.h$>$}
+
+\subsection*{Public Attributes}
+\begin{CompactItemize}
+\item 
+{\bf mi\-Boolean} {\bf trace}
+\item 
+int {\bf scanline}
+\item 
+{\bf mi\-Uint} {\bf motion}
+\item 
+{\bf mi\-Boolean} {\bf shadow\_\-sort}
+\item 
+{\bf mi\-Boolean} {\bf preview\_\-mode}
+\item 
+int {\bf reflection\_\-depth}
+\item 
+int {\bf refraction\_\-depth}
+\item 
+int {\bf trace\_\-depth}
+\item 
+int {\bf min\_\-samples}
+\item 
+int {\bf max\_\-samples}
+\item 
+{\bf mi\-Color} {\bf contrast}
+\item 
+{\bf mi\-Color} {\bf time\_\-contrast}
+\item 
+{\bf mi\-Tag} {\bf contour\_\-contrast}
+\item 
+{\bf mi\-Tag} {\bf contour\_\-store}
+\item 
+{\bf mi\-Boolean} {\bf caustic}
+\item 
+{\bf mi\-Boolean} {\bf globillum}
+\item 
+int {\bf caustic\_\-accuracy}
+\item 
+float {\bf caustic\_\-radius}
+\item 
+int {\bf globillum\_\-accuracy}
+\item 
+float {\bf globillum\_\-radius}
+\item 
+float {\bf caustic\_\-filter\_\-const}
+\item 
+float {\bf filter\_\-size\_\-x}
+\item 
+float {\bf filter\_\-size\_\-y}
+\item 
+float {\bf jitter}
+\item 
+float {\bf shutter}
+\item 
+short {\bf grid\_\-res} [3]
+\item 
+short {\bf grid\_\-max\_\-size}
+\item 
+short {\bf grid\_\-max\_\-depth}
+\item 
+{\bf mi\-Sint1} {\bf def\_\-min\_\-samples}
+\item 
+{\bf mi\-Sint1} {\bf def\_\-max\_\-samples}
+\item 
+int {\bf space\_\-max\_\-size}
+\item 
+int {\bf space\_\-max\_\-depth}
+\item 
+float {\bf shutter\_\-delay}
+\item 
+int {\bf no\_\-images}
+\item 
+{\bf mi\-Img\_\-type} {\bf image\_\-types} [mi\-RC\_\-MAX\_\-IMAGES]
+\item 
+{\bf mi\-Uint4} {\bf write\_\-image} [mi\-RC\_\-MAX\_\-IMAGES]
+\item 
+{\bf mi\-Boolean} {\bf interp\_\-image} [mi\-RC\_\-MAX\_\-IMAGES]
+\item 
+{\bf mi\-Tag} {\bf finalgather\_\-file}
+\item 
+{\bf mi\-CBoolean} {\bf space\_\-shadow\_\-separate}
+\item 
+{\bf mi\-Uchar} {\bf finalgather\_\-filter}
+\item 
+char {\bf rapid\_\-collect\_\-rate}
+\item 
+char {\bf rapid\_\-motion\_\-resample}
+\item 
+char {\bf use\_\-shadow\_\-maps}
+\item 
+{\bf mi\-CBoolean} {\bf rendering\_\-shadow\_\-maps}
+\item 
+char {\bf recompute\_\-shadow\_\-maps}
+\item 
+char {\bf shadow}
+\item 
+char {\bf caustic\_\-filter}
+\item 
+{\bf mi\-CBoolean} {\bf finalgather\_\-rebuild}
+\item 
+char {\bf filter}
+\item 
+char {\bf acceleration}
+\item 
+char {\bf face}
+\item 
+char {\bf field}
+\item 
+char {\bf smethod}
+\item 
+char {\bf render\_\-space}
+\item 
+{\bf mi\-CBoolean} {\bf pixel\_\-preview}
+\item 
+{\bf mi\-CBoolean} {\bf task\_\-preview}
+\item 
+{\bf mi\-CBoolean} {\bf visible\_\-lights}
+\item 
+{\bf mi\-CBoolean} {\bf shadow\_\-map\_\-motion}
+\item 
+int {\bf task\_\-size}
+\item 
+{\bf mi\-Boolean} {\bf strips}
+\item 
+{\bf mi\-Tag} {\bf photonmap\_\-file}
+\item 
+{\bf mi\-Boolean} {\bf photonmap\_\-rebuild}
+\item 
+int {\bf photon\_\-reflection\_\-depth}
+\item 
+int {\bf photon\_\-refraction\_\-depth}
+\item 
+int {\bf photon\_\-trace\_\-depth}
+\item 
+int {\bf space\_\-max\_\-mem}
+\item 
+{\bf mi\-Pointer} {\bf image} [mi\-RC\_\-MAX\_\-IMAGES]
+\item 
+{\bf mi\-CBoolean} {\bf no\_\-lens}
+\item 
+{\bf mi\-CBoolean} {\bf no\_\-volume}
+\item 
+{\bf mi\-CBoolean} {\bf no\_\-geometry}
+\item 
+{\bf mi\-CBoolean} {\bf no\_\-displace}
+\item 
+{\bf mi\-Uint1} {\bf no\_\-output}
+\item 
+{\bf mi\-CBoolean} {\bf no\_\-merge}
+\item 
+{\bf mi\-Uint1} {\bf caustic\_\-flag}
+\item 
+{\bf mi\-Uint1} {\bf diagnostic\_\-mode}
+\item 
+int {\bf photonvol\_\-accuracy}
+\item 
+float {\bf photonvol\_\-radius}
+\item 
+{\bf mi\-Uint1} {\bf globillum\_\-flag}
+\item 
+{\bf mi\-CBoolean} {\bf samplelock}
+\item 
+{\bf mi\-CBoolean} {\bf autovolume}
+\item 
+{\bf mi\-CBoolean} {\bf finalgather\_\-view}
+\item 
+{\bf mi\-CBoolean} {\bf no\_\-hair}
+\item 
+{\bf mi\-Uint1} {\bf n\_\-motion\_\-vectors}
+\item 
+{\bf mi\-CBoolean} {\bf no\_\-pass}
+\item 
+{\bf mi\-CBoolean} {\bf photon\_\-autovolume}
+\item 
+{\bf mi\-CBoolean} {\bf no\_\-predisplace}
+\item 
+{\bf mi\-Uint1} {\bf fg\_\-reflection\_\-depth}
+\item 
+{\bf mi\-Uint1} {\bf fg\_\-refraction\_\-depth}
+\item 
+{\bf mi\-Uint1} {\bf fg\_\-trace\_\-depth}
+\item 
+float {\bf fg\_\-falloff\_\-start}
+\item 
+float {\bf fg\_\-falloff\_\-stop}
+\item 
+{\bf mi\-Tag} {\bf userdata}
+\item 
+{\bf mi\-Approx} {\bf approx}
+\item 
+{\bf mi\-Approx} {\bf approx\_\-displace}
+\item 
+int {\bf finalgather}
+\item 
+int {\bf finalgather\_\-rays}
+\item 
+float {\bf finalgather\_\-maxradius}
+\item 
+float {\bf finalgather\_\-minradius}
+\item 
+float {\bf diag\_\-photon\_\-density}
+\item 
+float {\bf diag\_\-grid\_\-size}
+\item 
+{\bf mi\-Boolean} {\bf desaturate}
+\item 
+{\bf mi\-Boolean} {\bf dither}
+\item 
+{\bf mi\-Boolean} {\bf nopremult}
+\item 
+int {\bf colorclip}
+\item 
+float {\bf gamma}
+\item 
+{\bf mi\-Tag} {\bf inh\_\-funcdecl}
+\item 
+{\bf mi\-Color} {\bf luminance\_\-weight}
+\item 
+int {\bf split\_\-obj\_\-no\_\-triangs}
+\item 
+int {\bf split\_\-obj\_\-no\_\-faces}
+\item 
+{\bf mi\-CBoolean} {\bf inh\_\-is\_\-traversal}
+\item 
+{\bf mi\-Uint1} {\bf hardware}
+\item 
+{\bf mi\-Uint1} {\bf hardware\_\-diagnostic}
+\item 
+{\bf mi\-Uint1} {\bf shadowmap\_\-flags}
+\item 
+float {\bf maxdisplace}
+\end{CompactItemize}
+
+
+\subsection{Member Data Documentation}
+\index{miOptions@{mi\-Options}!acceleration@{acceleration}}
+\index{acceleration@{acceleration}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char {\bf mi\-Options::acceleration}}\label{structmiOptions_o49}
+
+
+\index{miOptions@{mi\-Options}!approx@{approx}}
+\index{approx@{approx}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Approx} {\bf mi\-Options::approx}}\label{structmiOptions_o92}
+
+
+\index{miOptions@{mi\-Options}!approx_displace@{approx\_\-displace}}
+\index{approx_displace@{approx\_\-displace}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Approx} {\bf mi\-Options::approx\_\-displace}}\label{structmiOptions_o93}
+
+
+\index{miOptions@{mi\-Options}!autovolume@{autovolume}}
+\index{autovolume@{autovolume}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-CBoolean} {\bf mi\-Options::autovolume}}\label{structmiOptions_o79}
+
+
+\index{miOptions@{mi\-Options}!caustic@{caustic}}
+\index{caustic@{caustic}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Boolean} {\bf mi\-Options::caustic}}\label{structmiOptions_o14}
+
+
+\index{miOptions@{mi\-Options}!caustic_accuracy@{caustic\_\-accuracy}}
+\index{caustic_accuracy@{caustic\_\-accuracy}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf mi\-Options::caustic\_\-accuracy}}\label{structmiOptions_o16}
+
+
+\index{miOptions@{mi\-Options}!caustic_filter@{caustic\_\-filter}}
+\index{caustic_filter@{caustic\_\-filter}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char {\bf mi\-Options::caustic\_\-filter}}\label{structmiOptions_o46}
+
+
+\index{miOptions@{mi\-Options}!caustic_filter_const@{caustic\_\-filter\_\-const}}
+\index{caustic_filter_const@{caustic\_\-filter\_\-const}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}float {\bf mi\-Options::caustic\_\-filter\_\-const}}\label{structmiOptions_o20}
+
+
+\index{miOptions@{mi\-Options}!caustic_flag@{caustic\_\-flag}}
+\index{caustic_flag@{caustic\_\-flag}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Uint1} {\bf mi\-Options::caustic\_\-flag}}\label{structmiOptions_o73}
+
+
+\index{miOptions@{mi\-Options}!caustic_radius@{caustic\_\-radius}}
+\index{caustic_radius@{caustic\_\-radius}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}float {\bf mi\-Options::caustic\_\-radius}}\label{structmiOptions_o17}
+
+
+\index{miOptions@{mi\-Options}!colorclip@{colorclip}}
+\index{colorclip@{colorclip}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf mi\-Options::colorclip}}\label{structmiOptions_o103}
+
+
+\index{miOptions@{mi\-Options}!contour_contrast@{contour\_\-contrast}}
+\index{contour_contrast@{contour\_\-contrast}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Tag} {\bf mi\-Options::contour\_\-contrast}}\label{structmiOptions_o12}
+
+
+\index{miOptions@{mi\-Options}!contour_store@{contour\_\-store}}
+\index{contour_store@{contour\_\-store}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Tag} {\bf mi\-Options::contour\_\-store}}\label{structmiOptions_o13}
+
+
+\index{miOptions@{mi\-Options}!contrast@{contrast}}
+\index{contrast@{contrast}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Color} {\bf mi\-Options::contrast}}\label{structmiOptions_o10}
+
+
+\index{miOptions@{mi\-Options}!def_max_samples@{def\_\-max\_\-samples}}
+\index{def_max_samples@{def\_\-max\_\-samples}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Sint1} {\bf mi\-Options::def\_\-max\_\-samples}}\label{structmiOptions_o29}
+
+
+\index{miOptions@{mi\-Options}!def_min_samples@{def\_\-min\_\-samples}}
+\index{def_min_samples@{def\_\-min\_\-samples}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Sint1} {\bf mi\-Options::def\_\-min\_\-samples}}\label{structmiOptions_o28}
+
+
+\index{miOptions@{mi\-Options}!desaturate@{desaturate}}
+\index{desaturate@{desaturate}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Boolean} {\bf mi\-Options::desaturate}}\label{structmiOptions_o100}
+
+
+\index{miOptions@{mi\-Options}!diag_grid_size@{diag\_\-grid\_\-size}}
+\index{diag_grid_size@{diag\_\-grid\_\-size}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}float {\bf mi\-Options::diag\_\-grid\_\-size}}\label{structmiOptions_o99}
+
+
+\index{miOptions@{mi\-Options}!diag_photon_density@{diag\_\-photon\_\-density}}
+\index{diag_photon_density@{diag\_\-photon\_\-density}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}float {\bf mi\-Options::diag\_\-photon\_\-density}}\label{structmiOptions_o98}
+
+
+\index{miOptions@{mi\-Options}!diagnostic_mode@{diagnostic\_\-mode}}
+\index{diagnostic_mode@{diagnostic\_\-mode}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Uint1} {\bf mi\-Options::diagnostic\_\-mode}}\label{structmiOptions_o74}
+
+
+\index{miOptions@{mi\-Options}!dither@{dither}}
+\index{dither@{dither}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Boolean} {\bf mi\-Options::dither}}\label{structmiOptions_o101}
+
+
+\index{miOptions@{mi\-Options}!face@{face}}
+\index{face@{face}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char {\bf mi\-Options::face}}\label{structmiOptions_o50}
+
+
+\index{miOptions@{mi\-Options}!fg_falloff_start@{fg\_\-falloff\_\-start}}
+\index{fg_falloff_start@{fg\_\-falloff\_\-start}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}float {\bf mi\-Options::fg\_\-falloff\_\-start}}\label{structmiOptions_o89}
+
+
+\index{miOptions@{mi\-Options}!fg_falloff_stop@{fg\_\-falloff\_\-stop}}
+\index{fg_falloff_stop@{fg\_\-falloff\_\-stop}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}float {\bf mi\-Options::fg\_\-falloff\_\-stop}}\label{structmiOptions_o90}
+
+
+\index{miOptions@{mi\-Options}!fg_reflection_depth@{fg\_\-reflection\_\-depth}}
+\index{fg_reflection_depth@{fg\_\-reflection\_\-depth}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Uint1} {\bf mi\-Options::fg\_\-reflection\_\-depth}}\label{structmiOptions_o86}
+
+
+\index{miOptions@{mi\-Options}!fg_refraction_depth@{fg\_\-refraction\_\-depth}}
+\index{fg_refraction_depth@{fg\_\-refraction\_\-depth}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Uint1} {\bf mi\-Options::fg\_\-refraction\_\-depth}}\label{structmiOptions_o87}
+
+
+\index{miOptions@{mi\-Options}!fg_trace_depth@{fg\_\-trace\_\-depth}}
+\index{fg_trace_depth@{fg\_\-trace\_\-depth}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Uint1} {\bf mi\-Options::fg\_\-trace\_\-depth}}\label{structmiOptions_o88}
+
+
+\index{miOptions@{mi\-Options}!field@{field}}
+\index{field@{field}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char {\bf mi\-Options::field}}\label{structmiOptions_o51}
+
+
+\index{miOptions@{mi\-Options}!filter@{filter}}
+\index{filter@{filter}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char {\bf mi\-Options::filter}}\label{structmiOptions_o48}
+
+
+\index{miOptions@{mi\-Options}!filter_size_x@{filter\_\-size\_\-x}}
+\index{filter_size_x@{filter\_\-size\_\-x}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}float {\bf mi\-Options::filter\_\-size\_\-x}}\label{structmiOptions_o21}
+
+
+\index{miOptions@{mi\-Options}!filter_size_y@{filter\_\-size\_\-y}}
+\index{filter_size_y@{filter\_\-size\_\-y}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}float {\bf mi\-Options::filter\_\-size\_\-y}}\label{structmiOptions_o22}
+
+
+\index{miOptions@{mi\-Options}!finalgather@{finalgather}}
+\index{finalgather@{finalgather}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf mi\-Options::finalgather}}\label{structmiOptions_o94}
+
+
+\index{miOptions@{mi\-Options}!finalgather_file@{finalgather\_\-file}}
+\index{finalgather_file@{finalgather\_\-file}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Tag} {\bf mi\-Options::finalgather\_\-file}}\label{structmiOptions_o37}
+
+
+\index{miOptions@{mi\-Options}!finalgather_filter@{finalgather\_\-filter}}
+\index{finalgather_filter@{finalgather\_\-filter}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Uchar} {\bf mi\-Options::finalgather\_\-filter}}\label{structmiOptions_o39}
+
+
+\index{miOptions@{mi\-Options}!finalgather_maxradius@{finalgather\_\-maxradius}}
+\index{finalgather_maxradius@{finalgather\_\-maxradius}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}float {\bf mi\-Options::finalgather\_\-maxradius}}\label{structmiOptions_o96}
+
+
+\index{miOptions@{mi\-Options}!finalgather_minradius@{finalgather\_\-minradius}}
+\index{finalgather_minradius@{finalgather\_\-minradius}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}float {\bf mi\-Options::finalgather\_\-minradius}}\label{structmiOptions_o97}
+
+
+\index{miOptions@{mi\-Options}!finalgather_rays@{finalgather\_\-rays}}
+\index{finalgather_rays@{finalgather\_\-rays}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf mi\-Options::finalgather\_\-rays}}\label{structmiOptions_o95}
+
+
+\index{miOptions@{mi\-Options}!finalgather_rebuild@{finalgather\_\-rebuild}}
+\index{finalgather_rebuild@{finalgather\_\-rebuild}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-CBoolean} {\bf mi\-Options::finalgather\_\-rebuild}}\label{structmiOptions_o47}
+
+
+\index{miOptions@{mi\-Options}!finalgather_view@{finalgather\_\-view}}
+\index{finalgather_view@{finalgather\_\-view}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-CBoolean} {\bf mi\-Options::finalgather\_\-view}}\label{structmiOptions_o80}
+
+
+\index{miOptions@{mi\-Options}!gamma@{gamma}}
+\index{gamma@{gamma}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}float {\bf mi\-Options::gamma}}\label{structmiOptions_o104}
+
+
+\index{miOptions@{mi\-Options}!globillum@{globillum}}
+\index{globillum@{globillum}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Boolean} {\bf mi\-Options::globillum}}\label{structmiOptions_o15}
+
+
+\index{miOptions@{mi\-Options}!globillum_accuracy@{globillum\_\-accuracy}}
+\index{globillum_accuracy@{globillum\_\-accuracy}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf mi\-Options::globillum\_\-accuracy}}\label{structmiOptions_o18}
+
+
+\index{miOptions@{mi\-Options}!globillum_flag@{globillum\_\-flag}}
+\index{globillum_flag@{globillum\_\-flag}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Uint1} {\bf mi\-Options::globillum\_\-flag}}\label{structmiOptions_o77}
+
+
+\index{miOptions@{mi\-Options}!globillum_radius@{globillum\_\-radius}}
+\index{globillum_radius@{globillum\_\-radius}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}float {\bf mi\-Options::globillum\_\-radius}}\label{structmiOptions_o19}
+
+
+\index{miOptions@{mi\-Options}!grid_max_depth@{grid\_\-max\_\-depth}}
+\index{grid_max_depth@{grid\_\-max\_\-depth}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}short {\bf mi\-Options::grid\_\-max\_\-depth}}\label{structmiOptions_o27}
+
+
+\index{miOptions@{mi\-Options}!grid_max_size@{grid\_\-max\_\-size}}
+\index{grid_max_size@{grid\_\-max\_\-size}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}short {\bf mi\-Options::grid\_\-max\_\-size}}\label{structmiOptions_o26}
+
+
+\index{miOptions@{mi\-Options}!grid_res@{grid\_\-res}}
+\index{grid_res@{grid\_\-res}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}short {\bf mi\-Options::grid\_\-res}[3]}\label{structmiOptions_o25}
+
+
+\index{miOptions@{mi\-Options}!hardware@{hardware}}
+\index{hardware@{hardware}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Uint1} {\bf mi\-Options::hardware}}\label{structmiOptions_o110}
+
+
+\index{miOptions@{mi\-Options}!hardware_diagnostic@{hardware\_\-diagnostic}}
+\index{hardware_diagnostic@{hardware\_\-diagnostic}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Uint1} {\bf mi\-Options::hardware\_\-diagnostic}}\label{structmiOptions_o111}
+
+
+\index{miOptions@{mi\-Options}!image@{image}}
+\index{image@{image}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Pointer} {\bf mi\-Options::image}[mi\-RC\_\-MAX\_\-IMAGES]}\label{structmiOptions_o66}
+
+
+\index{miOptions@{mi\-Options}!image_types@{image\_\-types}}
+\index{image_types@{image\_\-types}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Img\_\-type} {\bf mi\-Options::image\_\-types}[mi\-RC\_\-MAX\_\-IMAGES]}\label{structmiOptions_o34}
+
+
+\index{miOptions@{mi\-Options}!inh_funcdecl@{inh\_\-funcdecl}}
+\index{inh_funcdecl@{inh\_\-funcdecl}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Tag} {\bf mi\-Options::inh\_\-funcdecl}}\label{structmiOptions_o105}
+
+
+\index{miOptions@{mi\-Options}!inh_is_traversal@{inh\_\-is\_\-traversal}}
+\index{inh_is_traversal@{inh\_\-is\_\-traversal}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-CBoolean} {\bf mi\-Options::inh\_\-is\_\-traversal}}\label{structmiOptions_o109}
+
+
+\index{miOptions@{mi\-Options}!interp_image@{interp\_\-image}}
+\index{interp_image@{interp\_\-image}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Boolean} {\bf mi\-Options::interp\_\-image}[mi\-RC\_\-MAX\_\-IMAGES]}\label{structmiOptions_o36}
+
+
+\index{miOptions@{mi\-Options}!jitter@{jitter}}
+\index{jitter@{jitter}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}float {\bf mi\-Options::jitter}}\label{structmiOptions_o23}
+
+
+\index{miOptions@{mi\-Options}!luminance_weight@{luminance\_\-weight}}
+\index{luminance_weight@{luminance\_\-weight}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Color} {\bf mi\-Options::luminance\_\-weight}}\label{structmiOptions_o106}
+
+
+\index{miOptions@{mi\-Options}!max_samples@{max\_\-samples}}
+\index{max_samples@{max\_\-samples}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf mi\-Options::max\_\-samples}}\label{structmiOptions_o9}
+
+
+\index{miOptions@{mi\-Options}!maxdisplace@{maxdisplace}}
+\index{maxdisplace@{maxdisplace}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}float {\bf mi\-Options::maxdisplace}}\label{structmiOptions_o113}
+
+
+\index{miOptions@{mi\-Options}!min_samples@{min\_\-samples}}
+\index{min_samples@{min\_\-samples}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf mi\-Options::min\_\-samples}}\label{structmiOptions_o8}
+
+
+\index{miOptions@{mi\-Options}!motion@{motion}}
+\index{motion@{motion}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Uint} {\bf mi\-Options::motion}}\label{structmiOptions_o2}
+
+
+\index{miOptions@{mi\-Options}!n_motion_vectors@{n\_\-motion\_\-vectors}}
+\index{n_motion_vectors@{n\_\-motion\_\-vectors}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Uint1} {\bf mi\-Options::n\_\-motion\_\-vectors}}\label{structmiOptions_o82}
+
+
+\index{miOptions@{mi\-Options}!no_displace@{no\_\-displace}}
+\index{no_displace@{no\_\-displace}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-CBoolean} {\bf mi\-Options::no\_\-displace}}\label{structmiOptions_o70}
+
+
+\index{miOptions@{mi\-Options}!no_geometry@{no\_\-geometry}}
+\index{no_geometry@{no\_\-geometry}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-CBoolean} {\bf mi\-Options::no\_\-geometry}}\label{structmiOptions_o69}
+
+
+\index{miOptions@{mi\-Options}!no_hair@{no\_\-hair}}
+\index{no_hair@{no\_\-hair}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-CBoolean} {\bf mi\-Options::no\_\-hair}}\label{structmiOptions_o81}
+
+
+\index{miOptions@{mi\-Options}!no_images@{no\_\-images}}
+\index{no_images@{no\_\-images}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf mi\-Options::no\_\-images}}\label{structmiOptions_o33}
+
+
+\index{miOptions@{mi\-Options}!no_lens@{no\_\-lens}}
+\index{no_lens@{no\_\-lens}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-CBoolean} {\bf mi\-Options::no\_\-lens}}\label{structmiOptions_o67}
+
+
+\index{miOptions@{mi\-Options}!no_merge@{no\_\-merge}}
+\index{no_merge@{no\_\-merge}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-CBoolean} {\bf mi\-Options::no\_\-merge}}\label{structmiOptions_o72}
+
+
+\index{miOptions@{mi\-Options}!no_output@{no\_\-output}}
+\index{no_output@{no\_\-output}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Uint1} {\bf mi\-Options::no\_\-output}}\label{structmiOptions_o71}
+
+
+\index{miOptions@{mi\-Options}!no_pass@{no\_\-pass}}
+\index{no_pass@{no\_\-pass}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-CBoolean} {\bf mi\-Options::no\_\-pass}}\label{structmiOptions_o83}
+
+
+\index{miOptions@{mi\-Options}!no_predisplace@{no\_\-predisplace}}
+\index{no_predisplace@{no\_\-predisplace}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-CBoolean} {\bf mi\-Options::no\_\-predisplace}}\label{structmiOptions_o85}
+
+
+\index{miOptions@{mi\-Options}!no_volume@{no\_\-volume}}
+\index{no_volume@{no\_\-volume}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-CBoolean} {\bf mi\-Options::no\_\-volume}}\label{structmiOptions_o68}
+
+
+\index{miOptions@{mi\-Options}!nopremult@{nopremult}}
+\index{nopremult@{nopremult}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Boolean} {\bf mi\-Options::nopremult}}\label{structmiOptions_o102}
+
+
+\index{miOptions@{mi\-Options}!photon_autovolume@{photon\_\-autovolume}}
+\index{photon_autovolume@{photon\_\-autovolume}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-CBoolean} {\bf mi\-Options::photon\_\-autovolume}}\label{structmiOptions_o84}
+
+
+\index{miOptions@{mi\-Options}!photon_reflection_depth@{photon\_\-reflection\_\-depth}}
+\index{photon_reflection_depth@{photon\_\-reflection\_\-depth}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf mi\-Options::photon\_\-reflection\_\-depth}}\label{structmiOptions_o62}
+
+
+\index{miOptions@{mi\-Options}!photon_refraction_depth@{photon\_\-refraction\_\-depth}}
+\index{photon_refraction_depth@{photon\_\-refraction\_\-depth}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf mi\-Options::photon\_\-refraction\_\-depth}}\label{structmiOptions_o63}
+
+
+\index{miOptions@{mi\-Options}!photon_trace_depth@{photon\_\-trace\_\-depth}}
+\index{photon_trace_depth@{photon\_\-trace\_\-depth}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf mi\-Options::photon\_\-trace\_\-depth}}\label{structmiOptions_o64}
+
+
+\index{miOptions@{mi\-Options}!photonmap_file@{photonmap\_\-file}}
+\index{photonmap_file@{photonmap\_\-file}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Tag} {\bf mi\-Options::photonmap\_\-file}}\label{structmiOptions_o60}
+
+
+\index{miOptions@{mi\-Options}!photonmap_rebuild@{photonmap\_\-rebuild}}
+\index{photonmap_rebuild@{photonmap\_\-rebuild}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Boolean} {\bf mi\-Options::photonmap\_\-rebuild}}\label{structmiOptions_o61}
+
+
+\index{miOptions@{mi\-Options}!photonvol_accuracy@{photonvol\_\-accuracy}}
+\index{photonvol_accuracy@{photonvol\_\-accuracy}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf mi\-Options::photonvol\_\-accuracy}}\label{structmiOptions_o75}
+
+
+\index{miOptions@{mi\-Options}!photonvol_radius@{photonvol\_\-radius}}
+\index{photonvol_radius@{photonvol\_\-radius}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}float {\bf mi\-Options::photonvol\_\-radius}}\label{structmiOptions_o76}
+
+
+\index{miOptions@{mi\-Options}!pixel_preview@{pixel\_\-preview}}
+\index{pixel_preview@{pixel\_\-preview}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-CBoolean} {\bf mi\-Options::pixel\_\-preview}}\label{structmiOptions_o54}
+
+
+\index{miOptions@{mi\-Options}!preview_mode@{preview\_\-mode}}
+\index{preview_mode@{preview\_\-mode}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Boolean} {\bf mi\-Options::preview\_\-mode}}\label{structmiOptions_o4}
+
+
+\index{miOptions@{mi\-Options}!rapid_collect_rate@{rapid\_\-collect\_\-rate}}
+\index{rapid_collect_rate@{rapid\_\-collect\_\-rate}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char {\bf mi\-Options::rapid\_\-collect\_\-rate}}\label{structmiOptions_o40}
+
+
+\index{miOptions@{mi\-Options}!rapid_motion_resample@{rapid\_\-motion\_\-resample}}
+\index{rapid_motion_resample@{rapid\_\-motion\_\-resample}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char {\bf mi\-Options::rapid\_\-motion\_\-resample}}\label{structmiOptions_o41}
+
+
+\index{miOptions@{mi\-Options}!recompute_shadow_maps@{recompute\_\-shadow\_\-maps}}
+\index{recompute_shadow_maps@{recompute\_\-shadow\_\-maps}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char {\bf mi\-Options::recompute\_\-shadow\_\-maps}}\label{structmiOptions_o44}
+
+
+\index{miOptions@{mi\-Options}!reflection_depth@{reflection\_\-depth}}
+\index{reflection_depth@{reflection\_\-depth}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf mi\-Options::reflection\_\-depth}}\label{structmiOptions_o5}
+
+
+\index{miOptions@{mi\-Options}!refraction_depth@{refraction\_\-depth}}
+\index{refraction_depth@{refraction\_\-depth}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf mi\-Options::refraction\_\-depth}}\label{structmiOptions_o6}
+
+
+\index{miOptions@{mi\-Options}!render_space@{render\_\-space}}
+\index{render_space@{render\_\-space}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char {\bf mi\-Options::render\_\-space}}\label{structmiOptions_o53}
+
+
+\index{miOptions@{mi\-Options}!rendering_shadow_maps@{rendering\_\-shadow\_\-maps}}
+\index{rendering_shadow_maps@{rendering\_\-shadow\_\-maps}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-CBoolean} {\bf mi\-Options::rendering\_\-shadow\_\-maps}}\label{structmiOptions_o43}
+
+
+\index{miOptions@{mi\-Options}!samplelock@{samplelock}}
+\index{samplelock@{samplelock}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-CBoolean} {\bf mi\-Options::samplelock}}\label{structmiOptions_o78}
+
+
+\index{miOptions@{mi\-Options}!scanline@{scanline}}
+\index{scanline@{scanline}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf mi\-Options::scanline}}\label{structmiOptions_o1}
+
+
+\index{miOptions@{mi\-Options}!shadow@{shadow}}
+\index{shadow@{shadow}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char {\bf mi\-Options::shadow}}\label{structmiOptions_o45}
+
+
+\index{miOptions@{mi\-Options}!shadow_map_motion@{shadow\_\-map\_\-motion}}
+\index{shadow_map_motion@{shadow\_\-map\_\-motion}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-CBoolean} {\bf mi\-Options::shadow\_\-map\_\-motion}}\label{structmiOptions_o57}
+
+
+\index{miOptions@{mi\-Options}!shadow_sort@{shadow\_\-sort}}
+\index{shadow_sort@{shadow\_\-sort}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Boolean} {\bf mi\-Options::shadow\_\-sort}}\label{structmiOptions_o3}
+
+
+\index{miOptions@{mi\-Options}!shadowmap_flags@{shadowmap\_\-flags}}
+\index{shadowmap_flags@{shadowmap\_\-flags}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Uint1} {\bf mi\-Options::shadowmap\_\-flags}}\label{structmiOptions_o112}
+
+
+\index{miOptions@{mi\-Options}!shutter@{shutter}}
+\index{shutter@{shutter}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}float {\bf mi\-Options::shutter}}\label{structmiOptions_o24}
+
+
+\index{miOptions@{mi\-Options}!shutter_delay@{shutter\_\-delay}}
+\index{shutter_delay@{shutter\_\-delay}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}float {\bf mi\-Options::shutter\_\-delay}}\label{structmiOptions_o32}
+
+
+\index{miOptions@{mi\-Options}!smethod@{smethod}}
+\index{smethod@{smethod}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char {\bf mi\-Options::smethod}}\label{structmiOptions_o52}
+
+
+\index{miOptions@{mi\-Options}!space_max_depth@{space\_\-max\_\-depth}}
+\index{space_max_depth@{space\_\-max\_\-depth}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf mi\-Options::space\_\-max\_\-depth}}\label{structmiOptions_o31}
+
+
+\index{miOptions@{mi\-Options}!space_max_mem@{space\_\-max\_\-mem}}
+\index{space_max_mem@{space\_\-max\_\-mem}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf mi\-Options::space\_\-max\_\-mem}}\label{structmiOptions_o65}
+
+
+\index{miOptions@{mi\-Options}!space_max_size@{space\_\-max\_\-size}}
+\index{space_max_size@{space\_\-max\_\-size}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf mi\-Options::space\_\-max\_\-size}}\label{structmiOptions_o30}
+
+
+\index{miOptions@{mi\-Options}!space_shadow_separate@{space\_\-shadow\_\-separate}}
+\index{space_shadow_separate@{space\_\-shadow\_\-separate}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-CBoolean} {\bf mi\-Options::space\_\-shadow\_\-separate}}\label{structmiOptions_o38}
+
+
+\index{miOptions@{mi\-Options}!split_obj_no_faces@{split\_\-obj\_\-no\_\-faces}}
+\index{split_obj_no_faces@{split\_\-obj\_\-no\_\-faces}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf mi\-Options::split\_\-obj\_\-no\_\-faces}}\label{structmiOptions_o108}
+
+
+\index{miOptions@{mi\-Options}!split_obj_no_triangs@{split\_\-obj\_\-no\_\-triangs}}
+\index{split_obj_no_triangs@{split\_\-obj\_\-no\_\-triangs}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf mi\-Options::split\_\-obj\_\-no\_\-triangs}}\label{structmiOptions_o107}
+
+
+\index{miOptions@{mi\-Options}!strips@{strips}}
+\index{strips@{strips}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Boolean} {\bf mi\-Options::strips}}\label{structmiOptions_o59}
+
+
+\index{miOptions@{mi\-Options}!task_preview@{task\_\-preview}}
+\index{task_preview@{task\_\-preview}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-CBoolean} {\bf mi\-Options::task\_\-preview}}\label{structmiOptions_o55}
+
+
+\index{miOptions@{mi\-Options}!task_size@{task\_\-size}}
+\index{task_size@{task\_\-size}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf mi\-Options::task\_\-size}}\label{structmiOptions_o58}
+
+
+\index{miOptions@{mi\-Options}!time_contrast@{time\_\-contrast}}
+\index{time_contrast@{time\_\-contrast}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Color} {\bf mi\-Options::time\_\-contrast}}\label{structmiOptions_o11}
+
+
+\index{miOptions@{mi\-Options}!trace@{trace}}
+\index{trace@{trace}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Boolean} {\bf mi\-Options::trace}}\label{structmiOptions_o0}
+
+
+\index{miOptions@{mi\-Options}!trace_depth@{trace\_\-depth}}
+\index{trace_depth@{trace\_\-depth}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf mi\-Options::trace\_\-depth}}\label{structmiOptions_o7}
+
+
+\index{miOptions@{mi\-Options}!use_shadow_maps@{use\_\-shadow\_\-maps}}
+\index{use_shadow_maps@{use\_\-shadow\_\-maps}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char {\bf mi\-Options::use\_\-shadow\_\-maps}}\label{structmiOptions_o42}
+
+
+\index{miOptions@{mi\-Options}!userdata@{userdata}}
+\index{userdata@{userdata}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Tag} {\bf mi\-Options::userdata}}\label{structmiOptions_o91}
+
+
+\index{miOptions@{mi\-Options}!visible_lights@{visible\_\-lights}}
+\index{visible_lights@{visible\_\-lights}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-CBoolean} {\bf mi\-Options::visible\_\-lights}}\label{structmiOptions_o56}
+
+
+\index{miOptions@{mi\-Options}!write_image@{write\_\-image}}
+\index{write_image@{write\_\-image}!miOptions@{mi\-Options}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf mi\-Uint4} {\bf mi\-Options::write\_\-image}[mi\-RC\_\-MAX\_\-IMAGES]}\label{structmiOptions_o35}
+
+
+
+
+The documentation for this struct was generated from the following file:\begin{CompactItemize}
+\item 
+{\bf shader.h}\end{CompactItemize}

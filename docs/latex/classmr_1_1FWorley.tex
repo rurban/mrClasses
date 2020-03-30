@@ -1,0 +1,68 @@
+\section{mr::FWorley Class Reference}
+\label{classmr_1_1FWorley}\index{mr::FWorley@{mr::FWorley}}
+Worley noise class returning arbitrary number of floats.  
+
+
+{\tt \#include $<$mr\-Worley.h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{CompactItemize}
+\item 
+MR\_\-LIB\_\-EXPORT void {\bf noise} (const mi\-Scalar x, const mi\-Scalar y, const mi\-Scalar z, const mi\-Ulong max\_\-order, mi\-Scalar $\ast$const F, mi\-Vector $\ast$const delta=NULL, mi\-Ulong $\ast$const ID=NULL)
+\item 
+void {\bf noise} (const mi\-Vector \&P, const mi\-Ulong max\_\-order, mi\-Scalar $\ast$const F, mi\-Vector $\ast$const delta=NULL, mi\-Ulong $\ast$const ID=NULL)
+\item 
+MR\_\-LIB\_\-EXPORT void {\bf noise} (const {\bf mr::distances::Type} \&Distance\-Measure, const mi\-Vector \&scale, const mi\-Scalar x, const mi\-Scalar y, const mi\-Scalar z, const mi\-Ulong max\_\-order, mi\-Scalar $\ast$const F, mi\-Vector $\ast$const delta=NULL, mi\-Ulong $\ast$const ID=NULL)
+\item 
+void {\bf noise} (const {\bf mr::distances::Type} \&Distance\-Measure, const mi\-Vector \&scale, const mi\-Vector \&P, const mi\-Ulong max\_\-order, mi\-Scalar $\ast$const F, mi\-Vector $\ast$const delta=NULL, mi\-Ulong $\ast$const ID=NULL)
+\end{CompactItemize}
+\subsection*{Static Protected Member Functions}
+\begin{CompactItemize}
+\item 
+void {\bf Add\-Samples} (const long xi, const long yi, const long zi, const mi\-Ulong max\_\-order, const mi\-Vector \&at, mi\-Scalar $\ast$const F, mi\-Vector $\ast$const delta, mi\-Ulong $\ast$const ID)
+\item 
+void {\bf Add\-Samples} (const {\bf mr::distances::Type} \&Distance\-Measure, const mi\-Vector \&scale, const long xi, const long yi, const long zi, const mi\-Ulong max\_\-order, const mi\-Vector \&at, mi\-Scalar $\ast$const F, mi\-Vector $\ast$const delta, mi\-Ulong $\ast$const ID)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Worley noise class returning arbitrary number of floats. 
+
+
+
+\subsection{Member Function Documentation}
+\index{mr::FWorley@{mr::FWorley}!AddSamples@{AddSamples}}
+\index{AddSamples@{AddSamples}!mr::FWorley@{mr::FWorley}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::FWorley::Add\-Samples (const {\bf mr::distances::Type} \& {\em Distance\-Measure}, const mi\-Vector \& {\em scale}, const long {\em xi}, const long {\em yi}, const long {\em zi}, const mi\-Ulong {\em max\_\-order}, const mi\-Vector \& {\em at}, mi\-Scalar $\ast$const {\em F}, mi\-Vector $\ast$const {\em delta}, mi\-Ulong $\ast$const {\em ID})\hspace{0.3cm}{\tt  [static, protected]}}\label{classmr_1_1FWorley_f1}
+
+
+\index{mr::FWorley@{mr::FWorley}!AddSamples@{AddSamples}}
+\index{AddSamples@{AddSamples}!mr::FWorley@{mr::FWorley}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::FWorley::Add\-Samples (const long {\em xi}, const long {\em yi}, const long {\em zi}, const mi\-Ulong {\em max\_\-order}, const mi\-Vector \& {\em at}, mi\-Scalar $\ast$const {\em F}, mi\-Vector $\ast$const {\em delta}, mi\-Ulong $\ast$const {\em ID})\hspace{0.3cm}{\tt  [static, protected]}}\label{classmr_1_1FWorley_f0}
+
+
+the function to merge-sort a \char`\"{}cube\char`\"{} of samples into the current best-found list of values. \index{mr::FWorley@{mr::FWorley}!noise@{noise}}
+\index{noise@{noise}!mr::FWorley@{mr::FWorley}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::FWorley::noise (const {\bf mr::distances::Type} \& {\em Distance\-Measure}, const mi\-Vector \& {\em scale}, const mi\-Vector \& {\em P}, const mi\-Ulong {\em max\_\-order}, mi\-Scalar $\ast$const {\em F}, mi\-Vector $\ast$const {\em delta} = NULL, mi\-Ulong $\ast$const {\em ID} = NULL)\hspace{0.3cm}{\tt  [inline, static]}}\label{classmr_1_1FWorley_e3}
+
+
+\index{mr::FWorley@{mr::FWorley}!noise@{noise}}
+\index{noise@{noise}!mr::FWorley@{mr::FWorley}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MR\_\-LIB\_\-EXPORT void mr::FWorley::noise (const {\bf mr::distances::Type} \& {\em Distance\-Measure}, const mi\-Vector \& {\em scale}, const mi\-Scalar {\em x}, const mi\-Scalar {\em y}, const mi\-Scalar {\em z}, const mi\-Ulong {\em max\_\-order}, mi\-Scalar $\ast$const {\em F}, mi\-Vector $\ast$const {\em delta} = NULL, mi\-Ulong $\ast$const {\em ID} = NULL)\hspace{0.3cm}{\tt  [static]}}\label{classmr_1_1FWorley_e2}
+
+
+\index{mr::FWorley@{mr::FWorley}!noise@{noise}}
+\index{noise@{noise}!mr::FWorley@{mr::FWorley}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::FWorley::noise (const mi\-Vector \& {\em P}, const mi\-Ulong {\em max\_\-order}, mi\-Scalar $\ast$const {\em F}, mi\-Vector $\ast$const {\em delta} = NULL, mi\-Ulong $\ast$const {\em ID} = NULL)\hspace{0.3cm}{\tt  [inline, static]}}\label{classmr_1_1FWorley_e1}
+
+
+\index{mr::FWorley@{mr::FWorley}!noise@{noise}}
+\index{noise@{noise}!mr::FWorley@{mr::FWorley}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}MR\_\-LIB\_\-EXPORT void mr::FWorley::noise (const mi\-Scalar {\em x}, const mi\-Scalar {\em y}, const mi\-Scalar {\em z}, const mi\-Ulong {\em max\_\-order}, mi\-Scalar $\ast$const {\em F}, mi\-Vector $\ast$const {\em delta} = NULL, mi\-Ulong $\ast$const {\em ID} = NULL)\hspace{0.3cm}{\tt  [static]}}\label{classmr_1_1FWorley_e0}
+
+
+
+
+The documentation for this class was generated from the following file:\begin{CompactItemize}
+\item 
+{\bf mr\-Worley.h}\end{CompactItemize}

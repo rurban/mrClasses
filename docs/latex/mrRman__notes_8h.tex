@@ -1,0 +1,182 @@
+\section{mr\-Rman\_\-notes.h File Reference}
+\label{mrRman__notes_8h}\index{mrRman_notes.h@{mrRman\_\-notes.h}}
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define {\bf pulse}(a, b, fuzz, x)
+\item 
+\#define {\bf boxstep}(a, b, x)\ clamp(((x) - (a))/((b) - (a)), 0, 1)
+\item 
+\#define {\bf repeat}(x, freq)\ (math$<$float$>$::fmod((x) $\ast$ (freq), 1.0))
+\item 
+\#define {\bf odd}(x)\ (math$<$float$>$::fmod((x), 2) == 1)
+\item 
+\#define {\bf even}(x)\ (math$<$float$>$::fmod((x), 2) == 0)
+\item 
+\#define {\bf whichtile}(x, freq)\ (fastmath$<$float$>$::floor((x) $\ast$ (freq)))
+\item 
+\#define {\bf rotate2d}(x, y, rad, ox, oy, rx, ry)
+\item 
+\#define {\bf topolar2d}(x, y, r, theta)
+\item 
+\#define {\bf intersection}(a, b)\ ((a) $\ast$ (b))
+\item 
+\#define {\bf union}(a, b)\ ((a) + (b) - (a) $\ast$ (b))
+\item 
+\#define {\bf difference}(a, b)\ ((a) - (a) $\ast$ (b))
+\item 
+\#define {\bf complement}(a)\ (1 - (a))
+\item 
+\#define {\bf blend}(a, b, x)\ ((a) $\ast$ (1 - (x)) + (b) $\ast$ (x))
+\item 
+\#define {\bf lerp}(a, b, x)\ ((a) $\ast$ (1 - (x)) + (b) $\ast$ (x))
+\item 
+\#define {\bf snoise}(x)\ (noise(x) $\ast$ 2 - 1)
+\item 
+\#define {\bf snoise2}(x, y)\ (noise(x,y) $\ast$ 2 - 1)
+\item 
+\#define {\bf udn}(x, lo, hi)\ (smoothstep(.25, .75, noise(x)) $\ast$ ((hi) - (lo)) + (lo))
+\item 
+\#define {\bf udn2}(x, y, lo, hi)\ (smoothstep(.25, .75, noise(x,y)) $\ast$ ((hi)-(lo))+(lo))
+\item 
+\#define {\bf MINFILTERWIDTH}\ 1e-7
+\item 
+\#define {\bf MINDERIV}\ 0.0003
+\item 
+\#define {\bf filterwidth}(Du, Dv, x)
+\item 
+\#define {\bf filterwidth\_\-point}(p)\ (std::max(math$<$float$>$::sqrt(area(state)), MINFILTERWIDTH))
+\end{CompactItemize}
+
+
+\subsection{Define Documentation}
+\index{mrRman_notes.h@{mr\-Rman\_\-notes.h}!blend@{blend}}
+\index{blend@{blend}!mrRman_notes.h@{mr\-Rman\_\-notes.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define blend(a, b, x)\ ((a) $\ast$ (1 - (x)) + (b) $\ast$ (x))}\label{mrRman__notes_8h_a12}
+
+
+\index{mrRman_notes.h@{mr\-Rman\_\-notes.h}!boxstep@{boxstep}}
+\index{boxstep@{boxstep}!mrRman_notes.h@{mr\-Rman\_\-notes.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define boxstep(a, b, x)\ clamp(((x) - (a))/((b) - (a)), 0, 1)}\label{mrRman__notes_8h_a1}
+
+
+\index{mrRman_notes.h@{mr\-Rman\_\-notes.h}!complement@{complement}}
+\index{complement@{complement}!mrRman_notes.h@{mr\-Rman\_\-notes.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define complement(a)\ (1 - (a))}\label{mrRman__notes_8h_a11}
+
+
+\index{mrRman_notes.h@{mr\-Rman\_\-notes.h}!difference@{difference}}
+\index{difference@{difference}!mrRman_notes.h@{mr\-Rman\_\-notes.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define difference(a, b)\ ((a) - (a) $\ast$ (b))}\label{mrRman__notes_8h_a10}
+
+
+\index{mrRman_notes.h@{mr\-Rman\_\-notes.h}!even@{even}}
+\index{even@{even}!mrRman_notes.h@{mr\-Rman\_\-notes.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define even(x)\ (math$<$float$>$::fmod((x), 2) == 0)}\label{mrRman__notes_8h_a4}
+
+
+\index{mrRman_notes.h@{mr\-Rman\_\-notes.h}!filterwidth@{filterwidth}}
+\index{filterwidth@{filterwidth}!mrRman_notes.h@{mr\-Rman\_\-notes.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define filterwidth(Du, Dv, x)}\label{mrRman__notes_8h_a20}
+
+
+{\bf Value:}
+
+\footnotesize\begin{verbatim}DuDv( Du, Dv, state, x); \
+     (std::max(abs(Du(x) * (du)) + (Dv(x) * (dv)),MINFILTERWIDTH))
+\end{verbatim}\normalsize 
+\index{mrRman_notes.h@{mr\-Rman\_\-notes.h}!filterwidth_point@{filterwidth\_\-point}}
+\index{filterwidth_point@{filterwidth\_\-point}!mrRman_notes.h@{mr\-Rman\_\-notes.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define filterwidth\_\-point(p)\ (std::max(math$<$float$>$::sqrt(area(state)), MINFILTERWIDTH))}\label{mrRman__notes_8h_a21}
+
+
+\index{mrRman_notes.h@{mr\-Rman\_\-notes.h}!intersection@{intersection}}
+\index{intersection@{intersection}!mrRman_notes.h@{mr\-Rman\_\-notes.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define intersection(a, b)\ ((a) $\ast$ (b))}\label{mrRman__notes_8h_a8}
+
+
+\index{mrRman_notes.h@{mr\-Rman\_\-notes.h}!lerp@{lerp}}
+\index{lerp@{lerp}!mrRman_notes.h@{mr\-Rman\_\-notes.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define lerp(a, b, x)\ ((a) $\ast$ (1 - (x)) + (b) $\ast$ (x))}\label{mrRman__notes_8h_a13}
+
+
+\index{mrRman_notes.h@{mr\-Rman\_\-notes.h}!MINDERIV@{MINDERIV}}
+\index{MINDERIV@{MINDERIV}!mrRman_notes.h@{mr\-Rman\_\-notes.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define MINDERIV\ 0.0003}\label{mrRman__notes_8h_a19}
+
+
+\index{mrRman_notes.h@{mr\-Rman\_\-notes.h}!MINFILTERWIDTH@{MINFILTERWIDTH}}
+\index{MINFILTERWIDTH@{MINFILTERWIDTH}!mrRman_notes.h@{mr\-Rman\_\-notes.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define MINFILTERWIDTH\ 1e-7}\label{mrRman__notes_8h_a18}
+
+
+\index{mrRman_notes.h@{mr\-Rman\_\-notes.h}!odd@{odd}}
+\index{odd@{odd}!mrRman_notes.h@{mr\-Rman\_\-notes.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define odd(x)\ (math$<$float$>$::fmod((x), 2) == 1)}\label{mrRman__notes_8h_a3}
+
+
+\index{mrRman_notes.h@{mr\-Rman\_\-notes.h}!pulse@{pulse}}
+\index{pulse@{pulse}!mrRman_notes.h@{mr\-Rman\_\-notes.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define pulse(a, b, fuzz, x)}\label{mrRman__notes_8h_a0}
+
+
+{\bf Value:}
+
+\footnotesize\begin{verbatim}(smoothstep((a)-(fuzz),(a),(x)) - \
+                           smoothstep((b)-(fuzz),(b),(x)))
+\end{verbatim}\normalsize 
+\index{mrRman_notes.h@{mr\-Rman\_\-notes.h}!repeat@{repeat}}
+\index{repeat@{repeat}!mrRman_notes.h@{mr\-Rman\_\-notes.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define repeat(x, freq)\ (math$<$float$>$::fmod((x) $\ast$ (freq), 1.0))}\label{mrRman__notes_8h_a2}
+
+
+\index{mrRman_notes.h@{mr\-Rman\_\-notes.h}!rotate2d@{rotate2d}}
+\index{rotate2d@{rotate2d}!mrRman_notes.h@{mr\-Rman\_\-notes.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define rotate2d(x, y, rad, ox, oy, rx, ry)}\label{mrRman__notes_8h_a6}
+
+
+{\bf Value:}
+
+\footnotesize\begin{verbatim}rx = ((x) - (ox)) * cos(rad) - ((y) - (oy)) * math<float>::sin(rad) + (ox); \
+  ry = ((x) - (ox)) * sin(rad) + ((y) - (oy)) * math<float>::cos(rad) + (oy)
+\end{verbatim}\normalsize 
+\index{mrRman_notes.h@{mr\-Rman\_\-notes.h}!snoise@{snoise}}
+\index{snoise@{snoise}!mrRman_notes.h@{mr\-Rman\_\-notes.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define snoise(x)\ (noise(x) $\ast$ 2 - 1)}\label{mrRman__notes_8h_a14}
+
+
+\index{mrRman_notes.h@{mr\-Rman\_\-notes.h}!snoise2@{snoise2}}
+\index{snoise2@{snoise2}!mrRman_notes.h@{mr\-Rman\_\-notes.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define snoise2(x, y)\ (noise(x,y) $\ast$ 2 - 1)}\label{mrRman__notes_8h_a15}
+
+
+\index{mrRman_notes.h@{mr\-Rman\_\-notes.h}!topolar2d@{topolar2d}}
+\index{topolar2d@{topolar2d}!mrRman_notes.h@{mr\-Rman\_\-notes.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define topolar2d(x, y, r, theta)}\label{mrRman__notes_8h_a7}
+
+
+{\bf Value:}
+
+\footnotesize\begin{verbatim}r = math<float>::sqrt((x) * (x) + (y) * (y)); \
+  theta = math<float>::atan(y, x)
+\end{verbatim}\normalsize 
+\index{mrRman_notes.h@{mr\-Rman\_\-notes.h}!udn@{udn}}
+\index{udn@{udn}!mrRman_notes.h@{mr\-Rman\_\-notes.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define udn(x, lo, hi)\ (smoothstep(.25, .75, noise(x)) $\ast$ ((hi) - (lo)) + (lo))}\label{mrRman__notes_8h_a16}
+
+
+\index{mrRman_notes.h@{mr\-Rman\_\-notes.h}!udn2@{udn2}}
+\index{udn2@{udn2}!mrRman_notes.h@{mr\-Rman\_\-notes.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define udn2(x, y, lo, hi)\ (smoothstep(.25, .75, noise(x,y)) $\ast$ ((hi)-(lo))+(lo))}\label{mrRman__notes_8h_a17}
+
+
+\index{mrRman_notes.h@{mr\-Rman\_\-notes.h}!union@{union}}
+\index{union@{union}!mrRman_notes.h@{mr\-Rman\_\-notes.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define union(a, b)\ ((a) + (b) - (a) $\ast$ (b))}\label{mrRman__notes_8h_a9}
+
+
+\index{mrRman_notes.h@{mr\-Rman\_\-notes.h}!whichtile@{whichtile}}
+\index{whichtile@{whichtile}!mrRman_notes.h@{mr\-Rman\_\-notes.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define whichtile(x, freq)\ (fastmath$<$float$>$::floor((x) $\ast$ (freq)))}\label{mrRman__notes_8h_a5}
+
+

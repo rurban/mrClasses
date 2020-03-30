@@ -1,0 +1,36 @@
+#
+# surface shader for debugging and showing information on objects
+#
+declare shader
+	color		#: shortname "oc"
+	"gg_showinfo" 
+	(
+		integer		"what",	 
+		#: shortname "w"
+		#: default 0
+		#: softmin 0   softmax 30
+		#: min 0   max 100
+		integer         "space", 
+		#: shortname "s"
+		#: default 0
+		vector          "minValues",
+		#: shortname "minv"
+		#: default 0.0 0.0 0.0
+		vector          "maxValues",
+		#: shortname "maxv"
+		#: default 1.0 1.0 1.0
+		integer         "uvset",
+		#: shortname "uv"
+		#: default 0
+		vector		"normalCamera"
+		#: shortname "nc"
+		#: default 0.0 0.0 0.0
+	)
+	#:
+	#: nodeid 3003
+	#:
+	apply material, texture
+	derivative 1 2
+	version 1
+end declare
+

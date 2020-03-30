@@ -1,0 +1,418 @@
+\section{mr::base::vec2 Struct Reference}
+\label{structmr_1_1base_1_1vec2}\index{mr::base::vec2@{mr::base::vec2}}
+{\tt \#include $<$mr\-Vector.h$>$}
+
+\subsection*{Public Types}
+\begin{CompactItemize}
+\item 
+typedef mi\-Vector2d {\bf C}
+\item 
+typedef {\bf vec2} {\bf self}
+\item 
+typedef mi\-Scalar {\bf T}
+\end{CompactItemize}
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+const mi\-Scalar {\bf Evaluate} (const unsigned short i) const 
+\item 
+{\bf self} {\bf less\-Than} (const mi\-Vector2d \&b)
+\item 
+{\bf self} {\bf less\-Than\-Equal} (const mi\-Vector2d \&b)
+\item 
+{\bf self} {\bf greater\-Than} (const mi\-Vector2d \&b)
+\item 
+{\bf self} {\bf greater\-Than\-Equal} (const mi\-Vector2d \&b)
+\item 
+bool {\bf any} ()
+\item 
+const bool {\bf is\-Equivalent} (const mi\-Vector2d \&b, const mi\-Scalar tolerance=mi\-SCALAR\_\-EPSILON) const 
+\item 
+const {\bf self} \& {\bf mix} (const mi\-Vector2d \&b, const mi\-Scalar p)
+\item 
+const {\bf self} \& {\bf uv} () const 
+\item 
+{\bf self} {\bf vu} () const 
+\item 
+{\bf self} {\bf uu} () const 
+\item 
+{\bf self} {\bf vv} () const 
+\end{CompactItemize}
+\begin{Indent}{\bf Constructors}\par
+\begin{CompactItemize}
+\item 
+{\bf vec2} ({\bf k\-No\-Construct})
+\begin{CompactList}\small\item\em Constructor that does nothing (fast). Use as vector2d x(k\-No\-Init). \item\end{CompactList}\item 
+{\bf vec2} ()
+\begin{CompactList}\small\item\em Constructor that initializes vector to 0. \item\end{CompactList}\item 
+{\bf vec2} (const mi\-Scalar uu, const mi\-Scalar vv)
+\begin{CompactList}\small\item\em Constructor that initializes it from two mi\-Scalars. \item\end{CompactList}\item 
+{\bf vec2} (const mi\-Vector2d \&b)
+\begin{CompactList}\small\item\em Constructor from an mi\-Vector2d. \item\end{CompactList}\item 
+template$<$class X, class Y, class Oper$>$ {\bf vec2} (const {\bf base::exp}$<$ X, Y, Oper $>$ \&e)
+\begin{CompactList}\small\item\em Constructor from an expression. \item\end{CompactList}\end{CompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Copy Constructor}\par
+\begin{CompactItemize}
+\item 
+{\bf vec2} (const {\bf vec2} \&b)
+\end{CompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Accessors}\par
+\begin{CompactItemize}
+\item 
+{\bf T} \& {\bf operator[$\,$]} (const unsigned short i)
+\begin{CompactList}\small\item\em Allow access to each element of vector for assignment. \item\end{CompactList}\item 
+const {\bf T} {\bf operator[$\,$]} (const unsigned short i) const 
+\begin{CompactList}\small\item\em Allow access to each element of vector for reading. \item\end{CompactList}\item 
+void {\bf set} (const unsigned short i, const {\bf T} t)
+\begin{CompactList}\small\item\em Allow assignment to an element of a vector. \item\end{CompactList}\item 
+void {\bf set} (const {\bf T} uu, const {\bf T} vv)
+\begin{CompactList}\small\item\em Allow assignment to an elements of a vector. \item\end{CompactList}\item 
+const {\bf T} {\bf get} (const unsigned short i) const 
+\begin{CompactList}\small\item\em Allow access to an element of vector for reading. \item\end{CompactList}\end{CompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Assignment}\par
+\begin{CompactItemize}
+\item 
+template$<$class X, class Y, class Oper$>$ const {\bf self} \& {\bf operator=} (const {\bf base::exp}$<$ X, Y, Oper $>$ \&e)
+\item 
+const {\bf self} \& {\bf operator=} (const {\bf self} \&b)
+\item 
+const {\bf self} \& {\bf operator=} (const mi\-Vector2d \&b)
+\item 
+const {\bf self} \& {\bf operator=} (const mi\-Scalar b)
+\end{CompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Equality}\par
+\begin{CompactItemize}
+\item 
+template$<$class X, class Y, class Oper$>$ const bool {\bf operator==} (const {\bf base::exp}$<$ X, Y, Oper $>$ \&x) const 
+\item 
+const bool {\bf operator==} (const {\bf self} \&b) const 
+\item 
+const bool {\bf operator==} (const mi\-Vector2d \&b) const 
+\item 
+const bool {\bf operator==} (const mi\-Scalar b) const 
+\item 
+template$<$class X, class Y, class Oper$>$ const bool {\bf operator!=} (const {\bf base::exp}$<$ X, Y, Oper $>$ \&b) const 
+\item 
+const bool {\bf operator!=} (const {\bf self} \&b) const 
+\item 
+const bool {\bf operator!=} (const mi\-Vector2d \&b) const 
+\item 
+const bool {\bf operator!=} (const mi\-Scalar b) const 
+\end{CompactItemize}
+\end{Indent}
+\begin{Indent}{\bf REFERENCE OPERATORS (MODIFY IN PLACE)}\par
+\begin{CompactItemize}
+\item 
+template$<$class X, class Y, class Oper$>$ const {\bf self} \& {\bf operator+=} (const {\bf base::exp}$<$ X, Y, Oper $>$ \&b)
+\item 
+const {\bf self} \& {\bf operator+=} (const mi\-Scalar b)
+\item 
+const {\bf self} \& {\bf operator+=} (const mi\-Vector2d \&b)
+\item 
+template$<$class X, class Y, class Oper$>$ const {\bf self} \& {\bf operator-=} (const {\bf base::exp}$<$ X, Y, Oper $>$ \&b)
+\item 
+const {\bf self} \& {\bf operator-=} (const mi\-Scalar b)
+\item 
+const {\bf self} \& {\bf operator-=} (const mi\-Vector2d \&b)
+\item 
+template$<$class X, class Y, class Oper$>$ const {\bf self} \& {\bf operator $\ast$=} (const {\bf base::exp}$<$ X, Y, Oper $>$ \&b)
+\item 
+const {\bf self} \& {\bf operator $\ast$=} (const mi\-Scalar b)
+\item 
+const {\bf self} \& {\bf operator $\ast$=} (const mi\-Vector2d \&b)
+\item 
+template$<$class X, class Y, class Oper$>$ const {\bf self} \& {\bf operator/=} (const {\bf base::exp}$<$ X, Y, Oper $>$ \&b)
+\item 
+const {\bf self} \& {\bf operator/=} (const mi\-Scalar b)
+\item 
+const {\bf self} \& {\bf operator/=} (const mi\-Vector2d \&b)
+\end{CompactItemize}
+\end{Indent}
+
+
+\subsection{Member Typedef Documentation}
+\index{mr::base::vec2@{mr::base::vec2}!C@{C}}
+\index{C@{C}!mr::base::vec2@{mr::base::vec2}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef mi\-Vector2d {\bf mr::base::vec2::C}}\label{structmr_1_1base_1_1vec2_w0}
+
+
+\index{mr::base::vec2@{mr::base::vec2}!self@{self}}
+\index{self@{self}!mr::base::vec2@{mr::base::vec2}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf vec2} {\bf mr::base::vec2::self}}\label{structmr_1_1base_1_1vec2_w1}
+
+
+\index{mr::base::vec2@{mr::base::vec2}!T@{T}}
+\index{T@{T}!mr::base::vec2@{mr::base::vec2}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef mi\-Scalar {\bf mr::base::vec2::T}}\label{structmr_1_1base_1_1vec2_w2}
+
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{mr::base::vec2@{mr::base::vec2}!vec2@{vec2}}
+\index{vec2@{vec2}!mr::base::vec2@{mr::base::vec2}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mr::base::vec2::vec2 ({\bf k\-No\-Construct})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1base_1_1vec2_z45_0}
+
+
+Constructor that does nothing (fast). Use as vector2d x(k\-No\-Init). 
+
+\index{mr::base::vec2@{mr::base::vec2}!vec2@{vec2}}
+\index{vec2@{vec2}!mr::base::vec2@{mr::base::vec2}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mr::base::vec2::vec2 ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1base_1_1vec2_z45_1}
+
+
+Constructor that initializes vector to 0. 
+
+\index{mr::base::vec2@{mr::base::vec2}!vec2@{vec2}}
+\index{vec2@{vec2}!mr::base::vec2@{mr::base::vec2}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mr::base::vec2::vec2 (const mi\-Scalar {\em uu}, const mi\-Scalar {\em vv})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1base_1_1vec2_z45_2}
+
+
+Constructor that initializes it from two mi\-Scalars. 
+
+\index{mr::base::vec2@{mr::base::vec2}!vec2@{vec2}}
+\index{vec2@{vec2}!mr::base::vec2@{mr::base::vec2}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mr::base::vec2::vec2 (const mi\-Vector2d \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1base_1_1vec2_z45_3}
+
+
+Constructor from an mi\-Vector2d. 
+
+\index{mr::base::vec2@{mr::base::vec2}!vec2@{vec2}}
+\index{vec2@{vec2}!mr::base::vec2@{mr::base::vec2}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class X, class Y, class Oper$>$ mr::base::vec2::vec2 (const {\bf base::exp}$<$ X, Y, Oper $>$ \& {\em e})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1base_1_1vec2_z45_4}
+
+
+Constructor from an expression. 
+
+\index{mr::base::vec2@{mr::base::vec2}!vec2@{vec2}}
+\index{vec2@{vec2}!mr::base::vec2@{mr::base::vec2}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mr::base::vec2::vec2 (const {\bf vec2} \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1base_1_1vec2_z46_0}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{mr::base::vec2@{mr::base::vec2}!any@{any}}
+\index{any@{any}!mr::base::vec2@{mr::base::vec2}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}bool mr::base::vec2::any ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1base_1_1vec2_a5}
+
+
+\index{mr::base::vec2@{mr::base::vec2}!Evaluate@{Evaluate}}
+\index{Evaluate@{Evaluate}!mr::base::vec2@{mr::base::vec2}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const mi\-Scalar mr::base::vec2::Evaluate (const unsigned short {\em i}) const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1base_1_1vec2_a0}
+
+
+\index{mr::base::vec2@{mr::base::vec2}!get@{get}}
+\index{get@{get}!mr::base::vec2@{mr::base::vec2}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf T} mr::base::vec2::get (const unsigned short {\em i}) const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1base_1_1vec2_z47_4}
+
+
+Allow access to an element of vector for reading. 
+
+\index{mr::base::vec2@{mr::base::vec2}!greaterThan@{greaterThan}}
+\index{greaterThan@{greaterThan}!mr::base::vec2@{mr::base::vec2}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf self} mr::base::vec2::greater\-Than (const mi\-Vector2d \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1base_1_1vec2_a3}
+
+
+\index{mr::base::vec2@{mr::base::vec2}!greaterThanEqual@{greaterThanEqual}}
+\index{greaterThanEqual@{greaterThanEqual}!mr::base::vec2@{mr::base::vec2}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf self} mr::base::vec2::greater\-Than\-Equal (const mi\-Vector2d \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1base_1_1vec2_a4}
+
+
+\index{mr::base::vec2@{mr::base::vec2}!isEquivalent@{isEquivalent}}
+\index{isEquivalent@{isEquivalent}!mr::base::vec2@{mr::base::vec2}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const bool mr::base::vec2::is\-Equivalent (const mi\-Vector2d \& {\em b}, const mi\-Scalar {\em tolerance} = mi\-SCALAR\_\-EPSILON) const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1base_1_1vec2_a6}
+
+
+\index{mr::base::vec2@{mr::base::vec2}!lessThan@{lessThan}}
+\index{lessThan@{lessThan}!mr::base::vec2@{mr::base::vec2}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf self} mr::base::vec2::less\-Than (const mi\-Vector2d \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1base_1_1vec2_a1}
+
+
+\index{mr::base::vec2@{mr::base::vec2}!lessThanEqual@{lessThanEqual}}
+\index{lessThanEqual@{lessThanEqual}!mr::base::vec2@{mr::base::vec2}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf self} mr::base::vec2::less\-Than\-Equal (const mi\-Vector2d \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1base_1_1vec2_a2}
+
+
+\index{mr::base::vec2@{mr::base::vec2}!mix@{mix}}
+\index{mix@{mix}!mr::base::vec2@{mr::base::vec2}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf self}\& mr::base::vec2::mix (const mi\-Vector2d \& {\em b}, const mi\-Scalar {\em p})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1base_1_1vec2_a7}
+
+
+\index{mr::base::vec2@{mr::base::vec2}!operator *=@{operator $\ast$=}}
+\index{operator *=@{operator $\ast$=}!mr::base::vec2@{mr::base::vec2}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf self}\& mr::base::vec2::operator $\ast$= (const mi\-Vector2d \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1base_1_1vec2_z53_8}
+
+
+\index{mr::base::vec2@{mr::base::vec2}!operator *=@{operator $\ast$=}}
+\index{operator *=@{operator $\ast$=}!mr::base::vec2@{mr::base::vec2}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf self}\& mr::base::vec2::operator $\ast$= (const mi\-Scalar {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1base_1_1vec2_z53_7}
+
+
+\index{mr::base::vec2@{mr::base::vec2}!operator *=@{operator $\ast$=}}
+\index{operator *=@{operator $\ast$=}!mr::base::vec2@{mr::base::vec2}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class X, class Y, class Oper$>$ const {\bf self}\& mr::base::vec2::operator $\ast$= (const {\bf base::exp}$<$ X, Y, Oper $>$ \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1base_1_1vec2_z53_6}
+
+
+\index{mr::base::vec2@{mr::base::vec2}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!mr::base::vec2@{mr::base::vec2}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const bool mr::base::vec2::operator!= (const mi\-Scalar {\em b}) const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1base_1_1vec2_z51_7}
+
+
+\index{mr::base::vec2@{mr::base::vec2}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!mr::base::vec2@{mr::base::vec2}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const bool mr::base::vec2::operator!= (const mi\-Vector2d \& {\em b}) const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1base_1_1vec2_z51_6}
+
+
+\index{mr::base::vec2@{mr::base::vec2}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!mr::base::vec2@{mr::base::vec2}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const bool mr::base::vec2::operator!= (const {\bf self} \& {\em b}) const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1base_1_1vec2_z51_5}
+
+
+\index{mr::base::vec2@{mr::base::vec2}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!mr::base::vec2@{mr::base::vec2}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class X, class Y, class Oper$>$ const bool mr::base::vec2::operator!= (const {\bf base::exp}$<$ X, Y, Oper $>$ \& {\em b}) const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1base_1_1vec2_z51_4}
+
+
+\index{mr::base::vec2@{mr::base::vec2}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!mr::base::vec2@{mr::base::vec2}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf self}\& mr::base::vec2::operator+= (const mi\-Vector2d \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1base_1_1vec2_z53_2}
+
+
+\index{mr::base::vec2@{mr::base::vec2}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!mr::base::vec2@{mr::base::vec2}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf self}\& mr::base::vec2::operator+= (const mi\-Scalar {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1base_1_1vec2_z53_1}
+
+
+\index{mr::base::vec2@{mr::base::vec2}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!mr::base::vec2@{mr::base::vec2}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class X, class Y, class Oper$>$ const {\bf self}\& mr::base::vec2::operator+= (const {\bf base::exp}$<$ X, Y, Oper $>$ \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1base_1_1vec2_z53_0}
+
+
+\index{mr::base::vec2@{mr::base::vec2}!operator-=@{operator-=}}
+\index{operator-=@{operator-=}!mr::base::vec2@{mr::base::vec2}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf self}\& mr::base::vec2::operator-= (const mi\-Vector2d \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1base_1_1vec2_z53_5}
+
+
+\index{mr::base::vec2@{mr::base::vec2}!operator-=@{operator-=}}
+\index{operator-=@{operator-=}!mr::base::vec2@{mr::base::vec2}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf self}\& mr::base::vec2::operator-= (const mi\-Scalar {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1base_1_1vec2_z53_4}
+
+
+\index{mr::base::vec2@{mr::base::vec2}!operator-=@{operator-=}}
+\index{operator-=@{operator-=}!mr::base::vec2@{mr::base::vec2}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class X, class Y, class Oper$>$ const {\bf self}\& mr::base::vec2::operator-= (const {\bf base::exp}$<$ X, Y, Oper $>$ \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1base_1_1vec2_z53_3}
+
+
+\index{mr::base::vec2@{mr::base::vec2}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!mr::base::vec2@{mr::base::vec2}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf self}\& mr::base::vec2::operator/= (const mi\-Vector2d \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1base_1_1vec2_z53_11}
+
+
+\index{mr::base::vec2@{mr::base::vec2}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!mr::base::vec2@{mr::base::vec2}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf self}\& mr::base::vec2::operator/= (const mi\-Scalar {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1base_1_1vec2_z53_10}
+
+
+\index{mr::base::vec2@{mr::base::vec2}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!mr::base::vec2@{mr::base::vec2}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class X, class Y, class Oper$>$ const {\bf self}\& mr::base::vec2::operator/= (const {\bf base::exp}$<$ X, Y, Oper $>$ \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1base_1_1vec2_z53_9}
+
+
+\index{mr::base::vec2@{mr::base::vec2}!operator=@{operator=}}
+\index{operator=@{operator=}!mr::base::vec2@{mr::base::vec2}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf self}\& mr::base::vec2::operator= (const mi\-Scalar {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1base_1_1vec2_z49_3}
+
+
+\index{mr::base::vec2@{mr::base::vec2}!operator=@{operator=}}
+\index{operator=@{operator=}!mr::base::vec2@{mr::base::vec2}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf self}\& mr::base::vec2::operator= (const mi\-Vector2d \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1base_1_1vec2_z49_2}
+
+
+\index{mr::base::vec2@{mr::base::vec2}!operator=@{operator=}}
+\index{operator=@{operator=}!mr::base::vec2@{mr::base::vec2}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf self}\& mr::base::vec2::operator= (const {\bf self} \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1base_1_1vec2_z49_1}
+
+
+\index{mr::base::vec2@{mr::base::vec2}!operator=@{operator=}}
+\index{operator=@{operator=}!mr::base::vec2@{mr::base::vec2}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class X, class Y, class Oper$>$ const {\bf self}\& mr::base::vec2::operator= (const {\bf base::exp}$<$ X, Y, Oper $>$ \& {\em e})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1base_1_1vec2_z49_0}
+
+
+\index{mr::base::vec2@{mr::base::vec2}!operator==@{operator==}}
+\index{operator==@{operator==}!mr::base::vec2@{mr::base::vec2}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const bool mr::base::vec2::operator== (const mi\-Scalar {\em b}) const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1base_1_1vec2_z51_3}
+
+
+\index{mr::base::vec2@{mr::base::vec2}!operator==@{operator==}}
+\index{operator==@{operator==}!mr::base::vec2@{mr::base::vec2}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const bool mr::base::vec2::operator== (const mi\-Vector2d \& {\em b}) const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1base_1_1vec2_z51_2}
+
+
+\index{mr::base::vec2@{mr::base::vec2}!operator==@{operator==}}
+\index{operator==@{operator==}!mr::base::vec2@{mr::base::vec2}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const bool mr::base::vec2::operator== (const {\bf self} \& {\em b}) const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1base_1_1vec2_z51_1}
+
+
+\index{mr::base::vec2@{mr::base::vec2}!operator==@{operator==}}
+\index{operator==@{operator==}!mr::base::vec2@{mr::base::vec2}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class X, class Y, class Oper$>$ const bool mr::base::vec2::operator== (const {\bf base::exp}$<$ X, Y, Oper $>$ \& {\em x}) const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1base_1_1vec2_z51_0}
+
+
+\index{mr::base::vec2@{mr::base::vec2}!operator[]@{operator[]}}
+\index{operator[]@{operator[]}!mr::base::vec2@{mr::base::vec2}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf T} mr::base::vec2::operator[$\,$] (const unsigned short {\em i}) const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1base_1_1vec2_z47_1}
+
+
+Allow access to each element of vector for reading. 
+
+\index{mr::base::vec2@{mr::base::vec2}!operator[]@{operator[]}}
+\index{operator[]@{operator[]}!mr::base::vec2@{mr::base::vec2}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf T}\& mr::base::vec2::operator[$\,$] (const unsigned short {\em i})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1base_1_1vec2_z47_0}
+
+
+Allow access to each element of vector for assignment. 
+
+\index{mr::base::vec2@{mr::base::vec2}!set@{set}}
+\index{set@{set}!mr::base::vec2@{mr::base::vec2}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::base::vec2::set (const {\bf T} {\em uu}, const {\bf T} {\em vv})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1base_1_1vec2_z47_3}
+
+
+Allow assignment to an elements of a vector. 
+
+\index{mr::base::vec2@{mr::base::vec2}!set@{set}}
+\index{set@{set}!mr::base::vec2@{mr::base::vec2}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::base::vec2::set (const unsigned short {\em i}, const {\bf T} {\em t})\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1base_1_1vec2_z47_2}
+
+
+Allow assignment to an element of a vector. 
+
+\index{mr::base::vec2@{mr::base::vec2}!uu@{uu}}
+\index{uu@{uu}!mr::base::vec2@{mr::base::vec2}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf self} mr::base::vec2::uu () const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1base_1_1vec2_a10}
+
+
+\index{mr::base::vec2@{mr::base::vec2}!uv@{uv}}
+\index{uv@{uv}!mr::base::vec2@{mr::base::vec2}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const {\bf self}\& mr::base::vec2::uv () const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1base_1_1vec2_a8}
+
+
+\index{mr::base::vec2@{mr::base::vec2}!vu@{vu}}
+\index{vu@{vu}!mr::base::vec2@{mr::base::vec2}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf self} mr::base::vec2::vu () const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1base_1_1vec2_a9}
+
+
+\index{mr::base::vec2@{mr::base::vec2}!vv@{vv}}
+\index{vv@{vv}!mr::base::vec2@{mr::base::vec2}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf self} mr::base::vec2::vv () const\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1base_1_1vec2_a11}
+
+
+
+
+The documentation for this struct was generated from the following file:\begin{CompactItemize}
+\item 
+{\bf mr\-Vector.h}\end{CompactItemize}

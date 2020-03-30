@@ -1,0 +1,131 @@
+\section{mr::Triangle\-Vertex\-Cache Class Reference}
+\label{classmr_1_1TriangleVertexCache}\index{mr::TriangleVertexCache@{mr::TriangleVertexCache}}
+{\tt \#include $<$mr\-Cache.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+{\bf Triangle\-Vertex\-Cache} ()
+\item 
+{\bf $\sim$Triangle\-Vertex\-Cache} ()
+\item 
+void {\bf lock} ()
+\item 
+void {\bf unlock} ()
+\item 
+void {\bf reflection} (const mi\-State $\ast$const state, const mi\-Uint samples, const mi\-Scalar cos\-Angle=0.1f)
+\item 
+void {\bf refraction} (const mi\-State $\ast$const state, const mi\-Uint samples, const mi\-Scalar cos\-Angle=0.1f)
+\item 
+{\bf color} {\bf interpolate} (const mi\-State $\ast$const state)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+This class is used as a cache for colors in vertices . It can be used for 'pre-baking' stuff. This class is still experimental (ie. does not work that well).
+
+Usage is...
+
+
+
+\footnotesize\begin{verbatim}     EXTERN_C DLLEXPORT void
+     gg_phong_init(
+              miState* const        state,
+              struct gg_phong_t* p,
+              miBoolean* req_inst
+              )
+     {
+       if ( !p ) {  
+         *req_inst = miTRUE; return;
+       }
+   
+       TriangleVertexCache* cache = new TriangleVertexCache;
+       void **user;
+       mi_query(miQ_FUNC_USERPTR, state, 0, &user);
+       *user = cache;
+   
+     }
+   
+   
+     EXTERN_C DLLEXPORT void
+     gg_phong_exit(
+              miState* const        state,
+              struct gg_ambientocclusion_t* p
+              )
+     {
+       if ( !p ) return;
+   
+       void **user;
+       mi_query(miQ_FUNC_USERPTR, state, 0, &user);
+       delete *user;
+     }
+   
+   
+     EXTERN_C DLLEXPORT miBoolean 
+     gg_phong(
+         color* const result,
+         miState* const state,
+         struct gg_phong_t* p
+         )
+     {
+       void **user;
+       mi_query(miQ_FUNC_USERPTR, state, 0, &user);
+       TriangleVertexCache* cache = static_cast< TriangleVertexCache* >(*user);
+   
+       cache->lock();
+       cache->reflection( state, 16, 1 );
+       *result = cache->interpolate( state );
+       cache->unlock();
+   
+       return(miTRUE);
+     }
+\end{verbatim}
+\normalsize
+
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{mr::TriangleVertexCache@{mr::Triangle\-Vertex\-Cache}!TriangleVertexCache@{TriangleVertexCache}}
+\index{TriangleVertexCache@{TriangleVertexCache}!mr::TriangleVertexCache@{mr::Triangle\-Vertex\-Cache}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mr::Triangle\-Vertex\-Cache::Triangle\-Vertex\-Cache ()\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1TriangleVertexCache_a0}
+
+
+\index{mr::TriangleVertexCache@{mr::Triangle\-Vertex\-Cache}!~TriangleVertexCache@{$\sim$TriangleVertexCache}}
+\index{~TriangleVertexCache@{$\sim$TriangleVertexCache}!mr::TriangleVertexCache@{mr::Triangle\-Vertex\-Cache}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mr::Triangle\-Vertex\-Cache::$\sim${\bf Triangle\-Vertex\-Cache} ()\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1TriangleVertexCache_a1}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{mr::TriangleVertexCache@{mr::Triangle\-Vertex\-Cache}!interpolate@{interpolate}}
+\index{interpolate@{interpolate}!mr::TriangleVertexCache@{mr::Triangle\-Vertex\-Cache}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::Triangle\-Vertex\-Cache::interpolate (const mi\-State $\ast$const {\em state})\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1TriangleVertexCache_a6}
+
+
+\index{mr::TriangleVertexCache@{mr::Triangle\-Vertex\-Cache}!lock@{lock}}
+\index{lock@{lock}!mr::TriangleVertexCache@{mr::Triangle\-Vertex\-Cache}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::Triangle\-Vertex\-Cache::lock ()\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1TriangleVertexCache_a2}
+
+
+\index{mr::TriangleVertexCache@{mr::Triangle\-Vertex\-Cache}!reflection@{reflection}}
+\index{reflection@{reflection}!mr::TriangleVertexCache@{mr::Triangle\-Vertex\-Cache}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::Triangle\-Vertex\-Cache::reflection (const mi\-State $\ast$const {\em state}, const mi\-Uint {\em samples}, const mi\-Scalar {\em cos\-Angle} = 0.1f)\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1TriangleVertexCache_a4}
+
+
+\index{mr::TriangleVertexCache@{mr::Triangle\-Vertex\-Cache}!refraction@{refraction}}
+\index{refraction@{refraction}!mr::TriangleVertexCache@{mr::Triangle\-Vertex\-Cache}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::Triangle\-Vertex\-Cache::refraction (const mi\-State $\ast$const {\em state}, const mi\-Uint {\em samples}, const mi\-Scalar {\em cos\-Angle} = 0.1f)\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1TriangleVertexCache_a5}
+
+
+\index{mr::TriangleVertexCache@{mr::Triangle\-Vertex\-Cache}!unlock@{unlock}}
+\index{unlock@{unlock}!mr::TriangleVertexCache@{mr::Triangle\-Vertex\-Cache}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::Triangle\-Vertex\-Cache::unlock ()\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1TriangleVertexCache_a3}
+
+
+
+
+The documentation for this class was generated from the following file:\begin{CompactItemize}
+\item 
+{\bf mr\-Cache.h}\end{CompactItemize}

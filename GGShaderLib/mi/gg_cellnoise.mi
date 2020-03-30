@@ -1,0 +1,38 @@
+
+declare shader
+	scalar 			    #: shortname "os"
+	"gg_cellnoise"
+	(
+		integer "channels", #: default 3 min 1 max 4
+				    #: shortname "c"
+		vector "location",  #: shortname "l"
+		vector "scale",     #: default 1 1 1  min 0 0 0
+				    #: shortname "s"
+		scalar "timeScale"  #: default 1 min 0
+				    #: shortname "ts"
+	)
+	#:
+	#: nodeid 3009
+	#:
+	apply texture
+	version 1
+end declare
+
+declare shader
+	color  			    #: shortname "oc"
+	"gg_vcellnoise"
+	(
+		integer "channels", #: default 3 min 1 max 4 
+				    #: shortname "c"
+		vector "location",  #: shortname "l"
+		vector "scale",     #: default 1 1 1 min 0 0 0
+				    #: shortname "s"
+		scalar "timeScale"  #: default 1 min 0
+				    #: shortname "ts"
+	)
+	#:
+	#: nodeid 3010
+	#:
+	apply texture
+	version 1
+end declare

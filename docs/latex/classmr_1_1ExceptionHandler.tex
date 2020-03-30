@@ -1,0 +1,63 @@
+\section{mr::Exception\-Handler Class Reference}
+\label{classmr_1_1ExceptionHandler}\index{mr::ExceptionHandler@{mr::ExceptionHandler}}
+Exception handler.  
+
+
+{\tt \#include $<$mr\-Stack\-Trace\_\-win32.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+{\bf Exception\-Handler} ()
+\begin{CompactList}\small\item\em Initialize Exception Handler. \item\end{CompactList}\item 
+{\bf $\sim$Exception\-Handler} ()
+\begin{CompactList}\small\item\em Destroy exception handler and restore original exceptions. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{CompactItemize}
+\item 
+void {\bf Show\-Stack} (HANDLE h\-Thread, CONTEXT \&c)
+\begin{CompactList}\small\item\em Show a Stack Trace so far. \item\end{CompactList}\item 
+void {\bf Set\-Log\-File\-Name} (PTSTR psz\-Log\-File\-Name)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Exception handler. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{mr::ExceptionHandler@{mr::Exception\-Handler}!ExceptionHandler@{ExceptionHandler}}
+\index{ExceptionHandler@{ExceptionHandler}!mr::ExceptionHandler@{mr::Exception\-Handler}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mr::Exception\-Handler::Exception\-Handler ()}\label{classmr_1_1ExceptionHandler_a0}
+
+
+Initialize Exception Handler. 
+
+\index{mr::ExceptionHandler@{mr::Exception\-Handler}!~ExceptionHandler@{$\sim$ExceptionHandler}}
+\index{~ExceptionHandler@{$\sim$ExceptionHandler}!mr::ExceptionHandler@{mr::Exception\-Handler}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mr::Exception\-Handler::$\sim${\bf Exception\-Handler} ()}\label{classmr_1_1ExceptionHandler_a1}
+
+
+Destroy exception handler and restore original exceptions. 
+
+
+
+\subsection{Member Function Documentation}
+\index{mr::ExceptionHandler@{mr::Exception\-Handler}!SetLogFileName@{SetLogFileName}}
+\index{SetLogFileName@{SetLogFileName}!mr::ExceptionHandler@{mr::Exception\-Handler}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::Exception\-Handler::Set\-Log\-File\-Name (PTSTR {\em psz\-Log\-File\-Name})\hspace{0.3cm}{\tt  [static]}}\label{classmr_1_1ExceptionHandler_e1}
+
+
+Set log file to dump trace and info in case of crash. Default name is name of the main program. \index{mr::ExceptionHandler@{mr::Exception\-Handler}!ShowStack@{ShowStack}}
+\index{ShowStack@{ShowStack}!mr::ExceptionHandler@{mr::Exception\-Handler}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::Exception\-Handler::Show\-Stack (HANDLE {\em h\-Thread}, CONTEXT \& {\em c})\hspace{0.3cm}{\tt  [static]}}\label{classmr_1_1ExceptionHandler_e0}
+
+
+Show a Stack Trace so far. 
+
+
+
+The documentation for this class was generated from the following file:\begin{CompactItemize}
+\item 
+{\bf mr\-Stack\-Trace\_\-win32.h}\end{CompactItemize}

@@ -1,0 +1,555 @@
+\section{mr\-Operators.h File Reference}
+\label{mrOperators_8h}\index{mrOperators.h@{mrOperators.h}}
+{\tt \#include \char`\"{}mr\-Assert.h\char`\"{}}\par
+{\tt \#include \char`\"{}mr\-Base.h\char`\"{}}\par
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define {\bf CHECK\_\-NANS}
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+mi\-Color {\bf operator-} (const mi\-Color \&x)
+\item 
+mi\-Color {\bf operator+} (const mi\-Color \&a, const mi\-Color \&b)
+\item 
+mi\-Color {\bf operator+} (const mi\-Color \&a, const mi\-Scalar b)
+\item 
+template$<$class X, class Y, class Oper$>$ mi\-Color {\bf operator+} (const mi\-Color \&a, const {\bf mr::base::exp}$<$ X, Y, Oper $>$ \&b)
+\item 
+mi\-Color {\bf operator-} (const mi\-Color \&a, const mi\-Color \&b)
+\item 
+mi\-Color {\bf operator-} (const mi\-Color \&a, const mi\-Scalar b)
+\item 
+template$<$class X, class Y, class Oper$>$ mi\-Color {\bf operator-} (const mi\-Color \&a, const {\bf mr::base::exp}$<$ X, Y, Oper $>$ \&b)
+\item 
+mi\-Color {\bf operator $\ast$} (const mi\-Color \&a, const mi\-Color \&b)
+\item 
+mi\-Color {\bf operator $\ast$} (const mi\-Scalar b, const mi\-Color \&a)
+\item 
+mi\-Color {\bf operator $\ast$} (const mi\-Color \&a, const mi\-Scalar b)
+\item 
+template$<$class X, class Y, class Oper$>$ mi\-Color {\bf operator $\ast$} (const mi\-Color \&a, const {\bf mr::base::exp}$<$ X, Y, Oper $>$ \&b)
+\item 
+mi\-Color {\bf operator/} (const mi\-Color \&a, const mi\-Color \&b)
+\item 
+mi\-Color {\bf operator/} (const mi\-Color \&a, const mi\-Scalar \&b)
+\item 
+template$<$class X, class Y, class Oper$>$ mi\-Color {\bf operator/} (const mi\-Color \&a, const {\bf mr::base::exp}$<$ X, Y, Oper $>$ \&b)
+\item 
+const mi\-Color \& {\bf operator+=} (mi\-Color \&a, const mi\-Color \&b)
+\item 
+const mi\-Color \& {\bf operator+=} (mi\-Color \&a, const mi\-Scalar b)
+\item 
+template$<$class X, class Y, class Oper$>$ mi\-Color {\bf operator+=} (mi\-Color \&a, const {\bf mr::base::exp}$<$ X, Y, Oper $>$ \&b)
+\item 
+const mi\-Color \& {\bf operator-=} (mi\-Color \&a, const mi\-Color \&b)
+\item 
+const mi\-Color \& {\bf operator-=} (mi\-Color \&a, const mi\-Scalar b)
+\item 
+template$<$class X, class Y, class Oper$>$ mi\-Color {\bf operator-=} (mi\-Color \&a, const {\bf mr::base::exp}$<$ X, Y, Oper $>$ \&b)
+\item 
+const mi\-Color \& {\bf operator $\ast$=} (mi\-Color \&a, const mi\-Color \&b)
+\item 
+const mi\-Color \& {\bf operator $\ast$=} (mi\-Color \&a, const mi\-Scalar x)
+\item 
+template$<$class X, class Y, class Oper$>$ mi\-Color {\bf operator $\ast$=} (mi\-Color \&a, const {\bf mr::base::exp}$<$ X, Y, Oper $>$ \&b)
+\item 
+const mi\-Color \& {\bf operator/=} (mi\-Color \&a, const mi\-Color \&b)
+\item 
+template$<$class X, class Y, class Oper$>$ mi\-Color {\bf operator/=} (mi\-Color \&a, const {\bf mr::base::exp}$<$ X, Y, Oper $>$ \&b)
+\item 
+mi\-Vector {\bf operator-} (const mi\-Vector \&a)
+\item 
+const mi\-Vector \& {\bf operator+=} (mi\-Vector \&a, const mi\-Scalar b)
+\item 
+const mi\-Vector \& {\bf operator+=} (mi\-Vector \&a, const mi\-Vector \&b)
+\item 
+template$<$class X, class Y, class Oper$>$ mi\-Vector {\bf operator+=} (mi\-Vector \&a, const {\bf mr::base::exp}$<$ X, Y, Oper $>$ \&b)
+\item 
+const mi\-Vector \& {\bf operator-=} (mi\-Vector \&a, const mi\-Scalar b)
+\item 
+const mi\-Vector \& {\bf operator-=} (mi\-Vector \&a, const mi\-Vector \&b)
+\item 
+template$<$class X, class Y, class Oper$>$ mi\-Vector {\bf operator-=} (mi\-Vector \&a, const {\bf mr::base::exp}$<$ X, Y, Oper $>$ \&b)
+\item 
+const mi\-Vector \& {\bf operator $\ast$=} (mi\-Vector \&a, const mi\-Scalar b)
+\item 
+template$<$class X, class Y, class Oper$>$ mi\-Vector {\bf operator $\ast$=} (mi\-Vector \&a, const {\bf mr::base::exp}$<$ X, Y, Oper $>$ \&b)
+\item 
+const mi\-Vector \& {\bf operator $\ast$=} (mi\-Vector \&a, const mi\-Vector \&b)
+\item 
+const mi\-Vector \& {\bf operator/=} (mi\-Vector \&a, const mi\-Scalar b)
+\item 
+const mi\-Vector \& {\bf operator/=} (mi\-Vector \&a, const mi\-Vector \&b)
+\item 
+template$<$class X, class Y, class Oper$>$ mi\-Vector {\bf operator/=} (mi\-Vector \&a, const {\bf mr::base::exp}$<$ X, Y, Oper $>$ \&b)
+\item 
+mi\-Scalar {\bf operator\%} (const mi\-Vector \&a, const mi\-Vector \&b)
+\item 
+template$<$class X, class Y, class Oper$>$ mi\-Scalar {\bf operator\%} (const mi\-Vector \&a, const {\bf mr::base::exp}$<$ X, Y, Oper $>$ \&b)
+\item 
+mi\-Geo\-Vector {\bf operator-} (const mi\-Geo\-Vector \&a)
+\item 
+const mi\-Geo\-Vector \& {\bf operator+=} (mi\-Geo\-Vector \&a, const mi\-Geo\-Scalar b)
+\item 
+const mi\-Geo\-Vector \& {\bf operator+=} (mi\-Geo\-Vector \&a, const mi\-Vector \&b)
+\item 
+const mi\-Geo\-Vector \& {\bf operator+=} (mi\-Geo\-Vector \&a, const mi\-Geo\-Vector \&b)
+\item 
+template$<$class X, class Y, class Oper$>$ mi\-Geo\-Vector {\bf operator+=} (mi\-Geo\-Vector \&a, const {\bf mr::base::exp}$<$ X, Y, Oper $>$ \&b)
+\item 
+const mi\-Geo\-Vector \& {\bf operator-=} (mi\-Geo\-Vector \&a, const mi\-Geo\-Scalar b)
+\item 
+const mi\-Geo\-Vector \& {\bf operator-=} (mi\-Geo\-Vector \&a, const mi\-Vector \&b)
+\item 
+const mi\-Geo\-Vector \& {\bf operator-=} (mi\-Geo\-Vector \&a, const mi\-Geo\-Vector \&b)
+\item 
+template$<$class X, class Y, class Oper$>$ mi\-Geo\-Vector {\bf operator-=} (mi\-Geo\-Vector \&a, const {\bf mr::base::exp}$<$ X, Y, Oper $>$ \&b)
+\item 
+const mi\-Geo\-Vector \& {\bf operator $\ast$=} (mi\-Geo\-Vector \&a, const mi\-Geo\-Scalar b)
+\item 
+const mi\-Geo\-Vector \& {\bf operator $\ast$=} (mi\-Geo\-Vector \&a, const mi\-Vector \&b)
+\item 
+const mi\-Geo\-Vector \& {\bf operator $\ast$=} (mi\-Geo\-Vector \&a, const mi\-Geo\-Vector \&b)
+\item 
+template$<$class X, class Y, class Oper$>$ mi\-Geo\-Vector {\bf operator $\ast$=} (mi\-Geo\-Vector \&a, const {\bf mr::base::exp}$<$ X, Y, Oper $>$ \&b)
+\item 
+const mi\-Geo\-Vector \& {\bf operator/=} (mi\-Geo\-Vector \&a, const mi\-Geo\-Scalar b)
+\item 
+const mi\-Geo\-Vector \& {\bf operator/=} (mi\-Geo\-Vector \&a, const mi\-Vector \&b)
+\item 
+const mi\-Geo\-Vector \& {\bf operator/=} (mi\-Geo\-Vector \&a, const mi\-Geo\-Vector \&b)
+\item 
+template$<$class X, class Y, class Oper$>$ mi\-Geo\-Vector {\bf operator/=} (mi\-Geo\-Vector \&a, const {\bf mr::base::exp}$<$ X, Y, Oper $>$ \&b)
+\item 
+mi\-Geo\-Scalar {\bf operator\%} (const mi\-Vector \&a, const mi\-Geo\-Vector \&b)
+\item 
+mi\-Geo\-Scalar {\bf operator\%} (const mi\-Geo\-Vector \&a, const mi\-Vector \&b)
+\item 
+mi\-Geo\-Scalar {\bf operator\%} (const mi\-Geo\-Vector \&a, const mi\-Geo\-Vector \&b)
+\item 
+template$<$typename T$>$ mi\-Vector {\bf operator+} (const mi\-Vector \&a, const T \&b)
+\item 
+template$<$typename T$>$ mi\-Geo\-Vector {\bf operator+} (const mi\-Geo\-Vector \&a, const T \&b)
+\item 
+template$<$typename T$>$ mi\-Vector {\bf operator-} (const mi\-Vector \&a, const T \&b)
+\item 
+template$<$typename T$>$ mi\-Geo\-Vector {\bf operator-} (const mi\-Geo\-Vector \&a, const T \&b)
+\item 
+template$<$typename T$>$ mi\-Vector {\bf operator $\ast$} (const T \&b, const mi\-Vector \&a)
+\item 
+template$<$typename T$>$ mi\-Vector {\bf operator $\ast$} (const mi\-Vector \&a, const T \&b)
+\item 
+template$<$typename T$>$ mi\-Geo\-Vector {\bf operator $\ast$} (const T \&b, const mi\-Geo\-Vector \&a)
+\item 
+template$<$typename T$>$ mi\-Geo\-Vector {\bf operator $\ast$} (const mi\-Geo\-Vector \&a, const T \&b)
+\item 
+template$<$typename T$>$ mi\-Vector {\bf operator/} (const mi\-Vector \&a, const T \&b)
+\item 
+template$<$typename T$>$ mi\-Geo\-Vector {\bf operator/} (const mi\-Geo\-Vector \&a, const T \&b)
+\item 
+template$<$class X, class Y, class Oper$>$ mi\-Geo\-Scalar {\bf operator\%} (const mi\-Geo\-Vector \&a, const {\bf mr::base::exp}$<$ X, Y, Oper $>$ \&b)
+\item 
+template$<$class X, class Y, class Oper$>$ mi\-Vector {\bf operator$^\wedge$} (const mi\-Vector \&a, const {\bf mr::base::exp}$<$ X, Y, Oper $>$ \&b)
+\item 
+mi\-Vector {\bf operator$^\wedge$} (const mi\-Vector \&a, const mi\-Vector \&b)
+\item 
+mi\-Geo\-Vector {\bf operator$^\wedge$} (const mi\-Geo\-Vector \&a, const mi\-Geo\-Vector \&b)
+\item 
+mi\-Geo\-Vector {\bf operator$^\wedge$} (const mi\-Geo\-Vector \&a, const mi\-Vector \&b)
+\item 
+template$<$class X, class Y, class Oper$>$ mi\-Geo\-Vector {\bf operator$^\wedge$} (const mi\-Geo\-Vector \&a, const {\bf mr::base::exp}$<$ X, Y, Oper $>$ \&b)
+\end{CompactItemize}
+
+
+\subsection{Define Documentation}
+\index{mrOperators.h@{mr\-Operators.h}!CHECK_NANS@{CHECK\_\-NANS}}
+\index{CHECK_NANS@{CHECK\_\-NANS}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define CHECK\_\-NANS}\label{mrOperators_8h_a0}
+
+
+Simple overloading of all common operators for standard mi..types. Note that these operators may not be as optimal as the actual mr:: classes. 
+
+\subsection{Function Documentation}
+\index{mrOperators.h@{mr\-Operators.h}!operator *@{operator $\ast$}}
+\index{operator *@{operator $\ast$}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ mi\-Geo\-Vector operator $\ast$ (const mi\-Geo\-Vector \& {\em a}, const T \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a68}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator *@{operator $\ast$}}
+\index{operator *@{operator $\ast$}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ mi\-Geo\-Vector operator $\ast$ (const T \& {\em b}, const mi\-Geo\-Vector \& {\em a})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a67}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator *@{operator $\ast$}}
+\index{operator *@{operator $\ast$}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ mi\-Vector operator $\ast$ (const mi\-Vector \& {\em a}, const T \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a66}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator *@{operator $\ast$}}
+\index{operator *@{operator $\ast$}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ mi\-Vector operator $\ast$ (const T \& {\em b}, const mi\-Vector \& {\em a})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a65}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator *@{operator $\ast$}}
+\index{operator *@{operator $\ast$}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class X, class Y, class Oper$>$ mi\-Color operator $\ast$ (const mi\-Color \& {\em a}, const {\bf mr::base::exp}$<$ X, Y, Oper $>$ \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a11}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator *@{operator $\ast$}}
+\index{operator *@{operator $\ast$}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Color operator $\ast$ (const mi\-Color \& {\em a}, const mi\-Scalar {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a10}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator *@{operator $\ast$}}
+\index{operator *@{operator $\ast$}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Color operator $\ast$ (const mi\-Scalar {\em b}, const mi\-Color \& {\em a})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a9}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator *@{operator $\ast$}}
+\index{operator *@{operator $\ast$}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Color operator $\ast$ (const mi\-Color \& {\em a}, const mi\-Color \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a8}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator *=@{operator $\ast$=}}
+\index{operator *=@{operator $\ast$=}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class X, class Y, class Oper$>$ mi\-Geo\-Vector operator $\ast$= (mi\-Geo\-Vector \& {\em a}, const {\bf mr::base::exp}$<$ X, Y, Oper $>$ \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a53}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator *=@{operator $\ast$=}}
+\index{operator *=@{operator $\ast$=}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const mi\-Geo\-Vector\& operator $\ast$= (mi\-Geo\-Vector \& {\em a}, const mi\-Geo\-Vector \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a52}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator *=@{operator $\ast$=}}
+\index{operator *=@{operator $\ast$=}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const mi\-Geo\-Vector\& operator $\ast$= (mi\-Geo\-Vector \& {\em a}, const mi\-Vector \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a51}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator *=@{operator $\ast$=}}
+\index{operator *=@{operator $\ast$=}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const mi\-Geo\-Vector\& operator $\ast$= (mi\-Geo\-Vector \& {\em a}, const mi\-Geo\-Scalar {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a50}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator *=@{operator $\ast$=}}
+\index{operator *=@{operator $\ast$=}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const mi\-Vector\& operator $\ast$= (mi\-Vector \& {\em a}, const mi\-Vector \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a35}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator *=@{operator $\ast$=}}
+\index{operator *=@{operator $\ast$=}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class X, class Y, class Oper$>$ mi\-Vector operator $\ast$= (mi\-Vector \& {\em a}, const {\bf mr::base::exp}$<$ X, Y, Oper $>$ \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a34}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator *=@{operator $\ast$=}}
+\index{operator *=@{operator $\ast$=}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const mi\-Vector\& operator $\ast$= (mi\-Vector \& {\em a}, const mi\-Scalar {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a33}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator *=@{operator $\ast$=}}
+\index{operator *=@{operator $\ast$=}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class X, class Y, class Oper$>$ mi\-Color operator $\ast$= (mi\-Color \& {\em a}, const {\bf mr::base::exp}$<$ X, Y, Oper $>$ \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a23}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator *=@{operator $\ast$=}}
+\index{operator *=@{operator $\ast$=}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const mi\-Color\& operator $\ast$= (mi\-Color \& {\em a}, const mi\-Scalar {\em x})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a22}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator *=@{operator $\ast$=}}
+\index{operator *=@{operator $\ast$=}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const mi\-Color\& operator $\ast$= (mi\-Color \& {\em a}, const mi\-Color \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a21}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator\%@{operator\%}}
+\index{operator\%@{operator\%}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class X, class Y, class Oper$>$ mi\-Geo\-Scalar operator\% (const mi\-Geo\-Vector \& {\em a}, const {\bf mr::base::exp}$<$ X, Y, Oper $>$ \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a71}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator\%@{operator\%}}
+\index{operator\%@{operator\%}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Geo\-Scalar operator\% (const mi\-Geo\-Vector \& {\em a}, const mi\-Geo\-Vector \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a60}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator\%@{operator\%}}
+\index{operator\%@{operator\%}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Geo\-Scalar operator\% (const mi\-Geo\-Vector \& {\em a}, const mi\-Vector \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a59}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator\%@{operator\%}}
+\index{operator\%@{operator\%}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Geo\-Scalar operator\% (const mi\-Vector \& {\em a}, const mi\-Geo\-Vector \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a58}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator\%@{operator\%}}
+\index{operator\%@{operator\%}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class X, class Y, class Oper$>$ mi\-Scalar operator\% (const mi\-Vector \& {\em a}, const {\bf mr::base::exp}$<$ X, Y, Oper $>$ \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a40}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator\%@{operator\%}}
+\index{operator\%@{operator\%}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Scalar operator\% (const mi\-Vector \& {\em a}, const mi\-Vector \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a39}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator+@{operator+}}
+\index{operator+@{operator+}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ mi\-Geo\-Vector operator+ (const mi\-Geo\-Vector \& {\em a}, const T \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a62}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator+@{operator+}}
+\index{operator+@{operator+}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ mi\-Vector operator+ (const mi\-Vector \& {\em a}, const T \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a61}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator+@{operator+}}
+\index{operator+@{operator+}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class X, class Y, class Oper$>$ mi\-Color operator+ (const mi\-Color \& {\em a}, const {\bf mr::base::exp}$<$ X, Y, Oper $>$ \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a4}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator+@{operator+}}
+\index{operator+@{operator+}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Color operator+ (const mi\-Color \& {\em a}, const mi\-Scalar {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a3}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator+@{operator+}}
+\index{operator+@{operator+}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Color operator+ (const mi\-Color \& {\em a}, const mi\-Color \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a2}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class X, class Y, class Oper$>$ mi\-Geo\-Vector operator+= (mi\-Geo\-Vector \& {\em a}, const {\bf mr::base::exp}$<$ X, Y, Oper $>$ \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a45}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const mi\-Geo\-Vector\& operator+= (mi\-Geo\-Vector \& {\em a}, const mi\-Geo\-Vector \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a44}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const mi\-Geo\-Vector\& operator+= (mi\-Geo\-Vector \& {\em a}, const mi\-Vector \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a43}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const mi\-Geo\-Vector\& operator+= (mi\-Geo\-Vector \& {\em a}, const mi\-Geo\-Scalar {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a42}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class X, class Y, class Oper$>$ mi\-Vector operator+= (mi\-Vector \& {\em a}, const {\bf mr::base::exp}$<$ X, Y, Oper $>$ \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a29}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const mi\-Vector\& operator+= (mi\-Vector \& {\em a}, const mi\-Vector \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a28}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const mi\-Vector\& operator+= (mi\-Vector \& {\em a}, const mi\-Scalar {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a27}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class X, class Y, class Oper$>$ mi\-Color operator+= (mi\-Color \& {\em a}, const {\bf mr::base::exp}$<$ X, Y, Oper $>$ \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a17}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const mi\-Color\& operator+= (mi\-Color \& {\em a}, const mi\-Scalar {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a16}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const mi\-Color\& operator+= (mi\-Color \& {\em a}, const mi\-Color \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a15}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator-@{operator-}}
+\index{operator-@{operator-}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ mi\-Geo\-Vector operator- (const mi\-Geo\-Vector \& {\em a}, const T \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a64}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator-@{operator-}}
+\index{operator-@{operator-}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ mi\-Vector operator- (const mi\-Vector \& {\em a}, const T \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a63}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator-@{operator-}}
+\index{operator-@{operator-}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Geo\-Vector operator- (const mi\-Geo\-Vector \& {\em a})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a41}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator-@{operator-}}
+\index{operator-@{operator-}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Vector operator- (const mi\-Vector \& {\em a})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a26}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator-@{operator-}}
+\index{operator-@{operator-}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class X, class Y, class Oper$>$ mi\-Color operator- (const mi\-Color \& {\em a}, const {\bf mr::base::exp}$<$ X, Y, Oper $>$ \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a7}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator-@{operator-}}
+\index{operator-@{operator-}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Color operator- (const mi\-Color \& {\em a}, const mi\-Scalar {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a6}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator-@{operator-}}
+\index{operator-@{operator-}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Color operator- (const mi\-Color \& {\em a}, const mi\-Color \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a5}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator-@{operator-}}
+\index{operator-@{operator-}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Color operator- (const mi\-Color \& {\em x})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a1}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator-=@{operator-=}}
+\index{operator-=@{operator-=}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class X, class Y, class Oper$>$ mi\-Geo\-Vector operator-= (mi\-Geo\-Vector \& {\em a}, const {\bf mr::base::exp}$<$ X, Y, Oper $>$ \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a49}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator-=@{operator-=}}
+\index{operator-=@{operator-=}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const mi\-Geo\-Vector\& operator-= (mi\-Geo\-Vector \& {\em a}, const mi\-Geo\-Vector \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a48}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator-=@{operator-=}}
+\index{operator-=@{operator-=}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const mi\-Geo\-Vector\& operator-= (mi\-Geo\-Vector \& {\em a}, const mi\-Vector \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a47}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator-=@{operator-=}}
+\index{operator-=@{operator-=}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const mi\-Geo\-Vector\& operator-= (mi\-Geo\-Vector \& {\em a}, const mi\-Geo\-Scalar {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a46}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator-=@{operator-=}}
+\index{operator-=@{operator-=}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class X, class Y, class Oper$>$ mi\-Vector operator-= (mi\-Vector \& {\em a}, const {\bf mr::base::exp}$<$ X, Y, Oper $>$ \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a32}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator-=@{operator-=}}
+\index{operator-=@{operator-=}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const mi\-Vector\& operator-= (mi\-Vector \& {\em a}, const mi\-Vector \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a31}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator-=@{operator-=}}
+\index{operator-=@{operator-=}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const mi\-Vector\& operator-= (mi\-Vector \& {\em a}, const mi\-Scalar {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a30}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator-=@{operator-=}}
+\index{operator-=@{operator-=}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class X, class Y, class Oper$>$ mi\-Color operator-= (mi\-Color \& {\em a}, const {\bf mr::base::exp}$<$ X, Y, Oper $>$ \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a20}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator-=@{operator-=}}
+\index{operator-=@{operator-=}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const mi\-Color\& operator-= (mi\-Color \& {\em a}, const mi\-Scalar {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a19}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator-=@{operator-=}}
+\index{operator-=@{operator-=}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const mi\-Color\& operator-= (mi\-Color \& {\em a}, const mi\-Color \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a18}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator/@{operator/}}
+\index{operator/@{operator/}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ mi\-Geo\-Vector operator/ (const mi\-Geo\-Vector \& {\em a}, const T \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a70}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator/@{operator/}}
+\index{operator/@{operator/}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ mi\-Vector operator/ (const mi\-Vector \& {\em a}, const T \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a69}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator/@{operator/}}
+\index{operator/@{operator/}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class X, class Y, class Oper$>$ mi\-Color operator/ (const mi\-Color \& {\em a}, const {\bf mr::base::exp}$<$ X, Y, Oper $>$ \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a14}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator/@{operator/}}
+\index{operator/@{operator/}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Color operator/ (const mi\-Color \& {\em a}, const mi\-Scalar \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a13}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator/@{operator/}}
+\index{operator/@{operator/}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Color operator/ (const mi\-Color \& {\em a}, const mi\-Color \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a12}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class X, class Y, class Oper$>$ mi\-Geo\-Vector operator/= (mi\-Geo\-Vector \& {\em a}, const {\bf mr::base::exp}$<$ X, Y, Oper $>$ \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a57}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const mi\-Geo\-Vector\& operator/= (mi\-Geo\-Vector \& {\em a}, const mi\-Geo\-Vector \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a56}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const mi\-Geo\-Vector\& operator/= (mi\-Geo\-Vector \& {\em a}, const mi\-Vector \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a55}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const mi\-Geo\-Vector\& operator/= (mi\-Geo\-Vector \& {\em a}, const mi\-Geo\-Scalar {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a54}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class X, class Y, class Oper$>$ mi\-Vector operator/= (mi\-Vector \& {\em a}, const {\bf mr::base::exp}$<$ X, Y, Oper $>$ \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a38}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const mi\-Vector\& operator/= (mi\-Vector \& {\em a}, const mi\-Vector \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a37}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const mi\-Vector\& operator/= (mi\-Vector \& {\em a}, const mi\-Scalar {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a36}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class X, class Y, class Oper$>$ mi\-Color operator/= (mi\-Color \& {\em a}, const {\bf mr::base::exp}$<$ X, Y, Oper $>$ \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a25}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}const mi\-Color\& operator/= (mi\-Color \& {\em a}, const mi\-Color \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a24}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator^@{operator$^\wedge$}}
+\index{operator^@{operator$^\wedge$}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class X, class Y, class Oper$>$ mi\-Geo\-Vector operator$^\wedge$ (const mi\-Geo\-Vector \& {\em a}, const {\bf mr::base::exp}$<$ X, Y, Oper $>$ \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a76}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator^@{operator$^\wedge$}}
+\index{operator^@{operator$^\wedge$}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Geo\-Vector operator$^\wedge$ (const mi\-Geo\-Vector \& {\em a}, const mi\-Vector \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a75}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator^@{operator$^\wedge$}}
+\index{operator^@{operator$^\wedge$}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Geo\-Vector operator$^\wedge$ (const mi\-Geo\-Vector \& {\em a}, const mi\-Geo\-Vector \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a74}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator^@{operator$^\wedge$}}
+\index{operator^@{operator$^\wedge$}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mi\-Vector operator$^\wedge$ (const mi\-Vector \& {\em a}, const mi\-Vector \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a73}
+
+
+\index{mrOperators.h@{mr\-Operators.h}!operator^@{operator$^\wedge$}}
+\index{operator^@{operator$^\wedge$}!mrOperators.h@{mr\-Operators.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$class X, class Y, class Oper$>$ mi\-Vector operator$^\wedge$ (const mi\-Vector \& {\em a}, const {\bf mr::base::exp}$<$ X, Y, Oper $>$ \& {\em b})\hspace{0.3cm}{\tt  [inline]}}\label{mrOperators_8h_a72}
+
+

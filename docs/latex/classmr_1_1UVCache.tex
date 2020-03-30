@@ -1,0 +1,72 @@
+\section{mr::UVCache Class Reference}
+\label{classmr_1_1UVCache}\index{mr::UVCache@{mr::UVCache}}
+{\tt \#include $<$mr\-Cache.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+{\bf UVCache} (const mi\-Uint xres, const mi\-Uint yres)
+\item 
+{\bf $\sim$UVCache} ()
+\item 
+void {\bf lock} ()
+\item 
+void {\bf unlock} ()
+\item 
+void {\bf reflection} (mi\-State $\ast$const state, const mi\-Uint num\-Samples, const mi\-Scalar cosine=0.1f)
+\item 
+void {\bf refraction} (const mi\-State $\ast$const state, const mi\-Uint num\-Samples, const mi\-Scalar cosine=0.1f)
+\item 
+{\bf color} {\bf interpolate} (mi\-State $\ast$const state)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+This class is used as a cache for colors based on UVs. It can be used for 'pre-baking' stuff, similar to {\bf Triangle\-Vertex\-Cache}{\rm (p.\,\pageref{classmr_1_1TriangleVertexCache})}. This class is still experimental (ie. does not work that well). 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{mr::UVCache@{mr::UVCache}!UVCache@{UVCache}}
+\index{UVCache@{UVCache}!mr::UVCache@{mr::UVCache}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mr::UVCache::UVCache (const mi\-Uint {\em xres}, const mi\-Uint {\em yres})\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1UVCache_a0}
+
+
+\index{mr::UVCache@{mr::UVCache}!~UVCache@{$\sim$UVCache}}
+\index{~UVCache@{$\sim$UVCache}!mr::UVCache@{mr::UVCache}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mr::UVCache::$\sim${\bf UVCache} ()\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1UVCache_a1}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{mr::UVCache@{mr::UVCache}!interpolate@{interpolate}}
+\index{interpolate@{interpolate}!mr::UVCache@{mr::UVCache}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf color} mr::UVCache::interpolate (mi\-State $\ast$const {\em state})\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1UVCache_a6}
+
+
+\index{mr::UVCache@{mr::UVCache}!lock@{lock}}
+\index{lock@{lock}!mr::UVCache@{mr::UVCache}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::UVCache::lock ()\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1UVCache_a2}
+
+
+\index{mr::UVCache@{mr::UVCache}!reflection@{reflection}}
+\index{reflection@{reflection}!mr::UVCache@{mr::UVCache}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::UVCache::reflection (mi\-State $\ast$const {\em state}, const mi\-Uint {\em num\-Samples}, const mi\-Scalar {\em cosine} = 0.1f)\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1UVCache_a4}
+
+
+\index{mr::UVCache@{mr::UVCache}!refraction@{refraction}}
+\index{refraction@{refraction}!mr::UVCache@{mr::UVCache}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::UVCache::refraction (const mi\-State $\ast$const {\em state}, const mi\-Uint {\em num\-Samples}, const mi\-Scalar {\em cosine} = 0.1f)\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1UVCache_a5}
+
+
+\index{mr::UVCache@{mr::UVCache}!unlock@{unlock}}
+\index{unlock@{unlock}!mr::UVCache@{mr::UVCache}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::UVCache::unlock ()\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1UVCache_a3}
+
+
+
+
+The documentation for this class was generated from the following file:\begin{CompactItemize}
+\item 
+{\bf mr\-Cache.h}\end{CompactItemize}

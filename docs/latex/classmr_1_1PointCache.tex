@@ -1,0 +1,109 @@
+\section{mr::Point\-Cache Class Reference}
+\label{classmr_1_1PointCache}\index{mr::PointCache@{mr::PointCache}}
+{\tt \#include $<$mr\-Point\-Cache.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+void {\bf flush} ()
+\begin{CompactList}\small\item\em Flush (Clean) the cache. \item\end{CompactList}\item 
+{\bf Point\-Cache} (bool clean=true)
+\item 
+{\bf $\sim$Point\-Cache} ()
+\item 
+void {\bf insert} (const mi\-Vector \&P, void $\ast$data)
+\begin{CompactList}\small\item\em Insert user data into cache. \item\end{CompactList}\item 
+void $\ast$ {\bf at} (const mi\-Vector \&P)
+\item 
+void $\ast$ {\bf operator[$\,$]} (const mi\-Vector \&P)
+\item 
+template$<$typename T$>$ void {\bf data} (const mi\-State $\ast$const state, T $\ast$data[3])
+\end{CompactItemize}
+\subsection*{Protected Types}
+\begin{CompactItemize}
+\item 
+typedef std::map$<$ mi\-Vector, void $\ast$, {\bf less\-XYZOp} $>$ {\bf cache\-Type}
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+This class allows you to cache arbitrary data and reference it by a vertex coordinate.
+
+This can be useful to obtain some of the benefits of a SIMD architecture within mental ray, by using a backdoor. But it could have other uses, too.
+
+Following is a description of usage for doing things that are usually (incorrectly) considered possible only on SIMD architectures. One of the big questions is whether you could do Du() or Dv() for any arbitrary expression, for example. The answer is usually, no. I'll now show you how.
+
+When an object is to be rendered, displacement shaders in mental ray are executed first, before any surface or light shaders. A displacement shader is usually run on every point, before other shaders are called (or in portions of the object, before those triangles are shaded).
+
+Thus, this gives you the chance to cache all those vertices and do some math or store some property. Note that displacement shaders are usually limited in not being able to raytrace (well, the mray manual says you can force mray to do it, but I have not tested this is safe).
+
+Anyway, after caching this data in the displacement shader, it would then later be used by, say, the surface shader. This can be passed using any of the mray mechanisms (static variables, state-$>$user, shaderstate, or mi\_\-query() for local shader data ).
+
+Then, in {\bf mr\-Derivs.h}{\rm (p.\,\pageref{mrDerivs_8h})}, functions such as {\bf Du\-Dv()}{\rm (p.\,\pageref{namespacemr_a42})} can take that vertex data and use it to interpolate and give you (partial) derivatives, as prman. These derivatives will of course be accurate up to your tesselation rate, just as Du() is accurate up to shading rate in renderman.
+
+Note that it is important that you remember to flush this cache as it can grow to be quite big on complex scenes.
+
+See gg\_\-pointcache.cpp example in the sample shader library, which contains gg\_\-pointcache\_\-srf, gg\_\-pointcache\_\-dsp shaders.
+
+Disadvantages of the method:\begin{itemize}
+\item Technique will not work for volume shaders.\item Memory tracking. You need to flush your cache every now and then.\item Can be used in displacement shaders, but you need an additional displacement shader. \end{itemize}
+
+
+
+
+\subsection{Member Typedef Documentation}
+\index{mr::PointCache@{mr::Point\-Cache}!cacheType@{cacheType}}
+\index{cacheType@{cacheType}!mr::PointCache@{mr::Point\-Cache}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef std::map$<$ mi\-Vector, void$\ast$, {\bf less\-XYZOp} $>$ {\bf mr::Point\-Cache::cache\-Type}\hspace{0.3cm}{\tt  [protected]}}\label{classmr_1_1PointCache_x0}
+
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{mr::PointCache@{mr::Point\-Cache}!PointCache@{PointCache}}
+\index{PointCache@{PointCache}!mr::PointCache@{mr::Point\-Cache}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mr::Point\-Cache::Point\-Cache (bool {\em clean} = true)\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1PointCache_a1}
+
+
+Constructor. Set Clean to true if {\bf Point\-Cache}{\rm (p.\,\pageref{classmr_1_1PointCache})} should delete stored void pointers automatically. \index{mr::PointCache@{mr::Point\-Cache}!~PointCache@{$\sim$PointCache}}
+\index{~PointCache@{$\sim$PointCache}!mr::PointCache@{mr::Point\-Cache}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mr::Point\-Cache::$\sim${\bf Point\-Cache} ()\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1PointCache_a2}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{mr::PointCache@{mr::Point\-Cache}!at@{at}}
+\index{at@{at}!mr::PointCache@{mr::Point\-Cache}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ mr::Point\-Cache::at (const mi\-Vector \& {\em P})\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1PointCache_a4}
+
+
+Retrieve user data for point from cache Will die if point is not in cache. \index{mr::PointCache@{mr::Point\-Cache}!data@{data}}
+\index{data@{data}!mr::PointCache@{mr::Point\-Cache}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ void mr::Point\-Cache::data (const mi\-State $\ast$const {\em state}, T $\ast$ {\em data}[3])\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1PointCache_a6}
+
+
+Retrieve vertex data for vertices of current triangle from cache. \index{mr::PointCache@{mr::Point\-Cache}!flush@{flush}}
+\index{flush@{flush}!mr::PointCache@{mr::Point\-Cache}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::Point\-Cache::flush ()\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1PointCache_a0}
+
+
+Flush (Clean) the cache. 
+
+\index{mr::PointCache@{mr::Point\-Cache}!insert@{insert}}
+\index{insert@{insert}!mr::PointCache@{mr::Point\-Cache}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::Point\-Cache::insert (const mi\-Vector \& {\em P}, void $\ast$ {\em data})\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1PointCache_a3}
+
+
+Insert user data into cache. 
+
+\index{mr::PointCache@{mr::Point\-Cache}!operator[]@{operator[]}}
+\index{operator[]@{operator[]}!mr::PointCache@{mr::Point\-Cache}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ mr::Point\-Cache::operator[$\,$] (const mi\-Vector \& {\em P})\hspace{0.3cm}{\tt  [inline]}}\label{classmr_1_1PointCache_a5}
+
+
+Retrieve user data for point from cache Returns NULL if point is not in cache. 
+
+The documentation for this class was generated from the following file:\begin{CompactItemize}
+\item 
+{\bf mr\-Point\-Cache.h}\end{CompactItemize}

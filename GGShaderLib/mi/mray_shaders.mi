@@ -1,0 +1,102 @@
+#
+# Gonzalo Garramuno's mray shaders
+#
+# NodeId list starts at 3000
+#
+# This file includes:
+#
+# Surface Shaders:
+#   - gg_ambientocclusion    **DONE**  (3000)
+#   - gg_reflectionocclusion **DONE**  (3001)
+#   - gg_showinfo            **DONE**  (3003)
+#
+#   - gg_pointcache_srf   **DONE**    (3008)
+#
+# Displacement Shaders:
+#   - gg_rgbdisplacement  **DONE**    (3004)
+#   - gg_pointcache_dsp   **DONE**    (3007)
+#
+# Light Shaders:
+#
+#
+# LightMap Shaders:
+#
+# Texture Shaders:
+#   - gg_cellnoise  		**DONE**	(3009)
+#   - gg_vcellnoise		**DONE**	(3010)
+#   - gg_perlin			**DONE**	(3011)
+#   - gg_vperlin		**DONE**	(3012)
+#   - gg_worley			**DONE**	(3013)
+#   - gg_vworley		**DONE**	(3014)
+#   - gg_parallaxbump           **DONE**        (3015)
+#   - gg_tiff                   **DONE**        (3016)
+#   - gg_ctiff                  **DONE**        (3017)
+#
+# Output Shaders:
+#   - gg_buffers                **DONE**        (3018)
+#
+# Contour Shaders:
+#
+#
+# Lens Shaders:
+#
+# Image Shaders:
+#
+#
+# RenderPass Shaders:
+#
+#
+
+min version "3.2"
+
+#
+# ambient occlusion
+#
+$include "{MAYAROOT}/Aura/shaders/gg_ambientocclusion.mi"
+
+
+#
+# reflection occlusion
+#
+$include "{MAYAROOT}/Aura/shaders/gg_reflectionocclusion.mi"
+
+
+#
+# surface shader for debugging and showing information on objects
+#
+$include "{MAYAROOT}/Aura/shaders/gg_showinfo.mi"
+
+
+
+###########################################
+# DISPLACEMENT
+###########################################
+
+#
+# rgbdisplacement 
+# (allows displacing along arbitrary directions)
+#
+$include "{MAYAROOT}/Aura/shaders/gg_rgbdisplacement.mi"
+
+
+#
+# point cache example 
+# (does displacement and passes original P to surface
+#  shader gg_pointcache_srf)
+#
+$include "{MAYAROOT}/Aura/shaders/gg_pointcache.mi"
+
+###########################################
+# TEXTURE
+###########################################
+$include "{MAYAROOT}/Aura/shaders/gg_perlin.mi"
+$include "{MAYAROOT}/Aura/shaders/gg_cellnoise.mi"
+$include "{MAYAROOT}/Aura/shaders/gg_worley.mi"
+$include "{MAYAROOT}/Aura/shaders/gg_parallaxbump.mi"
+$include "{MAYAROOT}/Aura/shaders/gg_tiff.mi"
+
+
+###########################################
+# OUTPUT
+###########################################
+$include "{MAYAROOT}/Aura/shaders/gg_buffers.mi"

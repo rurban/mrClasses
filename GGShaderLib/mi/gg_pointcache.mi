@@ -1,0 +1,23 @@
+
+declare shader
+	scalar "gg_pointcache_dsp"
+	(
+	)
+	#:
+	#: nodeid 3007
+	#:
+	apply displace
+	version 1
+end declare
+
+
+declare shader
+	color "gg_pointcache_srf"
+	(
+	)
+	#:
+	#: nodeid 3008
+	#:
+	apply material, shadow, texture
+	version 1
+end declare

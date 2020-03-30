@@ -1,0 +1,99 @@
+\section{mr::mutex Struct Reference}
+\label{structmr_1_1mutex}\index{mr::mutex@{mr::mutex}}
+Class used to create an autolock for multithreading by wrapping mi\-Locks.  
+
+
+{\tt \#include $<$mr\-Mutex.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{CompactItemize}
+\item 
+{\bf mutex} ()
+\begin{CompactList}\small\item\em Create the mutex, doing mi\_\-init\_\-lock(). \item\end{CompactList}\item 
+{\bf $\sim$mutex} ()
+\begin{CompactList}\small\item\em Destroy the mutex, doing mi\_\-delete\_\-lock(). \item\end{CompactList}\item 
+void {\bf lock} ()
+\begin{CompactList}\small\item\em Lock the mutex. \item\end{CompactList}\item 
+void {\bf unlock} ()
+\begin{CompactList}\small\item\em Unlock the mutex. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Class used to create an autolock for multithreading by wrapping mi\-Locks. 
+
+mi\-Lock is inited in constructor of class and removed in its destructor.
+
+Elements created from this class should be created statically, to avoid the re-init/delete of the lock on each iteration.
+
+Example:
+
+
+
+\footnotesize\begin{verbatim}     static mr::Mutex myLock;
+   
+     myshader(...)
+     {
+        myLock.lock();
+        // do non thread-safe stuff here...
+        myLock.unlock();
+     }
+\end{verbatim}
+\normalsize
+
+
+\begin{Desc}
+\item[Warning:]\end{Desc}
+On maya2mr, initing lock in the constructor on Windows can make the DLL not load. For that, we instantiate inside a function called:
+
+
+
+\footnotesize\begin{verbatim}         extern "C" DLLEXPORT module_init()
+\end{verbatim}
+\normalsize
+
+
+which gets called after the DSO is loaded.
+
+If that feature is not available or does not work, set the define MR\_\-SAFE\_\-LOCK\_\-INIT as an option for the compiler.
+
+This should always work, but mutex locks will take a small hit in performance. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{mr::mutex@{mr::mutex}!mutex@{mutex}}
+\index{mutex@{mutex}!mr::mutex@{mr::mutex}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mr::mutex::mutex ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1mutex_a0}
+
+
+Create the mutex, doing mi\_\-init\_\-lock(). 
+
+\index{mr::mutex@{mr::mutex}!~mutex@{$\sim$mutex}}
+\index{~mutex@{$\sim$mutex}!mr::mutex@{mr::mutex}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}mr::mutex::$\sim${\bf mutex} ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1mutex_a1}
+
+
+Destroy the mutex, doing mi\_\-delete\_\-lock(). 
+
+
+
+\subsection{Member Function Documentation}
+\index{mr::mutex@{mr::mutex}!lock@{lock}}
+\index{lock@{lock}!mr::mutex@{mr::mutex}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::mutex::lock ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1mutex_a2}
+
+
+Lock the mutex. 
+
+\index{mr::mutex@{mr::mutex}!unlock@{unlock}}
+\index{unlock@{unlock}!mr::mutex@{mr::mutex}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mr::mutex::unlock ()\hspace{0.3cm}{\tt  [inline]}}\label{structmr_1_1mutex_a3}
+
+
+Unlock the mutex. 
+
+
+
+The documentation for this struct was generated from the following file:\begin{CompactItemize}
+\item 
+{\bf mr\-Mutex.h}\end{CompactItemize}

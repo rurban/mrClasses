@@ -1,0 +1,118 @@
+
+
+
+source "gg_mray_aux.mel";
+
+
+
+//
+//  Procedure Name:
+//	AEgg_exrNameNew 
+//
+
+global proc AEgg_exrNameNew (string $fileAttribute)
+{
+   setUITemplate -pst attributeEditorTemplate;
+   rowLayout -nc 3 textureNameLayout;
+   text -l "Image Name";
+   textField textureNameField;
+   symbolButton -image "navButtonBrowse.xpm" browser;
+   setParent ..;
+   setUITemplate -ppt;
+	
+   AEgg_exrNameReplace $fileAttribute;
+}
+
+//
+//  Procedure Name:
+//	AEgg_exrNameReplace
+//
+
+global proc AEgg_exrNameReplace (string $fileAttribute)
+{
+   connectControl -fileName textureNameField $fileAttribute;
+
+   string $command = "AEgg_assignTextureCB "+" "+$fileAttribute;
+
+   button -e -c
+     ("AEgg_fileTextureBrowser \"" + $command + "\"" ) browser;
+}
+
+global proc AEgg_exrPixelTypeNew( string $plug )
+{
+      
+   attrEnumOptionMenuGrp
+              -l "PixelType"
+              -at $plug
+              -ei  0 "Half"
+              -ei  1 "Float"
+              -ei  2 "Uint"
+	exrPixelTypeCtrl
+	;
+}
+
+
+//
+// Routine to replace a pulldown of whats
+//
+global proc AEgg_exrPixelTypeReplace( string $plug )
+{
+  attrEnumOptionMenuGrp -e -at $plug exrPixelTypeCtrl;
+}
+
+
+global proc AEgg_exrCompressionNew( string $plug )
+{
+      
+   attrEnumOptionMenuGrp
+              -l "Compression"
+              -at $plug
+              -ei  0 "None"
+              -ei  1 "RLE"
+              -ei  2 "PIZ"
+              -ei  3 "PIZ12"
+              -ei  4 "ZIP"
+              -ei  5 "ZIPS"
+	exrCompressionCtrl
+	;
+}
+
+
+//
+// Routine to replace a pulldown of whats
+//
+global proc AEgg_exrCompressionReplace( string $plug )
+{
+  attrEnumOptionMenuGrp -e -at $plug exrCompressionCtrl;
+}
+
+//
+//  Procedure Name:
+//	AEgg_exrTemplate
+//
+
+
+global proc AEgg_exrTemplate ( string $nodeName )
+{
+   AEswatchDisplay $nodeName;
+   editorTemplate -beginScrollLayout;
+   editorTemplate -beginLayout "File Attributes" -collapse 0;
+   editorTemplate -l "Single File" -addControl "singleFile";
+   editorTemplate -callCustom "AEgg_exrNameNew" "AEgg_exrNameReplace" "filename";
+   editorTemplate -l "Padding" -addControl "padding";
+   
+   editorTemplate -beginLayout "EXR Options" -collapse 0;
+   editorTemplate -callCustom "AEgg_exrCompressionNew" "AEgg_exrCompressionReplace" "compression";
+   editorTemplate -callCustom "AEgg_exrPixelTypeNew" "AEgg_exrPixelTypeReplace" "pixeltype";
+   editorTemplate -endLayout;
+   
+   // suppressed attributes
+   editorTemplate -suppress "singleFile";
+   editorTemplate -suppress "filename";
+   editorTemplate -suppress "padding";
+   editorTemplate -suppress "compression";
+   editorTemplate -suppress "pixeltype";
+   
+   editorTemplate -addExtraControls;
+   editorTemplate -endScrollLayout;
+}

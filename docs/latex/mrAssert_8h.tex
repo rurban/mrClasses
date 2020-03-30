@@ -1,0 +1,32 @@
+\section{mr\-Assert.h File Reference}
+\label{mrAssert_8h}\index{mrAssert.h@{mrAssert.h}}
+{\tt \#include \char`\"{}mr\-Platform.h\char`\"{}}\par
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define {\bf mr\-ASSERT}(x)
+\item 
+\#define {\bf mr\-FAIL}(x)
+\end{CompactItemize}
+
+
+\subsection{Define Documentation}
+\index{mrAssert.h@{mr\-Assert.h}!mrASSERT@{mrASSERT}}
+\index{mrASSERT@{mrASSERT}!mrAssert.h@{mr\-Assert.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define mr\-ASSERT(x)}\label{mrAssert_8h_a0}
+
+
+Just a simple include that adds ASSERTIONS for compile-time debugging \index{mrAssert.h@{mr\-Assert.h}!mrFAIL@{mrFAIL}}
+\index{mrFAIL@{mrFAIL}!mrAssert.h@{mr\-Assert.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define mr\-FAIL(x)}\label{mrAssert_8h_a1}
+
+
+{\bf Value:}
+
+\footnotesize\begin{verbatim}do { \
+                         mi_error( "FAIL! at %s, %s, line %d.", \
+                                  __FILE__, __FUNCTION__, __LINE__ ); \
+                         mr_error(x); \
+                         mi_fatal( "Aborting render..." ); \
+                    } while(0);
+\end{verbatim}\normalsize 
